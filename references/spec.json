@@ -1,0 +1,414 @@
+{
+  "_comment": "Template Palette Jessica - spec compacte pour generateur. Type fichier: JSON. Renommer en .json apres telechargement.",
+  "_versioning": {
+    "version": "1.1",
+    "source_md": "Template_Palette_Jessica_SPECIFICATION.txt",
+    "changelog": [
+      "v1.1: harmonisation couleurs textes (#2D2D3D / #1A1A2E -> #070E1D), correction #685D79 -> #6A5D79 (S08), ajout couleurs S05_STEP_*_NUMBER, ajout colors S08 valeurs, ajout RISK/OPP TITLE & BODY S09, ajout _no_takeaway_slides explicite, ajout S07 KPI sublabel positions"
+    ]
+  },
+  "_format": {
+    "size_cm": [33.87, 19.05],
+    "size_emu": [12192000, 6858000],
+    "ratio": "16:9"
+  },
+  "_theme": {
+    "name": "Palette Jessica",
+    "majorFont": "Segoe UI Black",
+    "minorFont": "Segoe UI",
+    "extra_fonts_used": ["Segoe UI Light", "Calibri", "Wingdings", "Poppins Medium", "Lato"]
+  },
+  "_palette": {
+    "_signature_3": ["#A25871", "#6A5D79", "#FDA85B"],
+    "primary_bordeaux": "#A25871",
+    "secondary_purple": "#6A5D79",
+    "accent_orange": "#FDA85B",
+    "title_navy": "#484C6A",
+    "text_primary": "#070E1D",
+    "text_secondary": "#474E67",
+    "text_muted": "#7D7B8D",
+    "kpi_pastels_6": ["#D8DBE8", "#BBB4C4", "#D5B3BE", "#F1D3D5", "#FEE3CA", "#FEF4DA"],
+    "kpi_strong_6": ["#484C6A", "#6A5D79", "#A25871", "#D4737A", "#FDA85B", "#FBCC58"],
+    "tag_green_pale": "#8DAC95",
+    "tag_green_strong": "#00B050",
+    "tag_red_strong": "#C00000",
+    "tag_olive": "#A8A400",
+    "bg_card_light": "#F4F5F9",
+    "card_border": "#AFB5C8"
+  },
+  "_master_elements": {
+    "title": {
+      "pos_cm": [1.09, 0.71],
+      "size_cm": [31.70, 1.58],
+      "font": "Segoe UI Black",
+      "size_pt": 29.32,
+      "color": "#484C6A",
+      "align": "left",
+      "anchor_v": "center"
+    },
+    "title_signature_bar_rect": {
+      "pos_cm": [1.09, 2.46],
+      "size_cm": [1.87, 0.27],
+      "fill": "#484C6A",
+      "border": "none"
+    },
+    "title_signature_bar_line": {
+      "pos_cm": [1.09, 2.71],
+      "size_cm": [3.69, 0],
+      "stroke": "accent2 (theme)",
+      "stroke_width_emu": 12700
+    },
+    "logo_safran": {
+      "pos_cm": [29.77, 17.91],
+      "size_cm": [3.03, 0.64],
+      "image": "image1.png"
+    },
+    "page_number": {
+      "pos_cm": [1.04, 18.03],
+      "size_cm": [0.70, 0.46],
+      "font": "Segoe UI",
+      "size_pt": 9,
+      "bold": true,
+      "color_scheme": "bg2 lumMod 60% lumOff 40%",
+      "field_type": "slidenum"
+    },
+    "footer_confidential": {
+      "pos_cm": [1.06, 18.51],
+      "size_cm": [26.32, 0.40],
+      "text": "This document and the information therein are the property of Safran. They must not be copied or communicated to a third party without the prior written authorization of Safran",
+      "font": "Segoe UI",
+      "size_pt": 9.33,
+      "color_scheme": "bg2 lumMod 60% lumOff 40%"
+    }
+  },
+  "_takeaway_band": {
+    "_used_on_slides": [1, 3, 4, 6, 7, 8, 10, 11],
+    "pos_cm": [1.09, 16.87],
+    "size_cm": [31.70, 1.10],
+    "shape": "rect",
+    "fill": {
+      "type": "gradient_linear",
+      "angle_deg": 90,
+      "base_color": "#A25871",
+      "satMod_pct": 115,
+      "stops": [
+        { "pos_pct": 0, "shade_pct": 30 },
+        { "pos_pct": 50, "shade_pct": 67.5 },
+        { "pos_pct": 100, "shade_pct": 100 }
+      ]
+    },
+    "text_default": "Take away",
+    "text_font": "Segoe UI",
+    "text_size_pt": 16,
+    "text_bold": true,
+    "text_color": "#FFFFFF",
+    "text_align": "center"
+  },
+  "_no_takeaway_slides": [2, 5, 9],
+  "_small_caps_mechanism": {
+    "_attribute": "cap=\"small\" on <a:rPr>",
+    "_meaning": "Petite majuscule avec premiere lettre en grande majuscule",
+    "_keep_text_lowercase": true,
+    "_used_on_placeholders": [
+      "S02_COL_1_TITLE", "S02_COL_2_TITLE", "S02_COL_3_TITLE",
+      "S03_FACTOR_1_LABEL", "S03_FACTOR_2_LABEL", "S03_FACTOR_3_LABEL",
+      "S03_FACTOR_4_LABEL", "S03_FACTOR_5_LABEL", "S03_FACTOR_6_LABEL",
+      "S05_STEP_1_PERIOD", "S05_STEP_2_PERIOD", "S05_STEP_3_PERIOD", "S05_STEP_4_PERIOD",
+      "S09_RISK_1_ACTION_TAG", "S09_RISK_2_ACTION_TAG", "S09_RISK_3_ACTION_TAG",
+      "S09_OPP_1_ACTION_TAG", "S09_OPP_2_ACTION_TAG", "S09_OPP_3_ACTION_TAG",
+      "S09_RISK_1_LEVEL", "S09_RISK_2_LEVEL", "S09_RISK_3_LEVEL",
+      "S09_OPP_1_LEVEL", "S09_OPP_2_LEVEL", "S09_OPP_3_LEVEL"
+    ]
+  },
+  "_alpha_watermark_mechanism": {
+    "_attribute": "<a:alpha val=\"40000\"/> inside <a:srgbClr>",
+    "_used_on_slide11_placeholders": [
+      { "name": "S11_BLOCK_1_NUMBER", "color": "#BBB4C4", "alpha_pct": 40 },
+      { "name": "S11_BLOCK_2_NUMBER", "color": "#D5B3BE", "alpha_pct": 40 },
+      { "name": "S11_BLOCK_3_NUMBER", "color": "#FEE3CA", "alpha_pct": 40 }
+    ]
+  },
+  "slides": [
+    {
+      "n": 1,
+      "title_text": "Hook sens + factuel",
+      "purpose": "Titre + manifeste + corps + 3 KPI verticaux + chart + take-away",
+      "named_placeholders": {
+        "S01_TITLE": { "from_master": true, "text": "Hook sens + factuel" },
+        "S01_MANIFESTO": { "pos_cm": [2.33, 3.44], "size_cm": [21.16, 2.86], "font": "Segoe UI Light", "size_pt": 24, "color": "#474E67" },
+        "S01_BODY": { "pos_cm": [2.33, 7.96], "size_cm": [20.46, 2.82], "font": "Segoe UI", "size_pt": 13, "color": "#474E67" },
+        "S01_STAT_1_VALUE": { "pos_cm": [24.20, 3.18], "size_cm": [9.45, 2.12], "font": "Segoe UI Black", "size_pt": 44, "bold": true, "color": "#6A5D79" },
+        "S01_STAT_1_LABEL": { "pos_cm": [24.20, 5.29], "size_cm": [9.45, 0.78], "font": "Segoe UI", "size_pt": 13, "bold": true, "color": "#070E1D" },
+        "S01_STAT_1_SUBLABEL": { "pos_cm": [24.20, 6.07], "size_cm": [9.45, 0.71], "font": "Segoe UI", "size_pt": 10, "color": "#474E67" },
+        "S01_STAT_2_VALUE": { "pos_cm": [24.20, 7.76], "size_cm": [9.45, 2.12], "font": "Segoe UI Black", "size_pt": 44, "bold": true, "color": "#A25871" },
+        "S01_STAT_2_LABEL": { "pos_cm": [24.20, 9.88], "size_cm": [9.45, 0.78], "font": "Segoe UI", "size_pt": 13, "bold": true, "color": "#070E1D" },
+        "S01_STAT_2_SUBLABEL": { "pos_cm": [24.20, 10.65], "size_cm": [9.45, 0.71], "font": "Segoe UI", "size_pt": 10, "color": "#474E67" },
+        "S01_STAT_3_VALUE": { "pos_cm": [24.20, 12.35], "size_cm": [9.45, 2.12], "font": "Segoe UI Black", "size_pt": 44, "bold": true, "color": "#FDA85B" },
+        "S01_STAT_3_LABEL": { "pos_cm": [24.20, 14.46], "size_cm": [9.45, 0.78], "font": "Segoe UI", "size_pt": 13, "bold": true, "color": "#070E1D" },
+        "S01_STAT_3_SUBLABEL": { "pos_cm": [24.20, 15.24], "size_cm": [9.45, 0.71], "font": "Segoe UI", "size_pt": 10, "color": "#474E67" },
+        "S01_TAKEAWAY": { "from_takeaway_band": true }
+      },
+      "decorative": [
+        { "name": "LeftAccentBar", "pos_cm": [0.61, 1.21], "size_cm": [0.04, 2.48], "fill": "#A25871" },
+        { "name": "KpiAccent_300", "pos_cm": [24.20, 2.89], "size_cm": [1.13, 0.07], "fill": "#484C6A" },
+        { "name": "KpiAccent_301", "pos_cm": [24.20, 7.48], "size_cm": [1.13, 0.07], "fill": "#A25871" },
+        { "name": "KpiAccent_302", "pos_cm": [24.20, 12.05], "size_cm": [1.13, 0.07], "fill": "#FDA85B" },
+        { "type": "image", "src": "image2.png", "purpose": "graphique RTDI Reception/Engage" }
+      ]
+    },
+    {
+      "n": 2,
+      "title_text": "Hook sens + vision",
+      "purpose": "3 colonnes (icone + titre small caps + body)",
+      "no_takeaway": true,
+      "named_placeholders": {
+        "S02_TITLE": { "from_master": true },
+        "S02_COL_1_TITLE": { "pos_cm": [2.36, 7.07], "size_cm": [9.0, 2.66], "font": "Segoe UI Black", "size_pt": 20, "bold": true, "color": "#6A5D79", "cap": "small" },
+        "S02_COL_1_BODY": { "pos_cm": [2.36, 11.35], "size_cm": [9.0, 3.13], "font": "Segoe UI Light", "size_pt": 14, "color": "#474E67" },
+        "S02_COL_2_TITLE": { "pos_cm": [12.77, 7.07], "size_cm": [9.0, 2.66], "font": "Segoe UI Black", "size_pt": 20, "bold": true, "color": "#A25871", "cap": "small" },
+        "S02_COL_2_BODY": { "pos_cm": [12.77, 11.35], "size_cm": [9.0, 3.13], "font": "Segoe UI Light", "size_pt": 14, "color": "#474E67" },
+        "S02_COL_3_TITLE": { "pos_cm": [23.19, 7.07], "size_cm": [9.0, 2.66], "font": "Segoe UI Black", "size_pt": 20, "bold": true, "color": "#FDA85B", "cap": "small" },
+        "S02_COL_3_BODY": { "pos_cm": [23.19, 11.35], "size_cm": [9.0, 3.13], "font": "Segoe UI Light", "size_pt": 14, "color": "#474E67" }
+      },
+      "decorative": [
+        { "type": "vbar", "pos_cm": [1.69, 4.71], "size_cm": [0.10, 9.9], "color": "#6A5D79" },
+        { "type": "vbar", "pos_cm": [12.11, 4.71], "size_cm": [0.10, 9.9], "color": "#A25871" },
+        { "type": "vbar", "pos_cm": [22.53, 4.71], "size_cm": [0.10, 9.9], "color": "#FDA85B" },
+        { "type": "image", "src": "image3.png", "pos_cm_approx": [3.0, 4.7] },
+        { "type": "image", "src": "image4.png", "pos_cm_approx": [13.4, 4.7] },
+        { "type": "image", "src": "image5.png", "pos_cm_approx": [23.8, 4.7] }
+      ]
+    },
+    {
+      "n": 3,
+      "title_text": "Liste en 6 points",
+      "purpose": "Grille 3x2 de larmes pastel + label small caps",
+      "named_placeholders": {
+        "S03_TITLE": { "from_master": true },
+        "S03_FACTOR_1_LABEL": { "pos_cm": [1.43, 6.89], "size_cm": [6.94, 0.86], "size_pt": 14, "bold": true, "color": "#070E1D", "cap": "small" },
+        "S03_FACTOR_2_LABEL": { "pos_cm": [13.36, 6.95], "size_cm": [6.94, 0.86], "size_pt": 14, "bold": true, "color": "#070E1D", "cap": "small" },
+        "S03_FACTOR_3_LABEL": { "pos_cm": [24.86, 6.95], "size_cm": [6.94, 0.86], "size_pt": 14, "bold": true, "color": "#070E1D", "cap": "small" },
+        "S03_FACTOR_4_LABEL": { "pos_cm": [1.47, 14.21], "size_cm": [6.94, 0.86], "size_pt": 14, "bold": true, "color": "#070E1D", "cap": "small" },
+        "S03_FACTOR_5_LABEL": { "pos_cm": [13.20, 14.21], "size_cm": [6.94, 0.86], "size_pt": 14, "bold": true, "color": "#070E1D", "cap": "small" },
+        "S03_FACTOR_6_LABEL": { "pos_cm": [24.56, 14.21], "size_cm": [6.94, 0.86], "size_pt": 14, "bold": true, "color": "#070E1D", "cap": "small" },
+        "S03_TAKEAWAY": { "from_takeaway_band": true }
+      },
+      "decorative_teardrops": [
+        { "name": "Larme 1", "size_cm_approx": [3.0, 3.0], "color": "#D8DBE8", "above_factor": 1 },
+        { "name": "Larme 2", "size_cm_approx": [3.0, 3.0], "color": "#BBB4C4", "above_factor": 2 },
+        { "name": "Larme 3", "size_cm_approx": [3.0, 3.0], "color": "#D5B3BE", "above_factor": 3 },
+        { "name": "Larme 4", "size_cm_approx": [3.0, 3.0], "color": "#F1D3D5", "above_factor": 4 },
+        { "name": "Larme 5", "size_cm_approx": [3.0, 3.0], "color": "#FEE3CA", "above_factor": 5 },
+        { "name": "Larme 6", "size_cm_approx": [3.0, 3.0], "color": "#FEF4DA", "above_factor": 6 }
+      ]
+    },
+    {
+      "n": 4,
+      "title_text": "Triptyque",
+      "purpose": "3 cercles connectes en triangle, label x/xx + sublabel xxx aux sommets",
+      "named_placeholders": {
+        "S04_TITLE": { "from_master": true },
+        "S04_TOP_LABEL": { "pos_cm": [19.61, 1.78], "size_cm": [6.08, 1.03], "font": "Segoe UI", "size_pt": 18, "bold": true, "color": "#070E1D" },
+        "S04_TOP_SUBLABEL": { "pos_cm": [19.61, 2.55], "size_cm": [6.08, 0.86], "font": "Segoe UI Light", "size_pt": 14, "color": "#474E67" },
+        "S04_LEFT_LABEL": { "pos_cm": [2.81, 11.84], "size_cm": [6.08, 1.03], "font": "Segoe UI", "size_pt": 18, "bold": true, "color": "#070E1D" },
+        "S04_LEFT_SUBLABEL": { "pos_cm": [2.81, 12.61], "size_cm": [6.08, 0.86], "font": "Segoe UI Light", "size_pt": 14, "color": "#474E67" },
+        "S04_RIGHT_LABEL": { "pos_cm": [24.80, 11.84], "size_cm": [6.08, 1.03], "font": "Segoe UI", "size_pt": 18, "bold": true, "color": "#070E1D" },
+        "S04_RIGHT_SUBLABEL": { "pos_cm": [24.80, 12.61], "size_cm": [6.08, 0.86], "font": "Segoe UI Light", "size_pt": 14, "color": "#474E67" },
+        "S04_TAKEAWAY": { "from_takeaway_band": true }
+      },
+      "decorative_circles": {
+        "top": { "pos_cm": [15.5, 4.0], "size_cm": [4.0, 4.0], "color": "#6A5D79" },
+        "left": { "pos_cm": [6.5, 9.5], "size_cm": [4.0, 4.0], "color": "#D5B3BE" },
+        "right": { "pos_cm": [22.5, 9.5], "size_cm": [4.0, 4.0], "color": "#FEE3CA" }
+      }
+    },
+    {
+      "n": 5,
+      "title_text": "Timeline",
+      "purpose": "Timeline 4 etapes avec puces numerotees colorees",
+      "no_takeaway": true,
+      "named_placeholders": {
+        "S05_TITLE": { "from_master": true },
+        "S05_STEP_1_NUMBER": { "pos_cm": [1.69, 7.64], "size_cm": [0.92, 0.92], "font": "Segoe UI Black", "size_pt": 12, "bold": true, "color": "#FFFFFF", "bullet_fill": "#6A5D79" },
+        "S05_STEP_1_PERIOD": { "pos_cm": [1.69, 8.87], "size_cm": [7.47, 0.62], "font": "Segoe UI", "size_pt": 12, "bold": true, "color": "#6A5D79", "cap": "small" },
+        "S05_STEP_1_TITLE": { "pos_cm": [1.69, 9.60], "size_cm": [7.47, 0.80], "font": "Segoe UI", "size_pt": 16, "bold": true, "color": "#070E1D" },
+        "S05_STEP_1_BODY": { "pos_cm": [1.69, 10.54], "size_cm": [7.47, 1.26], "font": "Segoe UI Light", "size_pt": 12, "color": "#474E67" },
+        "S05_STEP_2_NUMBER": { "pos_cm": [9.44, 7.64], "size_cm": [0.92, 0.92], "font": "Segoe UI Black", "size_pt": 12, "bold": true, "color": "#FFFFFF", "bullet_fill": "#A25871" },
+        "S05_STEP_2_PERIOD": { "pos_cm": [9.44, 8.87], "size_cm": [7.47, 0.62], "font": "Segoe UI", "size_pt": 12, "bold": true, "color": "#A25871", "cap": "small" },
+        "S05_STEP_2_TITLE": { "pos_cm": [9.44, 9.60], "size_cm": [7.47, 0.80], "font": "Segoe UI", "size_pt": 16, "bold": true, "color": "#070E1D" },
+        "S05_STEP_2_BODY": { "pos_cm": [9.44, 10.54], "size_cm": [7.47, 1.93], "font": "Segoe UI Light", "size_pt": 12, "color": "#474E67" },
+        "S05_STEP_3_NUMBER": { "pos_cm": [17.18, 7.64], "size_cm": [0.92, 0.92], "font": "Segoe UI Black", "size_pt": 12, "bold": true, "color": "#FFFFFF", "bullet_fill": "#D4737A" },
+        "S05_STEP_3_PERIOD": { "pos_cm": [17.18, 8.87], "size_cm": [7.47, 0.62], "font": "Segoe UI", "size_pt": 12, "bold": true, "color": "#D4737A", "cap": "small" },
+        "S05_STEP_3_TITLE": { "pos_cm": [17.18, 9.60], "size_cm": [7.47, 0.80], "font": "Segoe UI", "size_pt": 16, "bold": true, "color": "#070E1D" },
+        "S05_STEP_3_BODY": { "pos_cm": [17.18, 10.54], "size_cm": [7.47, 1.26], "font": "Segoe UI Light", "size_pt": 12, "color": "#474E67" },
+        "S05_STEP_4_NUMBER": { "pos_cm": [24.92, 7.64], "size_cm": [0.92, 0.92], "font": "Segoe UI Black", "size_pt": 12, "bold": true, "color": "#FFFFFF", "bullet_fill": "#FDA85B" },
+        "S05_STEP_4_PERIOD": { "pos_cm": [24.92, 8.87], "size_cm": [7.47, 0.62], "font": "Segoe UI", "size_pt": 12, "bold": true, "color": "#FDA85B", "cap": "small" },
+        "S05_STEP_4_TITLE": { "pos_cm": [24.92, 9.60], "size_cm": [7.47, 0.80], "font": "Segoe UI", "size_pt": 16, "bold": true, "color": "#070E1D" },
+        "S05_STEP_4_BODY": { "pos_cm": [24.92, 10.54], "size_cm": [7.47, 1.26], "font": "Segoe UI Light", "size_pt": 12, "color": "#474E67" }
+      },
+      "decorative": "4 cercles puce numero (~0.85cm) couleurs assorties (violet/bordeaux/rose/orange) + 3 segments lignes horizontales reliant les puces"
+    },
+    {
+      "n": 6,
+      "title_text": "Tableau",
+      "purpose": "Tableau 5 colonnes x 4 lignes avec en-tete violet sourd",
+      "named_placeholders": {
+        "S06_TITLE": { "from_master": true },
+        "S06_HEADER_C1": { "pos_cm": [1.52, 5.27], "size_cm": [9.49, 0.71], "font": "Segoe UI", "size_pt": 16, "bold": true, "color": "#FFFFFF" },
+        "S06_HEADER_C2": { "pos_cm": [11.59, 5.27], "size_cm": [5.08, 0.71], "font": "Segoe UI", "size_pt": 16, "bold": true, "color": "#FFFFFF" },
+        "S06_HEADER_C3": { "pos_cm": [17.38, 5.27], "size_cm": [4.15, 0.71], "font": "Segoe UI", "size_pt": 16, "bold": true, "color": "#FFFFFF" },
+        "S06_HEADER_C4": { "pos_cm": [22.26, 5.27], "size_cm": [5.75, 0.71], "font": "Segoe UI", "size_pt": 16, "bold": true, "color": "#FFFFFF" },
+        "S06_HEADER_C5": { "pos_cm": [28.70, 5.27], "size_cm": [3.79, 0.71], "font": "Segoe UI", "size_pt": 16, "bold": true, "color": "#FFFFFF" },
+        "_row_y_cm": { "R1": 6.56, "R2": 7.97, "R3": 9.38, "R4": 10.79 },
+        "_col_x_cm": { "C1": 1.52, "C2": 11.59, "C3": 17.38, "C4": 22.26, "C5": 28.70 },
+        "_col_w_cm": { "C1": 9.49, "C2": 5.08, "C3": 4.15, "C4": 5.75, "C5": 3.79 },
+        "_row_h_cm": 0.80,
+        "_header_fill": "#6A5D79",
+        "_row_alt_fill_even": "#F4F5F9",
+        "_row_alt_fill_odd": "#FFFFFF",
+        "_S06_R_X_C1_format": { "font": "Segoe UI", "size_pt": 14, "bold": true, "color": "#070E1D" },
+        "_S06_R_X_C2_format": { "font": "Segoe UI", "size_pt": 14, "color": "#474E67" },
+        "_S06_R_X_C3_format": { "font": "Segoe UI", "size_pt": 14, "color": "#474E67" },
+        "_S06_R_X_C4_format": { "font": "Segoe UI", "size_pt": 14, "bold": true, "color": "#6A5D79" },
+        "_S06_R_X_C5_format": { "font": "Segoe UI", "size_pt": 14, "bold": true, "color": "#474E67" },
+        "S06_TAKEAWAY": { "from_takeaway_band": true }
+      },
+      "decorative": "Header rectangles violet sourd #6A5D79 plein, lignes paires fond #F4F5F9 (zebrage), traits fins entre lignes"
+    },
+    {
+      "n": 7,
+      "title_text": "Dashboard",
+      "purpose": "6 cartes KPI pastel + 5 barres horizontales colorees",
+      "named_placeholders": {
+        "S07_TITLE": { "from_master": true },
+        "S07_KPI_1_CARD": { "pos_cm": [1.06, 3.71], "size_cm": [5.0, 4.44], "fill": "#D8DBE8", "rounded": true },
+        "S07_KPI_2_CARD": { "pos_cm": [6.29, 3.71], "size_cm": [5.0, 4.44], "fill": "#BBB4C4", "rounded": true },
+        "S07_KPI_3_CARD": { "pos_cm": [11.51, 3.71], "size_cm": [5.0, 4.44], "fill": "#D5B3BE", "rounded": true },
+        "S07_KPI_4_CARD": { "pos_cm": [16.73, 3.71], "size_cm": [5.0, 4.44], "fill": "#F1D3D5", "rounded": true },
+        "S07_KPI_5_CARD": { "pos_cm": [21.95, 3.71], "size_cm": [5.0, 4.44], "fill": "#FEE3CA", "rounded": true },
+        "S07_KPI_6_CARD": { "pos_cm": [27.18, 3.71], "size_cm": [5.0, 4.44], "fill": "#FEF4DA", "rounded": true },
+        "S07_KPI_1_LABEL": { "pos_cm": [1.17, 4.78], "size_cm": [4.8, 1.80], "font": "Segoe UI Black", "size_pt": 36, "bold": true, "color": "#484C6A" },
+        "S07_KPI_2_LABEL": { "pos_cm": [6.37, 4.78], "size_cm": [4.8, 1.80], "font": "Segoe UI Black", "size_pt": 36, "bold": true, "color": "#6A5D79" },
+        "S07_KPI_3_LABEL": { "pos_cm": [11.61, 4.78], "size_cm": [4.8, 1.80], "font": "Segoe UI Black", "size_pt": 36, "bold": true, "color": "#A25871" },
+        "S07_KPI_4_LABEL": { "pos_cm": [16.83, 4.78], "size_cm": [4.8, 1.80], "font": "Segoe UI Black", "size_pt": 36, "bold": true, "color": "#D4737A" },
+        "S07_KPI_5_LABEL": { "pos_cm": [22.05, 4.78], "size_cm": [4.8, 1.80], "font": "Segoe UI Black", "size_pt": 36, "bold": true, "color": "#FDA85B" },
+        "S07_KPI_6_LABEL": { "pos_cm": [27.28, 4.78], "size_cm": [4.8, 1.80], "font": "Segoe UI Black", "size_pt": 36, "bold": true, "color": "#FBCC58" },
+        "S07_KPI_1_SUBLABEL": { "pos_cm": [1.17, 6.65], "size_cm": [4.8, 0.73], "font": "Segoe UI", "size_pt": 11, "color": "#474E67" },
+        "S07_KPI_2_SUBLABEL": { "pos_cm": [6.37, 6.65], "size_cm": [4.8, 0.73], "font": "Segoe UI", "size_pt": 11, "color": "#474E67" },
+        "S07_KPI_3_SUBLABEL": { "pos_cm": [11.61, 6.65], "size_cm": [4.8, 0.73], "font": "Segoe UI", "size_pt": 11, "color": "#474E67" },
+        "S07_KPI_4_SUBLABEL": { "pos_cm": [16.83, 6.65], "size_cm": [4.8, 0.73], "font": "Segoe UI", "size_pt": 11, "color": "#474E67" },
+        "S07_KPI_5_SUBLABEL": { "pos_cm": [22.05, 6.65], "size_cm": [4.8, 0.73], "font": "Segoe UI", "size_pt": 11, "color": "#474E67" },
+        "S07_KPI_6_SUBLABEL": { "pos_cm": [27.28, 6.65], "size_cm": [4.8, 0.73], "font": "Segoe UI", "size_pt": 11, "color": "#474E67" },
+        "S07_SECTION_LABEL": { "pos_cm": [1.09, 8.50], "size_cm": [31.08, 1.17], "font": "Segoe UI", "size_pt": 12, "bold": true, "italic": true, "color": "#474E67" },
+        "S07_BAR_1_LABEL": { "pos_cm": [1.06, 10.09], "size_cm": [6.94, 0.97], "font": "Segoe UI", "size_pt": 11, "bold": true, "color": "#070E1D" },
+        "S07_BAR_2_LABEL": { "pos_cm": [1.06, 11.40], "size_cm": [6.94, 0.97], "font": "Segoe UI", "size_pt": 11, "bold": true, "color": "#070E1D" },
+        "S07_BAR_3_LABEL": { "pos_cm": [1.06, 12.68], "size_cm": [6.94, 0.97], "font": "Segoe UI", "size_pt": 11, "bold": true, "color": "#070E1D" },
+        "S07_BAR_4_LABEL": { "pos_cm": [1.06, 13.96], "size_cm": [6.94, 0.97], "font": "Segoe UI", "size_pt": 11, "bold": true, "color": "#070E1D" },
+        "S07_BAR_5_LABEL": { "pos_cm": [1.06, 15.18], "size_cm": [6.94, 0.97], "font": "Segoe UI", "size_pt": 11, "bold": true, "color": "#070E1D" },
+        "S07_TAKEAWAY": { "from_takeaway_band": true }
+      },
+      "decorative_bars": "5 barres oblong colorees longueur variable - couleurs (haut->bas): violet sourd #6A5D79, bordeaux #A25871, rose #D4737A, orange #FDA85B, jaune #FBCC58"
+    },
+    {
+      "n": 8,
+      "title_text": "Comparatif",
+      "purpose": "5 lignes de comparaison avec barres oblong gauche/droite",
+      "named_placeholders": {
+        "S08_TITLE": { "from_master": true },
+        "S08_SUBTITLE": { "pos_cm": [1.08, 4.04], "size_cm": [31.70, 0.97], "font": "Segoe UI Black", "size_pt": 21.3, "bold": true, "color": "#6A5D79" },
+        "S08_LEGEND_1": { "pos_cm": [21.81, 6.14], "size_cm": [5.56, 0.89], "font": "Segoe UI", "size_pt": 10, "color": "#474E67" },
+        "S08_LEGEND_2": { "pos_cm": [28.47, 6.14], "size_cm": [5.56, 0.89], "font": "Segoe UI", "size_pt": 10, "color": "#474E67" },
+        "_row_y_cm": { "R1": 8.05, "R2": 9.35, "R3": 10.66, "R4": 11.97, "R5": 13.27 },
+        "_S08_ROW_X_LABEL": { "x_cm": 1.08, "w_cm": 10.56, "h_cm": 0.97, "font": "Segoe UI", "size_pt": 12, "bold": true, "color": "#070E1D" },
+        "_S08_ROW_X_VALUE_1": { "x_cm": 11.94, "w_cm_max": 12.22, "h_cm": 0.83, "font": "Segoe UI", "size_pt": 12, "bold": true, "color": "#474E67", "bar_color": "#D5B3BE" },
+        "_S08_ROW_X_VALUE_2": { "x_cm": 24.44, "w_cm_max": 7.33, "h_cm": 0.83, "font": "Segoe UI", "size_pt": 12, "bold": true, "color": "#474E67", "bar_color": "#FEE3CA" },
+        "S08_TAKEAWAY": { "from_takeaway_band": true }
+      }
+    },
+    {
+      "n": 9,
+      "title_text": "Risques & Opportunites",
+      "purpose": "Grille 2x3 cartes - ligne 1 risques, ligne 2 opportunites",
+      "no_takeaway": true,
+      "named_placeholders": {
+        "S09_TITLE": { "from_master": true },
+        "_card_x_cm": { "C1": 0.42, "C2": 11.57, "C3": 22.71 },
+        "_card_size_cm": [10.55, 5.85],
+        "_RISK_card_y_cm": 3.50,
+        "_OPP_card_y_cm": 10.30,
+        "_RISK_y_cm": { "ICON": 4.18, "TITLE": 3.98, "LEVEL": 4.75, "BODY": 5.60, "ACTION_TAG": 7.74, "ACTION_BODY": 7.74 },
+        "_OPP_y_cm": { "ICON": 11.05, "TITLE": 10.86, "LEVEL": 11.63, "BODY": 12.48, "ACTION_TAG": 14.62, "ACTION_BODY": 14.62 },
+        "_icon_color_RISK": "#6A5D79",
+        "_icon_color_OPP": "#FBCC58",
+        "_TITLE_format": { "font": "Segoe UI", "size_pt": 12, "bold": true, "color": "#070E1D" },
+        "_BODY_format": { "font": "Segoe UI", "size_pt": 10, "color": "#070E1D" },
+        "_ACTION_BODY_format": { "font": "Segoe UI Light", "size_pt": 10, "color": "#070E1D" },
+        "_LEVEL_RISK_high": { "color": "#C00000", "text": "Risque eleve", "cap": "small" },
+        "_LEVEL_RISK_medium": { "color": "#FDA85B", "text": "Risque moyen", "cap": "small" },
+        "_LEVEL_OPP_high": { "color": "#00B050", "text": "Gain eleve", "cap": "small" },
+        "_LEVEL_OPP_medium": { "color": "#A8A400", "text": "Gain moyen", "cap": "small" },
+        "_ACTION_TAG_RISK": { "color": "#8DAC95", "text": "Parade", "cap": "small" },
+        "_ACTION_TAG_OPP": { "color": "#8DAC95", "text": "Levier", "cap": "small" }
+      },
+      "decorative": "6 cartes rect arrondi blanc + contour #AFB5C8 0.25pt + 6 separateurs pointilles horizontaux"
+    },
+    {
+      "n": 10,
+      "title_text": "Plan d'action en 3 phases",
+      "purpose": "3 colonnes phases - bandeau colore titre + 3 items chacune",
+      "named_placeholders": {
+        "S10_TITLE": { "from_master": true },
+        "S10_DATE": { "pos_cm": [28.11, 0.75], "size_cm": [5.08, 1.29], "font": "Calibri", "size_pt": 12, "color": "#FFFFFF" },
+        "_phase_x_cm": {
+          "P1": { "card": 0.61, "number": 0.78, "title": 2.37, "items": 1.63 },
+          "P2": { "card": 11.68, "number": 11.96, "title": 13.55, "items": 12.80 },
+          "P3": { "card": 22.86, "number": 23.13, "title": 24.72, "items": 23.98 }
+        },
+        "_phase_card_size_cm": [10.50, 11.49],
+        "_phase_card_y_cm": 4.10,
+        "_phase_band_size_cm": [10.50, 2.10],
+        "_phase_colors": { "P1": "#6A5D79", "P2": "#A25871", "P3": "#FDA85B" },
+        "_NUMBER_format": { "font": "Calibri", "size_pt": 24, "bold": true, "color": "#FFFFFF" },
+        "_TITLE_format": { "font": "Segoe UI", "size_pt": 16, "bold": true, "color": "#FFFFFF" },
+        "_SUBTITLE_format": { "font": "Segoe UI", "size_pt": 12, "italic": true, "color": "#FFFFFF" },
+        "_item_y_cm": { "ITEM_1_TITLE": 6.30, "ITEM_1_BODY": 7.26, "ITEM_2_TITLE": 9.08, "ITEM_2_BODY": 10.04, "ITEM_3_TITLE": 12.22, "ITEM_3_BODY": 13.18 },
+        "_ITEM_TITLE_format": { "font": "Segoe UI", "size_pt": 11, "bold": true, "color": "#070E1D" },
+        "_ITEM_BODY_format": { "font": "Segoe UI Light", "size_pt": 10.5, "color": "#474E67" },
+        "_phase_bullet_size_cm": [0.44, 0.44],
+        "S10_TAKEAWAY": { "from_takeaway_band": true }
+      }
+    },
+    {
+      "n": 11,
+      "title_text": "Arc narratif et CTA",
+      "purpose": "3 blocs narratifs empiles - chiffre filigrane + barre verticale + titre colore + body",
+      "named_placeholders": {
+        "S11_TITLE": { "from_master": true },
+        "S11_BLOCK_1_NUMBER": { "pos_cm": [1.80, 3.05], "size_cm": [3.0, 3.8], "font": "Segoe UI Black", "size_pt": 72, "bold": true, "color": "#BBB4C4", "alpha_pct": 40 },
+        "S11_BLOCK_1_TITLE": { "pos_cm": [2.00, 3.30], "size_cm": [29.50, 1.10], "font": "Segoe UI", "size_pt": 18, "bold": true, "color": "#6A5D79" },
+        "S11_BLOCK_1_BODY": { "pos_cm": [2.00, 4.50], "size_cm": [29.50, 2.40], "font": "Segoe UI Light", "size_pt": 14, "color": "#474E67" },
+        "S11_BLOCK_2_NUMBER": { "pos_cm": [1.80, 7.55], "size_cm": [3.39, 3.8], "font": "Segoe UI Black", "size_pt": 72, "bold": true, "color": "#D5B3BE", "alpha_pct": 40 },
+        "S11_BLOCK_2_TITLE": { "pos_cm": [2.00, 7.83], "size_cm": [29.50, 1.10], "font": "Segoe UI", "size_pt": 18, "bold": true, "color": "#A25871" },
+        "S11_BLOCK_2_BODY": { "pos_cm": [2.00, 9.03], "size_cm": [29.50, 2.40], "font": "Segoe UI Light", "size_pt": 14, "color": "#474E67" },
+        "S11_BLOCK_3_NUMBER": { "pos_cm": [1.80, 12.05], "size_cm": [3.83, 3.8], "font": "Segoe UI Black", "size_pt": 72, "bold": true, "color": "#FEE3CA", "alpha_pct": 40 },
+        "S11_BLOCK_3_TITLE": { "pos_cm": [2.00, 12.30], "size_cm": [29.50, 1.10], "font": "Segoe UI", "size_pt": 18, "bold": true, "color": "#FDA85B" },
+        "S11_BLOCK_3_BODY": { "pos_cm": [2.00, 13.50], "size_cm": [29.50, 2.40], "font": "Segoe UI Light", "size_pt": 14, "color": "#474E67" },
+        "S11_CTA": { "from_takeaway_band": true, "text_default": "Etes-vous prets ..." }
+      },
+      "decorative_accentbars": [
+        { "name": "AccentBar_block1", "block": 1, "color": "#6A5D79", "pos_cm": [1.09, 3.05], "size_cm": [0.10, 4.20] },
+        { "name": "AccentBar_block2", "block": 2, "color": "#A25871", "pos_cm": [1.09, 7.55], "size_cm": [0.10, 4.20] },
+        { "name": "AccentBar_block3", "block": 3, "color": "#FDA85B", "pos_cm": [1.09, 12.05], "size_cm": [0.10, 4.20] }
+      ]
+    }
+  ],
+  "_generation_rules": {
+    "1_modify_only": "Le contenu textuel <a:t> des placeholders nommes S{NN}_*",
+    "2_preserve": "Toutes les proprietes <a:rPr>: sz, b, i, cap, latin typeface, solidFill, et la position <a:xfrm>",
+    "3_xml_entities_for_apostrophes": { "courbe_droite": "&#x2019;", "guillemet_ouvrant": "&#x201C;", "guillemet_fermant": "&#x201D;" },
+    "4_multi_paragraph": "Si le placeholder recoit du multi-paragraphe, creer un <a:p> par paragraphe en clonant le <a:pPr> source",
+    "5_inline_emphasis": "Mot en gras dans une phrase: creer plusieurs <a:r> dans un <a:p>, le mot d'emphase ayant b=1 et color=#A25871 ou #6A5D79",
+    "6_no_modify_master_layouts": "Ne jamais toucher au master ni aux layouts - ils portent titre, footer, numero, logo, barre signature",
+    "7_no_remove_decorative": "Ne jamais supprimer Rectangles/Shapes/Connecteurs non nommes - ils portent le design"
+  }
+}

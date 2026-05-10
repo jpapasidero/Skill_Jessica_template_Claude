@@ -1,0 +1,260 @@
+{
+  "_comment": "Exemple complet illustrant les 11 layouts. Cas fil rouge: projet de transformation Lean Six-Sigma sur la chaine logistique d'un site Safran.",
+  "slides": [
+    {
+      "layout": 1,
+      "content": {
+        "title": "Pourquoi transformer la supply chain maintenant",
+        "manifesto": "Notre supply chain absorbe 38% des coûts. Le statu quo nous coûte chaque mois 480 k€ de plus que nos concurrents directs.",
+        "body": "Trois signaux convergent : nos délais s'allongent, nos défauts grimpent, nos équipes se désengagent. Pris séparément, chaque indicateur reste sous le seuil critique. Pris ensemble, ils dessinent un point de bascule. C'est maintenant qu'il faut agir, pas dans six mois.",
+        "stats": [
+          {"value": "+38%", "label": "Coûts logistiques", "sublabel": "vs benchmark secteur"},
+          {"value": "21 j", "label": "Cycle moyen", "sublabel": "objectif: 12 j"},
+          {"value": "-12%", "label": "Engagement", "sublabel": "vs N-1"}
+        ],
+        "takeaway": "Agir maintenant ou subir dans six mois"
+      }
+    },
+    {
+      "layout": 2,
+      "content": {
+        "title": "Trois piliers pour réussir",
+        "columns": [
+          {
+            "title": "Le terrain pilote la cadence",
+            "body": "Les opérateurs identifient les gaspillages mieux que les consultants. Notre programme s'appuie sur les Gemba walks hebdomadaires et les Andons digitaux."
+          },
+          {
+            "title": "Les indicateurs guident, pas l'inverse",
+            "body": "Cinq KPI partagés, mis à jour en temps réel. Pas de tableau de bord caché, pas de reporting parallèle. La donnée commune crée le langage commun."
+          },
+          {
+            "title": "Chaque équipier devient acteur",
+            "body": "Formation Yellow Belt pour 80% des équipes en 12 mois. Reconnaissance des contributeurs via les rituels de chantier. L'engagement se construit par l'autonomie."
+          }
+        ]
+      }
+    },
+    {
+      "layout": 3,
+      "content": {
+        "title": "Six facteurs critiques de succès",
+        "factors": [
+          {"label": "Sponsor exécutif"},
+          {"label": "Vision partagée"},
+          {"label": "Equipes dédiées"},
+          {"label": "Indicateurs simples"},
+          {"label": "Communication continue"},
+          {"label": "Quick wins visibles"}
+        ],
+        "takeaway": "Aligner les six avant le go, pas pendant"
+      }
+    },
+    {
+      "layout": 4,
+      "content": {
+        "title": "Trois dimensions interdépendantes",
+        "nodes": {
+          "top": {
+            "label": "Personnes",
+            "sublabel": "compétences, posture, culture qualité"
+          },
+          "left": {
+            "label": "Processus",
+            "sublabel": "méthodes Lean, standards, rituels"
+          },
+          "right": {
+            "label": "Outils",
+            "sublabel": "MES, dashboards, traçabilité digitale"
+          }
+        },
+        "takeaway": "Aucune dimension ne progresse seule"
+      }
+    },
+    {
+      "layout": 5,
+      "content": {
+        "title": "Notre feuille de route en 4 temps",
+        "steps": [
+          {
+            "period": "T2 2026",
+            "step_title": "Cadrage",
+            "body": "Diagnostic 360°, sponsoring N-1, KPI baseline sur 6 sites pilotes."
+          },
+          {
+            "period": "T3 2026",
+            "step_title": "Pilote",
+            "body": "Deux sites en cycle court, méthode itérative, REX hebdomadaire avec sponsor exécutif et terrain."
+          },
+          {
+            "period": "T4 2026 - T1 2027",
+            "step_title": "Vague 1",
+            "body": "Six sites supplémentaires, ambassadeurs internes, formation Yellow Belt déployée."
+          },
+          {
+            "period": "T2 - T4 2027",
+            "step_title": "Pérennisation",
+            "body": "BAU + amélioration continue, intégration aux processus RH et performance."
+          }
+        ]
+      }
+    },
+    {
+      "layout": 6,
+      "content": {
+        "title": "Comparatif des 4 scénarios",
+        "headers": ["Scénario", "Coût", "Délai", "Risque", "Score"],
+        "rows": [
+          ["A — Statu quo amélioré", "0,5 M€", "6 mois", "Faible", "★★"],
+          ["B — Refonte ciblée Lean", "1,8 M€", "12 mois", "Moyen", "★★★★"],
+          ["C — Transformation totale", "4,2 M€", "24 mois", "Elevé", "★★★"],
+          ["D — Externalisation partielle", "2,5 M€", "9 mois", "Moyen", "★★"]
+        ],
+        "takeaway": "Scénario B retenu : meilleur rapport valeur sur risque"
+      }
+    },
+    {
+      "layout": 7,
+      "content": {
+        "title": "Indicateurs cibles à 18 mois",
+        "kpis": [
+          {"value": "94%", "sublabel": "Adhésion équipes"},
+          {"value": "12 j", "sublabel": "Cycle moyen"},
+          {"value": "+38%", "sublabel": "Productivité"},
+          {"value": "1,2", "sublabel": "Sigma qualité"},
+          {"value": "2,4 M€", "sublabel": "Gains annualisés"},
+          {"value": "98%", "sublabel": "OTD client"}
+        ],
+        "section_label": "Avancement par chantier (% en mai 2026)",
+        "bars": [
+          {"label": "Chantier 1 — Standards opérationnels", "value": 85},
+          {"label": "Chantier 2 — Outils MES et data", "value": 62},
+          {"label": "Chantier 3 — Compétences Yellow Belt", "value": 41},
+          {"label": "Chantier 4 — Pilotage par KPI", "value": 78},
+          {"label": "Chantier 5 — Communication et change", "value": 90}
+        ],
+        "takeaway": "Trois chantiers à accélérer en priorité Q3"
+      }
+    },
+    {
+      "layout": 8,
+      "content": {
+        "title": "Avant / Après pilote sur 2 sites",
+        "subtitle": "Cinq indicateurs mesurés sur 90 jours",
+        "legends": ["Avant", "Après"],
+        "rows": [
+          {"label": "Délai de cycle (jours)", "value_1": 21, "value_2": 13, "display_1": "21 j", "display_2": "13 j"},
+          {"label": "Taux de défauts (ppm)", "value_1": 1200, "value_2": 380, "display_1": "1200", "display_2": "380"},
+          {"label": "Engagement équipe (%)", "value_1": 56, "value_2": 78, "display_1": "56%", "display_2": "78%"},
+          {"label": "Coût unitaire (€)", "value_1": 240, "value_2": 195, "display_1": "240 €", "display_2": "195 €"},
+          {"label": "Satisfaction client (/10)", "value_1": 7.2, "value_2": 8.6, "display_1": "7,2", "display_2": "8,6"}
+        ],
+        "takeaway": "Gains significatifs sur les 5 dimensions"
+      }
+    },
+    {
+      "layout": 9,
+      "content": {
+        "title": "Risques & Opportunités du scale-up",
+        "risks": [
+          {
+            "title": "Résistance management intermédiaire",
+            "level": "high_risk",
+            "body": "Crainte d'éviction, perception de surcharge.",
+            "action": "Programme dédié N-1: formation 5j + ambassadeurs identifiés."
+          },
+          {
+            "title": "Dépendance fournisseur SI",
+            "level": "medium_risk",
+            "body": "Couplage fort avec un éditeur unique.",
+            "action": "Clauses de réversibilité + plan de bascule sous 60 jours."
+          },
+          {
+            "title": "Charge sites en déploiement",
+            "level": "high_risk",
+            "body": "Pic d'activité commercial concomitant T4.",
+            "action": "Décaler 2 sites au T1 2027, lisser la charge."
+          }
+        ],
+        "opportunities": [
+          {
+            "title": "Vague d'engagement post-pilote",
+            "level": "high_opp",
+            "body": "Témoignages spontanés en interne, demande de formation.",
+            "action": "Capitaliser via communication + bourse aux bonnes pratiques."
+          },
+          {
+            "title": "Synergie avec autres BU",
+            "level": "medium_opp",
+            "body": "BU adjacentes intéressées par la méthodologie.",
+            "action": "Ouvrir un comité transverse au T4."
+          },
+          {
+            "title": "Crédibilité auprès des grands clients",
+            "level": "high_opp",
+            "body": "Audit client en T2 valorise la démarche.",
+            "action": "Intégrer dans les RFP et plaquettes commerciales."
+          }
+        ]
+      }
+    },
+    {
+      "layout": 10,
+      "content": {
+        "title": "Plan d'action 18 mois",
+        "date": "Mai 2026",
+        "phases": [
+          {
+            "phase_title": "Cadrage",
+            "phase_subtitle": "T2-T3 2026",
+            "items": [
+              {"title": "Sponsor + gouvernance", "body": "COPIL hebdomadaire piloté par le DG, sponsor N-1 nommé."},
+              {"title": "Diagnostic terrain", "body": "30 entretiens, 6 sites visités, value stream maps réalisés."},
+              {"title": "Roadmap détaillée", "body": "5 chantiers identifiés, KPI baseline figés, charte projet validée."}
+            ]
+          },
+          {
+            "phase_title": "Pilote",
+            "phase_subtitle": "T3 2026 - T1 2027",
+            "items": [
+              {"title": "2 sites pilotes", "body": "France et Espagne, profils différents pour tester la robustesse."},
+              {"title": "Méthode validée", "body": "Itérations 2 semaines, REX mensuel, ajustements documentés."},
+              {"title": "Premiers gains", "body": "+22% engagement, -38% cycle, communication interne intensive."}
+            ]
+          },
+          {
+            "phase_title": "Déploiement",
+            "phase_subtitle": "T2-T4 2027",
+            "items": [
+              {"title": "Vague 1 (6 sites)", "body": "Avec ambassadeurs internes, charge lissée sur 9 mois."},
+              {"title": "Vague 2 (12 sites)", "body": "Y compris BU adjacentes intéressées."},
+              {"title": "Pérennisation", "body": "BAU + intégration RH (objectifs Yellow Belt managers)."}
+            ]
+          }
+        ],
+        "takeaway": "Une feuille de route en 3 temps, 9 livrables clairs"
+      }
+    },
+    {
+      "layout": 11,
+      "content": {
+        "title": "Synthèse et appel à l'action",
+        "blocks": [
+          {
+            "block_title": "Ce que nous avons appris",
+            "body": "Le pilote sur 2 sites a confirmé la méthodologie : -38% cycle, +22% engagement, ROI atteint en 7 mois. Les 6 facteurs critiques de succès sont validés. La résistance managériale est l'unique frein matériel observé."
+          },
+          {
+            "block_title": "Ce que nous proposons",
+            "body": "Scénario B retenu : refonte ciblée Lean sur 18 mois, 1,8 M€, 18 sites au total. Plan d'action en 3 phases avec gouvernance dédiée (COPIL hebdomadaire, sponsor exécutif N-1)."
+          },
+          {
+            "block_title": "Ce que nous attendons de vous",
+            "body": "Validation du scénario B, allocation budget T3 2026 (1,1 M€) et T1 2027 (0,7 M€), désignation du sponsor exécutif. Décision attendue avant fin juin 2026 pour respecter la trajectoire."
+          }
+        ],
+        "cta": "Validez-vous le lancement de la phase 1 ?"
+      }
+    }
+  ]
+}
