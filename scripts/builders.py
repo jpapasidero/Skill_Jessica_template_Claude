@@ -122,7 +122,7 @@ def build_slide_3(slide, c, page_num=3, total=11, logo_path=None):
                        page_num=page_num, total=total, logo_path=logo_path)
 
     factors = c.get("factors", [])
-    teardrop_colors = ["#D8DBE8", "#BBB4C4", "#D5B3BE", "#F1D3D5", "#FEE3CA", "#FEF4DA"]
+    teardrop_colors = ["BABDD0", "#BBB4C4", "#D5B3BE", "#F1D3D5", "#FEE3CA", "#FEF4DA"]
     x_shift = (33.867 - 30.38) / 2 - 1.45
     # 3x2 grille
     positions = [

@@ -44,7 +44,7 @@
     "text_secondary": "#474E67",
     "text_muted": "#7D7B8D",
     "kpi_pastels_6": [
-      "#D8DBE8",
+      "#BABDD0",
       "#BBB4C4",
       "#D5B3BE",
       "#F1D3D5",
@@ -727,7 +727,7 @@
             3.0
           ],
           "color": "#D8DBE8",
-          "rotation": 180
+          "rotation": 0
         },
         {
           "name": "S03_TEARDROP_2",
@@ -740,7 +740,7 @@
             3.0
           ],
           "color": "#BBB4C4",
-          "rotation": 180
+          "rotation": 0
         },
         {
           "name": "S03_TEARDROP_3",
@@ -753,7 +753,7 @@
             3.0
           ],
           "color": "#D5B3BE",
-          "rotation": 180
+          "rotation": 0
         },
         {
           "name": "S03_TEARDROP_4",
@@ -766,7 +766,7 @@
             3.0
           ],
           "color": "#F1D3D5",
-          "rotation": 180
+          "rotation": 0
         },
         {
           "name": "S03_TEARDROP_5",
@@ -779,7 +779,7 @@
             3.0
           ],
           "color": "#FEE3CA",
-          "rotation": 180
+          "rotation": 0
         },
         {
           "name": "S03_TEARDROP_6",
@@ -792,7 +792,7 @@
             3.0
           ],
           "color": "#FEF4DA",
-          "rotation": 180
+          "rotation": 0
         }
       ]
     },

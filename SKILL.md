@@ -22,7 +22,7 @@ Ne pas l'utiliser pour : un seul slide isolé qu'on peut juste décrire en chat,
 1. **Comprendre l'intention** : combien de slides, quel objectif (informer / convaincre / décider), quelle audience (DISC : Dominant, Influent, Stable, Consciencieux). Si l'utilisateur n'a pas précisé, propose une structure narrative (storyline) avant de générer.
 
 2. **Choisir les layouts** parmi les 11 disponibles (voir `references/layouts_catalog.md`). Adapte le choix au message :
-   - Layout 1 (Hook factuel) ou 11 (Arc narratif) en ouverture
+   - Layout 1 (Hook factuel) ou 2 (Hook Vision) en ouverture
    - Layout 5 (Timeline) ou 10 (Plan 3 phases) pour le quand/comment
    - Layout 9 (Risques & Opportunités) avant la décision
    - Layout 11 (CTA) pour la clôture

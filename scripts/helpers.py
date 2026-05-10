@@ -375,13 +375,12 @@ def add_transparent_text_image(slide, x_cm, y_cm, w_cm, h_cm, text, *, font="Seg
 
 
 def add_teardrop(slide, x_cm, y_cm, w_cm, h_cm, fill_hex, *, name=None):
-    """Larme (teardrop). En python-pptx : MSO_SHAPE.TEAR (rotation à appliquer pour pointe en haut)."""
+    """Larme (teardrop). En python-pptx : MSO_SHAPE.TEAR."""
     shp = slide.shapes.add_shape(MSO_SHAPE.TEAR, cm(x_cm), cm(y_cm), cm(w_cm), cm(h_cm))
     remove_theme_style(shp)
     if name:
         shp.name = name
-    # rotation pour pointe vers le bas (esthétique larme du template)
-    shp.rotation = 180
+    shp.rotation = 0
     shp.fill.solid()
     shp.fill.fore_color.rgb = hex_to_rgb(fill_hex)
     shp.line.fill.background()
