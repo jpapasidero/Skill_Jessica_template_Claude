@@ -1,36 +1,62 @@
 {
-  "_comment": "Exemple complet illustrant les 11 layouts. Cas fil rouge: projet de transformation Lean Six-Sigma sur la chaine logistique d'un site Safran.",
+  "_comment": "Exemple complet 11 layouts avec emphases dans les placeholders texte.",
   "slides": [
     {
       "layout": 1,
       "content": {
-        "title": "Pourquoi transformer la supply chain maintenant",
-        "manifesto": "Notre supply chain absorbe 38% des coûts. Le statu quo nous coûte chaque mois 480 k€ de plus que nos concurrents directs.",
-        "body": "Trois signaux convergent : nos délais s'allongent, nos défauts grimpent, nos équipes se désengagent. Pris séparément, chaque indicateur reste sous le seuil critique. Pris ensemble, ils dessinent un point de bascule. C'est maintenant qu'il faut agir, pas dans six mois.",
+        "title": "Pourquoi accélérer maintenant",
+        "manifesto": {
+          "text": "Le statu quo ralentit les équipes. Le pilote donne un rythme clair et rend la décision visible.",
+          "emphasis": [
+            {"text": "statu quo"},
+            {"text": "rythme clair"},
+            {"text": "décision visible"}
+          ]
+        },
+        "body": {
+          "text": "Les signaux convergent : délais instables, arbitrages tardifs et énergie dispersée. Avec un pilote court, nous créons une preuve mesurable pour décider vite.",
+          "emphasis": [
+            {"text": "signaux convergent"},
+            {"text": "pilote court"},
+            {"text": "preuve mesurable"}
+          ]
+        },
         "stats": [
-          {"value": "+38%", "label": "Coûts logistiques", "sublabel": "vs benchmark secteur"},
-          {"value": "21 j", "label": "Cycle moyen", "sublabel": "objectif: 12 j"},
-          {"value": "-12%", "label": "Engagement", "sublabel": "vs N-1"}
+          {
+            "value": "+18%",
+            "label": {"text": "Engagement équipe", "emphasis": [{"text": "Engagement"}]},
+            "sublabel": {"text": "sur équipe pilote", "emphasis": [{"text": "pilote"}]}
+          },
+          {
+            "value": "12 j",
+            "label": {"text": "Cycle cible", "emphasis": [{"text": "Cycle"}]},
+            "sublabel": {"text": "contre 21 j", "emphasis": [{"text": "21 j"}]}
+          },
+          {
+            "value": "90 j",
+            "label": {"text": "Preuve de valeur", "emphasis": [{"text": "Preuve"}]},
+            "sublabel": {"text": "avant scale-up", "emphasis": [{"text": "scale-up"}]}
+          }
         ],
-        "takeaway": "Agir maintenant ou subir dans six mois"
+        "takeaway": {"text": "Décider vite pour apprendre vite", "emphasis": [{"text": "Décider vite"}]}
       }
     },
     {
       "layout": 2,
       "content": {
-        "title": "Trois piliers pour réussir",
+        "title": "Trois principes d'exécution",
         "columns": [
           {
-            "title": "Le terrain pilote la cadence",
-            "body": "Les opérateurs identifient les gaspillages mieux que les consultants. Notre programme s'appuie sur les Gemba walks hebdomadaires et les Andons digitaux."
+            "title": {"text": "Commencer petit, mesurer vite", "emphasis": [{"text": "mesurer vite"}]},
+            "body": {"text": "Un périmètre pilote évite la dispersion. Les apprentissages deviennent des standards simples.", "emphasis": [{"text": "périmètre pilote"}, {"text": "standards simples"}]}
           },
           {
-            "title": "Les indicateurs guident, pas l'inverse",
-            "body": "Cinq KPI partagés, mis à jour en temps réel. Pas de tableau de bord caché, pas de reporting parallèle. La donnée commune crée le langage commun."
+            "title": {"text": "Donner un rôle au terrain", "emphasis": [{"text": "terrain"}]},
+            "body": {"text": "Les équipes valident les irritants réels, priorisent les actions utiles et rendent les gains visibles.", "emphasis": [{"text": "irritants réels"}, {"text": "gains visibles"}]}
           },
           {
-            "title": "Chaque équipier devient acteur",
-            "body": "Formation Yellow Belt pour 80% des équipes en 12 mois. Reconnaissance des contributeurs via les rituels de chantier. L'engagement se construit par l'autonomie."
+            "title": {"text": "Installer une cadence commune", "emphasis": [{"text": "cadence commune"}]},
+            "body": {"text": "Un rythme court synchronise sponsor, managers et contributeurs autour des mêmes faits.", "emphasis": [{"text": "rythme court"}, {"text": "mêmes faits"}]}
           }
         ]
       }
@@ -38,63 +64,63 @@
     {
       "layout": 3,
       "content": {
-        "title": "Six facteurs critiques de succès",
+        "title": "Six facteurs critiques",
         "factors": [
-          {"label": "Sponsor exécutif"},
-          {"label": "Vision partagée"},
-          {"label": "Equipes dédiées"},
-          {"label": "Indicateurs simples"},
-          {"label": "Communication continue"},
-          {"label": "Quick wins visibles"}
+          {"label": {"text": "Sponsor exécutif", "emphasis": [{"text": "Sponsor"}]}},
+          {"label": {"text": "Vision partagée", "emphasis": [{"text": "Vision"}]}},
+          {"label": {"text": "Equipe dédiée", "emphasis": [{"text": "dédiée"}]}},
+          {"label": {"text": "Indicateurs simples", "emphasis": [{"text": "simples"}]}},
+          {"label": {"text": "Communication continue", "emphasis": [{"text": "continue"}]}},
+          {"label": {"text": "Quick wins visibles", "emphasis": [{"text": "visibles"}]}}
         ],
-        "takeaway": "Aligner les six avant le go, pas pendant"
+        "takeaway": {"text": "Aligner les facteurs avant le lancement", "emphasis": [{"text": "avant le lancement"}]}
       }
     },
     {
       "layout": 4,
       "content": {
-        "title": "Trois dimensions interdépendantes",
+        "title": "Trois dimensions liées",
         "nodes": {
           "top": {
-            "label": "Personnes",
-            "sublabel": "compétences, posture, culture qualité"
+            "label": {"text": "Personnes", "emphasis": [{"text": "Personnes"}]},
+            "sublabel": {"text": "compétences et posture", "emphasis": [{"text": "posture"}]}
           },
           "left": {
-            "label": "Processus",
-            "sublabel": "méthodes Lean, standards, rituels"
+            "label": {"text": "Processus", "emphasis": [{"text": "Processus"}]},
+            "sublabel": {"text": "rituels et standards", "emphasis": [{"text": "standards"}]}
           },
           "right": {
-            "label": "Outils",
-            "sublabel": "MES, dashboards, traçabilité digitale"
+            "label": {"text": "Outils", "emphasis": [{"text": "Outils"}]},
+            "sublabel": {"text": "données et pilotage", "emphasis": [{"text": "pilotage"}]}
           }
         },
-        "takeaway": "Aucune dimension ne progresse seule"
+        "takeaway": {"text": "Aucune dimension ne progresse seule", "emphasis": [{"text": "seule"}]}
       }
     },
     {
       "layout": 5,
       "content": {
-        "title": "Notre feuille de route en 4 temps",
+        "title": "Trajectoire en quatre temps",
         "steps": [
           {
-            "period": "T2 2026",
-            "step_title": "Cadrage",
-            "body": "Diagnostic 360°, sponsoring N-1, KPI baseline sur 6 sites pilotes."
+            "period": {"text": "S1-S2", "emphasis": [{"text": "S1"}]},
+            "step_title": {"text": "Cadrer", "emphasis": [{"text": "Cadrer"}]},
+            "body": {"text": "Aligner sponsor, périmètre pilote, indicateurs de succès et règles d'arbitrage.", "emphasis": [{"text": "sponsor"}, {"text": "indicateurs de succès"}]}
           },
           {
-            "period": "T3 2026",
-            "step_title": "Pilote",
-            "body": "Deux sites en cycle court, méthode itérative, REX hebdomadaire avec sponsor exécutif et terrain."
+            "period": {"text": "S3-S6", "emphasis": [{"text": "S3"}]},
+            "step_title": {"text": "Tester", "emphasis": [{"text": "Tester"}]},
+            "body": {"text": "Mener les cycles courts, mesurer les écarts et décider les corrections utiles.", "emphasis": [{"text": "cycles courts"}, {"text": "corrections utiles"}]}
           },
           {
-            "period": "T4 2026 - T1 2027",
-            "step_title": "Vague 1",
-            "body": "Six sites supplémentaires, ambassadeurs internes, formation Yellow Belt déployée."
+            "period": {"text": "S7-S10", "emphasis": [{"text": "S7"}]},
+            "step_title": {"text": "Stabiliser", "emphasis": [{"text": "Stabiliser"}]},
+            "body": {"text": "Transformer les pratiques validées en standards et former les relais locaux.", "emphasis": [{"text": "standards"}, {"text": "relais locaux"}]}
           },
           {
-            "period": "T2 - T4 2027",
-            "step_title": "Pérennisation",
-            "body": "BAU + amélioration continue, intégration aux processus RH et performance."
+            "period": {"text": "S11-S12", "emphasis": [{"text": "S11"}]},
+            "step_title": {"text": "Décider", "emphasis": [{"text": "Décider"}]},
+            "body": {"text": "Présenter les résultats, qualifier les risques et choisir le scénario de déploiement.", "emphasis": [{"text": "résultats"}, {"text": "scénario de déploiement"}]}
           }
         ]
       }
@@ -102,98 +128,131 @@
     {
       "layout": 6,
       "content": {
-        "title": "Comparatif des 4 scénarios",
-        "headers": ["Scénario", "Coût", "Délai", "Risque", "Score"],
-        "rows": [
-          ["A — Statu quo amélioré", "0,5 M€", "6 mois", "Faible", "★★"],
-          ["B — Refonte ciblée Lean", "1,8 M€", "12 mois", "Moyen", "★★★★"],
-          ["C — Transformation totale", "4,2 M€", "24 mois", "Elevé", "★★★"],
-          ["D — Externalisation partielle", "2,5 M€", "9 mois", "Moyen", "★★"]
+        "title": "Comparer les scénarios",
+        "headers": [
+          {"text": "Scénario", "emphasis": [{"text": "Scénario"}]},
+          {"text": "Coût", "emphasis": [{"text": "Coût"}]},
+          {"text": "Délai", "emphasis": [{"text": "Délai"}]},
+          {"text": "Risque", "emphasis": [{"text": "Risque"}]},
+          {"text": "Score", "emphasis": [{"text": "Score"}]}
         ],
-        "takeaway": "Scénario B retenu : meilleur rapport valeur sur risque"
+        "rows": [
+          [
+            {"text": "A - Statu quo", "emphasis": [{"text": "Statu quo"}]},
+            "0,5 M€",
+            "6 mois",
+            {"text": "Faible", "emphasis": [{"text": "Faible"}]},
+            "★★"
+          ],
+          [
+            {"text": "B - Pilote ciblé", "emphasis": [{"text": "Pilote ciblé"}]},
+            "1,2 M€",
+            "9 mois",
+            {"text": "Moyen", "emphasis": [{"text": "Moyen"}]},
+            "★★★★"
+          ],
+          [
+            {"text": "C - Transformation totale", "emphasis": [{"text": "totale"}]},
+            "4,0 M€",
+            "24 mois",
+            {"text": "Elevé", "emphasis": [{"text": "Elevé"}]},
+            "★★★"
+          ],
+          [
+            {"text": "D - Externalisation", "emphasis": [{"text": "Externalisation"}]},
+            "2,5 M€",
+            "12 mois",
+            {"text": "Moyen", "emphasis": [{"text": "Moyen"}]},
+            "★★"
+          ]
+        ],
+        "takeaway": {"text": "Scénario B : meilleur équilibre valeur/risque", "emphasis": [{"text": "Scénario B"}]}
       }
     },
     {
       "layout": 7,
       "content": {
-        "title": "Indicateurs cibles à 18 mois",
+        "title": "Indicateurs de pilotage",
         "kpis": [
-          {"value": "94%", "sublabel": "Adhésion équipes"},
-          {"value": "12 j", "sublabel": "Cycle moyen"},
-          {"value": "+38%", "sublabel": "Productivité"},
-          {"value": "1,2", "sublabel": "Sigma qualité"},
-          {"value": "2,4 M€", "sublabel": "Gains annualisés"},
-          {"value": "98%", "sublabel": "OTD client"}
+          {"value": "94%", "sublabel": {"text": "Adhésion équipes", "emphasis": [{"text": "Adhésion"}]}},
+          {"value": "12 j", "sublabel": {"text": "Cycle moyen", "emphasis": [{"text": "Cycle"}]}},
+          {"value": "+18%", "sublabel": {"text": "Engagement", "emphasis": [{"text": "Engagement"}]}},
+          {"value": "1,2", "sublabel": {"text": "Sigma qualité", "emphasis": [{"text": "qualité"}]}},
+          {"value": "2,4 M€", "sublabel": {"text": "Gains annualisés", "emphasis": [{"text": "Gains"}]}},
+          {"value": "98%", "sublabel": {"text": "OTD client", "emphasis": [{"text": "client"}]}}
         ],
-        "section_label": "Avancement par chantier (% en mai 2026)",
+        "section_label": {"text": "Avancement par chantier en mai 2026", "emphasis": [{"text": "Avancement"}]},
         "bars": [
-          {"label": "Chantier 1 — Standards opérationnels", "value": 85},
-          {"label": "Chantier 2 — Outils MES et data", "value": 62},
-          {"label": "Chantier 3 — Compétences Yellow Belt", "value": 41},
-          {"label": "Chantier 4 — Pilotage par KPI", "value": 78},
-          {"label": "Chantier 5 — Communication et change", "value": 90}
+          {"label": {"text": "Standards opérationnels", "emphasis": [{"text": "Standards"}]}, "value": 85},
+          {"label": {"text": "Outils data", "emphasis": [{"text": "data"}]}, "value": 62},
+          {"label": {"text": "Compétences relais", "emphasis": [{"text": "relais"}]}, "value": 41},
+          {"label": {"text": "Pilotage KPI", "emphasis": [{"text": "KPI"}]}, "value": 78},
+          {"label": {"text": "Communication change", "emphasis": [{"text": "change"}]}, "value": 90}
         ],
-        "takeaway": "Trois chantiers à accélérer en priorité Q3"
+        "takeaway": {"text": "Accélérer trois chantiers prioritaires", "emphasis": [{"text": "trois chantiers"}]}
       }
     },
     {
       "layout": 8,
       "content": {
-        "title": "Avant / Après pilote sur 2 sites",
-        "subtitle": "Cinq indicateurs mesurés sur 90 jours",
-        "legends": ["Avant", "Après"],
-        "rows": [
-          {"label": "Délai de cycle (jours)", "value_1": 21, "value_2": 13, "display_1": "21 j", "display_2": "13 j"},
-          {"label": "Taux de défauts (ppm)", "value_1": 1200, "value_2": 380, "display_1": "1200", "display_2": "380"},
-          {"label": "Engagement équipe (%)", "value_1": 56, "value_2": 78, "display_1": "56%", "display_2": "78%"},
-          {"label": "Coût unitaire (€)", "value_1": 240, "value_2": 195, "display_1": "240 €", "display_2": "195 €"},
-          {"label": "Satisfaction client (/10)", "value_1": 7.2, "value_2": 8.6, "display_1": "7,2", "display_2": "8,6"}
+        "title": "Avant / Après pilote",
+        "subtitle": {"text": "Cinq indicateurs mesurés sur 90 jours", "emphasis": [{"text": "90 jours"}]},
+        "legends": [
+          {"text": "Avant", "emphasis": [{"text": "Avant"}]},
+          {"text": "Après", "emphasis": [{"text": "Après"}]}
         ],
-        "takeaway": "Gains significatifs sur les 5 dimensions"
+        "rows": [
+          {"label": {"text": "Délai de cycle", "emphasis": [{"text": "cycle"}]}, "value_1": 21, "value_2": 13, "display_1": "21 j", "display_2": "13 j"},
+          {"label": {"text": "Taux de défauts", "emphasis": [{"text": "défauts"}]}, "value_1": 1200, "value_2": 380, "display_1": "1200", "display_2": "380"},
+          {"label": {"text": "Engagement équipe", "emphasis": [{"text": "Engagement"}]}, "value_1": 56, "value_2": 78, "display_1": "56%", "display_2": "78%"},
+          {"label": {"text": "Coût unitaire", "emphasis": [{"text": "Coût"}]}, "value_1": 240, "value_2": 195, "display_1": "240 €", "display_2": "195 €"},
+          {"label": {"text": "Satisfaction client", "emphasis": [{"text": "client"}]}, "value_1": 7.2, "value_2": 8.6, "display_1": "7,2", "display_2": "8,6"}
+        ],
+        "takeaway": {"text": "Le pilote améliore les cinq dimensions", "emphasis": [{"text": "cinq dimensions"}]}
       }
     },
     {
       "layout": 9,
       "content": {
-        "title": "Risques & Opportunités du scale-up",
+        "title": "Risques & Opportunités",
         "risks": [
           {
-            "title": "Résistance management intermédiaire",
+            "title": {"text": "Résistance managériale", "emphasis": [{"text": "Résistance"}]},
             "level": "high_risk",
-            "body": "Crainte d'éviction, perception de surcharge.",
-            "action": "Programme dédié N-1: formation 5j + ambassadeurs identifiés."
+            "body": {"text": "Crainte de surcharge et perte de repères.", "emphasis": [{"text": "surcharge"}]},
+            "action": {"text": "Former les relais et clarifier le rôle du sponsor.", "emphasis": [{"text": "relais"}, {"text": "sponsor"}]}
           },
           {
-            "title": "Dépendance fournisseur SI",
+            "title": {"text": "Disponibilité terrain", "emphasis": [{"text": "terrain"}]},
             "level": "medium_risk",
-            "body": "Couplage fort avec un éditeur unique.",
-            "action": "Clauses de réversibilité + plan de bascule sous 60 jours."
+            "body": {"text": "Calendrier chargé sur les sites pilotes.", "emphasis": [{"text": "sites pilotes"}]},
+            "action": {"text": "Limiter les ateliers et préparer les décisions en amont.", "emphasis": [{"text": "décisions"}]}
           },
           {
-            "title": "Charge sites en déploiement",
-            "level": "high_risk",
-            "body": "Pic d'activité commercial concomitant T4.",
-            "action": "Décaler 2 sites au T1 2027, lisser la charge."
+            "title": {"text": "Dépendance data", "emphasis": [{"text": "data"}]},
+            "level": "medium_risk",
+            "body": {"text": "Qualité variable des données sources.", "emphasis": [{"text": "données sources"}]},
+            "action": {"text": "Créer une règle simple de validation hebdomadaire.", "emphasis": [{"text": "validation"}]}
           }
         ],
         "opportunities": [
           {
-            "title": "Vague d'engagement post-pilote",
+            "title": {"text": "Engagement post-pilote", "emphasis": [{"text": "Engagement"}]},
             "level": "high_opp",
-            "body": "Témoignages spontanés en interne, demande de formation.",
-            "action": "Capitaliser via communication + bourse aux bonnes pratiques."
+            "body": {"text": "Témoignages spontanés des équipes.", "emphasis": [{"text": "Témoignages"}]},
+            "action": {"text": "Capitaliser via communication interne.", "emphasis": [{"text": "communication interne"}]}
           },
           {
-            "title": "Synergie avec autres BU",
+            "title": {"text": "Réplicabilité multi-sites", "emphasis": [{"text": "multi-sites"}]},
+            "level": "high_opp",
+            "body": {"text": "Méthode simple et transférable.", "emphasis": [{"text": "transférable"}]},
+            "action": {"text": "Préparer un kit de déploiement.", "emphasis": [{"text": "kit"}]}
+          },
+          {
+            "title": {"text": "Crédibilité comité", "emphasis": [{"text": "comité"}]},
             "level": "medium_opp",
-            "body": "BU adjacentes intéressées par la méthodologie.",
-            "action": "Ouvrir un comité transverse au T4."
-          },
-          {
-            "title": "Crédibilité auprès des grands clients",
-            "level": "high_opp",
-            "body": "Audit client en T2 valorise la démarche.",
-            "action": "Intégrer dans les RFP et plaquettes commerciales."
+            "body": {"text": "Décision appuyée sur des preuves terrain.", "emphasis": [{"text": "preuves terrain"}]},
+            "action": {"text": "Présenter les gains et les risques restants.", "emphasis": [{"text": "gains"}]}
           }
         ]
       }
@@ -202,58 +261,76 @@
       "layout": 10,
       "content": {
         "title": "Plan d'action 18 mois",
-        "date": "Mai 2026",
+        "date": {"text": "Mai 2026", "emphasis": [{"text": "2026"}]},
         "phases": [
           {
-            "phase_title": "Cadrage",
-            "phase_subtitle": "T2-T3 2026",
+            "phase_title": {"text": "Cadrage", "emphasis": [{"text": "Cadrage"}]},
+            "phase_subtitle": {"text": "T2 2026", "emphasis": [{"text": "T2"}]},
             "items": [
-              {"title": "Sponsor + gouvernance", "body": "COPIL hebdomadaire piloté par le DG, sponsor N-1 nommé."},
-              {"title": "Diagnostic terrain", "body": "30 entretiens, 6 sites visités, value stream maps réalisés."},
-              {"title": "Roadmap détaillée", "body": "5 chantiers identifiés, KPI baseline figés, charte projet validée."}
+              {"title": {"text": "Sponsor + gouvernance", "emphasis": [{"text": "Sponsor"}]}, "body": {"text": "COPIL hebdomadaire et sponsor nommé.", "emphasis": [{"text": "hebdomadaire"}]}},
+              {"title": {"text": "Diagnostic terrain", "emphasis": [{"text": "terrain"}]}, "body": {"text": "Entretiens, irritants et baseline KPI.", "emphasis": [{"text": "baseline KPI"}]}},
+              {"title": {"text": "Roadmap détaillée", "emphasis": [{"text": "Roadmap"}]}, "body": {"text": "Chantiers, jalons et critères de succès.", "emphasis": [{"text": "succès"}]}}
             ]
           },
           {
-            "phase_title": "Pilote",
-            "phase_subtitle": "T3 2026 - T1 2027",
+            "phase_title": {"text": "Pilote", "emphasis": [{"text": "Pilote"}]},
+            "phase_subtitle": {"text": "T3 2026", "emphasis": [{"text": "T3"}]},
             "items": [
-              {"title": "2 sites pilotes", "body": "France et Espagne, profils différents pour tester la robustesse."},
-              {"title": "Méthode validée", "body": "Itérations 2 semaines, REX mensuel, ajustements documentés."},
-              {"title": "Premiers gains", "body": "+22% engagement, -38% cycle, communication interne intensive."}
+              {"title": {"text": "2 sites pilotes", "emphasis": [{"text": "2 sites"}]}, "body": {"text": "Deux contextes pour tester la robustesse.", "emphasis": [{"text": "robustesse"}]}},
+              {"title": {"text": "Méthode validée", "emphasis": [{"text": "validée"}]}, "body": {"text": "Itérations courtes et REX mensuel.", "emphasis": [{"text": "REX"}]}},
+              {"title": {"text": "Premiers gains", "emphasis": [{"text": "gains"}]}, "body": {"text": "Mesure des impacts et communication.", "emphasis": [{"text": "impacts"}]}}
             ]
           },
           {
-            "phase_title": "Déploiement",
-            "phase_subtitle": "T2-T4 2027",
+            "phase_title": {"text": "Déploiement", "emphasis": [{"text": "Déploiement"}]},
+            "phase_subtitle": {"text": "2027", "emphasis": [{"text": "2027"}]},
             "items": [
-              {"title": "Vague 1 (6 sites)", "body": "Avec ambassadeurs internes, charge lissée sur 9 mois."},
-              {"title": "Vague 2 (12 sites)", "body": "Y compris BU adjacentes intéressées."},
-              {"title": "Pérennisation", "body": "BAU + intégration RH (objectifs Yellow Belt managers)."}
+              {"title": {"text": "Vague 1", "emphasis": [{"text": "Vague"}]}, "body": {"text": "Six sites avec relais locaux.", "emphasis": [{"text": "relais locaux"}]}},
+              {"title": {"text": "Vague 2", "emphasis": [{"text": "Vague"}]}, "body": {"text": "Extension aux BU adjacentes.", "emphasis": [{"text": "BU"}]}},
+              {"title": {"text": "Pérennisation", "emphasis": [{"text": "Pérennisation"}]}, "body": {"text": "Intégration aux routines managériales.", "emphasis": [{"text": "routines"}]}}
             ]
           }
         ],
-        "takeaway": "Une feuille de route en 3 temps, 9 livrables clairs"
+        "takeaway": {"text": "Trois phases pour sécuriser le scale-up", "emphasis": [{"text": "Trois phases"}]}
       }
     },
     {
       "layout": 11,
       "content": {
-        "title": "Synthèse et appel à l'action",
+        "title": "Synthèse et décision",
         "blocks": [
           {
-            "block_title": "Ce que nous avons appris",
-            "body": "Le pilote sur 2 sites a confirmé la méthodologie : -38% cycle, +22% engagement, ROI atteint en 7 mois. Les 6 facteurs critiques de succès sont validés. La résistance managériale est l'unique frein matériel observé."
+            "block_title": {"text": "Ce que le pilote prouve", "emphasis": [{"text": "pilote"}]},
+            "body": {
+              "text": "Le dispositif réduit le temps d'arbitrage et rend les points de blocage visibles.",
+              "emphasis": [
+                {"text": "réduit le temps d'arbitrage"},
+                {"text": "points de blocage visibles"}
+              ]
+            }
           },
           {
-            "block_title": "Ce que nous proposons",
-            "body": "Scénario B retenu : refonte ciblée Lean sur 18 mois, 1,8 M€, 18 sites au total. Plan d'action en 3 phases avec gouvernance dédiée (COPIL hebdomadaire, sponsor exécutif N-1)."
+            "block_title": {"text": "Ce qui change pour les équipes", "emphasis": [{"text": "équipes"}]},
+            "body": {
+              "text": "Les équipes disposent d'une cadence stable, de décisions plus rapides et d'un espace clair pour remonter les irritants.",
+              "emphasis": [
+                {"text": "cadence stable"},
+                {"text": "décisions plus rapides"}
+              ]
+            }
           },
           {
-            "block_title": "Ce que nous attendons de vous",
-            "body": "Validation du scénario B, allocation budget T3 2026 (1,1 M€) et T1 2027 (0,7 M€), désignation du sponsor exécutif. Décision attendue avant fin juin 2026 pour respecter la trajectoire."
+            "block_title": {"text": "Ce que nous proposons", "emphasis": [{"text": "proposons"}]},
+            "body": {
+              "text": "Valider le scale-up sur trois sites, avec un sponsor unique et un reporting centré sur les impacts.",
+              "emphasis": [
+                {"text": "scale-up sur trois sites"},
+                {"text": "sponsor unique"}
+              ]
+            }
           }
         ],
-        "cta": "Validez-vous le lancement de la phase 1 ?"
+        "cta": {"text": "Validez-vous le scale-up dès ce mois-ci ?", "emphasis": [{"text": "scale-up"}]}
       }
     }
   ]

@@ -38,6 +38,8 @@ Tous les `content` peuvent inclure un champ `"title"` (titre de la slide). S'il 
 
 - **stats** : exactement 3 entrées. Couleurs imposées (violet, bordeaux, orange).
 - **value** : max 4-6 caractères pour respecter le rendu 44 pt.
+- **manifesto** : interligne par défaut `1.15`. Les emphases utilisent par défaut Segoe UI bold en `#A25871`.
+- **body** : interligne par défaut `1.3`. Les emphases utilisent par défaut Segoe UI bold.
 
 ---
 
@@ -58,6 +60,7 @@ Tous les `content` peuvent inclure un champ `"title"` (titre de la slide). S'il 
 ```
 
 - **columns[*].title** : sera rendu en small caps (1ère lettre majuscule + reste en petites capitales). Écrire en minuscules normales.
+- **columns[*].body** : interligne par défaut `1.3`.
 - **Pas de takeaway** sur ce layout.
 
 ---
@@ -127,6 +130,7 @@ Tous les `content` peuvent inclure un champ `"title"` (titre de la slide). S'il 
 
 - **steps** : exactement 4. Couleurs de période imposées (violet, bordeaux, rose, orange).
 - **period** rendu en small caps.
+- **steps[*].body** : interligne par défaut `1.3`.
 - **Pas de takeaway**.
 
 ---
@@ -331,12 +335,38 @@ Tous les `content` peuvent inclure un champ `"title"` (titre de la slide). S'il 
 - **blocks** : exactement 3 (couleurs filigranes : violet pâle / rose pâle / pêche pâle).
 - Filigranes "01"/"02"/"03" générés automatiquement (alpha 40%).
 - **cta** : phrase d'engagement, registre direct.
+- **blocks[*].body** : interligne par défaut `1.3`. Les emphases utilisent par défaut Segoe UI bold.
 
 ---
 
 ## Conventions générales
 
-- Tous les textes sont des **chaînes UTF-8**. Les caractères français (é, à, ç, œ, etc.) sont supportés.
+- Tous les textes peuvent être des **chaînes UTF-8** simples. Les caractères français (é, à, ç, œ, etc.) sont supportés.
+- Tout champ texte peut aussi recevoir une **spécification enrichie** pour piloter le placeholder nommé correspondant :
+
+```json
+{
+  "text": "Le statu quo coûte 480 k€ par mois, mais le pilote réduit le cycle.",
+  "line_spacing": 1.15,
+  "emphasis": [
+    {
+      "text": "statu quo",
+      "font": "Segoe UI Black",
+      "color": "#A25871",
+      "bold": true
+    },
+    {
+      "text": "réduit le cycle",
+      "font": "Segoe UI",
+      "color": "#6A5D79",
+      "bold": true
+    }
+  ]
+}
+```
+
+- **line_spacing** : accepte un ratio (`1.15`), un pourcentage (`"115%"`) ou une valeur en points (`"16pt"`).
+- **emphasis** : applique une police, une couleur et/ou un style aux occurrences de `text` dans le paragraphe. Par défaut, toutes les occurrences sont concernées ; ajouter `"first_only": true` pour ne cibler que la première, ou `"case_sensitive": true` pour une recherche sensible à la casse.
 - **Apostrophes courbes** (' au lieu de ') : à privilégier (le générateur les conserve telles quelles).
 - **Sauts de ligne** dans un body : utiliser `\n` (encodé `\\n` en JSON).
 - **Pas de balises HTML / Markdown** dans les valeurs : le générateur prend les chaînes brutes.

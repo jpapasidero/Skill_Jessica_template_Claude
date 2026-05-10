@@ -73,6 +73,7 @@ Le détail exact des champs attendus pour chaque layout est dans `references/con
 - **3 KPI verticaux (slide 1)** : 1 chiffre signature par couleur (violet, bordeaux, orange) — ne pas dépasser 4 caractères pour la valeur
 - **Take-away** : 1 phrase d'action, max 12 mots, formulation impérative ou affirmative forte
 - **Layout 11 (CTA)** : la phrase CTA doit poser une question ou appeler à un engagement explicite (registre Influent en DISC)
+- **Texte enrichi** : tout champ texte peut être soit une chaîne, soit un objet `{ "text": "...", "line_spacing": 1.15, "emphasis": [...] }` pour régler l'interligne et mettre certains mots en couleur/police spécifique. Voir `references/content_schema.md`.
 
 ## Contraintes techniques
 

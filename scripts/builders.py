@@ -20,16 +20,18 @@ def build_slide_1(slide, c, page_num=1, total=11, logo_path=None):
                        page_num=page_num, total=total, logo_path=logo_path)
 
     # LeftAccentBar bordeaux
-    add_rect(slide, 0.61, 1.21, 0.04, 2.48, "#A25871", name="LeftAccentBar")
+    add_rect(slide, 2, 3.5, 0.11, 6.3, "#A25871", name="LeftAccentBar")
 
     # Manifesto
     add_textbox(slide, 2.33, 3.44, 21.16, 2.86, c.get("manifesto", ""),
                 font="Segoe UI Light", size_pt=24, color_hex="#474E67",
-                anchor="t", name="S01_MANIFESTO")
+                anchor="t", name="S01_MANIFESTO", line_spacing=1.15,
+                emphasis_style={"font": "Segoe UI", "bold": True, "color_hex": "#A25871"})
     # Body
     add_textbox(slide, 2.33, 7.96, 20.46, 2.82, c.get("body", ""),
                 font="Segoe UI", size_pt=13, color_hex="#474E67",
-                name="S01_BODY")
+                name="S01_BODY", line_spacing=1.3,
+                emphasis_style={"font": "Segoe UI", "bold": True, "color_hex":"#070E1D"})
 
     # 3 KPI verticaux
     stats = c.get("stats", [])
@@ -83,13 +85,13 @@ def build_slide_2(slide, c, page_num=2, total=11, logo_path=None):
                  name=f"S02_ICON_{i+1}")
         # titre small caps
         add_textbox(slide, xs[i], 7.07, 9.0, 2.66, col.get("title", ""),
-                    font="Segoe UI Black", size_pt=20, bold=True,
+                    font="Segoe UI", size_pt=20, bold=True,
                     color_hex=title_colors[i], cap="small",
                     name=f"S02_COL_{i+1}_TITLE")
         # body
         add_textbox(slide, xs[i], 11.35, 9.0, 3.13, col.get("body", ""),
                     font="Segoe UI Light", size_pt=14, color_hex="#474E67",
-                    name=f"S02_COL_{i+1}_BODY")
+                    name=f"S02_COL_{i+1}_BODY", line_spacing=1.3)
 
 
 # ============================================================
@@ -210,7 +212,7 @@ def build_slide_5(slide, c, page_num=5, total=11, logo_path=None):
         # body
         add_textbox(slide, xs[i], 10.54, 7.47, 1.93, s.get("body", ""),
                     font="Segoe UI Light", size_pt=12, color_hex="#474E67",
-                    name=f"S05_STEP_{i+1}_BODY")
+                    name=f"S05_STEP_{i+1}_BODY", line_spacing=1.3)
 
 
 # ============================================================
@@ -585,7 +587,8 @@ def build_slide_11(slide, c, page_num=11, total=11, logo_path=None):
         # body
         add_textbox(slide, 2.00, body_ys[i], 29.50, 2.40, b.get("body", ""),
                     font="Segoe UI Light", size_pt=14, color_hex="#474E67",
-                    name=f"S11_BLOCK_{i+1}_BODY")
+                    name=f"S11_BLOCK_{i+1}_BODY", line_spacing=1.3,
+                    emphasis_style={"font": "Segoe UI", "bold": True})
 
     # CTA en bas (gradient bandeau)
     add_takeaway_band(slide, c.get("cta", "Êtes-vous prêts ?"))

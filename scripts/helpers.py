@@ -5,6 +5,8 @@ Manipule directement le XML OOXML pour les effets non gérés nativement par pyt
 - alpha (filigrane translucide)
 - gradient vertical 3-stops sur le bandeau Take-away
 """
+import re
+
 from pptx.util import Cm, Pt, Emu
 from pptx.dml.color import RGBColor
 from pptx.enum.shapes import MSO_SHAPE
@@ -59,10 +61,96 @@ def set_run_props(run, *, font=None, size_pt=None, bold=None, italic=None, color
         alpha.set("val", str(int(alpha_pct * 1000)))  # 40% -> 40000
 
 
+def normalize_text_spec(text):
+    """Accepte une chaine simple ou une spec enrichie de type {"text": ..., ...}."""
+    if isinstance(text, dict):
+        spec = dict(text)
+        spec["text"] = str(spec.get("text", ""))
+        spec["emphasis"] = spec.get("emphasis", spec.get("emphases", [])) or []
+        return spec
+    return {"text": "" if text is None else str(text), "emphasis": []}
+
+
+def normalize_line_spacing(value):
+    """Convertit l'interligne JSON en valeur python-pptx (ratio ou points)."""
+    if value is None:
+        return None
+    if isinstance(value, str):
+        cleaned = value.strip()
+        if cleaned.endswith("%"):
+            return float(cleaned[:-1]) / 100.0
+        if cleaned.endswith("pt"):
+            return Pt(float(cleaned[:-2]))
+        return float(cleaned)
+    return value
+
+
+def emphasis_spans(text, emphases):
+    """Retourne des segments (texte, style) en appliquant les emphases non chevauchantes."""
+    spans = []
+    for emph in emphases:
+        if not isinstance(emph, dict):
+            emph = {"text": str(emph)}
+        needle = str(emph.get("text", ""))
+        if not needle:
+            continue
+        flags = 0 if emph.get("case_sensitive", False) else re.IGNORECASE
+        count = 1 if emph.get("first_only", False) else 0
+        for match in re.finditer(re.escape(needle), text, flags):
+            start, end = match.span()
+            if any(start < existing_end and end > existing_start for existing_start, existing_end, _ in spans):
+                continue
+            spans.append((start, end, emph))
+            if count == 1:
+                break
+
+    if not spans:
+        return [(text, None)]
+
+    segments = []
+    cursor = 0
+    for start, end, emph in sorted(spans, key=lambda item: item[0]):
+        if start > cursor:
+            segments.append((text[cursor:start], None))
+        segments.append((text[start:end], emph))
+        cursor = end
+    if cursor < len(text):
+        segments.append((text[cursor:], None))
+    return segments
+
+
+def run_style(base, override=None, defaults=None):
+    """Fusionne le style du placeholder avec une emphase locale."""
+    style = dict(base)
+    if not override:
+        return style
+    if defaults:
+        for key, value in defaults.items():
+            if key == "color":
+                style["color_hex"] = value
+            else:
+                style[key] = value
+    mapping = {
+        "font": "font",
+        "size_pt": "size_pt",
+        "bold": "bold",
+        "italic": "italic",
+        "color": "color_hex",
+        "color_hex": "color_hex",
+        "cap": "cap",
+        "alpha_pct": "alpha_pct",
+    }
+    for src, dest in mapping.items():
+        if src in override:
+            style[dest] = override[src]
+    return style
+
+
 def add_textbox(slide, x_cm, y_cm, w_cm, h_cm, text, *, font="Segoe UI", size_pt=12,
                 bold=False, italic=False, color_hex="#070E1D", cap=None, alpha_pct=None,
-                align="left", anchor="t", name=None):
-    """Crée un textbox avec un run unique aux propriétés spécifiées."""
+                align="left", anchor="t", name=None, line_spacing=None,
+                emphasis_style=None):
+    """Crée un textbox avec texte simple ou spec enrichie (interligne + emphases)."""
     tb = slide.shapes.add_textbox(cm(x_cm), cm(y_cm), cm(w_cm), cm(h_cm))
     if name:
         tb.name = name
@@ -82,10 +170,27 @@ def add_textbox(slide, x_cm, y_cm, w_cm, h_cm, text, *, font="Segoe UI", size_pt
     align_map = {"left": PP_ALIGN.LEFT, "center": PP_ALIGN.CENTER, "right": PP_ALIGN.RIGHT}
     p.alignment = align_map.get(align, PP_ALIGN.LEFT)
 
-    run = p.add_run()
-    run.text = text
-    set_run_props(run, font=font, size_pt=size_pt, bold=bold, italic=italic,
-                  color_hex=color_hex, cap=cap, alpha_pct=alpha_pct)
+    spec = normalize_text_spec(text)
+    effective_line_spacing = spec.get("line_spacing", spec.get("interligne", line_spacing))
+    effective_line_spacing = normalize_line_spacing(effective_line_spacing)
+    if effective_line_spacing is not None:
+        p.line_spacing = effective_line_spacing
+
+    base_style = {
+        "font": font,
+        "size_pt": size_pt,
+        "bold": bold,
+        "italic": italic,
+        "color_hex": color_hex,
+        "cap": cap,
+        "alpha_pct": alpha_pct,
+    }
+    for segment, emphasis in emphasis_spans(spec["text"], spec["emphasis"]):
+        if not segment:
+            continue
+        run = p.add_run()
+        run.text = segment
+        set_run_props(run, **run_style(base_style, emphasis, emphasis_style))
     return tb
 
 
