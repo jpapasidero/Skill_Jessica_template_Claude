@@ -156,17 +156,18 @@ def run_style(base, override=None, defaults=None):
 def add_textbox(slide, x_cm, y_cm, w_cm, h_cm, text, *, font="Segoe UI", size_pt=12,
                 bold=False, italic=False, color_hex="#070E1D", cap=None, alpha_pct=None,
                 align="left", anchor="t", name=None, line_spacing=None,
-                emphasis_style=None):
+                emphasis_style=None, margin_left=None, margin_right=None,
+                margin_top=None, margin_bottom=None):
     """Crée un textbox avec texte simple ou spec enrichie (interligne + emphases)."""
     tb = slide.shapes.add_textbox(cm(x_cm), cm(y_cm), cm(w_cm), cm(h_cm))
     if name:
         tb.name = name
     tf = tb.text_frame
     tf.word_wrap = True
-    tf.margin_left = Emu(45720)
-    tf.margin_right = Emu(45720)
-    tf.margin_top = Emu(45720)
-    tf.margin_bottom = Emu(45720)
+    tf.margin_left = cm(margin_left) if margin_left is not None else Emu(45720)
+    tf.margin_right = cm(margin_right) if margin_right is not None else Emu(45720)
+    tf.margin_top = cm(margin_top) if margin_top is not None else Emu(45720)
+    tf.margin_bottom = cm(margin_bottom) if margin_bottom is not None else Emu(45720)
 
     # ancrage vertical
     from pptx.enum.text import MSO_ANCHOR, PP_ALIGN
@@ -204,7 +205,11 @@ def add_textbox(slide, x_cm, y_cm, w_cm, h_cm, text, *, font="Segoe UI", size_pt
 # ---------- Formes ----------
 
 def add_rect(slide, x_cm, y_cm, w_cm, h_cm, fill_hex, *, line_hex=None, line_w_pt=0,
-             rounded=False, name=None):
+             rounded=False, radius_adjust=0.1, name=None, text=None,
+             font="Segoe UI", size_pt=12, bold=False, italic=False,
+             text_color_hex="#070E1D", color_hex=None, cap=None, alpha_pct=None,
+             align="left", anchor="m", line_spacing=None, emphasis_style=None,
+             margin_left=None, margin_right=None, margin_top=None, margin_bottom=None):
     shape_type = MSO_SHAPE.ROUNDED_RECTANGLE if rounded else MSO_SHAPE.RECTANGLE
     shp = slide.shapes.add_shape(shape_type, cm(x_cm), cm(y_cm), cm(w_cm), cm(h_cm))
     remove_theme_style(shp)
@@ -212,7 +217,7 @@ def add_rect(slide, x_cm, y_cm, w_cm, h_cm, fill_hex, *, line_hex=None, line_w_p
         shp.name = name
     if rounded:
         # arrondi modéré
-        shp.adjustments[0] = 0.1
+        shp.adjustments[0] = radius_adjust
     shp.fill.solid()
     shp.fill.fore_color.rgb = hex_to_rgb(fill_hex)
     if line_hex:
@@ -220,6 +225,43 @@ def add_rect(slide, x_cm, y_cm, w_cm, h_cm, fill_hex, *, line_hex=None, line_w_p
         shp.line.width = Pt(line_w_pt) if line_w_pt else Pt(0.25)
     else:
         shp.line.fill.background()
+    if text is not None:
+        tf = shp.text_frame
+        tf.word_wrap = True
+        tf.margin_left = cm(margin_left) if margin_left is not None else Emu(45720)
+        tf.margin_right = cm(margin_right) if margin_right is not None else Emu(45720)
+        tf.margin_top = cm(margin_top) if margin_top is not None else Emu(45720)
+        tf.margin_bottom = cm(margin_bottom) if margin_bottom is not None else Emu(45720)
+
+        from pptx.enum.text import MSO_ANCHOR, PP_ALIGN
+        anchor_map = {"t": MSO_ANCHOR.TOP, "m": MSO_ANCHOR.MIDDLE, "b": MSO_ANCHOR.BOTTOM}
+        tf.vertical_anchor = anchor_map.get(anchor, MSO_ANCHOR.MIDDLE)
+
+        p = tf.paragraphs[0]
+        align_map = {"left": PP_ALIGN.LEFT, "center": PP_ALIGN.CENTER, "right": PP_ALIGN.RIGHT}
+        p.alignment = align_map.get(align, PP_ALIGN.LEFT)
+
+        spec = normalize_text_spec(text)
+        effective_line_spacing = spec.get("line_spacing", spec.get("interligne", line_spacing))
+        effective_line_spacing = normalize_line_spacing(effective_line_spacing)
+        if effective_line_spacing is not None:
+            p.line_spacing = effective_line_spacing
+
+        base_style = {
+            "font": font,
+            "size_pt": size_pt,
+            "bold": bold,
+            "italic": italic,
+            "color_hex": color_hex or text_color_hex,
+            "cap": cap,
+            "alpha_pct": alpha_pct,
+        }
+        for segment, emphasis in emphasis_spans(spec["text"], spec["emphasis"]):
+            if not segment:
+                continue
+            run = p.add_run()
+            run.text = segment
+            set_run_props(run, **run_style(base_style, emphasis, emphasis_style))
     return shp
 
 
@@ -361,8 +403,8 @@ def add_master_chrome(slide, title_text, *, page_num=None, total=None, with_sign
 
 # ---------- Fond blanc explicite ----------
 
-def set_white_background(slide):
+def set_white_background(slide, color_hex="#FFFFFF"):
     bg = slide.background
     fill = bg.fill
     fill.solid()
-    fill.fore_color.rgb = hex_to_rgb("#FFFFFF")
+    fill.fore_color.rgb = hex_to_rgb(color_hex)

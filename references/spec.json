@@ -418,17 +418,17 @@
         {
           "name": "LeftAccentBar",
           "pos_cm": [
-            0.61,
-            1.21
+            2,
+            3.5
           ],
           "size_cm": [
-            0.04,
-            2.48
+            0.11,
+            6.3
           ],
           "fill": "#A25871"
         },
         {
-          "name": "KpiAccent_300",
+          "name": "KpiAccent_1",
           "pos_cm": [
             24.20,
             2.89
@@ -440,7 +440,7 @@
           "fill": "#484C6A"
         },
         {
-          "name": "KpiAccent_301",
+          "name": "KpiAccent_2",
           "pos_cm": [
             24.20,
             7.48
@@ -452,7 +452,7 @@
           "fill": "#A25871"
         },
         {
-          "name": "KpiAccent_302",
+          "name": "KpiAccent_3",
           "pos_cm": [
             24.20,
             12.05
@@ -462,11 +462,6 @@
             0.07
           ],
           "fill": "#FDA85B"
-        },
-        {
-          "type": "image",
-          "src": "image2.png",
-          "purpose": "graphique RTDI Reception/Engage"
         }
       ]
     },
@@ -488,7 +483,7 @@
             9.0,
             2.66
           ],
-          "font": "Segoe UI Black",
+          "font": "Segoe UI",
           "size_pt": 20,
           "bold": true,
           "color": "#6A5D79",
@@ -516,7 +511,7 @@
             9.0,
             2.66
           ],
-          "font": "Segoe UI Black",
+          "font": "Segoe UI",
           "size_pt": 20,
           "bold": true,
           "color": "#A25871",
@@ -544,7 +539,7 @@
             9.0,
             2.66
           ],
-          "font": "Segoe UI Black",
+          "font": "Segoe UI",
           "size_pt": 20,
           "bold": true,
           "color": "#FDA85B",
@@ -567,6 +562,7 @@
       "decorative": [
         {
           "type": "vbar",
+          "name": "S02_SEP_1",
           "pos_cm": [
             1.69,
             4.71
@@ -579,6 +575,7 @@
         },
         {
           "type": "vbar",
+          "name": "S02_SEP_2",
           "pos_cm": [
             12.11,
             4.71
@@ -591,6 +588,7 @@
         },
         {
           "type": "vbar",
+          "name": "S02_SEP_3",
           "pos_cm": [
             22.53,
             4.71
@@ -600,30 +598,6 @@
             9.9
           ],
           "color": "#FDA85B"
-        },
-        {
-          "type": "image",
-          "src": "image3.png",
-          "pos_cm_approx": [
-            3.0,
-            4.7
-          ]
-        },
-        {
-          "type": "image",
-          "src": "image4.png",
-          "pos_cm_approx": [
-            13.4,
-            4.7
-          ]
-        },
-        {
-          "type": "image",
-          "src": "image5.png",
-          "pos_cm_approx": [
-            23.8,
-            4.7
-          ]
         }
       ]
     },
@@ -648,7 +622,9 @@
           "bold": true,
           "color": "#070E1D",
           "cap": "small",
-          "anchor_v": "center"
+          "anchor_v": "center",
+          "font": "Segoe UI",
+          "align": "center"
         },
         "S03_FACTOR_2_LABEL": {
           "pos_cm": [
@@ -663,7 +639,9 @@
           "bold": true,
           "color": "#070E1D",
           "cap": "small",
-          "anchor_v": "center"
+          "anchor_v": "center",
+          "font": "Segoe UI",
+          "align": "center"
         },
         "S03_FACTOR_3_LABEL": {
           "pos_cm": [
@@ -678,7 +656,9 @@
           "bold": true,
           "color": "#070E1D",
           "cap": "small",
-          "anchor_v": "center"
+          "anchor_v": "center",
+          "font": "Segoe UI",
+          "align": "center"
         },
         "S03_FACTOR_4_LABEL": {
           "pos_cm": [
@@ -693,7 +673,9 @@
           "bold": true,
           "color": "#070E1D",
           "cap": "small",
-          "anchor_v": "center"
+          "anchor_v": "center",
+          "font": "Segoe UI",
+          "align": "center"
         },
         "S03_FACTOR_5_LABEL": {
           "pos_cm": [
@@ -708,7 +690,9 @@
           "bold": true,
           "color": "#070E1D",
           "cap": "small",
-          "anchor_v": "center"
+          "anchor_v": "center",
+          "font": "Segoe UI",
+          "align": "center"
         },
         "S03_FACTOR_6_LABEL": {
           "pos_cm": [
@@ -723,7 +707,9 @@
           "bold": true,
           "color": "#070E1D",
           "cap": "small",
-          "anchor_v": "center"
+          "anchor_v": "center",
+          "font": "Segoe UI",
+          "align": "center"
         },
         "S03_TAKEAWAY": {
           "from_takeaway_band": true
@@ -731,58 +717,82 @@
       },
       "decorative_teardrops": [
         {
-          "name": "Larme 1",
-          "size_cm_approx": [
+          "name": "S03_TEARDROP_1",
+          "pos_cm": [
+            3.42,
+            3.59
+          ],
+          "size_cm": [
             3.0,
             3.0
           ],
           "color": "#D8DBE8",
-          "above_factor": 1
+          "rotation": 180
         },
         {
-          "name": "Larme 2",
-          "size_cm_approx": [
+          "name": "S03_TEARDROP_2",
+          "pos_cm": [
+            15.36,
+            3.65
+          ],
+          "size_cm": [
             3.0,
             3.0
           ],
           "color": "#BBB4C4",
-          "above_factor": 2
+          "rotation": 180
         },
         {
-          "name": "Larme 3",
-          "size_cm_approx": [
+          "name": "S03_TEARDROP_3",
+          "pos_cm": [
+            26.86,
+            3.65
+          ],
+          "size_cm": [
             3.0,
             3.0
           ],
           "color": "#D5B3BE",
-          "above_factor": 3
+          "rotation": 180
         },
         {
-          "name": "Larme 4",
-          "size_cm_approx": [
+          "name": "S03_TEARDROP_4",
+          "pos_cm": [
+            3.46,
+            10.91
+          ],
+          "size_cm": [
             3.0,
             3.0
           ],
           "color": "#F1D3D5",
-          "above_factor": 4
+          "rotation": 180
         },
         {
-          "name": "Larme 5",
-          "size_cm_approx": [
+          "name": "S03_TEARDROP_5",
+          "pos_cm": [
+            15.20,
+            10.91
+          ],
+          "size_cm": [
             3.0,
             3.0
           ],
           "color": "#FEE3CA",
-          "above_factor": 5
+          "rotation": 180
         },
         {
-          "name": "Larme 6",
-          "size_cm_approx": [
+          "name": "S03_TEARDROP_6",
+          "pos_cm": [
+            26.56,
+            10.91
+          ],
+          "size_cm": [
             3.0,
             3.0
           ],
           "color": "#FEF4DA",
-          "above_factor": 6
+          "rotation": 180
         }
       ]
     },
@@ -891,7 +901,7 @@
           12.9
         ],
         "align": "center_horizontal",
-        "resize": false
+        "resize": true
       }
     },
     {
@@ -954,7 +964,7 @@
           ],
           "size_cm": [
             7.47,
-            1.26
+            1.93
           ],
           "font": "Segoe UI Light",
           "size_pt": 12,
@@ -1068,7 +1078,7 @@
           ],
           "size_cm": [
             7.47,
-            1.26
+            1.93
           ],
           "font": "Segoe UI Light",
           "size_pt": 12,
@@ -1125,14 +1135,103 @@
           ],
           "size_cm": [
             7.47,
-            1.26
+            1.93
           ],
           "font": "Segoe UI Light",
           "size_pt": 12,
           "color": "#474E67"
         }
       },
-      "decorative": "4 cercles puce numero (~0.85cm) couleurs assorties (violet/bordeaux/rose/orange) + 3 segments lignes horizontales reliant les puces"
+      "decorative": {
+        "bullets": [
+          {
+            "name": "S05_STEP_1_BULLET",
+            "pos_cm": [
+              1.69,
+              7.64
+            ],
+            "size_cm": [
+              0.92,
+              0.92
+            ],
+            "fill": "#6A5D79"
+          },
+          {
+            "name": "S05_STEP_2_BULLET",
+            "pos_cm": [
+              9.44,
+              7.64
+            ],
+            "size_cm": [
+              0.92,
+              0.92
+            ],
+            "fill": "#A25871"
+          },
+          {
+            "name": "S05_STEP_3_BULLET",
+            "pos_cm": [
+              17.18,
+              7.64
+            ],
+            "size_cm": [
+              0.92,
+              0.92
+            ],
+            "fill": "#D4737A"
+          },
+          {
+            "name": "S05_STEP_4_BULLET",
+            "pos_cm": [
+              24.92,
+              7.64
+            ],
+            "size_cm": [
+              0.92,
+              0.92
+            ],
+            "fill": "#FDA85B"
+          }
+        ],
+        "connector_lines": [
+          {
+            "from_cm": [
+              2.61,
+              8.10
+            ],
+            "to_cm": [
+              9.44,
+              8.10
+            ],
+            "stroke": "#BBB4C4",
+            "stroke_width_pt": 1.5
+          },
+          {
+            "from_cm": [
+              10.36,
+              8.10
+            ],
+            "to_cm": [
+              17.18,
+              8.10
+            ],
+            "stroke": "#D5B3BE",
+            "stroke_width_pt": 1.5
+          },
+          {
+            "from_cm": [
+              18.10,
+              8.10
+            ],
+            "to_cm": [
+              24.92,
+              8.10
+            ],
+            "stroke": "#F1D3D5",
+            "stroke_width_pt": 1.5
+          }
+        ]
+      }
     },
     {
       "n": 6,
@@ -1148,13 +1247,15 @@
             5.27
           ],
           "size_cm": [
-            9.49,
-            0.71
+            10.07,
+            1.27
           ],
           "font": "Segoe UI",
           "size_pt": 16,
           "bold": true,
-          "color": "#FFFFFF"
+          "color": "#FFFFFF",
+          "align": "left",
+          "anchor_v": "center"
         },
         "S06_HEADER_C2": {
           "pos_cm": [
@@ -1162,13 +1263,15 @@
             5.27
           ],
           "size_cm": [
-            5.08,
-            0.71
+            5.82,
+            1.27
           ],
           "font": "Segoe UI",
           "size_pt": 16,
           "bold": true,
-          "color": "#FFFFFF"
+          "color": "#FFFFFF",
+          "align": "left",
+          "anchor_v": "center"
         },
         "S06_HEADER_C3": {
           "pos_cm": [
@@ -1176,13 +1279,15 @@
             5.27
           ],
           "size_cm": [
-            4.15,
-            0.71
+            4.90,
+            1.27
           ],
           "font": "Segoe UI",
           "size_pt": 16,
           "bold": true,
-          "color": "#FFFFFF"
+          "color": "#FFFFFF",
+          "align": "left",
+          "anchor_v": "center"
         },
         "S06_HEADER_C4": {
           "pos_cm": [
@@ -1190,13 +1295,15 @@
             5.27
           ],
           "size_cm": [
-            5.75,
-            0.71
+            6.47,
+            1.27
           ],
           "font": "Segoe UI",
           "size_pt": 16,
           "bold": true,
-          "color": "#FFFFFF"
+          "color": "#FFFFFF",
+          "align": "left",
+          "anchor_v": "center"
         },
         "S06_HEADER_C5": {
           "pos_cm": [
@@ -1204,13 +1311,15 @@
             5.27
           ],
           "size_cm": [
-            3.79,
-            0.71
+            4.52,
+            1.27
           ],
           "font": "Segoe UI",
           "size_pt": 16,
           "bold": true,
-          "color": "#FFFFFF"
+          "color": "#FFFFFF",
+          "align": "left",
+          "anchor_v": "center"
         },
         "_row_y_cm": {
           "R1": 6.56,
@@ -1226,46 +1335,63 @@
           "C5": 28.70
         },
         "_col_w_cm": {
-          "C1": 9.49,
-          "C2": 5.08,
-          "C3": 4.15,
-          "C4": 5.75,
-          "C5": 3.79
+          "C1": 10.07,
+          "C2": 5.82,
+          "C3": 4.90,
+          "C4": 6.47,
+          "C5": 4.52
         },
-        "_row_h_cm": 0.80,
+        "_row_h_cm": 1.40,
+        "_tab_w_cm": 31.62,
+        "_header_h_cm": 1.27,
         "_header_fill": "#6A5D79",
-        "_row_alt_fill_even": "#F4F5F9",
-        "_row_alt_fill_odd": "#FFFFFF",
+        "_row_alt_fill_even": "#FFFFFF",
+        "_row_alt_fill_odd": "#F4F5F9",
         "_S06_R_X_C1_format": {
           "font": "Segoe UI",
           "size_pt": 14,
           "bold": true,
-          "color": "#070E1D"
+          "color": "#070E1D",
+          "align": "left",
+          "anchor_v": "center"
         },
         "_S06_R_X_C2_format": {
           "font": "Segoe UI",
           "size_pt": 14,
-          "color": "#474E67"
+          "color": "#474E67",
+          "align": "left",
+          "anchor_v": "center"
         },
         "_S06_R_X_C3_format": {
           "font": "Segoe UI",
           "size_pt": 14,
-          "color": "#474E67"
+          "color": "#474E67",
+          "align": "left",
+          "anchor_v": "center"
         },
         "_S06_R_X_C4_format": {
           "font": "Segoe UI",
           "size_pt": 14,
           "bold": true,
-          "color": "#6A5D79"
+          "color": "#6A5D79",
+          "align": "left",
+          "anchor_v": "center"
         },
         "_S06_R_X_C5_format": {
           "font": "Segoe UI",
           "size_pt": 14,
           "bold": true,
-          "color": "#474E67"
+          "color": "#474E67",
+          "align": "left",
+          "anchor_v": "center"
         },
         "S06_TAKEAWAY": {
           "from_takeaway_band": true
+        },
+        "_row_separator": {
+          "stroke": "#D8DBE8",
+          "stroke_width_pt": 0.75,
+          "dash": false
         }
       },
       "decorative": "Header rectangles violet sourd #6A5D79 plein, lignes paires fond #F4F5F9 (zebrage), traits fins entre lignes"

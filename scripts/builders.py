@@ -13,6 +13,17 @@ except ImportError:
                          add_takeaway_band, add_master_chrome, set_white_background, cm)
 
 
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+
+
+def resolve_background_asset(filename):
+    for asset_dir in ("assets", "asset"):
+        path = PROJECT_ROOT / asset_dir / "backgrounds" / filename
+        if path.exists():
+            return path
+    return None
+
+
 # ============================================================
 # LAYOUT 1 — Hook sens + factuel
 # ============================================================
@@ -136,8 +147,8 @@ def build_slide_3(slide, c, page_num=3, total=11, logo_path=None):
 # ============================================================
 def build_slide_4(slide, c, page_num=4, total=11, logo_path=None):
     set_white_background(slide)
-    triangle_bg = Path(__file__).resolve().parent.parent / "triangle_bg.png"
-    if triangle_bg.exists():
+    triangle_bg = resolve_background_asset("triangle_bg.png")
+    if triangle_bg:
         triangle = slide.shapes.add_picture(str(triangle_bg), cm(0), cm(3),
                                             width=cm(14.8), height=cm(12.9))
         triangle.left = int((cm(33.867) - triangle.width) / 2)
@@ -295,9 +306,11 @@ def build_slide_7(slide, c, page_num=7, total=11, logo_path=None):
                     align="center", name=f"S07_KPI_{i+1}_SUBLABEL")
 
     # Section label
+    add_rect(slide, 1.09, 8.50, 31.08, 1.17, "#F2F2F2", line_hex=None, line_w_pt=0,
+             rounded=False, radius_adjust=0.1, name=None)    
     add_textbox(slide, 1.09, 8.50, 31.08, 1.17, section_label,
                 font="Segoe UI", size_pt=12, bold=True, italic=True,
-                color_hex="#474E67", align="center", anchor="m",name="S07_SECTION_LABEL")
+                color_hex="#070E1D", align="center", anchor="m",name="S07_SECTION_LABEL")
 
     # 5 barres horizontales
     bar_ys = [10.09, 11.40, 12.68, 13.96, 15.18]
@@ -313,7 +326,7 @@ def build_slide_7(slide, c, page_num=7, total=11, logo_path=None):
         max_w = 24.0
         bar_w = max_w * (val / 100.0)
         add_rect(slide, 8.20, bar_ys[i] + 0.20, bar_w, 0.55, bar_colors[i],
-                 rounded=True, name=f"S07_BAR_{i+1}_BAR")
+                 rounded=True, radius_adjust=0.5, name=f"S07_BAR_{i+1}_BAR")
         # valeur affichée à droite
         add_textbox(slide, 8.20 + bar_w + 0.10, bar_ys[i] + 0.10, 1.6, 0.75,
                     f"{int(val)}%", font="Segoe UI", size_pt=11, bold=True,
@@ -337,10 +350,10 @@ def build_slide_8(slide, c, page_num=8, total=11, logo_path=None):
     legends = c.get("legends", ["Série 1", "Série 2"])
     add_textbox(slide, 21.81, 6.14, 5.56, 0.89, legends[0],
                 font="Segoe UI", size_pt=10, color_hex="#474E67",
-                align="center", name="S08_LEGEND_1")
+                align="left", anchor="m",name="S08_LEGEND_1")
     add_textbox(slide, 28.47, 6.14, 5.56, 0.89, legends[1],
                 font="Segoe UI", size_pt=10, color_hex="#474E67",
-                align="center", name="S08_LEGEND_2")
+                align="left", anchor="m",name="S08_LEGEND_2")
 
     # petits carrés couleurs des légendes
     add_rect(slide, 21.30, 6.30, 0.45, 0.45, "#D5B3BE", name="S08_LEGEND_1_SQ")
@@ -365,9 +378,9 @@ def build_slide_8(slide, c, page_num=8, total=11, logo_path=None):
         w1 = max_w_1 * (abs(v1) / v_max) * 0.85
         w2 = max_w_2 * (abs(v2) / v_max) * 0.85
         add_rect(slide, 11.94, row_ys[i] + 0.10, max(w1, 0.5), 0.83, "#D5B3BE",
-                 rounded=True, name=f"S08_ROW_{i+1}_BAR_1")
+                 rounded=True, radius_adjust=0.3, name=f"S08_ROW_{i+1}_BAR_1")
         add_rect(slide, 24.44, row_ys[i] + 0.10, max(w2, 0.5), 0.83, "#FEE3CA",
-                 rounded=True, name=f"S08_ROW_{i+1}_BAR_2")
+                 rounded=True, radius_adjust=0.3, name=f"S08_ROW_{i+1}_BAR_2")
         # valeurs (format display si fourni, sinon valeur brute)
         d1 = str(r.get("display_1", v1))
         d2 = str(r.get("display_2", v2))
@@ -387,20 +400,26 @@ def build_slide_8(slide, c, page_num=8, total=11, logo_path=None):
 # LAYOUT 9 — Risques & Opportunités (grille 2x3)
 # ============================================================
 def build_slide_9(slide, c, page_num=9, total=11, logo_path=None):
-    set_white_background(slide)
+    set_white_background(slide, "#EFF1F6")
     add_master_chrome(slide, c.get("title", "Risques & Opportunités"),
                        page_num=page_num, total=total, logo_path=logo_path)
 
     risks = c.get("risks", [])
     opps = c.get("opportunities", [])
     card_xs = [0.42, 11.57, 22.71]
-    card_w, card_h = 10.55, 5.85
+    card_w, card_h = 10.89, 6.40
 
     LEVEL_COLORS = {
         "high_risk": "#C00000",
         "medium_risk": "#FDA85B",
         "high_opp": "#00B050",
         "medium_opp": "#A8A400",
+    }
+    LEVEL_BACKGROUNDS = {
+        "high_risk": "#FF97973",
+        "medium_risk": "#FEE3CA",
+        "high_opp": "#69FFAD",
+        "medium_opp": "#FFFF85",
     }
     LEVEL_TEXTS = {
         "high_risk": "Risque élevé",
@@ -418,18 +437,21 @@ def build_slide_9(slide, c, page_num=9, total=11, logo_path=None):
                  line_hex="#AFB5C8", line_w_pt=0.25, rounded=True,
                  name=f"S09_RISK_{i+1}_CARD")
         # icône violette (cercle simulant Wingdings)
-        add_oval(slide, x + 0.13, 4.00, 0.85, 0.85, "#6A5D79",
-                 name=f"S09_RISK_{i+1}_ICON")
+        add_rect(slide, x + 0.13, 4.00, 0.85, 0.85, "#BBB4C4",text="L",
+                rounded=True,radius_adjust=0.15,
+                font="Wingdings", size_pt=18, bold=True, color_hex="#6A5D79",
+                align="center", anchor="m", name=f"S09_RISK_{i+1}_ICON")
         # title
         add_textbox(slide, x + 1.20, 3.85, 9.0, 0.77, r.get("title", ""),
                     font="Segoe UI", size_pt=12, bold=True, color_hex="#070E1D",
                     name=f"S09_RISK_{i+1}_TITLE")
         # level (small caps colorée)
         level = r.get("level", "high_risk")
-        add_textbox(slide, x + 1.20, 4.62, 4.0, 0.53, LEVEL_TEXTS.get(level, ""),
-                    font="Segoe UI", size_pt=10, bold=True,
+        add_rect(slide, x + 1.20, 4.62, 2.48, 0.53, LEVEL_BACKGROUNDS.get(level,"#FF97973"),
+                    rounded=True,radius_adjust=0.15,
+                    text=LEVEL_TEXTS.get(level, ""),font="Segoe UI", size_pt=10,
                     color_hex=LEVEL_COLORS.get(level, "#C00000"), cap="small",
-                    name=f"S09_RISK_{i+1}_LEVEL")
+                    align="center",anchor="m",name=f"S09_RISK_{i+1}_LEVEL")
         # body
         add_textbox(slide, x + 0.20, 5.30, card_w - 0.40, 1.20, r.get("body", ""),
                     font="Segoe UI", size_pt=10, color_hex="#070E1D",
@@ -438,14 +460,15 @@ def build_slide_9(slide, c, page_num=9, total=11, logo_path=None):
         add_line(slide, x + 0.20, 6.80, x + card_w - 0.20, 6.80, "#AFB5C8",
                  width_pt=0.75, dash=True)
         # action tag (PARADE)
-        add_textbox(slide, x + 0.20, 7.10, 1.71, 0.53, "Parade",
-                    font="Segoe UI", size_pt=10, bold=True,
-                    color_hex="#8DAC95", cap="small",
+        add_rect(slide, x + 0.20, 7.10, 1.71, 0.53, "#DDE7CF",text="Parade",
+                    rounded=True,radius_adjust=0.15,
+                    font="Segoe UI", size_pt=10, 
+                    color_hex="#8DAC95", cap="small", align="center",anchor="m",
                     name=f"S09_RISK_{i+1}_ACTION_TAG")
         # action body
         add_textbox(slide, x + 2.10, 7.10, card_w - 2.30, 1.0, r.get("action", ""),
                     font="Segoe UI Light", size_pt=10, color_hex="#070E1D",
-                    name=f"S09_RISK_{i+1}_ACTION_BODY")
+                    margin_top=0, name=f"S09_RISK_{i+1}_ACTION_BODY")
 
     # Ligne 2 : Opportunités
     for i in range(3):
@@ -454,28 +477,32 @@ def build_slide_9(slide, c, page_num=9, total=11, logo_path=None):
         add_rect(slide, x, 10.30, card_w, card_h, "#FFFFFF",
                  line_hex="#AFB5C8", line_w_pt=0.25, rounded=True,
                  name=f"S09_OPP_{i+1}_CARD")
-        add_oval(slide, x + 0.13, 10.80, 0.85, 0.85, "#FBCC58",
-                 name=f"S09_OPP_{i+1}_ICON")
+        add_rect(slide, x + 0.13, 10.80, 0.85, 0.85, "#FEF4da",text="J",
+                rounded=True,radius_adjust=0.15,
+                font="Wingdings", size_pt=18, bold=True, color_hex="#FBCC58",
+                align="center",anchor="m", name=f"S09_OPP_{i+1}_ICON")
         add_textbox(slide, x + 1.20, 10.65, 9.0, 0.77, o.get("title", ""),
                     font="Segoe UI", size_pt=12, bold=True, color_hex="#070E1D",
                     name=f"S09_OPP_{i+1}_TITLE")
         level = o.get("level", "high_opp")
-        add_textbox(slide, x + 1.20, 11.42, 4.0, 0.53, LEVEL_TEXTS.get(level, ""),
-                    font="Segoe UI", size_pt=10, bold=True,
+        add_rect(slide, x + 1.20, 11.42, 2.48, 0.53, LEVEL_BACKGROUNDS.get(level,"#69FFAD"),
+                    rounded=True,radius_adjust=0.15,
+                    text=LEVEL_TEXTS.get(level, ""),font="Segoe UI", size_pt=10,
                     color_hex=LEVEL_COLORS.get(level, "#00B050"), cap="small",
-                    name=f"S09_OPP_{i+1}_LEVEL")
+                    align="center",anchor="m", name=f"S09_OPP_{i+1}_LEVEL")
         add_textbox(slide, x + 0.20, 12.10, card_w - 0.40, 1.20, o.get("body", ""),
                     font="Segoe UI", size_pt=10, color_hex="#070E1D",
                     name=f"S09_OPP_{i+1}_BODY")
         add_line(slide, x + 0.20, 13.60, x + card_w - 0.20, 13.60, "#AFB5C8",
                  width_pt=0.75, dash=True)
-        add_textbox(slide, x + 0.20, 13.90, 1.71, 0.53, "Levier",
-                    font="Segoe UI", size_pt=10, bold=True,
-                    color_hex="#8DAC95", cap="small",
+        add_rect(slide, x + 0.20, 13.90, 1.71, 0.53, "#DDE7CF",text="Levier",
+                    rounded=True,radius_adjust=0.15,
+                    font="Segoe UI", size_pt=10,
+                    color_hex="#8DAC95", cap="small", align="center",anchor="m",
                     name=f"S09_OPP_{i+1}_ACTION_TAG")
         add_textbox(slide, x + 2.10, 13.90, card_w - 2.30, 1.0, o.get("action", ""),
                     font="Segoe UI Light", size_pt=10, color_hex="#070E1D",
-                    name=f"S09_OPP_{i+1}_ACTION_BODY")
+                    margin_top=0, name=f"S09_OPP_{i+1}_ACTION_BODY")
 
 
 # ============================================================
