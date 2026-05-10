@@ -25,6 +25,13 @@ def hex_to_rgb(hexstr):
     return RGBColor(int(h[0:2], 16), int(h[2:4], 16), int(h[4:6], 16))
 
 
+def remove_theme_style(shape):
+    """Remove PowerPoint theme effects that can add shadows by default."""
+    style = shape._element.find(qn("p:style"))
+    if style is not None:
+        shape._element.remove(style)
+
+
 # ---------- Texte ----------
 
 def set_run_props(run, *, font=None, size_pt=None, bold=None, italic=None, color_hex=None,
@@ -200,6 +207,7 @@ def add_rect(slide, x_cm, y_cm, w_cm, h_cm, fill_hex, *, line_hex=None, line_w_p
              rounded=False, name=None):
     shape_type = MSO_SHAPE.ROUNDED_RECTANGLE if rounded else MSO_SHAPE.RECTANGLE
     shp = slide.shapes.add_shape(shape_type, cm(x_cm), cm(y_cm), cm(w_cm), cm(h_cm))
+    remove_theme_style(shp)
     if name:
         shp.name = name
     if rounded:
@@ -217,6 +225,7 @@ def add_rect(slide, x_cm, y_cm, w_cm, h_cm, fill_hex, *, line_hex=None, line_w_p
 
 def add_oval(slide, x_cm, y_cm, w_cm, h_cm, fill_hex, *, line_hex=None, name=None):
     shp = slide.shapes.add_shape(MSO_SHAPE.OVAL, cm(x_cm), cm(y_cm), cm(w_cm), cm(h_cm))
+    remove_theme_style(shp)
     if name:
         shp.name = name
     shp.fill.solid()
@@ -231,6 +240,7 @@ def add_oval(slide, x_cm, y_cm, w_cm, h_cm, fill_hex, *, line_hex=None, name=Non
 def add_teardrop(slide, x_cm, y_cm, w_cm, h_cm, fill_hex, *, name=None):
     """Larme (teardrop). En python-pptx : MSO_SHAPE.TEAR (rotation à appliquer pour pointe en haut)."""
     shp = slide.shapes.add_shape(MSO_SHAPE.TEAR, cm(x_cm), cm(y_cm), cm(w_cm), cm(h_cm))
+    remove_theme_style(shp)
     if name:
         shp.name = name
     # rotation pour pointe vers le bas (esthétique larme du template)
@@ -245,6 +255,7 @@ def add_line(slide, x1_cm, y1_cm, x2_cm, y2_cm, color_hex, *, width_pt=1.0, dash
     from pptx.enum.shapes import MSO_CONNECTOR
     conn = slide.shapes.add_connector(MSO_CONNECTOR.STRAIGHT, cm(x1_cm), cm(y1_cm),
                                        cm(x2_cm), cm(y2_cm))
+    remove_theme_style(conn)
     conn.line.color.rgb = hex_to_rgb(color_hex)
     conn.line.width = Pt(width_pt)
     if dash:
@@ -263,6 +274,7 @@ def add_takeaway_band(slide, text="Take away"):
     BASE = "A25871"
 
     shp = slide.shapes.add_shape(MSO_SHAPE.RECTANGLE, cm(POS_X), cm(POS_Y), cm(W), cm(H))
+    remove_theme_style(shp)
     shp.name = "TakeawayBand"
 
     # spPr est directement le CT_ShapeProperties accessible sur shp._element.spPr

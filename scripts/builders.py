@@ -221,11 +221,12 @@ def build_slide_6(slide, c, page_num=6, total=11, logo_path=None):
     rows = c.get("rows", [])
 
     col_x = [1.52, 11.59, 17.38, 22.26, 28.70]
-    col_w = [9.49, 5.08, 4.15, 5.75, 3.79]
+    col_w = [10.07, 5.82, 4.9, 6.47, 4.52]
     row_y = [6.56, 7.97, 9.38, 10.79]
-    row_h = 0.80
+    row_h = 1.4
+    tab_w = 31.62
     header_y = 5.27
-    header_h = 0.71
+    header_h = 1.27
 
     # En-tête (rectangles violet sourd)
     for i in range(5):
@@ -234,14 +235,14 @@ def build_slide_6(slide, c, page_num=6, total=11, logo_path=None):
         add_textbox(slide, col_x[i], header_y, col_w[i], header_h,
                     headers[i] if i < len(headers) else "",
                     font="Segoe UI", size_pt=16, bold=True, color_hex="#FFFFFF",
-                    align="center", anchor="m", name=f"S06_HEADER_C{i+1}")
+                    align="left", anchor="m", name=f"S06_HEADER_C{i+1}")
 
     # Lignes (zébrage)
     for r in range(4):
-        is_even = (r % 2 == 0)
+        is_even = (r % 2 == 1)
         bg = "#F4F5F9" if is_even else "#FFFFFF"
         # bande de fond pour la ligne
-        add_rect(slide, col_x[0], row_y[r], sum(col_w), row_h, bg, name=f"S06_R{r+1}_BG")
+        add_rect(slide, col_x[0], row_y[r], tab_w, row_h, bg, name=f"S06_R{r+1}_BG")
 
         row_data = rows[r] if r < len(rows) else [""]*5
         for ci in range(5):
@@ -258,7 +259,8 @@ def build_slide_6(slide, c, page_num=6, total=11, logo_path=None):
 
             add_textbox(slide, col_x[ci], row_y[r], col_w[ci], row_h, cell_text,
                         font=font, size_pt=size, bold=bold, color_hex=col,
-                        align="center", anchor="m", name=f"S06_R{r+1}C{ci+1}")
+                        align="left", anchor="m", name=f"S06_R{r+1}C{ci+1}")
+            add_line(slide, col_x[0], row_y[r]+row_h, col_x[0]+tab_w, row_y[r]+row_h, "#D8DBE8", width_pt=0.75, dash=False)
 
     add_takeaway_band(slide, c.get("takeaway", "Take away"))
 
@@ -295,7 +297,7 @@ def build_slide_7(slide, c, page_num=7, total=11, logo_path=None):
     # Section label
     add_textbox(slide, 1.09, 8.50, 31.08, 1.17, section_label,
                 font="Segoe UI", size_pt=12, bold=True, italic=True,
-                color_hex="#474E67", name="S07_SECTION_LABEL")
+                color_hex="#474E67", align="center", anchor="m",name="S07_SECTION_LABEL")
 
     # 5 barres horizontales
     bar_ys = [10.09, 11.40, 12.68, 13.96, 15.18]
