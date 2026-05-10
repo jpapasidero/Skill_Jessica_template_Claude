@@ -79,7 +79,7 @@ Le détail exact des champs attendus pour chaque layout est dans `references/con
 
 - **Format slide** : 16:9 widescreen (33.87 × 19.05 cm) — fixé par le générateur
 - **Polices** : Segoe UI Black (titres), Segoe UI (corps), Segoe UI Light (secondaire). Si la machine ne les a pas, PowerPoint substituera automatiquement (Arial Black / Arial / Arial Light)
-- **Logo Safran** : fournir `--logo path/to/logo.png` pour qu'il apparaisse en bas à droite (sinon, espace réservé blanc)
+- **Logo Safran** : le générateur cherche automatiquement un PNG/JPG dans `assets/logo`, `assets/logos`, `asset/logo` ou `asset/logos`. `--logo path/to/logo.png` reste possible pour forcer un fichier précis.
 - **Le fichier produit ne contient pas de slide master Safran personnalisé** — les éléments « chrome » (titre, barre signature, footer confidentiel, n° page) sont reproduits sur chaque slide via shapes nommées. Ce choix garantit la fidélité visuelle sans dépendre d'un fichier source `.pptx` propriétaire.
 
 ## Référence rapide des 11 layouts
@@ -118,6 +118,6 @@ Après génération, vérifie :
 ## Limites connues
 
 - python-pptx ne reproduit pas le `cap="small"` à 100 % : injecté en XML mais certains visualiseurs (LibreOffice headless, aperçus thumbnails) peuvent le rendre en majuscules pleines
-- Le logo Safran (`image1.png`) est confidentiel — le skill ne l'embarque pas. Fournir le fichier via `--logo`
+- Le logo Safran est chargé depuis les assets locaux du skill quand il est présent. Garder `--logo` seulement pour surcharger ce choix.
 - Les images icônes (image3-5 du template original) ne sont pas embarquées — les builders dessinent des cercles colorés à la place
 - Slide 4 (triptyque) : le template original utilise Poppins/Lato — ce skill substitue par Segoe UI pour cohérence

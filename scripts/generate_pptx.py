@@ -28,6 +28,8 @@ except ImportError:
 # Format slide : 33.87 × 19.05 cm (16:9 widescreen)
 SLIDE_W_CM = 33.867
 SLIDE_H_CM = 19.05
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+LOGO_EXTENSIONS = (".png", ".jpg", ".jpeg")
 
 
 def init_presentation():
@@ -38,7 +40,48 @@ def init_presentation():
     return prs
 
 
+def resolve_logo_path(logo_path=None):
+    """Trouve le logo depuis un chemin explicite ou les dossiers d'assets locaux."""
+    if logo_path:
+        candidate = Path(logo_path).expanduser()
+        search_paths = [candidate]
+        if not candidate.is_absolute():
+            search_paths.append(PROJECT_ROOT / candidate)
+        for path in search_paths:
+            if path.exists():
+                return str(path)
+        print(f"[WARN] Logo introuvable : {logo_path}", file=sys.stderr)
+
+    logo_dirs = [
+        PROJECT_ROOT / "assets" / "logo",
+        PROJECT_ROOT / "assets" / "logos",
+        PROJECT_ROOT / "asset" / "logo",
+        PROJECT_ROOT / "asset" / "logos",
+    ]
+    preferred_names = [
+        "safran_logo.png",
+        "logo.png",
+        "safran.png",
+    ]
+
+    for logo_dir in logo_dirs:
+        if logo_dir.is_file() and logo_dir.suffix.lower() in LOGO_EXTENSIONS:
+            return str(logo_dir)
+        if not logo_dir.is_dir():
+            continue
+        for name in preferred_names:
+            candidate = logo_dir / name
+            if candidate.exists():
+                return str(candidate)
+        for candidate in sorted(logo_dir.iterdir()):
+            if candidate.is_file() and candidate.suffix.lower() in LOGO_EXTENSIONS:
+                return str(candidate)
+    return None
+
+
 def generate(content_path, output_path, logo_path=None):
+    logo_path = resolve_logo_path(logo_path)
+
     with open(content_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
@@ -75,7 +118,8 @@ def main():
     ap = argparse.ArgumentParser(description="Générateur PPTX Palette Jessica")
     ap.add_argument("--content", required=True, help="Fichier JSON de contenu")
     ap.add_argument("--output", required=True, help="Fichier .pptx de sortie")
-    ap.add_argument("--logo", default=None, help="Chemin vers le logo Safran (PNG)")
+    ap.add_argument("--logo", default=None,
+                    help="Chemin optionnel vers le logo Safran. Par defaut, cherche dans assets/logo(s).")
     args = ap.parse_args()
     generate(args.content, args.output, logo_path=args.logo)
 

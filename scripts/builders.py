@@ -143,7 +143,7 @@ def build_slide_3(slide, c, page_num=3, total=11, logo_path=None):
         label_w = 6.94
         lx = tx + 1.5 - label_w / 2
         # larme
-        add_teardrop(slide, tx, ty, 3.0, 3.0, teardrop_colors[i],
+        add_teardrop(slide, tx, ty, 2.4, 2.4, teardrop_colors[i],
                      name=f"S03_TEARDROP_{i+1}")
         # label
         add_textbox(slide, lx, ly, label_w, label_h, f.get("label", ""),

@@ -407,7 +407,7 @@ def add_line(slide, x1_cm, y1_cm, x2_cm, y2_cm, color_hex, *, width_pt=1.0, dash
 
 def add_takeaway_band(slide, text="Take away", *, y_cm=None):
     """Bandeau bordeaux avec gradient vertical 3-stops + texte centré blanc."""
-    POS_X, POS_Y, W, H = 1.09, 16.87, 31.70, 1.10
+    POS_X, POS_Y, W, H = 1.09, 16.77, 31.70, 1.10
     if y_cm is not None:
         POS_Y = y_cm
     BASE = "A25871"
@@ -479,14 +479,14 @@ def add_master_chrome(slide, title_text, *, page_num=None, total=None, with_sign
                    "They must not be copied or communicated to a third party without the "
                    "prior written authorization of Safran")
     add_textbox(slide, 1.06, 18.51, 26.32, 0.40, footer_text,
-                font="Segoe UI", size_pt=6.5, color_hex="#A8A8B5",
+                font="Segoe UI", size_pt=9, color_hex="#A8A8B5",
                 align="left", anchor="t", name="FooterConfidential")
 
     # Numéro de page
     if page_num is not None:
-        page_str = f"{page_num:02d}" if total is None else f"{page_num:02d}/{total:02d}"
+        page_str = f"{page_num:02d}" if total is None else  f"{page_num:02d}{' ' * 6}|"
         add_textbox(slide, 1.04, 18.03, 1.50, 0.46, page_str,
-                    font="Segoe UI", size_pt=9, bold=True, color_hex="#7D7B8D",
+                    font="Segoe UI", size_pt=9, color_hex="#7D7B8D",
                     align="left", anchor="m", name="PageNumber")
 
     # Logo Safran (si fourni)
