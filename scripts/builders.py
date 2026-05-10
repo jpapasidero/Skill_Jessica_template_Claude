@@ -3,6 +3,8 @@ Constructeurs par layout (slide 1 à 11) du template Palette Jessica.
 Chaque fonction reçoit (prs, slide, content_dict) et remplit la slide.
 content_dict contient les valeurs textuelles fournies par l'utilisateur.
 """
+from pathlib import Path
+
 try:
     from .helpers import (add_textbox, add_rect, add_oval, add_teardrop, add_line,
                           add_takeaway_band, add_master_chrome, set_white_background, cm)
@@ -80,9 +82,6 @@ def build_slide_2(slide, c, page_num=2, total=11, logo_path=None):
         # séparateur vertical
         add_rect(slide, sep_xs[i], 4.71, 0.10, 9.9, title_colors[i],
                  name=f"S02_SEP_{i+1}")
-        # icône (cercle décoratif si pas d'image)
-        add_oval(slide, xs[i] + 3.0, 4.7, 2.5, 2.5, title_colors[i] + "33" if False else title_colors[i],
-                 name=f"S02_ICON_{i+1}")
         # titre small caps
         add_textbox(slide, xs[i], 7.07, 9.0, 2.66, col.get("title", ""),
                     font="Segoe UI", size_pt=20, bold=True,
@@ -117,13 +116,16 @@ def build_slide_3(slide, c, page_num=3, total=11, logo_path=None):
     for i in range(6):
         f = factors[i] if i < len(factors) else {}
         lx, ly, tx, ty = positions[i]
+        label_h = 0.86
+        label_w = 6.94
+        lx = tx + 1.5 - label_w / 2
         # larme
         add_teardrop(slide, tx, ty, 3.0, 3.0, teardrop_colors[i],
                      name=f"S03_TEARDROP_{i+1}")
         # label
-        add_textbox(slide, lx, ly, 6.94, 0.86, f.get("label", ""),
-                    font="Segoe UI Black", size_pt=14, bold=True,
-                    color_hex="#070E1D", cap="small",
+        add_textbox(slide, lx, ly, label_w, label_h, f.get("label", ""),
+                    font="Segoe UI", size_pt=14, bold=True,
+                    color_hex="#070E1D", cap="small", align="center", anchor="m",
                     name=f"S03_FACTOR_{i+1}_LABEL")
 
     add_takeaway_band(slide, c.get("takeaway", "Take away"))
@@ -134,25 +136,16 @@ def build_slide_3(slide, c, page_num=3, total=11, logo_path=None):
 # ============================================================
 def build_slide_4(slide, c, page_num=4, total=11, logo_path=None):
     set_white_background(slide)
+    triangle_bg = Path(__file__).resolve().parent.parent / "triangle_bg.png"
+    if triangle_bg.exists():
+        triangle = slide.shapes.add_picture(str(triangle_bg), cm(0), cm(3),
+                                            width=cm(14.8), height=cm(12.9))
+        triangle.left = int((cm(33.867) - triangle.width) / 2)
+
     add_master_chrome(slide, c.get("title", "Triptyque"),
                        page_num=page_num, total=total, logo_path=logo_path)
 
     nodes = c.get("nodes", {})
-    # 3 cercles connectés
-    circles = [
-        ("top", 15.5, 4.0, 4.0, "#6A5D79"),
-        ("left", 6.5, 9.5, 4.0, "#D5B3BE"),
-        ("right", 22.5, 9.5, 4.0, "#FEE3CA"),
-    ]
-    centers = {}
-    for key, x, y, sz, col in circles:
-        add_oval(slide, x, y, sz, sz, col, name=f"S04_CIRCLE_{key.upper()}")
-        centers[key] = (x + sz/2, y + sz/2)
-
-    # connecteurs entre cercles
-    add_line(slide, *centers["top"], *centers["left"], "#BBB4C4", width_pt=1.5)
-    add_line(slide, *centers["top"], *centers["right"], "#BBB4C4", width_pt=1.5)
-    add_line(slide, *centers["left"], *centers["right"], "#BBB4C4", width_pt=1.5)
 
     # Labels aux 3 sommets
     label_positions = [
@@ -184,13 +177,14 @@ def build_slide_5(slide, c, page_num=5, total=11, logo_path=None):
     xs = [1.69, 9.44, 17.18, 24.92]
     period_colors = ["#6A5D79", "#A25871", "#D4737A", "#FDA85B"]
     bullet_colors = period_colors
+    line_colors = ["#BBB4C4", "#D5B3BE", "#F1D3D5"]
 
     # ligne reliant les puces (à hauteur du centre des puces)
     bullet_cy = 7.64 + 0.46
     for i in range(3):
         x1 = xs[i] + 0.92
         x2 = xs[i+1]
-        add_line(slide, x1, bullet_cy, x2, bullet_cy, "#BBB4C4", width_pt=1.5)
+        add_line(slide, x1, bullet_cy, x2, bullet_cy, line_colors[i], width_pt=1.5)
 
     for i in range(4):
         s = steps[i] if i < len(steps) else {}
