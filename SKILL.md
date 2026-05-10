@@ -38,7 +38,7 @@ Ne pas l'utiliser pour : un seul slide isolé qu'on peut juste décrire en chat,
        [--logo /path/to/safran_logo.png]
    ```
 
-5. **Présenter le fichier** à l'utilisateur via `present_files`.
+5. **Remettre le fichier généré** à l'utilisateur en indiquant clairement le chemin du `.pptx` produit.
 
 ## Structure du contenu (content.json)
 
@@ -70,10 +70,9 @@ Le détail exact des champs attendus pour chaque layout est dans `references/con
 
 - **Titres courts** (5-7 mots max) pour ne pas casser la mise en page
 - **Manifesto / titres de section en small caps** : écris en minuscules normales — l'effet `cap="small"` est appliqué automatiquement par le rendu OOXML
-- **3 KPI verticaux (slide 1)** : 1 chiffre signature par couleur (violet, bordeaux, orange) — ne pas dépasser 4 caractères pour la valeur
+- **3 KPI verticaux (slide 1)** : 1 chiffre signature par couleur (violet, bordeaux, orange). Le script accepte du texte plus long, mais vise 4-6 caractères pour préserver le rendu en 44 pt.
 - **Take-away** : 1 phrase d'action, max 12 mots, formulation impérative ou affirmative forte
 - **Layout 11 (CTA)** : la phrase CTA doit poser une question ou appeler à un engagement explicite (registre Influent en DISC)
-- **Texte enrichi** : tout champ texte peut être soit une chaîne, soit un objet `{ "text": "...", "line_spacing": 1.15, "emphasis": [...] }` pour régler l'interligne et mettre certains mots en couleur/police spécifique. Voir `references/content_schema.md`.
 
 ## Contraintes techniques
 
@@ -81,6 +80,8 @@ Le détail exact des champs attendus pour chaque layout est dans `references/con
 - **Polices** : Segoe UI Black (titres), Segoe UI (corps), Segoe UI Light (secondaire). Si la machine ne les a pas, PowerPoint substituera automatiquement (Arial Black / Arial / Arial Light)
 - **Logo Safran** : le générateur cherche automatiquement un PNG/JPG dans `assets/logo`, `assets/logos`, `asset/logo` ou `asset/logos`. `--logo path/to/logo.png` reste possible pour forcer un fichier précis.
 - **Le fichier produit ne contient pas de slide master Safran personnalisé** — les éléments « chrome » (titre, barre signature, footer confidentiel, n° page) sont reproduits sur chaque slide via shapes nommées. Ce choix garantit la fidélité visuelle sans dépendre d'un fichier source `.pptx` propriétaire.
+- **Tolérance JSON** : les listes trop courtes sont complétées visuellement par des emplacements vides ; les entrées au-delà du nombre rendu par le layout sont ignorées. Le générateur ne valide pas strictement le schéma avant rendu.
+- **Texte enrichi** : tout champ texte peut être une chaîne ou un objet `{ "text": "...", "line_spacing": ..., "emphasis": [...] }`. Les emphases sont appliquées aux occurrences textuelles non chevauchantes, insensibles à la casse par défaut.
 
 ## Référence rapide des 11 layouts
 
@@ -119,5 +120,4 @@ Après génération, vérifie :
 
 - python-pptx ne reproduit pas le `cap="small"` à 100 % : injecté en XML mais certains visualiseurs (LibreOffice headless, aperçus thumbnails) peuvent le rendre en majuscules pleines
 - Le logo Safran est chargé depuis les assets locaux du skill quand il est présent. Garder `--logo` seulement pour surcharger ce choix.
-- Les images icônes (image3-5 du template original) ne sont pas embarquées — les builders dessinent des cercles colorés à la place
 - Slide 4 (triptyque) : le template original utilise Poppins/Lato — ce skill substitue par Segoe UI pour cohérence

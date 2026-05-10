@@ -15,6 +15,8 @@ Ce fichier décrit, layout par layout, la structure JSON attendue par `generate_
 
 Tous les `content` peuvent inclure un champ `"title"` (titre de la slide). S'il est omis, le titre par défaut du layout est utilisé.
 
+Le générateur est tolérant : lorsqu'une liste contient moins d'entrées que le layout n'en affiche, les emplacements restants sont rendus vides ; lorsqu'elle en contient davantage, les entrées supplémentaires sont ignorées. Les nombres ci-dessous décrivent donc la capacité rendue par les scripts, pas une validation bloquante.
+
 ---
 
 ## Layout 1 — Hook sens + factuel
@@ -36,7 +38,7 @@ Tous les `content` peuvent inclure un champ `"title"` (titre de la slide). S'il 
 }
 ```
 
-- **stats** : exactement 3 entrées. Couleurs imposées (violet, bordeaux, orange).
+- **stats** : jusqu'à 3 entrées rendues. Couleurs imposées (violet, bordeaux, orange).
 - **value** : max 4-6 caractères pour respecter le rendu 44 pt.
 - **manifesto** : interligne par défaut `1.15`. Les emphases utilisent par défaut Segoe UI bold en `#A25871`.
 - **body** : interligne par défaut `1.3`. Les emphases utilisent par défaut Segoe UI bold.
@@ -85,7 +87,7 @@ Tous les `content` peuvent inclure un champ `"title"` (titre de la slide). S'il 
 }
 ```
 
-- **factors** : exactement 6 entrées.
+- **factors** : jusqu'à 6 entrées rendues.
 - Labels rendus en small caps.
 
 ---
@@ -128,7 +130,7 @@ Tous les `content` peuvent inclure un champ `"title"` (titre de la slide). S'il 
 }
 ```
 
-- **steps** : exactement 4. Couleurs de période imposées (violet, bordeaux, rose, orange).
+- **steps** : jusqu'à 4 entrées rendues. Couleurs de période imposées (violet, bordeaux, rose, orange).
 - **period** rendu en small caps.
 - **steps[*].body** : interligne par défaut `1.3`.
 - **Pas de takeaway**.
@@ -154,8 +156,8 @@ Tous les `content` peuvent inclure un champ `"title"` (titre de la slide). S'il 
 }
 ```
 
-- **headers** : 5 entrées (cellules en-tête sur fond violet sourd).
-- **rows** : 4 listes de 5 cellules.
+- **headers** : jusqu'à 5 entrées rendues (cellules en-tête sur fond violet sourd).
+- **rows** : jusqu'à 4 listes de 5 cellules rendues.
 - Colonne 4 (avant-dernière) automatiquement colorée en `#6A5D79` bold.
 
 ---
@@ -188,8 +190,8 @@ Tous les `content` peuvent inclure un champ `"title"` (titre de la slide). S'il 
 }
 ```
 
-- **kpis** : exactement 6 (ordre = couleurs bleu nuit / violet / bordeaux / rose / orange / jaune).
-- **bars** : exactement 5. **value** ∈ [0, 100].
+- **kpis** : jusqu'à 6 entrées rendues (ordre = couleurs bleu nuit / violet / bordeaux / rose / orange / jaune).
+- **bars** : jusqu'à 5 entrées rendues. **value** est convertie en nombre et utilisée comme pourcentage ; viser `[0, 100]`, car le script ne borne pas la valeur.
 
 ---
 
@@ -214,7 +216,7 @@ Tous les `content` peuvent inclure un champ `"title"` (titre de la slide). S'il 
 }
 ```
 
-- **rows** : exactement 5.
+- **rows** : jusqu'à 5 entrées rendues.
 - **value_1** et **value_2** : nombres pour proportionner les barres.
 - **display_1**, **display_2** (optionnels) : texte affiché à droite des barres (sinon valeur brute).
 
@@ -253,7 +255,7 @@ Tous les `content` peuvent inclure un champ `"title"` (titre de la slide). S'il 
 
 - **level** ∈ `high_risk` (rouge), `medium_risk` (orange), `high_opp` (vert), `medium_opp` (olive).
 - Tags d'action figés : "Parade" pour risques, "Levier" pour opportunités (small caps vert pâle).
-- **risks** et **opportunities** : exactement 3 chacun.
+- **risks** et **opportunities** : jusqu'à 3 entrées rendues chacun.
 - **Pas de takeaway**.
 
 ---
@@ -300,8 +302,8 @@ Tous les `content` peuvent inclure un champ `"title"` (titre de la slide). S'il 
 }
 ```
 
-- **phases** : exactement 3. Couleurs des bandeaux imposées (violet, bordeaux, orange).
-- **items** par phase : exactement 3.
+- **phases** : jusqu'à 3 entrées rendues. Couleurs des bandeaux imposées (violet, bordeaux, orange).
+- **items** par phase : jusqu'à 3 entrées rendues.
 - **date** : optionnelle (apparaît en haut à droite).
 
 ---
@@ -332,7 +334,7 @@ Tous les `content` peuvent inclure un champ `"title"` (titre de la slide). S'il 
 }
 ```
 
-- **blocks** : exactement 3 (couleurs filigranes : violet pâle / rose pâle / pêche pâle).
+- **blocks** : jusqu'à 3 entrées rendues (couleurs filigranes : violet pâle / rose pâle / pêche pâle).
 - Filigranes "01"/"02"/"03" générés automatiquement (alpha 40%).
 - **cta** : phrase d'engagement, registre direct.
 - **blocks[*].body** : interligne par défaut `1.3`. Les emphases utilisent par défaut Segoe UI bold.
@@ -370,3 +372,4 @@ Tous les `content` peuvent inclure un champ `"title"` (titre de la slide). S'il 
 - **Apostrophes courbes** (' au lieu de ') : à privilégier (le générateur les conserve telles quelles).
 - **Sauts de ligne** dans un body : utiliser `\n` (encodé `\\n` en JSON).
 - **Pas de balises HTML / Markdown** dans les valeurs : le générateur prend les chaînes brutes.
+- Le script accepte aussi `"emphases"` comme alias de `"emphasis"` dans une spécification enrichie.
