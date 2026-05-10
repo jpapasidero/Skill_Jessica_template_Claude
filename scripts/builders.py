@@ -406,8 +406,11 @@ def build_slide_9(slide, c, page_num=9, total=11, logo_path=None):
 
     risks = c.get("risks", [])
     opps = c.get("opportunities", [])
-    card_xs = [0.42, 11.57, 22.71]
     card_w, card_h = 10.89, 6.40
+    card_gap = 0.26
+    group_w = card_w * 3 + card_gap * 2
+    group_x = (33.867 - group_w) / 2
+    card_xs = [group_x + i * (card_w + card_gap) for i in range(3)]
 
     LEVEL_COLORS = {
         "high_risk": "#C00000",
@@ -443,7 +446,7 @@ def build_slide_9(slide, c, page_num=9, total=11, logo_path=None):
                 align="center", anchor="m", name=f"S09_RISK_{i+1}_ICON")
         # title
         add_textbox(slide, x + 1.20, 3.85, 9.0, 0.77, r.get("title", ""),
-                    font="Segoe UI", size_pt=12, bold=True, color_hex="#070E1D",
+                    font="Segoe UI", size_pt=12, bold=True, color_hex="#070E1D", margin_left=0,
                     name=f"S09_RISK_{i+1}_TITLE")
         # level (small caps colorée)
         level = r.get("level", "high_risk")
@@ -453,8 +456,8 @@ def build_slide_9(slide, c, page_num=9, total=11, logo_path=None):
                     color_hex=LEVEL_COLORS.get(level, "#C00000"), cap="small",
                     align="center",anchor="m",name=f"S09_RISK_{i+1}_LEVEL")
         # body
-        add_textbox(slide, x + 0.20, 5.30, card_w - 0.40, 1.20, r.get("body", ""),
-                    font="Segoe UI", size_pt=10, color_hex="#070E1D",
+        add_textbox(slide, x + 0.13, 5.30, card_w - 0.40, 1.20, r.get("body", ""),
+                    font="Segoe UI", size_pt=10, color_hex="#070E1D", margin_left=0,
                     name=f"S09_RISK_{i+1}_BODY")
         # séparateur pointillé
         add_line(slide, x + 0.20, 6.80, x + card_w - 0.20, 6.80, "#AFB5C8",
@@ -482,7 +485,7 @@ def build_slide_9(slide, c, page_num=9, total=11, logo_path=None):
                 font="Wingdings", size_pt=18, bold=True, color_hex="#FBCC58",
                 align="center",anchor="m", name=f"S09_OPP_{i+1}_ICON")
         add_textbox(slide, x + 1.20, 10.65, 9.0, 0.77, o.get("title", ""),
-                    font="Segoe UI", size_pt=12, bold=True, color_hex="#070E1D",
+                    font="Segoe UI", size_pt=12, bold=True, color_hex="#070E1D", margin_left=0,
                     name=f"S09_OPP_{i+1}_TITLE")
         level = o.get("level", "high_opp")
         add_rect(slide, x + 1.20, 11.42, 2.48, 0.53, LEVEL_BACKGROUNDS.get(level,"#69FFAD"),
@@ -490,8 +493,8 @@ def build_slide_9(slide, c, page_num=9, total=11, logo_path=None):
                     text=LEVEL_TEXTS.get(level, ""),font="Segoe UI", size_pt=10,
                     color_hex=LEVEL_COLORS.get(level, "#00B050"), cap="small",
                     align="center",anchor="m", name=f"S09_OPP_{i+1}_LEVEL")
-        add_textbox(slide, x + 0.20, 12.10, card_w - 0.40, 1.20, o.get("body", ""),
-                    font="Segoe UI", size_pt=10, color_hex="#070E1D",
+        add_textbox(slide, x + 0.13, 12.10, card_w - 0.40, 1.20, o.get("body", ""),
+                    font="Segoe UI", size_pt=10, color_hex="#070E1D", margin_left=0,
                     name=f"S09_OPP_{i+1}_BODY")
         add_line(slide, x + 0.20, 13.60, x + card_w - 0.20, 13.60, "#AFB5C8",
                  width_pt=0.75, dash=True)
