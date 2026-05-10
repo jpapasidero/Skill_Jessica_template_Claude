@@ -86,9 +86,16 @@ def build_slide_2(slide, c, page_num=2, total=11, logo_path=None):
                        page_num=page_num, total=total, logo_path=logo_path)
 
     cols = c.get("columns", [])
-    xs = [2.36, 12.77, 23.19]
+    slide_w = 33.867
+    col_w = 9.0
+    sep_w = 0.10
+    col_gap = 1.41
+    sep_to_text = 0.67
+    group_w = (col_w + col_gap) * 2 + sep_to_text + col_w
+    group_x = (slide_w - group_w) / 2
+    sep_xs = [group_x + i * (col_w + col_gap) for i in range(3)]
+    xs = [x + sep_to_text for x in sep_xs]
     title_colors = ["#6A5D79", "#A25871", "#FDA85B"]
-    sep_xs = [1.69, 12.11, 22.53]
 
     for i in range(3):
         col = cols[i] if i < len(cols) else {}
@@ -116,6 +123,7 @@ def build_slide_3(slide, c, page_num=3, total=11, logo_path=None):
 
     factors = c.get("factors", [])
     teardrop_colors = ["#D8DBE8", "#BBB4C4", "#D5B3BE", "#F1D3D5", "#FEE3CA", "#FEF4DA"]
+    x_shift = (33.867 - 30.38) / 2 - 1.45
     # 3x2 grille
     positions = [
         (1.43, 6.89, 3.42, 3.59),  # F1 label x,y et larme x,y (centrée au-dessus)
@@ -129,6 +137,8 @@ def build_slide_3(slide, c, page_num=3, total=11, logo_path=None):
     for i in range(6):
         f = factors[i] if i < len(factors) else {}
         lx, ly, tx, ty = positions[i]
+        lx += x_shift
+        tx += x_shift
         label_h = 0.86
         label_w = 6.94
         lx = tx + 1.5 - label_w / 2
@@ -152,7 +162,7 @@ def build_slide_4(slide, c, page_num=4, total=11, logo_path=None):
     triangle_bg = resolve_background_asset("triangle_bg.png")
     if triangle_bg:
         triangle = slide.shapes.add_picture(str(triangle_bg), cm(0), cm(3),
-                                            width=cm(14.8), height=cm(12.9))
+                                            width=cm(16.47), height=cm(13.5))
         triangle.left = int((cm(33.867) - triangle.width) / 2)
 
     add_master_chrome(slide, c.get("title", "Triptyque"),
@@ -187,24 +197,29 @@ def build_slide_5(slide, c, page_num=5, total=11, logo_path=None):
                        page_num=page_num, total=total, logo_path=logo_path)
 
     steps = c.get("steps", [])
-    xs = [1.69, 9.44, 17.18, 24.92]
+    slide_w = 33.867
+    step_w = 7.47
+    step_gap = 0.28
+    group_w = step_w * 4 + step_gap * 3
+    group_x = (slide_w - group_w) / 2
+    xs = [group_x + i * (step_w + step_gap) for i in range(4)]
     period_colors = ["#6A5D79", "#A25871", "#D4737A", "#FDA85B"]
     bullet_colors = period_colors
     line_colors = ["#BBB4C4", "#D5B3BE", "#F1D3D5"]
 
     # ligne reliant les puces (à hauteur du centre des puces)
-    bullet_cy = 7.64 + 0.46
+    bullet_cy = 6.64+0.2
     for i in range(3):
-        x1 = xs[i] + 0.92
-        x2 = xs[i+1]
+        x1 = xs[i] + 0.4
+        x2 = xs[i+1]-0.4
         add_line(slide, x1, bullet_cy, x2, bullet_cy, line_colors[i], width_pt=1.5)
 
     for i in range(4):
         s = steps[i] if i < len(steps) else {}
         # puce numérotée (cercle plein avec chiffre blanc centré)
-        add_oval(slide, xs[i], 7.64, 0.92, 0.92, bullet_colors[i],
+        add_oval(slide, xs[i], 6.64, 0.4, 0.4, bullet_colors[i],
                  name=f"S05_STEP_{i+1}_BULLET")
-        add_textbox(slide, xs[i], 7.64, 0.92, 0.92, str(i+1),
+        add_oval(slide, xs[i], 7.64, 0.92, 0.92, period_colors[i],text=str(i+1),
                     font="Segoe UI Black", size_pt=12, bold=True, color_hex="#FFFFFF",
                     align="center", anchor="m", name=f"S05_STEP_{i+1}_NUMBER")
         # period (small caps colorée)
@@ -233,11 +248,14 @@ def build_slide_6(slide, c, page_num=6, total=11, logo_path=None):
     headers = c.get("headers", ["", "", "", "", ""])
     rows = c.get("rows", [])
 
-    col_x = [1.52, 11.59, 17.38, 22.26, 28.70]
     col_w = [10.07, 5.82, 4.9, 6.47, 4.52]
+    tab_w = sum(col_w)
+    tab_x = (33.867 - tab_w) / 2
+    col_x = [tab_x]
+    for w in col_w[:-1]:
+        col_x.append(col_x[-1] + w)
     row_y = [6.56, 7.97, 9.38, 10.79]
     row_h = 1.4
-    tab_w = 31.62
     header_y = 5.27
     header_h = 1.27
 
@@ -292,7 +310,13 @@ def build_slide_7(slide, c, page_num=7, total=11, logo_path=None):
 
     pastels = ["#D8DBE8", "#BBB4C4", "#D5B3BE", "#F1D3D5", "#FEE3CA", "#FEF4DA"]
     strongs = ["#484C6A", "#6A5D79", "#A25871", "#D4737A", "#FDA85B", "#FBCC58"]
-    xs = [1.06, 6.29, 11.51, 16.73, 21.95, 27.18]
+    slide_w = 33.867
+    kpi_w = 5.0
+    kpi_gap = 0.22
+    kpi_group_w = kpi_w * 6 + kpi_gap * 5
+    content_left = (slide_w - kpi_group_w) / 2
+    content_right = slide_w - content_left
+    xs = [content_left + i * (kpi_w + kpi_gap) for i in range(6)]
 
     # 6 cartes KPI
     for i in range(6):
@@ -308,29 +332,37 @@ def build_slide_7(slide, c, page_num=7, total=11, logo_path=None):
                     align="center", name=f"S07_KPI_{i+1}_SUBLABEL")
 
     # Section label
-    add_rect(slide, 1.09, 8.50, 31.08, 1.17, "#F2F2F2", line_hex=None, line_w_pt=0,
+    section_w = 31.08
+    section_x = (slide_w - section_w) / 2
+    add_rect(slide, section_x, 8.50, section_w, 1.17, "#F2F2F2", line_hex=None, line_w_pt=0,
              rounded=False, radius_adjust=0.1, name=None)    
-    add_textbox(slide, 1.09, 8.50, 31.08, 1.17, section_label,
+    add_textbox(slide, section_x, 8.50, section_w, 1.17, section_label,
                 font="Segoe UI", size_pt=12, bold=True, italic=True,
                 color_hex="#070E1D", align="center", anchor="m",name="S07_SECTION_LABEL")
 
     # 5 barres horizontales
     bar_ys = [10.09, 11.40, 12.68, 13.96, 15.18]
     bar_colors = ["#6A5D79", "#A25871", "#D4737A", "#FDA85B", "#FBCC58"]
+    bar_label_x = content_left
+    bar_label_w = 6.94
+    bar_x = bar_label_x + 7.14
+    value_gap = 0.10
+    value_w = 1.6
+    value_x = content_right - value_w
+    max_w = value_x - value_gap - bar_x
     for i in range(5):
         b = bars[i] if i < len(bars) else {}
         # label
-        add_textbox(slide, 1.06, bar_ys[i], 6.94, 0.97, b.get("label", ""),
+        add_textbox(slide, bar_label_x, bar_ys[i], bar_label_w, 0.97, b.get("label", ""),
                     font="Segoe UI", size_pt=11, bold=True, color_hex="#070E1D",
                     anchor="m", name=f"S07_BAR_{i+1}_LABEL")
         # barre (longueur proportionnelle à value 0..100)
         val = float(b.get("value", 50))
-        max_w = 24.0
         bar_w = max_w * (val / 100.0)
-        add_rect(slide, 8.20, bar_ys[i] + 0.20, bar_w, 0.55, bar_colors[i],
+        add_rect(slide, bar_x, bar_ys[i] + 0.20, bar_w, 0.55, bar_colors[i],
                  rounded=True, radius_adjust=0.5, name=f"S07_BAR_{i+1}_BAR")
         # valeur affichée à droite
-        add_textbox(slide, 8.20 + bar_w + 0.10, bar_ys[i] + 0.10, 1.6, 0.75,
+        add_textbox(slide, value_x, bar_ys[i] + 0.10, value_w, 0.75,
                     f"{int(val)}%", font="Segoe UI", size_pt=11, bold=True,
                     color_hex="#070E1D", anchor="m", name=f"S07_BAR_{i+1}_VALUE")
 
@@ -602,11 +634,12 @@ def build_slide_11(slide, c, page_num=11, total=11, logo_path=None):
                        page_num=page_num, total=total, logo_path=logo_path)
 
     blocks = c.get("blocks", [])
-    bar_ys = [3.05, 7.55, 12.05]
+    y_shift = 0.15
+    bar_ys = [3.05 + y_shift, 7.55 + y_shift, 12.05 + y_shift]
     # Filigranes alignés en haut avec le titre, pour effet "chiffre derrière le texte"
-    title_ys = [3.30, 7.83, 12.30]
+    title_ys = [3.30 + y_shift, 7.83 + y_shift, 12.30 + y_shift]
     number_ys = title_ys
-    body_ys = [4.50, 9.03, 13.50]
+    body_ys = [4.50 + y_shift, 9.03 + y_shift, 13.50 + y_shift]
     bar_colors = ["#6A5D79", "#A25871", "#FDA85B"]
     title_colors = ["#6A5D79", "#A25871", "#FDA85B"]
     number_colors = ["#BBB4C4", "#D5B3BE", "#FEE3CA"]

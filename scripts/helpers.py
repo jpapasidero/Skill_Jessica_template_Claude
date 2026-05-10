@@ -405,9 +405,11 @@ def add_line(slide, x1_cm, y1_cm, x2_cm, y2_cm, color_hex, *, width_pt=1.0, dash
 
 # ---------- Bandeau Take-away avec gradient vertical 3-stops ----------
 
-def add_takeaway_band(slide, text="Take away"):
+def add_takeaway_band(slide, text="Take away", *, y_cm=None):
     """Bandeau bordeaux avec gradient vertical 3-stops + texte centré blanc."""
     POS_X, POS_Y, W, H = 1.09, 16.87, 31.70, 1.10
+    if y_cm is not None:
+        POS_Y = y_cm
     BASE = "A25871"
 
     shp = slide.shapes.add_shape(MSO_SHAPE.RECTANGLE, cm(POS_X), cm(POS_Y), cm(W), cm(H))
@@ -463,7 +465,7 @@ def add_master_chrome(slide, title_text, *, page_num=None, total=None, with_sign
     # Titre
     add_textbox(slide, 1.09, 0.71, 31.70, 1.58, title_text,
                 font="Segoe UI Black", size_pt=29.32, color_hex="#484C6A",
-                align="left", anchor="m", name="SLIDE_TITLE")
+                align="left", anchor="m", margin_left=0, name="SLIDE_TITLE")
 
     # Barre signature double
     if with_signature:
