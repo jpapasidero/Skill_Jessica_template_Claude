@@ -159,12 +159,13 @@ def add_takeaway_band(slide, text="Take away"):
 
     shp = slide.shapes.add_shape(MSO_SHAPE.RECTANGLE, cm(POS_X), cm(POS_Y), cm(W), cm(H))
     shp.name = "TakeawayBand"
-    shp.line.fill.background()
 
     # spPr est directement le CT_ShapeProperties accessible sur shp._element.spPr
     sppr = shp._element.spPr
-    # nettoyer fill existant
-    for tag in ["a:solidFill", "a:gradFill", "a:noFill", "a:blipFill", "a:pattFill"]:
+    # nettoyer fill/line existants pour garder l'ordre OOXML valide :
+    # géométrie -> fill -> line. Sinon PowerPoint peut ignorer le gradient
+    # et retomber sur la couleur accent du thème.
+    for tag in ["a:solidFill", "a:gradFill", "a:noFill", "a:blipFill", "a:pattFill", "a:ln"]:
         for el in sppr.findall(qn(tag)):
             sppr.remove(el)
 
@@ -189,6 +190,9 @@ def add_takeaway_band(slide, text="Take away"):
     lin = etree.SubElement(gradFill, qn("a:lin"))
     lin.set("ang", "5400000")
     lin.set("scaled", "1")
+
+    ln = etree.SubElement(sppr, qn("a:ln"))
+    etree.SubElement(ln, qn("a:noFill"))
 
     # Texte centré
     add_textbox(slide, POS_X, POS_Y, W, H, text,
