@@ -1,30 +1,46 @@
 {
   "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\scripts\\builders.py": {
-    "mtime": 1778404856.631683,
-    "hash": "dbf01a1d1b9a5254edd71d75d83be2c5"
+    "mtime": 1778442018.6833372,
+    "hash": "c7f2c26cf777fc405fae71ea3708d3f5"
   },
   "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\scripts\\generate_pptx.py": {
-    "mtime": 1778404892.4429343,
+    "mtime": 1778405781.8841577,
     "hash": "454bfdcecf837412cb447d9b02b2e7ec"
   },
   "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\scripts\\helpers.py": {
-    "mtime": 1778404878.0281487,
-    "hash": "cbeefa6480f151241b34e7e87e995ac6"
+    "mtime": 1778441265.2208884,
+    "hash": "e2a43a3e10ded7cdb60fb68dd8bfd9e9"
   },
   "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\scripts\\__init__.py": {
-    "mtime": 1778404840.1053264,
+    "mtime": 1778405760.2488413,
     "hash": "5674535097e3348b9b273c46b3c520da"
   },
   "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\SKILL.md": {
-    "mtime": 1778405080.8847194,
-    "hash": "0b43a8ad3010fc85d3ff8f19556e7f82"
+    "mtime": 1778416990.198146,
+    "hash": "6d446e2a00b844bfc57f41eaa2b1b492"
   },
   "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\references\\content_schema.md": {
-    "mtime": 1778405071.221706,
-    "hash": "8982e0c1dba4fe70ae55a175d00d2ace"
+    "mtime": 1778417665.867939,
+    "hash": "b614dc1bd4a97e60522f24f2bd636979"
   },
   "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\references\\layouts_catalog.md": {
     "mtime": 1778405211.9250872,
     "hash": "cf0a0f2f2fdfe8c06909c5f6784f95af"
+  },
+  "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\assets\\backgrounds\\triangle_bg.png": {
+    "mtime": 1778440889.3903952,
+    "hash": "806d0950370d6f55033b530c9bc42c83"
+  },
+  "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\assets\\logos\\safran_logo.png": {
+    "mtime": 1778440889.2948885,
+    "hash": "84e2f68a3805d35d1dfe4fd6b97de916"
+  },
+  "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\assets\\logos\\safran_logo_alt.svg": {
+    "mtime": 1778440889.310673,
+    "hash": "fa8be3451eb22d9b373a61b19ada954a"
+  },
+  "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\assets\\logos\\safran_logo_vector.svg": {
+    "mtime": 1778440889.302222,
+    "hash": "6ae06496ce220de1cf039a91bbd88297"
   }
 }

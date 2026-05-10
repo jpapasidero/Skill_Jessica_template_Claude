@@ -523,24 +523,33 @@ def build_slide_10(slide, c, page_num=10, total=11, logo_path=None):
 
     phases = c.get("phases", [])
     card_xs = [0.61, 11.68, 22.86]
-    num_xs = [0.78, 11.96, 23.13]
     title_xs = [2.37, 13.55, 24.72]
     item_xs = [1.63, 12.80, 23.98]
     band_colors = ["#6A5D79", "#A25871", "#FDA85B"]
-    item_ys = {"t1": 6.30, "b1": 7.26, "t2": 9.08, "b2": 10.04, "t3": 12.22, "b3": 13.18}
+    card_y = 4.10
+    band_h = 2.10
+    content_top = card_y + band_h
+    content_h = 11.49 - band_h
+    item_section_h = content_h / 3
+    item_title_h = 1.02
+    item_body_h = 0.85
+    item_titles_y = [content_top + j * item_section_h + 0.10 for j in range(3)]
+    item_bodies_y = [y + 0.96 for y in item_titles_y]
+    separator_ys = [content_top + item_section_h * j for j in range(1, 3)]
 
     for i in range(3):
         p = phases[i] if i < len(phases) else {}
         # carte (rectangle blanc avec bordure légère)
-        add_rect(slide, card_xs[i], 4.10, 10.50, 11.49, "#FFFFFF",
+        add_rect(slide, card_xs[i], card_y, 10.50, 11.49, "#FFFFFF",
                  line_hex="#E0E2EA", line_w_pt=0.25, name=f"S10_PHASE_{i+1}_CARD")
         # bandeau coloré supérieur
-        add_rect(slide, card_xs[i], 4.10, 10.50, 2.10, band_colors[i],
+        add_rect(slide, card_xs[i], card_y, 10.50, band_h, band_colors[i],
                  name=f"S10_PHASE_{i+1}_BAND")
         # numéro (gros chiffre blanc)
-        add_textbox(slide, num_xs[i], 4.30, 1.42, 1.42, str(i+1),
-                    font="Calibri", size_pt=24, bold=True, color_hex="#FFFFFF",
-                    align="center", anchor="m", name=f"S10_PHASE_{i+1}_NUMBER")
+        add_oval(slide, card_xs[i]+0.2, card_y+band_h/4, 1.14, 1.14, band_colors[i],
+                 line_hex="#FFFFFF", line_w_pt=2.25, text=str(i+1),
+                 font="Segoe UI", size_pt=24, bold=True, color_hex="#FFFFFF",
+                 align="center", anchor="m", name=f"S10_PHASE_{i+1}_NUMBER")
         # titre phase
         add_textbox(slide, title_xs[i], 4.33, 8.40, 0.95, p.get("phase_title", ""),
                     font="Segoe UI", size_pt=16, bold=True, color_hex="#FFFFFF",
@@ -552,27 +561,26 @@ def build_slide_10(slide, c, page_num=10, total=11, logo_path=None):
 
         # 3 items
         items = p.get("items", [])
-        item_titles_y = [6.30, 9.08, 12.22]
-        item_bodies_y = [7.26, 10.04, 13.18]
         for j in range(3):
             it = items[j] if j < len(items) else {}
             # puce
-            add_oval(slide, card_xs[i] + 0.5, item_titles_y[j] + 0.20, 0.30, 0.30,
+            bullet_y = item_titles_y[j] + item_title_h / 2 - 0.15
+            add_oval(slide, card_xs[i] + 0.5, bullet_y, 0.30, 0.30,
                      band_colors[i], name=f"S10_PHASE_{i+1}_ITEM_{j+1}_BULLET")
             # title
-            add_textbox(slide, item_xs[i], item_titles_y[j], 9.08, 1.02,
+            add_textbox(slide, item_xs[i], item_titles_y[j], 9.08, item_title_h,
                         it.get("title", ""),
                         font="Segoe UI", size_pt=11, bold=True, color_hex="#070E1D",
                         anchor="m", name=f"S10_PHASE_{i+1}_ITEM_{j+1}_TITLE")
             # body
-            add_textbox(slide, item_xs[i], item_bodies_y[j], 9.08, 0.85,
+            add_textbox(slide, item_xs[i], item_bodies_y[j], 9.08, item_body_h,
                         it.get("body", ""),
                         font="Segoe UI Light", size_pt=10.5, color_hex="#474E67",
                         name=f"S10_PHASE_{i+1}_ITEM_{j+1}_BODY")
             # séparateur fin entre items
             if j < 2:
-                add_line(slide, card_xs[i] + 0.40, item_bodies_y[j] + 0.95,
-                         card_xs[i] + 10.10, item_bodies_y[j] + 0.95,
+                add_line(slide, card_xs[i] + 0.40, separator_ys[j],
+                         card_xs[i] + 10.10, separator_ys[j],
                          "#E8E9EE", width_pt=0.5)
 
     add_takeaway_band(slide, c.get("takeaway", "Take away"))

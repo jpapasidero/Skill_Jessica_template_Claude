@@ -265,7 +265,9 @@ def add_rect(slide, x_cm, y_cm, w_cm, h_cm, fill_hex, *, line_hex=None, line_w_p
     return shp
 
 
-def add_oval(slide, x_cm, y_cm, w_cm, h_cm, fill_hex, *, line_hex=None, name=None):
+def add_oval(slide, x_cm, y_cm, w_cm, h_cm, fill_hex, *, line_hex=None, line_w_pt=0,
+             name=None, text=None, font="Segoe UI", size_pt=12, bold=False,
+             italic=False, color_hex="#070E1D", align="center", anchor="m"):
     shp = slide.shapes.add_shape(MSO_SHAPE.OVAL, cm(x_cm), cm(y_cm), cm(w_cm), cm(h_cm))
     remove_theme_style(shp)
     if name:
@@ -274,8 +276,29 @@ def add_oval(slide, x_cm, y_cm, w_cm, h_cm, fill_hex, *, line_hex=None, name=Non
     shp.fill.fore_color.rgb = hex_to_rgb(fill_hex)
     if line_hex:
         shp.line.color.rgb = hex_to_rgb(line_hex)
+        shp.line.width = Pt(line_w_pt) if line_w_pt else Pt(0.25)
     else:
         shp.line.fill.background()
+    if text is not None:
+        tf = shp.text_frame
+        tf.word_wrap = True
+        tf.margin_left = Emu(0)
+        tf.margin_right = Emu(0)
+        tf.margin_top = Emu(0)
+        tf.margin_bottom = Emu(0)
+
+        from pptx.enum.text import MSO_ANCHOR, PP_ALIGN
+        anchor_map = {"t": MSO_ANCHOR.TOP, "m": MSO_ANCHOR.MIDDLE, "b": MSO_ANCHOR.BOTTOM}
+        tf.vertical_anchor = anchor_map.get(anchor, MSO_ANCHOR.MIDDLE)
+
+        p = tf.paragraphs[0]
+        align_map = {"left": PP_ALIGN.LEFT, "center": PP_ALIGN.CENTER, "right": PP_ALIGN.RIGHT}
+        p.alignment = align_map.get(align, PP_ALIGN.CENTER)
+
+        run = p.add_run()
+        run.text = str(text)
+        set_run_props(run, font=font, size_pt=size_pt, bold=bold, italic=italic,
+                      color_hex=color_hex)
     return shp
 
 
