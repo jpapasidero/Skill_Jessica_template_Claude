@@ -7,10 +7,12 @@ from pathlib import Path
 
 try:
     from .helpers import (add_textbox, add_rect, add_oval, add_teardrop, add_line,
-                          add_takeaway_band, add_master_chrome, set_white_background, cm)
+                          add_takeaway_band, add_master_chrome, set_white_background,
+                          add_transparent_text_image, cm)
 except ImportError:
     from helpers import (add_textbox, add_rect, add_oval, add_teardrop, add_line,
-                         add_takeaway_band, add_master_chrome, set_white_background, cm)
+                         add_takeaway_band, add_master_chrome, set_white_background,
+                         add_transparent_text_image, cm)
 
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -601,9 +603,9 @@ def build_slide_11(slide, c, page_num=11, total=11, logo_path=None):
 
     blocks = c.get("blocks", [])
     bar_ys = [3.05, 7.55, 12.05]
-    # Filigranes positionnés un peu au-dessus du titre, pour effet "chiffre derrière le texte"
-    number_ys = [2.50, 7.00, 11.50]
+    # Filigranes alignés en haut avec le titre, pour effet "chiffre derrière le texte"
     title_ys = [3.30, 7.83, 12.30]
+    number_ys = title_ys
     body_ys = [4.50, 9.03, 13.50]
     bar_colors = ["#6A5D79", "#A25871", "#FDA85B"]
     title_colors = ["#6A5D79", "#A25871", "#FDA85B"]
@@ -612,13 +614,14 @@ def build_slide_11(slide, c, page_num=11, total=11, logo_path=None):
     for i in range(3):
         b = blocks[i] if i < len(blocks) else {}
         # barre verticale colorée à gauche
-        add_rect(slide, 1.09, bar_ys[i], 0.10, 4.20, bar_colors[i],
+        add_rect(slide, 1.09, bar_ys[i], 0.17, 3.81, bar_colors[i],
+                 rounded=True, radius_adjust=0.12,
                  name=f"S11_BLOCK_{i+1}_ACCENT_BAR")
-        # filigrane chiffre (sz 72pt, alpha 40%, 2.5cm de haut suffit)
-        add_textbox(slide, 1.80, number_ys[i], 4.0, 2.20, f"0{i+1}",
-                    font="Segoe UI Black", size_pt=72, bold=True,
-                    color_hex=number_colors[i], alpha_pct=40,
-                    anchor="t", name=f"S11_BLOCK_{i+1}_NUMBER")
+        # filigrane chiffre en PNG RGBA pour un rendu de transparence fiable
+        add_transparent_text_image(slide, 1.80, number_ys[i], 4.0, 2.20, f"0{i+1}",
+                                   font="Segoe UI Black", size_pt=72, bold=True,
+                                   color_hex=number_colors[i], alpha_pct=40,
+                                   anchor="t", name=f"S11_BLOCK_{i+1}_NUMBER")
         # titre coloré
         add_textbox(slide, 2.00, title_ys[i], 29.50, 1.10, b.get("block_title", ""),
                     font="Segoe UI", size_pt=18, bold=True,

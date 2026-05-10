@@ -6,12 +6,15 @@ Manipule directement le XML OOXML pour les effets non gérés nativement par pyt
 - gradient vertical 3-stops sur le bandeau Take-away
 """
 import re
+from io import BytesIO
+from pathlib import Path
 
 from pptx.util import Cm, Pt, Emu
 from pptx.dml.color import RGBColor
 from pptx.enum.shapes import MSO_SHAPE
 from pptx.oxml.ns import qn
 from lxml import etree
+from PIL import Image, ImageDraw, ImageFont
 
 
 # ---------- Conversions ----------
@@ -23,6 +26,12 @@ def cm(v):
 def hex_to_rgb(hexstr):
     h = hexstr.lstrip("#")
     return RGBColor(int(h[0:2], 16), int(h[2:4], 16), int(h[4:6], 16))
+
+
+def hex_to_rgba(hexstr, alpha_pct=100):
+    h = hexstr.lstrip("#")
+    alpha = max(0, min(255, round(255 * alpha_pct / 100)))
+    return (int(h[0:2], 16), int(h[2:4], 16), int(h[4:6], 16), alpha)
 
 
 def remove_theme_style(shape):
@@ -299,6 +308,69 @@ def add_oval(slide, x_cm, y_cm, w_cm, h_cm, fill_hex, *, line_hex=None, line_w_p
         run.text = str(text)
         set_run_props(run, font=font, size_pt=size_pt, bold=bold, italic=italic,
                       color_hex=color_hex)
+    return shp
+
+
+def _load_pil_font(font, size_px, bold=False):
+    windows_fonts = Path("C:/Windows/Fonts")
+    font_key = (font or "").lower()
+    candidates = []
+    if "segoe ui black" in font_key:
+        candidates = ["seguibl.ttf", "seguibl.TTF"]
+    elif "segoe ui" in font_key:
+        candidates = ["segoeuib.ttf" if bold else "segoeui.ttf", "seguibl.ttf"]
+    elif "calibri" in font_key:
+        candidates = ["calibrib.ttf" if bold else "calibri.ttf"]
+    candidates.extend(["arialbd.ttf" if bold else "arial.ttf", "DejaVuSans-Bold.ttf" if bold else "DejaVuSans.ttf"])
+
+    for candidate in candidates:
+        try:
+            return ImageFont.truetype(candidate, size_px)
+        except OSError:
+            pass
+        font_path = windows_fonts / candidate
+        if font_path.exists():
+            try:
+                return ImageFont.truetype(str(font_path), size_px)
+            except OSError:
+                pass
+    return ImageFont.load_default()
+
+
+def add_transparent_text_image(slide, x_cm, y_cm, w_cm, h_cm, text, *, font="Segoe UI",
+                               size_pt=72, bold=False, color_hex="#070E1D",
+                               alpha_pct=40, align="left", anchor="t", name=None):
+    scale = 3
+    px_w = max(1, int(w_cm / 2.54 * 96 * scale))
+    px_h = max(1, int(h_cm / 2.54 * 96 * scale))
+    img = Image.new("RGBA", (px_w, px_h), (255, 255, 255, 0))
+    draw = ImageDraw.Draw(img)
+    pil_font = _load_pil_font(font, int(size_pt / 72 * 96 * scale), bold=bold)
+    bbox = draw.textbbox((0, 0), str(text), font=pil_font)
+    text_w = bbox[2] - bbox[0]
+    text_h = bbox[3] - bbox[1]
+
+    align_map = {
+        "left": 0,
+        "center": (px_w - text_w) / 2,
+        "right": px_w - text_w,
+    }
+    anchor_map = {
+        "t": 0,
+        "m": (px_h - text_h) / 2,
+        "b": px_h - text_h,
+    }
+    x = align_map.get(align, 0) - bbox[0]
+    y = anchor_map.get(anchor, 0) - bbox[1]
+    draw.text((x, y), str(text), font=pil_font, fill=hex_to_rgba(color_hex, alpha_pct))
+
+    buffer = BytesIO()
+    img.save(buffer, format="PNG")
+    buffer.seek(0)
+    shp = slide.shapes.add_picture(buffer, cm(x_cm), cm(y_cm), width=cm(w_cm), height=cm(h_cm))
+    remove_theme_style(shp)
+    if name:
+        shp.name = name
     return shp
 
 
