@@ -1,0 +1,76 @@
+{
+  "slides": [
+    {
+      "layout": 15,
+      "content": {
+        "title": "Impact par population",
+        "headers": ["Outils", "Métier", "Organisation", "Culture", "Leviers retenus"],
+        "rows": [
+          {
+            "label": "Garants de fabricabilité",
+            "sublabel": "~ 5 personnes",
+            "impacts": [1, 1, 2, 2],
+            "levers": "Comm. visibilité budget & planif 3m | Démo pairs VP1 | Support oSmoz (templates + MàJ) & retex usage"
+          },
+          {
+            "label": "Experts usinage IBIF",
+            "sublabel": "~ 1 personne",
+            "impacts": [1, 2, 1, 2],
+            "levers": "Enjeux chantier & résultats VP1 | Démo pairs | Relais RGM & pilotage MàJ ILS/RACI | Retex appropriation RGM"
+          },
+          {
+            "label": "Garants de fabricabilité",
+            "sublabel": "~ 10 personnes",
+            "impacts": [1, 1, 4, 2],
+            "levers": "Comm. visibilité budget & planif 3m | Démo pairs VP1 | Support oSmoz (templates + MàJ) & retex usage"
+          },
+          {
+            "label": "Experts usinage IBIF",
+            "sublabel": "TBD",
+            "impacts": [1, 2, 1, 2],
+            "levers": "Enjeux chantier & résultats VP1 | Démo pairs | Relais RGM & pilotage MàJ ILS/RACI | Retex appropriation RGM"
+          },
+          {
+            "label": "Garants de fabricabilité",
+            "sublabel": "~ 5 personnes",
+            "impacts": [1, 1, 2, 2],
+            "levers": "Comm. visibilité budget & planif 3m | Démo pairs VP1 | Support oSmoz (templates + MàJ) & retex usage"
+          },
+          {
+            "label": "Experts usinage IBIF",
+            "sublabel": "TBD",
+            "impacts": [1, 2, 1, 2],
+            "levers": "Enjeux chantier & résultats VP1 | Démo pairs | Relais RGM & pilotage MàJ ILS/RACI | Retex appropriation RGM"
+          }
+        ],
+        "legend_title": "Intensité",
+        "legend": ["Faible", "Modéré", "Fort", "Très fort"],
+        "footnote": "Leviers = axes d'accompagnement prioritaires par population"
+      }
+    },
+    {
+      "layout": 15,
+      "content": {
+        "title": "Impact par population (suite)",
+        "headers": ["Outils", "Métier", "Organisation", "Culture", "Leviers retenus"],
+        "rows": [
+          {
+            "label": "Garants de fabricabilité",
+            "sublabel": "~ 5 personnes",
+            "impacts": [1, 1, 4, 2],
+            "levers": "Comm. visibilité budget & planif 3m | Démo pairs VP1 | Support oSmoz (templates + MàJ) & retex usage"
+          },
+          {
+            "label": "Experts usinage IBIF",
+            "sublabel": "TBD",
+            "impacts": [1, 2, 1, 2],
+            "levers": "Enjeux chantier & résultats VP1 | Démo pairs | Relais RGM & pilotage MàJ ILS/RACI | Retex appropriation RGM"
+          }
+        ],
+        "legend_title": "Intensité",
+        "legend": ["Faible", "Modéré", "Fort", "Très fort"],
+        "footnote": "Leviers = axes d'accompagnement prioritaires par population"
+      }
+    }
+  ]
+}

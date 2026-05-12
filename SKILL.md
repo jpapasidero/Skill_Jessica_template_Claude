@@ -126,6 +126,60 @@ Après génération, vérifie :
 - Pour modifier la palette : éditer les hex codes en haut des builders concernés (recommandation : extraire dans une constante en début de `builders.py` pour future v2)
 - La spec complète du template original est dans `references/spec.json` — pour audit / régénération XML directe
 
+## Analyse d'impact — Génération automatique du Layout 15
+
+Quand l'utilisateur fournit un fichier d'analyse d'impact PPTX (format Safran, comme `Exemple_analyse_impact.pptx`), tu dois générer un ou plusieurs slides Layout 15 (Matrice d'impact par population) à partir des données extraites.
+
+### Workflow analyse d'impact
+
+1. **Lancer le parseur** pour extraire les données brutes :
+   ```bash
+   cd <skill-path>
+   python scripts/impact_parser.py <fichier_impact.pptx> --raw
+   ```
+   Cela retourne un JSON avec, pour chaque slide du fichier source :
+   - `population` : nom de la population impactée
+   - `effectif` : effectif (ou `"TBD"` si absent du titre)
+   - `omoc` : cotations d'impact `{Tool, Business, Organization, Culture}` de 0 à 4
+   - `raw_levers` : liste des actions de changement brutes (ressort, type, détail)
+
+2. **Rédiger les résumés « Leviers retenus »** pour chaque population.
+
+   Pour chaque population, lis les `raw_levers` et **rédige toi-même un résumé synthétique** des actions de conduite du changement décidées. Ce résumé doit :
+   - **Ne pas dépasser 135 caractères** (contrainte d'affichage de la cellule Layout 15)
+   - Être **spécifique** au contenu des actions — ne pas se limiter à lister les types (Communication, Support…)
+   - Capturer les **leviers concrets** décidés pour cette population (ex. formation terrain, templates oSmoz, retex post-déploiement, mobilisation de relais, kit de déploiement…)
+   - Utiliser un style **télégraphique professionnel** (pas de verbes conjugués, pas d'articles inutiles)
+
+   Exemples de bons résumés :
+   - `"Comm. enjeux + preuve par pairs VP1 | Support templates oSmoz + retex appropriation"` (93 car.)
+   - `"Mobilisation relais RGM + pilotage MàJ ILS | Support retex post-déploiement"` (76 car.)
+
+3. **Construire le `content.json`** pour le(s) slide(s) Layout 15 en injectant tes résumés dans le champ `levers` de chaque row.
+
+4. **Générer la présentation** avec l'argument `--impact` :
+   ```bash
+   python scripts/generate_pptx.py \
+       --content /path/to/content.json \
+       --output /path/to/output.pptx \
+       --impact <fichier_impact.pptx>
+   ```
+
+   > Quand `--impact` est utilisé, le générateur remplace automatiquement les slides Layout 15 du content.json par celles extraites du fichier d'impact. Si tu as déjà rédigé tes résumés dans le content.json, utilise la commande **sans** `--impact` et renseigne manuellement les slides Layout 15 dans le JSON.
+
+### Règles de mapping (automatiques, gérées par le parseur)
+
+| Zone source | Champ Layout 15 | Règle |
+|---|---|---|
+| TITLE (partie gauche du séparateur `–`) | `S15_TABLE_LABEL_Ri` | Nom de la population |
+| TITLE (partie droite du séparateur `–`) | `S15_TABLE_SUBLABEL_Ri` | Effectif, préfixé `~`. Si absent : `"TBD"` |
+| ZONE_OMOC (4 bullets Ellipse) | `S15_TABLE_Ri_C2..C5` | Cotations 0-4 par axe (Outils, Métier, Organisation, Culture) |
+| RESSORTS_CHANGE (table) | `S15_TABLE_Ri_C6` | Résumé rédigé par l'IA ≤ 135 caractères |
+
+- **Maximum 6 populations par slide Layout 15.** Si le fichier d'impact contient plus de 6 populations, créer des slides Layout 15 supplémentaires.
+- **1 slide source = 1 population**, même si des slides semblent similaires — ne pas dédoublonner.
+- **Ordre chronologique obligatoire** : les populations doivent apparaître dans le Layout 15 **dans l'ordre des slides du fichier source** (champ `slide_index` dans la sortie `--raw`). Ne pas réordonner, regrouper ni trier autrement.
+
 ## Limites connues
 
 - python-pptx ne reproduit pas le `cap="small"` à 100 % : injecté en XML mais certains visualiseurs (LibreOffice headless, aperçus thumbnails) peuvent le rendre en majuscules pleines

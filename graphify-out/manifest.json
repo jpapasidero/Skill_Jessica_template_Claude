@@ -1,31 +1,39 @@
 {
   "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\scripts\\builders.py": {
-    "mtime": 1778611606.197827,
-    "hash": "ca6959bd8a0143b6f27202ef3c26e71b"
+    "mtime": 1778617543.1296227,
+    "hash": "603970995df0de6698456556c7d64501"
   },
   "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\scripts\\generate_pptx.py": {
-    "mtime": 1778611606.2138023,
-    "hash": "f5f0e0a0b25ffc276acd5a86a8529964"
+    "mtime": 1778617542.010977,
+    "hash": "0058450644bd701bd5d4b5da7448f0ae"
   },
   "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\scripts\\helpers.py": {
     "mtime": 1778611606.2296886,
     "hash": "ba891705b7066f3ec9ae816ab0ad992e"
+  },
+  "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\scripts\\impact_parser.py": {
+    "mtime": 1778618051.5825148,
+    "hash": "878e9bf0e33d88162991d48aa5eebc94"
   },
   "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\scripts\\__init__.py": {
     "mtime": 1778611606.1823702,
     "hash": "5674535097e3348b9b273c46b3c520da"
   },
   "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\SKILL.md": {
-    "mtime": 1778611605.8096669,
-    "hash": "d14cb8067ae38d18673764505dfc4e80"
+    "mtime": 1778617543.1125543,
+    "hash": "883fdd21b8e727391462cb991bafb543"
   },
   "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\references\\content_schema.md": {
-    "mtime": 1778611606.12212,
-    "hash": "e7bfb532087932eb321a6f283260555e"
+    "mtime": 1778617543.1236033,
+    "hash": "299c481959d58047c4f05386d0becc46"
   },
   "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\references\\layouts_catalog.md": {
-    "mtime": 1778611606.138972,
-    "hash": "cf0a0f2f2fdfe8c06909c5f6784f95af"
+    "mtime": 1778617543.1236033,
+    "hash": "eda8f1348f07c35d1b0f93c1531ff6fb"
+  },
+  "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\assets\\backgrounds\\Comp_quali_bg.png": {
+    "mtime": 1778617543.1165614,
+    "hash": "da3ccb4ea97b6c9656e51e33dadadde5"
   },
   "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\assets\\backgrounds\\triangle_bg.png": {
     "mtime": 1778611605.8763113,

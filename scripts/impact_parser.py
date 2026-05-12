@@ -71,30 +71,61 @@ def _classify_omoc_bullet(x_cm, y_cm, w_cm, h_cm):
     return axis, level
 
 
-def _summarize_levers(table):
+def _extract_raw_levers(table):
     """
-    Résume les actions de la table RESSORTS_CHANGE en une seule chaîne
-    pour la colonne « Leviers retenus » du Layout 15.
+    Extrait les données brutes de la table RESSORTS_CHANGE.
 
-    Chaque ligne d'action commence par son type (Communication, Support,
-    Mobilisation, Formation). On extrait ces types uniques comme résumé.
+    Retourne une liste de dicts :
+    [
+        {"ressort": "Sens", "type": "Communication", "detail": "...texte complet..."},
+        ...
+    ]
     """
-    action_types = []
-    seen = set()
-
+    entries = []
     for ri in range(1, len(table.rows)):
-        action_cell = table.cell(ri, 1).text.strip()
-        if not action_cell:
+        ressort = table.cell(ri, 0).text.strip()
+        action_raw = table.cell(ri, 1).text.strip()
+        if not ressort or not action_raw:
             continue
-        # Le premier mot/ligne est souvent le type d'action
-        first_line = action_cell.split('\n')[0].strip()
-        # Nettoyer : souvent "Communication", "Support", "Mobilisation", "Formation"
-        action_type = first_line.rstrip(':').strip()
-        if action_type and action_type.lower() not in seen:
-            seen.add(action_type.lower())
-            action_types.append(action_type)
 
-    return ' | '.join(action_types)
+        lines = action_raw.split('\n')
+        action_type = lines[0].strip().rstrip(':')
+        detail = ' '.join(l.strip() for l in lines[1:] if l.strip())
+        entries.append({
+            "ressort": ressort,
+            "type": action_type,
+            "detail": detail or action_type
+        })
+    return entries
+
+
+def _fallback_summarize_levers(raw_levers, max_len=135):
+    """
+    Résumé mécanique de secours (≤ max_len caractères) utilisé quand
+    l'IA ne fournit pas de résumé rédigé.
+
+    Concatène les types d'action uniques, puis complète avec les noms
+    de ressorts si la place le permet.
+    """
+    if not raw_levers:
+        return ""
+
+    # Types d'action uniques (Communication, Support, Mobilisation, Formation)
+    types_seen = []
+    types_set = set()
+    for entry in raw_levers:
+        t = entry["type"]
+        if t.lower() not in types_set:
+            types_set.add(t.lower())
+            types_seen.append(t)
+
+    # Résumé court : "Type1 | Type2 | ..."
+    summary = " | ".join(types_seen)
+    if len(summary) <= max_len:
+        return summary
+
+    # Tronquer si trop long
+    return summary[:max_len - 1].rsplit(' ', 1)[0] + '…'
 
 
 def _parse_title(title_text):
@@ -137,7 +168,8 @@ def parse_impact_file(pptx_path):
             "population": "Garants de fabricabilité",
             "effectif": "~ 5 personnes",
             "omoc": {"Tool": 1, "Business": 1, "Organization": 2, "Culture": 2},
-            "levers": "Communication | Support"
+            "raw_levers": [{"ressort": "Sens", "type": "Communication", "detail": "..."}],
+            "levers": "Communication | Support"   # fallback mécanique
         },
         ...
     ]
@@ -145,11 +177,13 @@ def parse_impact_file(pptx_path):
     prs = Presentation(str(pptx_path))
     populations = []
 
-    for slide in prs.slides:
+    for slide_idx, slide in enumerate(prs.slides, start=1):
         entry = {
+            "slide_index": slide_idx,
             "population": "",
             "effectif": "TBD",
             "omoc": {"Tool": 0, "Business": 0, "Organization": 0, "Culture": 0},
+            "raw_levers": [],
             "levers": ""
         }
 
@@ -174,7 +208,8 @@ def parse_impact_file(pptx_path):
 
             # --- RESSORTS_CHANGE ---
             if name == 'RESSORTS_CHANGE':
-                entry["levers"] = _summarize_levers(shape.table)
+                entry["raw_levers"] = _extract_raw_levers(shape.table)
+                entry["levers"] = _fallback_summarize_levers(entry["raw_levers"])
 
         # N'ajouter que les slides qui ont un titre exploitable
         if entry["population"]:
@@ -267,18 +302,26 @@ if __name__ == "__main__":
     if output_json:
         slides = build_layout15_slides(populations)
         print(json.dumps({"slides": slides}, ensure_ascii=False, indent=2))
+    elif "--raw" in sys.argv:
+        # Mode brut : afficher les données RESSORTS_CHANGE complètes (pour l'IA)
+        print(json.dumps(populations, ensure_ascii=False, indent=2))
     else:
         print(f"Populations extraites : {len(populations)}")
         print("=" * 70)
         for i, pop in enumerate(populations, 1):
             omoc = pop["omoc"]
-            print(f"\n[{i}] {pop['population']}")
+            si = pop.get("slide_index", "?")
+            print(f"\n[{i}] (slide source #{si}) {pop['population']}")
             print(f"    Effectif     : {pop['effectif']}")
             print(f"    Outils       : {omoc['Tool']}")
-            print(f"    Métier       : {omoc['Business']}")
+            print(f"    Metier       : {omoc['Business']}")
             print(f"    Organisation : {omoc['Organization']}")
             print(f"    Culture      : {omoc['Culture']}")
-            print(f"    Leviers      : {pop['levers']}")
+            print(f"    Leviers (fallback) : {pop['levers']}")
+            if pop['raw_levers']:
+                print(f"    Actions brutes :")
+                for rl in pop['raw_levers']:
+                    print(f"      - [{rl['ressort']}] {rl['type']}: {rl['detail'][:80]}")
 
         print(f"\n=> {len(populations)} populations => "
               f"{(len(populations) + 5) // 6} slide(s) Layout 15")
