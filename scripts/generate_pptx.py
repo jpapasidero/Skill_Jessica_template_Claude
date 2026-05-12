@@ -20,9 +20,11 @@ from pptx.util import Cm
 # Permettre l'exécution directe ET en module
 try:
     from .builders import build_slide
+    from .impact_parser import generate_impact_content
 except ImportError:
     sys.path.insert(0, str(Path(__file__).parent))
     from builders import build_slide
+    from impact_parser import generate_impact_content
 
 
 # Format slide : 33.87 × 19.05 cm (16:9 widescreen)
@@ -79,14 +81,25 @@ def resolve_logo_path(logo_path=None):
     return None
 
 
-def generate(content_path, output_path, logo_path=None):
+def generate(content_path, output_path, logo_path=None, impact_path=None):
     logo_path = resolve_logo_path(logo_path)
 
     with open(content_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
-    prs = init_presentation()
     slides_data = data.get("slides", [])
+
+    # Si un fichier d'analyse d'impact est fourni, générer les slides Layout 15
+    if impact_path:
+        impact_slides = generate_impact_content(impact_path)
+        if impact_slides:
+            # Retirer les éventuels Layout 15 existants du contenu
+            slides_data = [sd for sd in slides_data if sd.get("layout") != 15]
+            slides_data.extend(impact_slides)
+            print(f"[INFO] {len(impact_slides)} slide(s) Layout 15 générée(s) "
+                  f"depuis {impact_path}", file=sys.stderr)
+
+    prs = init_presentation()
     total = len(slides_data)
 
     # layout vide ("blank") pour chaque slide
@@ -120,8 +133,10 @@ def main():
     ap.add_argument("--output", required=True, help="Fichier .pptx de sortie")
     ap.add_argument("--logo", default=None,
                     help="Chemin optionnel vers le logo Safran. Par defaut, cherche dans assets/logo(s).")
+    ap.add_argument("--impact", default=None,
+                    help="Fichier PPTX d'analyse d'impact pour générer automatiquement les slides Layout 15.")
     args = ap.parse_args()
-    generate(args.content, args.output, logo_path=args.logo)
+    generate(args.content, args.output, logo_path=args.logo, impact_path=args.impact)
 
 
 if __name__ == "__main__":
