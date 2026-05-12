@@ -26,6 +26,13 @@ def resolve_background_asset(filename):
     return None
 
 
+def plain_text(value):
+    """Retourne le texte brut d'un champ enrichi, sans emphases inline."""
+    if isinstance(value, dict):
+        return str(value.get("text", ""))
+    return "" if value is None else str(value)
+
+
 # ============================================================
 # LAYOUT 1 — Hook sens + factuel
 # ============================================================
@@ -670,18 +677,220 @@ def build_slide_11(slide, c, page_num=11, total=11, logo_path=None):
 
 
 # ============================================================
+# LAYOUT 12 - Process vertical 6 etapes
+# ============================================================
+def build_slide_12(slide, c, page_num=12, total=15, logo_path=None):
+    set_white_background(slide)
+    add_master_chrome(slide, c.get("title", "Process"),
+                       page_num=page_num, total=total, logo_path=logo_path)
+
+    steps = c.get("steps", [])
+    fill_colors = ["#BABDD0", "#BBB4C4", "#D5B3BE", "#F1D3D5", "#FEE3CA", "#FDEBBF"]
+    line_colors = ["#484C6A", "#6A5D79", "#A25871", "#D4737A", "#FDA85B", "#FBCC58"]
+    y_bullets = [3.62, 5.90, 8.18, 10.47, 12.75, 15.04]
+    y_labels = [3.58, 5.87, 8.15, 10.43, 12.72, 15.00]
+    y_sublabels = [4.33, 6.62, 8.90, 11.18, 13.47, 15.75]
+
+    for i in range(6):
+        step = steps[i] if i < len(steps) else {}
+        add_oval(slide, 1.09, y_bullets[i], 1.23, 1.23, fill_colors[i],
+                 line_hex=line_colors[i], line_w_pt=1.5,
+                 name=f"S12_STEP_{i+1}_BULLET")
+        add_textbox(slide, 1.09, y_bullets[i], 1.23, 1.23, str(i + 1),
+                    font="Segoe UI", size_pt=12, bold=True, color_hex=line_colors[i],
+                    align="center", anchor="m", name=f"S12_STEP_{i+1}_NUMBER",
+                    margin_left=0, margin_right=0, margin_top=0, margin_bottom=0)
+        add_textbox(slide, 2.90, y_labels[i], 12.27, 0.75, step.get("label", ""),
+                    font="Segoe UI", size_pt=12, bold=True, color_hex="#070E1D",
+                    name=f"S12_STEP_{i+1}_LABEL", margin_left=0)
+        add_textbox(slide, 2.90, y_sublabels[i], 28.30, 1.02, step.get("sublabel", ""),
+                    font="Segoe UI", size_pt=10, color_hex="#474E67",
+                    name=f"S12_STEP_{i+1}_SUBLABEL", margin_left=0,
+                    line_spacing=1.15)
+        if i < 5:
+            add_line(slide, 1.71, y_bullets[i] + 1.22, 1.71, y_bullets[i + 1],
+                     fill_colors[i], width_pt=1.5)
+
+
+# ============================================================
+# LAYOUT 13 - Opposition qualitative
+# ============================================================
+def build_slide_13(slide, c, page_num=13, total=15, logo_path=None):
+    set_white_background(slide)
+    add_master_chrome(slide, c.get("title", "Opposition qualitative"),
+                       page_num=page_num, total=total, logo_path=logo_path)
+
+    left_title = c.get("left_title", "A faire")
+    right_title = c.get("right_title", "A eviter")
+    left_items = c.get("left_items", [])
+    right_items = c.get("right_items", [])
+    rows_y = [5.64, 7.41, 9.17, 10.94, 12.71]
+
+    add_textbox(slide, 0.96, 4.38, 15.29, 1.02, left_title,
+                font="Segoe UI", size_pt=12, bold=True, color_hex="#0F6E56",
+                name="S13_LEFT_TITLE", margin_left=0)
+    add_textbox(slide, 16.93, 4.38, 15.97, 1.02, right_title,
+                font="Segoe UI", size_pt=12, bold=True, color_hex="#993C1D",
+                name="S13_RIGHT_TITLE", margin_left=0)
+
+    for i in range(5):
+        left_text = left_items[i] if i < len(left_items) else ""
+        right_text = right_items[i] if i < len(right_items) else ""
+        y = rows_y[i]
+        add_rect(slide, 0.96, y, 15.29, 1.49, "#FFFFFF",
+                 line_hex="#E0DFDB", line_w_pt=0.5, rounded=True,
+                 radius_adjust=0.08, name=f"S13_LEFT_{i+1}_BOX")
+        add_rect(slide, 16.93, y, 15.97, 1.49, "#FFFFFF",
+                 line_hex="#E0DFDB", line_w_pt=0.5, rounded=True,
+                 radius_adjust=0.08, name=f"S13_RIGHT_{i+1}_BOX")
+        add_oval(slide, 1.30, y + 0.27, 0.88, 0.88, "#E1F5EE",
+                 line_hex="#0F6E56", line_w_pt=0.5,
+                 text="✓", font="Segoe UI", size_pt=11, bold=True,
+                 color_hex="#0F6E56", name=f"S13_LEFT_{i+1}_BULLET")
+        add_oval(slide, 17.27, y + 0.27, 0.88, 0.88, "#FAECE7",
+                 line_hex="#993C1D", line_w_pt=0.5,
+                 text="×", font="Segoe UI", size_pt=11, bold=True,
+                 color_hex="#993C1D", name=f"S13_RIGHT_{i+1}_BULLET")
+        add_textbox(slide, 2.49, y + 0.14, 13.42, 1.22, left_text,
+                    font="Segoe UI", size_pt=10, color_hex="#474E67",
+                    anchor="m", name=f"S13_LEFT_{i+1}_ITEM", margin_left=0,
+                    line_spacing=1.1,
+                    emphasis_style={"font": "Segoe UI", "bold": True, "color_hex": "#070E1D"})
+        add_textbox(slide, 18.46, y + 0.14, 14.10, 1.22, right_text,
+                    font="Segoe UI", size_pt=10, color_hex="#474E67",
+                    anchor="m", name=f"S13_RIGHT_{i+1}_ITEM", margin_left=0,
+                    line_spacing=1.1,
+                    emphasis_style={"font": "Segoe UI", "bold": True, "color_hex": "#070E1D"})
+
+
+# ============================================================
+# LAYOUT 14 - Comparatif qualitatif en deux colonnes
+# ============================================================
+def build_slide_14(slide, c, page_num=14, total=15, logo_path=None):
+    set_white_background(slide)
+    add_master_chrome(slide, c.get("title", "Comparatif qualitatif"),
+                       page_num=page_num, total=total, logo_path=logo_path)
+
+    left_title = c.get("left_title", "Dmaic")
+    right_title = c.get("right_title", "Dmadv")
+    left_items = c.get("left_items", [])
+    right_items = c.get("right_items", [])
+    item_ys = [6.46, 8.16, 9.86, 11.56, 13.26]
+
+    bg_asset = resolve_background_asset("Comp_quali_bg.png")
+    if bg_asset:
+        bg = slide.shapes.add_picture(str(bg_asset), cm(3.17), cm(3.92),
+                                      width=cm(27.53), height=cm(11.64))
+        bg.name = "Comp_quali_bg"
+
+    add_textbox(slide, 5.69, 4.72, 7.49, 1.20, left_title,
+                font="Segoe UI", size_pt=22, bold=True, color_hex="#6A5D79",
+                align="center", anchor="m", name="S14_LEFT_TITLE",
+                margin_left=0, cap="small")
+    add_textbox(slide, 20.67, 4.72, 7.49, 1.20, right_title,
+                font="Segoe UI", size_pt=22, bold=True, color_hex="#FDA85B",
+                align="center", anchor="m", name="S14_RIGHT_TITLE",
+                margin_left=0, cap="small")
+
+    for i in range(5):
+        add_textbox(slide, 3.62, item_ys[i], 11.18, 1.22,
+                    left_items[i] if i < len(left_items) else "",
+                    font="Segoe UI", size_pt=10, color_hex="#474E67",
+                    anchor="m", name=f"S14_LEFT_{i+1}_ITEM", margin_left=0,
+                    line_spacing=1.1,
+                    emphasis_style={"font": "Segoe UI", "bold": True, "color_hex": "#070E1D"})
+        add_textbox(slide, 18.62, item_ys[i], 11.18, 1.22,
+                    right_items[i] if i < len(right_items) else "",
+                    font="Segoe UI", size_pt=10, color_hex="#474E67",
+                    anchor="m", name=f"S14_RIGHT_{i+1}_ITEM", margin_left=0,
+                    line_spacing=1.1,
+                    emphasis_style={"font": "Segoe UI", "bold": True, "color_hex": "#070E1D"})
+
+    add_takeaway_band(slide, c.get("takeaway", "Take away"), y_cm=16.87)
+
+
+# ============================================================
+# LAYOUT 15 - Matrice d'impact par population
+# ============================================================
+def build_slide_15(slide, c, page_num=15, total=15, logo_path=None):
+    set_white_background(slide)
+    add_master_chrome(slide, plain_text(c.get("title", "Impact par population")),
+                       page_num=page_num, total=total, logo_path=logo_path)
+
+    headers = c.get("headers", ["Outils", "Metier", "Organisation", "Culture", "Leviers d'accompagnement"])
+    rows = c.get("rows", [])
+    impact_colors = {1: "#CEC9D5", 2: "#9D93AB", 3: "#6A5D79", 4: "#393242"}
+    header_xs = [9.21, 13.12, 16.31, 20.74, 25.15]
+    header_ws = [1.76, 1.82, 3.17, 2.04, 5.66]
+    cell_xs = [8.26, 12.13, 16.00, 19.86]
+    row_ys = [4.60, 6.17, 7.73, 9.29, 10.86, 12.42]
+
+    for i, header in enumerate(headers[:5]):
+        add_textbox(slide, header_xs[i], 3.64, header_ws[i], 0.77, plain_text(header),
+                    font="Segoe UI", size_pt=12, bold=True, color_hex="#070E1D", cap="small",
+                    align="center", anchor="m", name=f"S15_HEADER_{i+1}",
+                    margin_left=0, margin_right=0)
+    add_line(slide, 1.08, 4.45, 32.78, 4.45, "#D7DAE4", width_pt=1.5)
+
+    for r in range(6):
+        row = rows[r] if r < len(rows) else {}
+        y = row_ys[r]
+        add_textbox(slide, 1.08, y, 6.73, 0.77, plain_text(row.get("label", "")),
+                    font="Segoe UI", size_pt=12, color_hex="#070E1D",
+                    name=f"S15_TABLE_LABEL_R{r+1}", margin_left=0)
+        add_textbox(slide, 1.08, y + 0.73, 6.73, 0.51, plain_text(row.get("sublabel", "")),
+                    font="Segoe UI", size_pt=9, color_hex="#474E67",
+                    name=f"S15_TABLE_SUBLABEL_R{r+1}", margin_left=0, margin_top = 0)
+        impacts = row.get("impacts", [])
+        for ci in range(4):
+            level = int(impacts[ci]) if ci < len(impacts) and str(impacts[ci]).strip() else 0
+            if level > 0:
+                add_rect(slide, cell_xs[ci], y, 3.80, 1.50,
+                         impact_colors.get(level, "#CEC9D5"),
+                         rounded=True, radius_adjust=0.2,
+                         name=f"S15_TABLE_R{r+1}_C{ci+2}")
+        add_rect(slide, 23.73, y, 9.06, 1.50, "#FFFFFF",
+                 line_hex="#FFFFFF", line_w_pt=0.25,
+                 text=plain_text(row.get("levers", "")),
+                 font="Segoe UI", size_pt=10, text_color_hex="#474E67",
+                 anchor="t", name=f"S15_TABLE_R{r+1}_C6",
+                 margin_top = 0, margin_left = 0.25, line_spacing=1.1)
+
+    add_line(slide, 1.08, 16.68, 32.78, 16.68, "#D7DAE4", width_pt=1.5)
+    add_textbox(slide, 1.08, 16.69, 1.73, 0.64, plain_text(c.get("legend_title", "Intensité")),
+                font="Segoe UI", size_pt=9, color_hex="#474E67", cap = "small",
+                name="LEGENDE_TITLE", margin_left=0)
+    legend = c.get("legend", ["Faible", "Modéré", "Fort", "Très fort"])
+    legend_xs = [4.96, 7.75, 10.55, 12.78]
+    label_xs = [5.67, 8.46, 11.26, 13.49]
+    label_ws = [1.34, 1.63, 1.07, 1.70]
+    for i in range(4):
+        add_rect(slide, legend_xs[i], 16.79, 0.51, 0.46, impact_colors[i + 1],
+                 name=f"S15_LEGENDE_{i+1}_BOX")
+        add_textbox(slide, label_xs[i], 16.69, label_ws[i], 0.64,
+                    plain_text(legend[i]) if i < len(legend) else "",
+                    font="Segoe UI", size_pt=9, color_hex="#474E67",
+                    name=f"S15_LEGENDE_{i+1}_LABEL", margin_left=0)
+    add_textbox(slide, 23.49, 16.69, 8.98, 0.64,
+                plain_text(c.get("footnote", "Leviers = axes d'accompagnement prioritaires par population")),
+                font="Segoe UI", size_pt=9, italic=True, color_hex="#474E67",
+                align="right", name="S15_FOOTNOTE", margin_left=0)
+
+
+# ============================================================
 # Dispatcher
 # ============================================================
 BUILDERS = {
     1: build_slide_1, 2: build_slide_2, 3: build_slide_3, 4: build_slide_4,
     5: build_slide_5, 6: build_slide_6, 7: build_slide_7, 8: build_slide_8,
     9: build_slide_9, 10: build_slide_10, 11: build_slide_11,
+    12: build_slide_12, 13: build_slide_13, 14: build_slide_14, 15: build_slide_15,
 }
 
 
-def build_slide(layout_n, slide, content, page_num=None, total=11, logo_path=None):
+def build_slide(layout_n, slide, content, page_num=None, total=15, logo_path=None):
     """Dispatcher : appelle le bon builder selon layout_n (1..11)."""
     if layout_n not in BUILDERS:
-        raise ValueError(f"Layout inconnu : {layout_n}. Doit être entre 1 et 11.")
+        raise ValueError(f"Layout inconnu : {layout_n}. Doit être entre 1 et 15.")
     return BUILDERS[layout_n](slide, content, page_num=page_num or layout_n,
                               total=total, logo_path=logo_path)

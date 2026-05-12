@@ -1,11 +1,11 @@
 ---
 name: palette-jessica
-description: Generate Safran-styled PowerPoint presentations using the "Palette Jessica" 16:9 template at pixel-perfect fidelity. Trigger this skill ANY time the user asks for a slide deck, presentation, pitch deck, or .pptx file in the Safran "Palette Jessica" style, mentions the bordeaux/violet/orange palette (#A25871/#6A5D79/#FDA85B), refers to the 11 named layouts (Hook factuel, Hook vision, Liste 6 points, Triptyque, Timeline, Tableau, Dashboard, Comparatif, Risques & Opportunités, Plan d'action 3 phases, Arc narratif/CTA), or wants to convert a topic outline into a complete branded presentation. Also use when the user uploads a content brief and asks for a "presentation Safran", "deck conduite du changement", "support comité", "présentation projet de transformation", or similar — even if they don't explicitly name the template.
+description: Generate Safran-styled PowerPoint presentations using the "Palette Jessica" 16:9 template at pixel-perfect fidelity. Trigger this skill ANY time the user asks for a slide deck, presentation, pitch deck, or .pptx file in the Safran "Palette Jessica" style, mentions the bordeaux/violet/orange palette (#A25871/#6A5D79/#FDA85B), refers to the 15 named layouts (Hook factuel, Hook vision, Liste 6 points, Triptyque, Timeline, Tableau, Dashboard, Comparatif, Risques & Opportunités, Plan d'action 3 phases, Arc narratif/CTA, Process vertical, Opposition qualitative, Comparatif qualitatif, Impact par population), or wants to convert a topic outline into a complete branded presentation. Also use when the user uploads a content brief and asks for a "presentation Safran", "deck conduite du changement", "support comité", "présentation projet de transformation", or similar — even if they don't explicitly name the template.
 ---
 
 # Skill: Palette Jessica — Générateur de présentations Safran
 
-Ce skill produit des présentations PowerPoint conformes au template **Palette Jessica** (Safran), en s'appuyant sur 11 layouts métier prédéfinis et la palette signature **bordeaux #A25871 / violet #6A5D79 / orange #FDA85B**.
+Ce skill produit des présentations PowerPoint conformes au template **Palette Jessica** (Safran), en s'appuyant sur 15 layouts métier prédéfinis et la palette signature **bordeaux #A25871 / violet #6A5D79 / orange #FDA85B**.
 
 ## Quand utiliser ce skill
 
@@ -21,11 +21,15 @@ Ne pas l'utiliser pour : un seul slide isolé qu'on peut juste décrire en chat,
 
 1. **Comprendre l'intention** : combien de slides, quel objectif (informer / convaincre / décider), quelle audience (DISC : Dominant, Influent, Stable, Consciencieux). Si l'utilisateur n'a pas précisé, propose une structure narrative (storyline) avant de générer.
 
-2. **Choisir les layouts** parmi les 11 disponibles (voir `references/layouts_catalog.md`). Adapte le choix au message :
+2. **Choisir les layouts** parmi les 15 disponibles (voir `references/layouts_catalog.md`). Adapte le choix au message :
    - Layout 1 (Hook factuel) ou 2 (Hook Vision) en ouverture
    - Layout 5 (Timeline) ou 10 (Plan 3 phases) pour le quand/comment
    - Layout 9 (Risques & Opportunités) avant la décision
    - Layout 11 (CTA) pour la clôture
+   - Layout 12 pour un protocole/process en 6 étapes
+   - Layout 13 pour opposer bonnes pratiques et erreurs à éviter
+   - Layout 14 pour comparer qualitativement deux méthodes
+   - Layout 15 pour cartographier les impacts par population
 
 3. **Construire le `content.json`** au format décrit dans `references/content_schema.md`.
 
@@ -80,10 +84,12 @@ Le détail exact des champs attendus pour chaque layout est dans `references/con
 - **Polices** : Segoe UI Black (titres), Segoe UI (corps), Segoe UI Light (secondaire). Si la machine ne les a pas, PowerPoint substituera automatiquement (Arial Black / Arial / Arial Light)
 - **Logo Safran** : le générateur cherche automatiquement un PNG/JPG dans `assets/logo`, `assets/logos`, `asset/logo` ou `asset/logos`. `--logo path/to/logo.png` reste possible pour forcer un fichier précis.
 - **Le fichier produit ne contient pas de slide master Safran personnalisé** — les éléments « chrome » (titre, barre signature, footer confidentiel, n° page) sont reproduits sur chaque slide via shapes nommées. Ce choix garantit la fidélité visuelle sans dépendre d'un fichier source `.pptx` propriétaire.
+- **Layout 14** : le décor comparatif est inséré depuis `assets/backgrounds/Comp_quali_bg.png`, exporté depuis la forme `Comp_quali_bg` du template. Ne pas recréer cette forme en shapes ; seuls les placeholders texte nommés sont modifiés.
+- **Layout 15** : les cellules `S15_TABLE_R*_C*` ont un léger arrondi et les emphases inline sont ignorées sur ce slide.
 - **Tolérance JSON** : les listes trop courtes sont complétées visuellement par des emplacements vides ; les entrées au-delà du nombre rendu par le layout sont ignorées. Le générateur ne valide pas strictement le schéma avant rendu.
 - **Texte enrichi** : tout champ texte peut être une chaîne ou un objet `{ "text": "...", "line_spacing": ..., "emphasis": [...] }`. Les emphases sont appliquées aux occurrences textuelles non chevauchantes, insensibles à la casse par défaut.
 
-## Référence rapide des 11 layouts
+## Référence rapide des 15 layouts
 
 | # | Nom | Usage type | Take-away |
 |---|---|---|---|
@@ -98,17 +104,21 @@ Le détail exact des champs attendus pour chaque layout est dans `references/con
 | 9 | Risques & Opportunités | Grille 2×3 (3 risques / 3 opps) | Non |
 | 10 | Plan d'action 3 phases | Roadmap avec 3 phases × 3 items | Oui |
 | 11 | Arc narratif / CTA | Conclusion 3 blocs + appel à l'action | Oui (CTA) |
+| 12 | Process vertical | 6 étapes avec label + sublabel | Non |
+| 13 | Opposition qualitative | À faire / À éviter en 2 colonnes | Non |
+| 14 | Comparatif qualitatif | Deux approches en miroir | Oui |
+| 15 | Impact par population | Matrice d'intensité + leviers | Non |
 
 ## Vérification post-génération
 
 Après génération, vérifie :
-- [ ] Le bandeau Take-away (gradient vertical bordeaux) apparaît sur les slides 1, 3, 4, 6, 7, 8, 10, 11
-- [ ] Le bandeau **n'apparaît pas** sur les slides 2, 5, 9
+- [ ] Le bandeau Take-away (gradient vertical bordeaux) apparaît sur les slides 1, 3, 4, 6, 7, 8, 10, 11, 14
+- [ ] Le bandeau **n'apparaît pas** sur les slides 2, 5, 9, 12, 13, 15
 - [ ] Les couleurs signature sont présentes : `#A25871`, `#6A5D79`, `#FDA85B`
 - [ ] Le titre est en `#484C6A` Segoe UI Black 29.32pt
 - [ ] La barre de signature (rectangle bleu nuit + trait fin) apparaît sous chaque titre
 - [ ] Le filigrane "01"/"02"/"03" (slide 11) est translucide à 40%
-- [ ] Les small caps fonctionnent sur slides 2 (titres colonnes), 3 (factor labels), 5 (periods), 9 (level + action tags)
+- [ ] Les small caps fonctionnent sur slides 2 (titres colonnes), 3 (factor labels), 5 (periods), 9 (level + action tags), 14 (titres comparatifs)
 
 ## Extension / personnalisation
 

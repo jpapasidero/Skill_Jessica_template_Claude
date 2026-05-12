@@ -1,5 +1,5 @@
 {
-  "_comment": "Exemple complet 11 layouts avec emphases dans les placeholders texte.",
+  "_comment": "Exemple complet 15 layouts avec emphases dans les placeholders texte, sauf layout 15.",
   "slides": [
     {
       "layout": 1,
@@ -331,6 +331,83 @@
           }
         ],
         "cta": {"text": "Validez-vous le scale-up dès ce mois-ci ?", "emphasis": [{"text": "scale-up"}]}
+      }
+    },
+    {
+      "layout": 12,
+      "content": {
+        "title": "Process de déploiement",
+        "steps": [
+          {"label": {"text": "Identifier les clients", "emphasis": [{"text": "clients"}]}, "sublabel": {"text": "Cartographier les parties prenantes et qualifier la voix du client.", "emphasis": [{"text": "voix du client"}]}},
+          {"label": {"text": "Évaluer les attentes", "emphasis": [{"text": "attentes"}]}, "sublabel": {"text": "Prioriser chaque besoin sur une échelle simple et comparable.", "emphasis": [{"text": "Prioriser"}]}},
+          {"label": {"text": "Construire le questionnaire", "emphasis": [{"text": "questionnaire"}]}, "sublabel": {"text": "Préparer des questions fonctionnelles et dysfonctionnelles robustes.", "emphasis": [{"text": "fonctionnelles"}]}},
+          {"label": {"text": "Tester le dispositif", "emphasis": [{"text": "Tester"}]}, "sublabel": {"text": "Valider la compréhension auprès d'un échantillon restreint.", "emphasis": [{"text": "échantillon"}]}},
+          {"label": {"text": "Diffuser largement", "emphasis": [{"text": "Diffuser"}]}, "sublabel": {"text": "Choisir les canaux, suivre le taux de réponse et sécuriser les données.", "emphasis": [{"text": "taux de réponse"}]}},
+          {"label": {"text": "Analyser les résultats", "emphasis": [{"text": "résultats"}]}, "sublabel": {"text": "Transformer les réponses en priorités d'action mesurables.", "emphasis": [{"text": "priorités d'action"}]}}
+        ]
+      }
+    },
+    {
+      "layout": 13,
+      "content": {
+        "title": "Bonnes pratiques terrain",
+        "left_title": "À faire",
+        "right_title": "À éviter",
+        "left_items": [
+          {"text": "Questions précises, portant sur une seule caractéristique", "emphasis": [{"text": "précises"}]},
+          {"text": "Formuler en termes de bénéfices pour l'utilisateur", "emphasis": [{"text": "bénéfices"}]},
+          {"text": "Mélanger les questions dans un ordre aléatoire", "emphasis": [{"text": "ordre aléatoire"}]},
+          {"text": "Placer les données démographiques en fin de questionnaire", "emphasis": [{"text": "fin"}]},
+          {"text": "Limiter le questionnaire à dix fonctionnalités", "emphasis": [{"text": "dix"}]}
+        ],
+        "right_items": [
+          {"text": "Nier mécaniquement la question fonctionnelle", "emphasis": [{"text": "mécaniquement"}]},
+          {"text": "Utiliser une échelle classique à la place des réponses adaptées", "emphasis": [{"text": "échelle classique"}]},
+          {"text": "Prioriser par simple comptage sans indice d'intensité", "emphasis": [{"text": "simple comptage"}]},
+          {"text": "Lancer sans tester le questionnaire en amont", "emphasis": [{"text": "sans tester"}]},
+          {"text": "Multiplier les fonctionnalités au détriment de la qualité de réponse", "emphasis": [{"text": "Multiplier"}]}
+        ]
+      }
+    },
+    {
+      "layout": 14,
+      "content": {
+        "title": "Comparatif qualitatif",
+        "left_title": "DMAIC",
+        "right_title": "DMADV",
+        "left_items": [
+          {"text": "Améliorer un processus existant à partir de preuves terrain", "emphasis": [{"text": "processus existant"}]},
+          {"text": "Mesurer les écarts avant de définir les actions correctives", "emphasis": [{"text": "écarts"}]},
+          {"text": "Réduire la variabilité et stabiliser les standards", "emphasis": [{"text": "variabilité"}]},
+          {"text": "Installer un contrôle opérationnel après amélioration", "emphasis": [{"text": "contrôle"}]},
+          {"text": "Idéal quand le fonctionnement actuel est connu", "emphasis": [{"text": "connu"}]}
+        ],
+        "right_items": [
+          {"text": "Concevoir une solution nouvelle quand l'existant ne suffit plus", "emphasis": [{"text": "solution nouvelle"}]},
+          {"text": "Traduire la voix client en exigences de conception", "emphasis": [{"text": "exigences"}]},
+          {"text": "Prototyper et vérifier la robustesse avant déploiement", "emphasis": [{"text": "robustesse"}]},
+          {"text": "Prévenir les défauts dès la phase de design", "emphasis": [{"text": "design"}]},
+          {"text": "Idéal quand il faut créer un modèle cible", "emphasis": [{"text": "modèle cible"}]}
+        ],
+        "takeaway": {"text": "Choisir l'approche selon la maturité du problème", "emphasis": [{"text": "maturité"}]}
+      }
+    },
+    {
+      "layout": 15,
+      "content": {
+        "title": "Impact par population",
+        "headers": ["Outils", "Métier", "Organisation", "Culture", "Leviers d'accompagnement"],
+        "rows": [
+          {"label": "Conseillers en agence", "sublabel": "~ 1 200 pers.", "impacts": [4, 3, 2, 4], "levers": "Formation | Accompagnement terrain"},
+          {"label": "Managers de proximité", "sublabel": "~ 180 pers.", "impacts": [3, 4, 4, 3], "levers": "Kit manager | Formation en premier"},
+          {"label": "Back-office & operations", "sublabel": "~ 340 pers.", "impacts": [3, 2, 2, 2], "levers": "Formation process & nouvel outil"},
+          {"label": "Experts métier", "sublabel": "~ 60 pers.", "impacts": [2, 3, 1, 3], "levers": "Co-conception | Montée en compétence"},
+          {"label": "Direction régionale", "sublabel": "~ 25 pers.", "impacts": [4, 3, 3, 1], "levers": "Information | Implication tôt"},
+          {"label": "Fonctions support", "sublabel": "~ 90 pers.", "impacts": [2, 1, 1, 1], "levers": "Sensibilisation | Communication"}
+        ],
+        "legend_title": "Intensité",
+        "legend": ["Faible", "Modéré", "Fort", "Très fort"],
+        "footnote": "Leviers = axes d'accompagnement prioritaires par population"
       }
     }
   ]

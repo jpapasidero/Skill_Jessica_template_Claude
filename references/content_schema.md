@@ -341,6 +341,108 @@ Le générateur est tolérant : lorsqu'une liste contient moins d'entrées que l
 
 ---
 
+## Layout 12 — Process vertical 6 étapes
+
+```json
+{
+  "layout": 12,
+  "content": {
+    "title": "Process de déploiement",
+    "steps": [
+      {"label": "Identifier les clients", "sublabel": "Cartographie des parties prenantes"},
+      {"label": "Évaluer les attentes", "sublabel": "Échelle de priorisation commune"},
+      {"label": "Construire le questionnaire", "sublabel": "Questions fonctionnelles / dysfonctionnelles"},
+      {"label": "Tester le dispositif", "sublabel": "Échantillon restreint"},
+      {"label": "Diffuser largement", "sublabel": "Canal, suivi, données"},
+      {"label": "Analyser les résultats", "sublabel": "Priorités d'action"}
+    ]
+  }
+}
+```
+
+- **steps** : jusqu'à 6 entrées rendues.
+- **label** : titre court en 12 pt bold.
+- **sublabel** : détail opérationnel en 10 pt.
+- Pas de takeaway : ce layout est une séquence process compacte.
+
+---
+
+## Layout 13 — Opposition qualitative
+
+```json
+{
+  "layout": 13,
+  "content": {
+    "title": "Bonnes pratiques terrain",
+    "left_title": "À faire",
+    "right_title": "À éviter",
+    "left_items": ["Question précise", "Bénéfice utilisateur"],
+    "right_items": ["Question trop générale", "Échelle inadaptée"]
+  }
+}
+```
+
+- **left_items** et **right_items** : jusqu'à 5 entrées rendues par colonne.
+- La colonne gauche utilise le vert `#0F6E56`; la droite utilise le brun rouge `#993C1D`.
+- Chaque item est placé dans une carte blanche avec contour fin `#E0DFDB`.
+- Pas de takeaway : le contraste visuel suffit à la décision.
+
+---
+
+## Layout 14 — Comparatif qualitatif
+
+```json
+{
+  "layout": 14,
+  "content": {
+    "title": "Comparatif qualitatif",
+    "left_title": "DMAIC",
+    "right_title": "DMADV",
+    "left_items": ["Améliorer un processus existant"],
+    "right_items": ["Concevoir une solution nouvelle"],
+    "takeaway": "Choisir l'approche selon la maturité du problème"
+  }
+}
+```
+
+- **left_items** et **right_items** : jusqu'à 5 entrées rendues.
+- Titres de colonnes en small caps, 22 pt, violet `#6A5D79` à gauche et orange `#FDA85B` à droite.
+- Le grand cadre décoratif est un asset PNG figé, `assets/backgrounds/Comp_quali_bg.png`, exporté depuis la forme nommée `Comp_quali_bg` du template. Le générateur ne recrée pas cette forme ; il insère l'asset puis modifie uniquement les placeholders texte nommés.
+- **takeaway** : bandeau bas standard, positionné à `y=16.87 cm`.
+
+---
+
+## Layout 15 — Matrice d'impact par population
+
+```json
+{
+  "layout": 15,
+  "content": {
+    "title": "Impact par population",
+    "headers": ["Outils", "Métier", "Organisation", "Culture", "Leviers"],
+    "rows": [
+      {
+        "label": "Conseillers en agence",
+        "sublabel": "~ 1 200 pers.",
+        "impacts": [4, 3, 2, 4],
+        "levers": "Formation | Accompagnement terrain"
+      }
+    ],
+    "legend_title": "Intensité",
+    "legend": ["Faible", "Modéré", "Fort", "Très fort"],
+    "footnote": "Leviers = axes d'accompagnement prioritaires par population"
+  }
+}
+```
+
+- **rows** : jusqu'à 6 populations rendues.
+- **impacts** : 4 niveaux numériques pour les colonnes Outils / Métier / Organisation / Culture. `1` = faible `#CEC9D5`, `2` = modéré `#9D93AB`, `3` = fort `#6A5D79`, `4` = très fort `#393242`. `0` ou valeur vide laisse la cellule blanche.
+- **levers** : texte libre affiché dans la dernière colonne, sans emphase inline sur ce layout.
+- Les cellules `S15_TABLE_R*_C*` sont rendues avec un léger arrondi.
+- Pas de takeaway : la légende occupe le bas de slide.
+
+---
+
 ## Conventions générales
 
 - Tous les textes peuvent être des **chaînes UTF-8** simples. Les caractères français (é, à, ç, œ, etc.) sont supportés.

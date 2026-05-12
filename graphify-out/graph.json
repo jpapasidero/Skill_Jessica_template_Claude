@@ -9,23 +9,23 @@
       "source_file": "builders.py",
       "source_location": "L1",
       "id": "builders_py",
-      "community": 0,
+      "community": 6,
       "norm_label": "builders.py"
     },
     {
       "label": "resolve_background_asset()",
       "file_type": "code",
       "source_file": "builders.py",
-      "source_location": "L19",
+      "source_location": "L21",
       "id": "scripts_builders_resolve_background_asset",
-      "community": 5,
+      "community": 6,
       "norm_label": "resolve_background_asset()"
     },
     {
       "label": "build_slide_1()",
       "file_type": "code",
       "source_file": "builders.py",
-      "source_location": "L30",
+      "source_location": "L32",
       "id": "scripts_builders_build_slide_1",
       "community": 0,
       "norm_label": "build_slide_1()"
@@ -34,52 +34,52 @@
       "label": "build_slide_2()",
       "file_type": "code",
       "source_file": "builders.py",
-      "source_location": "L81",
+      "source_location": "L83",
       "id": "scripts_builders_build_slide_2",
-      "community": 4,
+      "community": 6,
       "norm_label": "build_slide_2()"
     },
     {
       "label": "build_slide_3()",
       "file_type": "code",
       "source_file": "builders.py",
-      "source_location": "L110",
+      "source_location": "L119",
       "id": "scripts_builders_build_slide_3",
-      "community": 2,
+      "community": 1,
       "norm_label": "build_slide_3()"
     },
     {
       "label": "build_slide_4()",
       "file_type": "code",
       "source_file": "builders.py",
-      "source_location": "L148",
+      "source_location": "L160",
       "id": "scripts_builders_build_slide_4",
-      "community": 5,
+      "community": 6,
       "norm_label": "build_slide_4()"
     },
     {
       "label": "build_slide_5()",
       "file_type": "code",
       "source_file": "builders.py",
-      "source_location": "L182",
+      "source_location": "L194",
       "id": "scripts_builders_build_slide_5",
-      "community": 6,
+      "community": 3,
       "norm_label": "build_slide_5()"
     },
     {
       "label": "build_slide_6()",
       "file_type": "code",
       "source_file": "builders.py",
-      "source_location": "L226",
+      "source_location": "L243",
       "id": "scripts_builders_build_slide_6",
-      "community": 7,
+      "community": 4,
       "norm_label": "build_slide_6()"
     },
     {
       "label": "build_slide_7()",
       "file_type": "code",
       "source_file": "builders.py",
-      "source_location": "L282",
+      "source_location": "L302",
       "id": "scripts_builders_build_slide_7",
       "community": 0,
       "norm_label": "build_slide_7()"
@@ -88,34 +88,34 @@
       "label": "build_slide_8()",
       "file_type": "code",
       "source_file": "builders.py",
-      "source_location": "L341",
+      "source_location": "L375",
       "id": "scripts_builders_build_slide_8",
-      "community": 0,
+      "community": 4,
       "norm_label": "build_slide_8()"
     },
     {
       "label": "build_slide_9()",
       "file_type": "code",
       "source_file": "builders.py",
-      "source_location": "L402",
+      "source_location": "L436",
       "id": "scripts_builders_build_slide_9",
-      "community": 7,
+      "community": 3,
       "norm_label": "build_slide_9()"
     },
     {
       "label": "build_slide_10()",
       "file_type": "code",
       "source_file": "builders.py",
-      "source_location": "L514",
+      "source_location": "L548",
       "id": "scripts_builders_build_slide_10",
-      "community": 7,
+      "community": 3,
       "norm_label": "build_slide_10()"
     },
     {
       "label": "build_slide_11()",
       "file_type": "code",
       "source_file": "builders.py",
-      "source_location": "L584",
+      "source_location": "L631",
       "id": "scripts_builders_build_slide_11",
       "community": 0,
       "norm_label": "build_slide_11()"
@@ -124,9 +124,9 @@
       "label": "build_slide()",
       "file_type": "code",
       "source_file": "builders.py",
-      "source_location": "L633",
+      "source_location": "L682",
       "id": "scripts_builders_build_slide",
-      "community": 1,
+      "community": 2,
       "norm_label": "build_slide()"
     },
     {
@@ -135,16 +135,16 @@
       "source_file": "builders.py",
       "source_location": "L1",
       "id": "scripts_builders_rationale_1",
-      "community": 0,
+      "community": 6,
       "norm_label": "constructeurs par layout (slide 1 a 11) du template palette jessica. chaque fonc"
     },
     {
       "label": "Dispatcher : appelle le bon builder selon layout_n (1..11).",
       "file_type": "rationale",
       "source_file": "builders.py",
-      "source_location": "L634",
-      "id": "scripts_builders_rationale_634",
-      "community": 1,
+      "source_location": "L683",
+      "id": "scripts_builders_rationale_683",
+      "community": 2,
       "norm_label": "dispatcher : appelle le bon builder selon layout_n (1..11)."
     },
     {
@@ -153,44 +153,62 @@
       "source_file": "generate_pptx.py",
       "source_location": "L1",
       "id": "generate_pptx_py",
-      "community": 1,
+      "community": 2,
       "norm_label": "generate_pptx.py"
     },
     {
       "label": "init_presentation()",
       "file_type": "code",
       "source_file": "generate_pptx.py",
-      "source_location": "L33",
+      "source_location": "L35",
       "id": "scripts_generate_pptx_init_presentation",
-      "community": 1,
+      "community": 2,
       "norm_label": "init_presentation()"
+    },
+    {
+      "label": "resolve_logo_path()",
+      "file_type": "code",
+      "source_file": "generate_pptx.py",
+      "source_location": "L43",
+      "id": "scripts_generate_pptx_resolve_logo_path",
+      "community": 2,
+      "norm_label": "resolve_logo_path()"
     },
     {
       "label": "generate()",
       "file_type": "code",
       "source_file": "generate_pptx.py",
-      "source_location": "L41",
+      "source_location": "L82",
       "id": "scripts_generate_pptx_generate",
-      "community": 1,
+      "community": 2,
       "norm_label": "generate()"
     },
     {
       "label": "main()",
       "file_type": "code",
       "source_file": "generate_pptx.py",
-      "source_location": "L74",
+      "source_location": "L117",
       "id": "scripts_generate_pptx_main",
-      "community": 1,
+      "community": 2,
       "norm_label": "main()"
     },
     {
       "label": "Cr\u00e9e une pr\u00e9sentation vierge au bon format.",
       "file_type": "rationale",
       "source_file": "generate_pptx.py",
-      "source_location": "L34",
-      "id": "scripts_generate_pptx_rationale_34",
-      "community": 1,
+      "source_location": "L36",
+      "id": "scripts_generate_pptx_rationale_36",
+      "community": 2,
       "norm_label": "cree une presentation vierge au bon format."
+    },
+    {
+      "label": "Trouve le logo depuis un chemin explicite ou les dossiers d'assets locaux.",
+      "file_type": "rationale",
+      "source_file": "generate_pptx.py",
+      "source_location": "L44",
+      "id": "scripts_generate_pptx_rationale_44",
+      "community": 2,
+      "norm_label": "trouve le logo depuis un chemin explicite ou les dossiers d'assets locaux."
     },
     {
       "label": "helpers.py",
@@ -198,131 +216,158 @@
       "source_file": "helpers.py",
       "source_location": "L1",
       "id": "helpers_py",
-      "community": 8,
+      "community": 1,
       "norm_label": "helpers.py"
     },
     {
       "label": "cm()",
       "file_type": "code",
       "source_file": "helpers.py",
-      "source_location": "L19",
+      "source_location": "L22",
       "id": "scripts_helpers_cm",
-      "community": 5,
+      "community": 1,
       "norm_label": "cm()"
     },
     {
       "label": "hex_to_rgb()",
       "file_type": "code",
       "source_file": "helpers.py",
-      "source_location": "L23",
+      "source_location": "L26",
       "id": "scripts_helpers_hex_to_rgb",
       "community": 3,
       "norm_label": "hex_to_rgb()"
     },
     {
+      "label": "hex_to_rgba()",
+      "file_type": "code",
+      "source_file": "helpers.py",
+      "source_location": "L31",
+      "id": "scripts_helpers_hex_to_rgba",
+      "community": 1,
+      "norm_label": "hex_to_rgba()"
+    },
+    {
       "label": "remove_theme_style()",
       "file_type": "code",
       "source_file": "helpers.py",
-      "source_location": "L28",
+      "source_location": "L37",
       "id": "scripts_helpers_remove_theme_style",
-      "community": 2,
+      "community": 1,
       "norm_label": "remove_theme_style()"
     },
     {
       "label": "set_run_props()",
       "file_type": "code",
       "source_file": "helpers.py",
-      "source_location": "L37",
+      "source_location": "L46",
       "id": "scripts_helpers_set_run_props",
-      "community": 3,
+      "community": 7,
       "norm_label": "set_run_props()"
     },
     {
       "label": "normalize_text_spec()",
       "file_type": "code",
       "source_file": "helpers.py",
-      "source_location": "L71",
+      "source_location": "L80",
       "id": "scripts_helpers_normalize_text_spec",
-      "community": 9,
+      "community": 5,
       "norm_label": "normalize_text_spec()"
     },
     {
       "label": "normalize_line_spacing()",
       "file_type": "code",
       "source_file": "helpers.py",
-      "source_location": "L81",
+      "source_location": "L90",
       "id": "scripts_helpers_normalize_line_spacing",
-      "community": 8,
+      "community": 5,
       "norm_label": "normalize_line_spacing()"
     },
     {
       "label": "emphasis_spans()",
       "file_type": "code",
       "source_file": "helpers.py",
-      "source_location": "L95",
+      "source_location": "L104",
       "id": "scripts_helpers_emphasis_spans",
-      "community": 10,
+      "community": 0,
       "norm_label": "emphasis_spans()"
     },
     {
       "label": "run_style()",
       "file_type": "code",
       "source_file": "helpers.py",
-      "source_location": "L129",
+      "source_location": "L138",
       "id": "scripts_helpers_run_style",
-      "community": 11,
+      "community": 8,
       "norm_label": "run_style()"
     },
     {
       "label": "add_textbox()",
       "file_type": "code",
       "source_file": "helpers.py",
-      "source_location": "L156",
+      "source_location": "L165",
       "id": "scripts_helpers_add_textbox",
-      "community": 6,
+      "community": 0,
       "norm_label": "add_textbox()"
     },
     {
       "label": "add_rect()",
       "file_type": "code",
       "source_file": "helpers.py",
-      "source_location": "L207",
+      "source_location": "L216",
       "id": "scripts_helpers_add_rect",
-      "community": 3,
+      "community": 4,
       "norm_label": "add_rect()"
     },
     {
       "label": "add_oval()",
       "file_type": "code",
       "source_file": "helpers.py",
-      "source_location": "L268",
+      "source_location": "L277",
       "id": "scripts_helpers_add_oval",
-      "community": 5,
+      "community": 3,
       "norm_label": "add_oval()"
+    },
+    {
+      "label": "_load_pil_font()",
+      "file_type": "code",
+      "source_file": "helpers.py",
+      "source_location": "L314",
+      "id": "scripts_helpers_load_pil_font",
+      "community": 1,
+      "norm_label": "_load_pil_font()"
+    },
+    {
+      "label": "add_transparent_text_image()",
+      "file_type": "code",
+      "source_file": "helpers.py",
+      "source_location": "L340",
+      "id": "scripts_helpers_add_transparent_text_image",
+      "community": 1,
+      "norm_label": "add_transparent_text_image()"
     },
     {
       "label": "add_teardrop()",
       "file_type": "code",
       "source_file": "helpers.py",
-      "source_location": "L282",
+      "source_location": "L377",
       "id": "scripts_helpers_add_teardrop",
-      "community": 2,
+      "community": 1,
       "norm_label": "add_teardrop()"
     },
     {
       "label": "add_line()",
       "file_type": "code",
       "source_file": "helpers.py",
-      "source_location": "L296",
+      "source_location": "L390",
       "id": "scripts_helpers_add_line",
-      "community": 7,
+      "community": 3,
       "norm_label": "add_line()"
     },
     {
       "label": "add_takeaway_band()",
       "file_type": "code",
       "source_file": "helpers.py",
-      "source_location": "L313",
+      "source_location": "L407",
       "id": "scripts_helpers_add_takeaway_band",
       "community": 0,
       "norm_label": "add_takeaway_band()"
@@ -331,7 +376,7 @@
       "label": "add_master_chrome()",
       "file_type": "code",
       "source_file": "helpers.py",
-      "source_location": "L365",
+      "source_location": "L461",
       "id": "scripts_helpers_add_master_chrome",
       "community": 4,
       "norm_label": "add_master_chrome()"
@@ -340,9 +385,9 @@
       "label": "set_white_background()",
       "file_type": "code",
       "source_file": "helpers.py",
-      "source_location": "L406",
+      "source_location": "L502",
       "id": "scripts_helpers_set_white_background",
-      "community": 0,
+      "community": 3,
       "norm_label": "set_white_background()"
     },
     {
@@ -351,87 +396,87 @@
       "source_file": "helpers.py",
       "source_location": "L1",
       "id": "scripts_helpers_rationale_1",
-      "community": 8,
+      "community": 1,
       "norm_label": "helpers bas-niveau pour le template palette jessica. manipule directement le xml"
     },
     {
       "label": "Remove PowerPoint theme effects that can add shadows by default.",
       "file_type": "rationale",
       "source_file": "helpers.py",
-      "source_location": "L29",
-      "id": "scripts_helpers_rationale_29",
-      "community": 2,
+      "source_location": "L38",
+      "id": "scripts_helpers_rationale_38",
+      "community": 1,
       "norm_label": "remove powerpoint theme effects that can add shadows by default."
     },
     {
       "label": "Applique les propri\u00e9t\u00e9s \u00e0 un run et patche le XML pour cap / alpha si demand\u00e9.",
       "file_type": "rationale",
       "source_file": "helpers.py",
-      "source_location": "L39",
-      "id": "scripts_helpers_rationale_39",
-      "community": 3,
+      "source_location": "L48",
+      "id": "scripts_helpers_rationale_48",
+      "community": 7,
       "norm_label": "applique les proprietes a un run et patche le xml pour cap / alpha si demande."
     },
     {
       "label": "Accepte une chaine simple ou une spec enrichie de type {\"text\": ..., ...}.",
       "file_type": "rationale",
       "source_file": "helpers.py",
-      "source_location": "L72",
-      "id": "scripts_helpers_rationale_72",
-      "community": 9,
+      "source_location": "L81",
+      "id": "scripts_helpers_rationale_81",
+      "community": 5,
       "norm_label": "accepte une chaine simple ou une spec enrichie de type {\"text\": ..., ...}."
     },
     {
       "label": "Convertit l'interligne JSON en valeur python-pptx (ratio ou points).",
       "file_type": "rationale",
       "source_file": "helpers.py",
-      "source_location": "L82",
-      "id": "scripts_helpers_rationale_82",
-      "community": 8,
+      "source_location": "L91",
+      "id": "scripts_helpers_rationale_91",
+      "community": 5,
       "norm_label": "convertit l'interligne json en valeur python-pptx (ratio ou points)."
     },
     {
       "label": "Retourne des segments (texte, style) en appliquant les emphases non chevauchante",
       "file_type": "rationale",
       "source_file": "helpers.py",
-      "source_location": "L96",
-      "id": "scripts_helpers_rationale_96",
-      "community": 10,
+      "source_location": "L105",
+      "id": "scripts_helpers_rationale_105",
+      "community": 0,
       "norm_label": "retourne des segments (texte, style) en appliquant les emphases non chevauchante"
     },
     {
       "label": "Fusionne le style du placeholder avec une emphase locale.",
       "file_type": "rationale",
       "source_file": "helpers.py",
-      "source_location": "L130",
-      "id": "scripts_helpers_rationale_130",
-      "community": 11,
+      "source_location": "L139",
+      "id": "scripts_helpers_rationale_139",
+      "community": 8,
       "norm_label": "fusionne le style du placeholder avec une emphase locale."
     },
     {
       "label": "Cr\u00e9e un textbox avec texte simple ou spec enrichie (interligne + emphases).",
       "file_type": "rationale",
       "source_file": "helpers.py",
-      "source_location": "L161",
-      "id": "scripts_helpers_rationale_161",
-      "community": 6,
+      "source_location": "L170",
+      "id": "scripts_helpers_rationale_170",
+      "community": 0,
       "norm_label": "cree un textbox avec texte simple ou spec enrichie (interligne + emphases)."
     },
     {
-      "label": "Larme (teardrop). En python-pptx : MSO_SHAPE.TEAR (rotation \u00e0 appliquer pour poi",
+      "label": "Larme (teardrop). En python-pptx : MSO_SHAPE.TEAR.",
       "file_type": "rationale",
       "source_file": "helpers.py",
-      "source_location": "L283",
-      "id": "scripts_helpers_rationale_283",
-      "community": 2,
-      "norm_label": "larme (teardrop). en python-pptx : mso_shape.tear (rotation a appliquer pour poi"
+      "source_location": "L378",
+      "id": "scripts_helpers_rationale_378",
+      "community": 1,
+      "norm_label": "larme (teardrop). en python-pptx : mso_shape.tear."
     },
     {
       "label": "Bandeau bordeaux avec gradient vertical 3-stops + texte centr\u00e9 blanc.",
       "file_type": "rationale",
       "source_file": "helpers.py",
-      "source_location": "L314",
-      "id": "scripts_helpers_rationale_314",
+      "source_location": "L408",
+      "id": "scripts_helpers_rationale_408",
       "community": 0,
       "norm_label": "bandeau bordeaux avec gradient vertical 3-stops + texte centre blanc."
     },
@@ -439,8 +484,8 @@
       "label": "Ajoute le 'chrome' commun \u00e0 toutes les slides : titre, barre signature, footer,",
       "file_type": "rationale",
       "source_file": "helpers.py",
-      "source_location": "L367",
-      "id": "scripts_helpers_rationale_367",
+      "source_location": "L463",
+      "id": "scripts_helpers_rationale_463",
       "community": 4,
       "norm_label": "ajoute le 'chrome' commun a toutes les slides : titre, barre signature, footer,"
     },
@@ -450,15 +495,123 @@
       "source_file": "__init__.py",
       "source_location": "L1",
       "id": "init_py",
-      "community": 12,
+      "community": 9,
       "norm_label": "__init__.py"
     },
     {
       "label": "Dispatcher : appelle le bon builder selon layout_n (1..11).",
       "file_type": "rationale",
       "source_file": "builders.py",
-      "source_location": "L605",
+      "source_location": "L634",
+      "community": 2,
+      "norm_label": "dispatcher : appelle le bon builder selon layout_n (1..11).",
+      "id": "scripts_builders_rationale_634"
+    },
+    {
+      "label": "Cr\u00e9e une pr\u00e9sentation vierge au bon format.",
+      "file_type": "rationale",
+      "source_file": "generate_pptx.py",
+      "source_location": "L34",
+      "community": 2,
+      "norm_label": "cree une presentation vierge au bon format.",
+      "id": "scripts_generate_pptx_rationale_34"
+    },
+    {
+      "label": "Remove PowerPoint theme effects that can add shadows by default.",
+      "file_type": "rationale",
+      "source_file": "helpers.py",
+      "source_location": "L29",
       "community": 1,
+      "norm_label": "remove powerpoint theme effects that can add shadows by default.",
+      "id": "scripts_helpers_rationale_29"
+    },
+    {
+      "label": "Applique les propri\u00e9t\u00e9s \u00e0 un run et patche le XML pour cap / alpha si demand\u00e9.",
+      "file_type": "rationale",
+      "source_file": "helpers.py",
+      "source_location": "L39",
+      "community": 7,
+      "norm_label": "applique les proprietes a un run et patche le xml pour cap / alpha si demande.",
+      "id": "scripts_helpers_rationale_39"
+    },
+    {
+      "label": "Accepte une chaine simple ou une spec enrichie de type {\"text\": ..., ...}.",
+      "file_type": "rationale",
+      "source_file": "helpers.py",
+      "source_location": "L72",
+      "community": 5,
+      "norm_label": "accepte une chaine simple ou une spec enrichie de type {\"text\": ..., ...}.",
+      "id": "scripts_helpers_rationale_72"
+    },
+    {
+      "label": "Convertit l'interligne JSON en valeur python-pptx (ratio ou points).",
+      "file_type": "rationale",
+      "source_file": "helpers.py",
+      "source_location": "L82",
+      "community": 5,
+      "norm_label": "convertit l'interligne json en valeur python-pptx (ratio ou points).",
+      "id": "scripts_helpers_rationale_82"
+    },
+    {
+      "label": "Retourne des segments (texte, style) en appliquant les emphases non chevauchante",
+      "file_type": "rationale",
+      "source_file": "helpers.py",
+      "source_location": "L96",
+      "community": 0,
+      "norm_label": "retourne des segments (texte, style) en appliquant les emphases non chevauchante",
+      "id": "scripts_helpers_rationale_96"
+    },
+    {
+      "label": "Fusionne le style du placeholder avec une emphase locale.",
+      "file_type": "rationale",
+      "source_file": "helpers.py",
+      "source_location": "L130",
+      "community": 8,
+      "norm_label": "fusionne le style du placeholder avec une emphase locale.",
+      "id": "scripts_helpers_rationale_130"
+    },
+    {
+      "label": "Cr\u00e9e un textbox avec texte simple ou spec enrichie (interligne + emphases).",
+      "file_type": "rationale",
+      "source_file": "helpers.py",
+      "source_location": "L161",
+      "community": 0,
+      "norm_label": "cree un textbox avec texte simple ou spec enrichie (interligne + emphases).",
+      "id": "scripts_helpers_rationale_161"
+    },
+    {
+      "label": "Larme (teardrop). En python-pptx : MSO_SHAPE.TEAR (rotation \u00e0 appliquer pour poi",
+      "file_type": "rationale",
+      "source_file": "helpers.py",
+      "source_location": "L283",
+      "community": 1,
+      "norm_label": "larme (teardrop). en python-pptx : mso_shape.tear (rotation a appliquer pour poi",
+      "id": "scripts_helpers_rationale_283"
+    },
+    {
+      "label": "Bandeau bordeaux avec gradient vertical 3-stops + texte centr\u00e9 blanc.",
+      "file_type": "rationale",
+      "source_file": "helpers.py",
+      "source_location": "L314",
+      "community": 0,
+      "norm_label": "bandeau bordeaux avec gradient vertical 3-stops + texte centre blanc.",
+      "id": "scripts_helpers_rationale_314"
+    },
+    {
+      "label": "Ajoute le 'chrome' commun \u00e0 toutes les slides : titre, barre signature, footer,",
+      "file_type": "rationale",
+      "source_file": "helpers.py",
+      "source_location": "L367",
+      "community": 4,
+      "norm_label": "ajoute le 'chrome' commun a toutes les slides : titre, barre signature, footer,",
+      "id": "scripts_helpers_rationale_367"
+    },
+    {
+      "label": "Dispatcher : appelle le bon builder selon layout_n (1..11).",
+      "file_type": "rationale",
+      "source_file": "builders.py",
+      "source_location": "L605",
+      "community": 2,
       "norm_label": "dispatcher : appelle le bon builder selon layout_n (1..11).",
       "id": "scripts_builders_rationale_605"
     },
@@ -467,7 +620,7 @@
       "file_type": "rationale",
       "source_file": "helpers.py",
       "source_location": "L30",
-      "community": 3,
+      "community": 7,
       "norm_label": "applique les proprietes a un run et patche le xml pour cap / alpha si demande.",
       "id": "scripts_helpers_rationale_30"
     },
@@ -476,7 +629,7 @@
       "file_type": "rationale",
       "source_file": "helpers.py",
       "source_location": "L65",
-      "community": 6,
+      "community": 0,
       "norm_label": "cree un textbox avec un run unique aux proprietes specifiees.",
       "id": "scripts_helpers_rationale_65"
     },
@@ -485,7 +638,7 @@
       "file_type": "rationale",
       "source_file": "helpers.py",
       "source_location": "L127",
-      "community": 2,
+      "community": 1,
       "norm_label": "larme (teardrop). en python-pptx : mso_shape.tear (rotation a appliquer pour poi",
       "id": "scripts_helpers_rationale_127"
     },
@@ -526,9 +679,9 @@
       "source_file": "builders.py",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "builders_py",
-      "target": "scripts_builders_resolve_background_asset",
-      "confidence_score": 1.0
+      "target": "scripts_builders_resolve_background_asset"
     },
     {
       "relation": "contains",
@@ -678,9 +831,9 @@
       "source_file": "builders.py",
       "source_location": "L150",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_builders_build_slide_4",
-      "target": "scripts_builders_resolve_background_asset",
-      "confidence_score": 1.0
+      "target": "scripts_builders_resolve_background_asset"
     },
     {
       "relation": "calls",
@@ -1337,6 +1490,17 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "builders.py",
+      "source_location": "L654",
+      "weight": 1.0,
+      "source": "scripts_builders_build_slide_11",
+      "target": "scripts_helpers_add_transparent_text_image"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "builders.py",
       "source_location": "L577",
       "weight": 1.0,
       "source": "scripts_builders_build_slide_11",
@@ -1357,9 +1521,9 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "builders.py",
-      "source_location": "L634",
+      "source_location": "L683",
       "weight": 1.0,
-      "source": "scripts_builders_rationale_634",
+      "source": "scripts_builders_rationale_683",
       "target": "scripts_builders_build_slide",
       "confidence_score": 1.0
     },
@@ -1372,6 +1536,16 @@
       "source_location": "L64",
       "weight": 1.0,
       "source": "scripts_generate_pptx_generate",
+      "target": "scripts_builders_build_slide"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "builders.py",
+      "source_location": "L634",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_builders_rationale_634",
       "target": "scripts_builders_build_slide"
     },
     {
@@ -1393,6 +1567,16 @@
       "confidence_score": 1.0,
       "source": "generate_pptx_py",
       "target": "scripts_generate_pptx_init_presentation"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "generate_pptx.py",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "generate_pptx_py",
+      "target": "scripts_generate_pptx_resolve_logo_path",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1429,11 +1613,11 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "generate_pptx.py",
-      "source_location": "L34",
+      "source_location": "L36",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_generate_pptx_rationale_34",
-      "target": "scripts_generate_pptx_init_presentation"
+      "source": "scripts_generate_pptx_rationale_36",
+      "target": "scripts_generate_pptx_init_presentation",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -1445,6 +1629,37 @@
       "weight": 1.0,
       "source": "scripts_generate_pptx_init_presentation",
       "target": "scripts_helpers_cm"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "generate_pptx.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_generate_pptx_rationale_34",
+      "target": "scripts_generate_pptx_init_presentation"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "generate_pptx.py",
+      "source_location": "L83",
+      "weight": 1.0,
+      "source": "scripts_generate_pptx_generate",
+      "target": "scripts_generate_pptx_resolve_logo_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "generate_pptx.py",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "scripts_generate_pptx_rationale_44",
+      "target": "scripts_generate_pptx_resolve_logo_path",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -1481,11 +1696,21 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "helpers.py",
-      "source_location": "L28",
+      "source_location": "L31",
       "weight": 1.0,
       "source": "helpers_py",
-      "target": "scripts_helpers_remove_theme_style",
+      "target": "scripts_helpers_hex_to_rgba",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "helpers.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "helpers_py",
+      "target": "scripts_helpers_remove_theme_style"
     },
     {
       "relation": "contains",
@@ -1503,9 +1728,9 @@
       "source_file": "helpers.py",
       "source_location": "L71",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "helpers_py",
-      "target": "scripts_helpers_normalize_text_spec",
-      "confidence_score": 1.0
+      "target": "scripts_helpers_normalize_text_spec"
     },
     {
       "relation": "contains",
@@ -1513,9 +1738,9 @@
       "source_file": "helpers.py",
       "source_location": "L81",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "helpers_py",
-      "target": "scripts_helpers_normalize_line_spacing",
-      "confidence_score": 1.0
+      "target": "scripts_helpers_normalize_line_spacing"
     },
     {
       "relation": "contains",
@@ -1523,9 +1748,9 @@
       "source_file": "helpers.py",
       "source_location": "L95",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "helpers_py",
-      "target": "scripts_helpers_emphasis_spans",
-      "confidence_score": 1.0
+      "target": "scripts_helpers_emphasis_spans"
     },
     {
       "relation": "contains",
@@ -1533,9 +1758,9 @@
       "source_file": "helpers.py",
       "source_location": "L129",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "helpers_py",
-      "target": "scripts_helpers_run_style",
-      "confidence_score": 1.0
+      "target": "scripts_helpers_run_style"
     },
     {
       "relation": "contains",
@@ -1566,6 +1791,26 @@
       "confidence_score": 1.0,
       "source": "helpers_py",
       "target": "scripts_helpers_add_oval"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "helpers.py",
+      "source_location": "L314",
+      "weight": 1.0,
+      "source": "helpers_py",
+      "target": "scripts_helpers_load_pil_font",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "helpers.py",
+      "source_location": "L340",
+      "weight": 1.0,
+      "source": "helpers_py",
+      "target": "scripts_helpers_add_transparent_text_image",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1659,6 +1904,17 @@
       "confidence_score": 1.0,
       "source": "scripts_helpers_add_oval",
       "target": "scripts_helpers_cm"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "helpers.py",
+      "source_location": "L370",
+      "weight": 1.0,
+      "source": "scripts_helpers_add_transparent_text_image",
+      "target": "scripts_helpers_cm",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -1775,11 +2031,22 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "helpers.py",
+      "source_location": "L365",
+      "weight": 1.0,
+      "source": "scripts_helpers_add_transparent_text_image",
+      "target": "scripts_helpers_hex_to_rgba",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "helpers.py",
       "source_location": "L215",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_helpers_add_rect",
-      "target": "scripts_helpers_remove_theme_style",
-      "confidence_score": 1.0
+      "target": "scripts_helpers_remove_theme_style"
     },
     {
       "relation": "calls",
@@ -1788,7 +2055,18 @@
       "source_file": "helpers.py",
       "source_location": "L270",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_helpers_add_oval",
+      "target": "scripts_helpers_remove_theme_style"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "helpers.py",
+      "source_location": "L371",
+      "weight": 1.0,
+      "source": "scripts_helpers_add_transparent_text_image",
       "target": "scripts_helpers_remove_theme_style",
       "confidence_score": 1.0
     },
@@ -1799,9 +2077,9 @@
       "source_file": "helpers.py",
       "source_location": "L285",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_helpers_add_teardrop",
-      "target": "scripts_helpers_remove_theme_style",
-      "confidence_score": 1.0
+      "target": "scripts_helpers_remove_theme_style"
     },
     {
       "relation": "calls",
@@ -1810,9 +2088,9 @@
       "source_file": "helpers.py",
       "source_location": "L300",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_helpers_add_line",
-      "target": "scripts_helpers_remove_theme_style",
-      "confidence_score": 1.0
+      "target": "scripts_helpers_remove_theme_style"
     },
     {
       "relation": "calls",
@@ -1821,7 +2099,17 @@
       "source_file": "helpers.py",
       "source_location": "L319",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_helpers_add_takeaway_band",
+      "target": "scripts_helpers_remove_theme_style"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "helpers.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "scripts_helpers_rationale_38",
       "target": "scripts_helpers_remove_theme_style",
       "confidence_score": 1.0
     },
@@ -1831,9 +2119,9 @@
       "source_file": "helpers.py",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_helpers_rationale_29",
-      "target": "scripts_helpers_remove_theme_style",
-      "confidence_score": 1.0
+      "target": "scripts_helpers_remove_theme_style"
     },
     {
       "relation": "calls",
@@ -1853,7 +2141,28 @@
       "source_file": "helpers.py",
       "source_location": "L264",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_helpers_add_rect",
+      "target": "scripts_helpers_set_run_props"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "helpers.py",
+      "source_location": "L309",
+      "weight": 1.0,
+      "source": "scripts_helpers_add_oval",
+      "target": "scripts_helpers_set_run_props",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "helpers.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "source": "scripts_helpers_rationale_48",
       "target": "scripts_helpers_set_run_props",
       "confidence_score": 1.0
     },
@@ -1863,9 +2172,9 @@
       "source_file": "helpers.py",
       "source_location": "L39",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_helpers_rationale_39",
-      "target": "scripts_helpers_set_run_props",
-      "confidence_score": 1.0
+      "target": "scripts_helpers_set_run_props"
     },
     {
       "relation": "rationale_for",
@@ -1884,9 +2193,9 @@
       "source_file": "helpers.py",
       "source_location": "L181",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_helpers_add_textbox",
-      "target": "scripts_helpers_normalize_text_spec",
-      "confidence_score": 1.0
+      "target": "scripts_helpers_normalize_text_spec"
     },
     {
       "relation": "calls",
@@ -1895,7 +2204,17 @@
       "source_file": "helpers.py",
       "source_location": "L244",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_helpers_add_rect",
+      "target": "scripts_helpers_normalize_text_spec"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "helpers.py",
+      "source_location": "L81",
+      "weight": 1.0,
+      "source": "scripts_helpers_rationale_81",
       "target": "scripts_helpers_normalize_text_spec",
       "confidence_score": 1.0
     },
@@ -1905,9 +2224,9 @@
       "source_file": "helpers.py",
       "source_location": "L72",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_helpers_rationale_72",
-      "target": "scripts_helpers_normalize_text_spec",
-      "confidence_score": 1.0
+      "target": "scripts_helpers_normalize_text_spec"
     },
     {
       "relation": "calls",
@@ -1916,9 +2235,9 @@
       "source_file": "helpers.py",
       "source_location": "L183",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_helpers_add_textbox",
-      "target": "scripts_helpers_normalize_line_spacing",
-      "confidence_score": 1.0
+      "target": "scripts_helpers_normalize_line_spacing"
     },
     {
       "relation": "calls",
@@ -1927,7 +2246,17 @@
       "source_file": "helpers.py",
       "source_location": "L246",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_helpers_add_rect",
+      "target": "scripts_helpers_normalize_line_spacing"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "helpers.py",
+      "source_location": "L91",
+      "weight": 1.0,
+      "source": "scripts_helpers_rationale_91",
       "target": "scripts_helpers_normalize_line_spacing",
       "confidence_score": 1.0
     },
@@ -1937,9 +2266,9 @@
       "source_file": "helpers.py",
       "source_location": "L82",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_helpers_rationale_82",
-      "target": "scripts_helpers_normalize_line_spacing",
-      "confidence_score": 1.0
+      "target": "scripts_helpers_normalize_line_spacing"
     },
     {
       "relation": "calls",
@@ -1948,9 +2277,9 @@
       "source_file": "helpers.py",
       "source_location": "L196",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_helpers_add_textbox",
-      "target": "scripts_helpers_emphasis_spans",
-      "confidence_score": 1.0
+      "target": "scripts_helpers_emphasis_spans"
     },
     {
       "relation": "calls",
@@ -1959,7 +2288,17 @@
       "source_file": "helpers.py",
       "source_location": "L259",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_helpers_add_rect",
+      "target": "scripts_helpers_emphasis_spans"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "helpers.py",
+      "source_location": "L105",
+      "weight": 1.0,
+      "source": "scripts_helpers_rationale_105",
       "target": "scripts_helpers_emphasis_spans",
       "confidence_score": 1.0
     },
@@ -1969,9 +2308,9 @@
       "source_file": "helpers.py",
       "source_location": "L96",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_helpers_rationale_96",
-      "target": "scripts_helpers_emphasis_spans",
-      "confidence_score": 1.0
+      "target": "scripts_helpers_emphasis_spans"
     },
     {
       "relation": "calls",
@@ -1980,9 +2319,9 @@
       "source_file": "helpers.py",
       "source_location": "L201",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_helpers_add_textbox",
-      "target": "scripts_helpers_run_style",
-      "confidence_score": 1.0
+      "target": "scripts_helpers_run_style"
     },
     {
       "relation": "calls",
@@ -1991,7 +2330,17 @@
       "source_file": "helpers.py",
       "source_location": "L264",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_helpers_add_rect",
+      "target": "scripts_helpers_run_style"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "helpers.py",
+      "source_location": "L139",
+      "weight": 1.0,
+      "source": "scripts_helpers_rationale_139",
       "target": "scripts_helpers_run_style",
       "confidence_score": 1.0
     },
@@ -2001,9 +2350,9 @@
       "source_file": "helpers.py",
       "source_location": "L130",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_helpers_rationale_130",
-      "target": "scripts_helpers_run_style",
-      "confidence_score": 1.0
+      "target": "scripts_helpers_run_style"
     },
     {
       "relation": "calls",
@@ -2031,11 +2380,21 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "helpers.py",
-      "source_location": "L161",
+      "source_location": "L170",
       "weight": 1.0,
-      "source": "scripts_helpers_rationale_161",
+      "source": "scripts_helpers_rationale_170",
       "target": "scripts_helpers_add_textbox",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "helpers.py",
+      "source_location": "L161",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_helpers_rationale_161",
+      "target": "scripts_helpers_add_textbox"
     },
     {
       "relation": "rationale_for",
@@ -2059,14 +2418,35 @@
       "target": "scripts_helpers_add_rect"
     },
     {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "helpers.py",
+      "source_location": "L348",
+      "weight": 1.0,
+      "source": "scripts_helpers_add_transparent_text_image",
+      "target": "scripts_helpers_load_pil_font",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "helpers.py",
+      "source_location": "L378",
+      "weight": 1.0,
+      "source": "scripts_helpers_rationale_378",
+      "target": "scripts_helpers_add_teardrop",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "helpers.py",
       "source_location": "L283",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_helpers_rationale_283",
-      "target": "scripts_helpers_add_teardrop",
-      "confidence_score": 1.0
+      "target": "scripts_helpers_add_teardrop"
     },
     {
       "relation": "rationale_for",
@@ -2082,11 +2462,21 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "helpers.py",
-      "source_location": "L314",
+      "source_location": "L408",
       "weight": 1.0,
-      "source": "scripts_helpers_rationale_314",
+      "source": "scripts_helpers_rationale_408",
       "target": "scripts_helpers_add_takeaway_band",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "helpers.py",
+      "source_location": "L314",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_helpers_rationale_314",
+      "target": "scripts_helpers_add_takeaway_band"
     },
     {
       "relation": "rationale_for",
@@ -2102,11 +2492,21 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "helpers.py",
-      "source_location": "L367",
+      "source_location": "L463",
       "weight": 1.0,
-      "source": "scripts_helpers_rationale_367",
+      "source": "scripts_helpers_rationale_463",
       "target": "scripts_helpers_add_master_chrome",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "helpers.py",
+      "source_location": "L367",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_helpers_rationale_367",
+      "target": "scripts_helpers_add_master_chrome"
     },
     {
       "relation": "rationale_for",
