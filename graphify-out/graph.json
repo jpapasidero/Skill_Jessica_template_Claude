@@ -9,7 +9,7 @@
       "source_file": "builders.py",
       "source_location": "L1",
       "id": "builders_py",
-      "community": 2,
+      "community": 0,
       "norm_label": "builders.py"
     },
     {
@@ -18,7 +18,7 @@
       "source_file": "builders.py",
       "source_location": "L21",
       "id": "scripts_builders_resolve_background_asset",
-      "community": 14,
+      "community": 0,
       "norm_label": "resolve_background_asset()"
     },
     {
@@ -27,7 +27,7 @@
       "source_file": "builders.py",
       "source_location": "L29",
       "id": "scripts_builders_plain_text",
-      "community": 15,
+      "community": 0,
       "norm_label": "plain_text()"
     },
     {
@@ -45,7 +45,7 @@
       "source_file": "builders.py",
       "source_location": "L90",
       "id": "scripts_builders_build_slide_2",
-      "community": 2,
+      "community": 0,
       "norm_label": "build_slide_2()"
     },
     {
@@ -54,7 +54,7 @@
       "source_file": "builders.py",
       "source_location": "L126",
       "id": "scripts_builders_build_slide_3",
-      "community": 5,
+      "community": 3,
       "norm_label": "build_slide_3()"
     },
     {
@@ -63,7 +63,7 @@
       "source_file": "builders.py",
       "source_location": "L167",
       "id": "scripts_builders_build_slide_4",
-      "community": 14,
+      "community": 0,
       "norm_label": "build_slide_4()"
     },
     {
@@ -72,7 +72,7 @@
       "source_file": "builders.py",
       "source_location": "L201",
       "id": "scripts_builders_build_slide_5",
-      "community": 8,
+      "community": 0,
       "norm_label": "build_slide_5()"
     },
     {
@@ -81,7 +81,7 @@
       "source_file": "builders.py",
       "source_location": "L250",
       "id": "scripts_builders_build_slide_6",
-      "community": 5,
+      "community": 0,
       "norm_label": "build_slide_6()"
     },
     {
@@ -99,7 +99,7 @@
       "source_file": "builders.py",
       "source_location": "L382",
       "id": "scripts_builders_build_slide_8",
-      "community": 6,
+      "community": 2,
       "norm_label": "build_slide_8()"
     },
     {
@@ -108,7 +108,7 @@
       "source_file": "builders.py",
       "source_location": "L443",
       "id": "scripts_builders_build_slide_9",
-      "community": 3,
+      "community": 0,
       "norm_label": "build_slide_9()"
     },
     {
@@ -117,7 +117,7 @@
       "source_file": "builders.py",
       "source_location": "L555",
       "id": "scripts_builders_build_slide_10",
-      "community": 3,
+      "community": 0,
       "norm_label": "build_slide_10()"
     },
     {
@@ -126,7 +126,7 @@
       "source_file": "builders.py",
       "source_location": "L638",
       "id": "scripts_builders_build_slide_11",
-      "community": 6,
+      "community": 0,
       "norm_label": "build_slide_11()"
     },
     {
@@ -135,7 +135,7 @@
       "source_file": "builders.py",
       "source_location": "L682",
       "id": "scripts_builders_build_slide_12",
-      "community": 2,
+      "community": 0,
       "norm_label": "build_slide_12()"
     },
     {
@@ -144,7 +144,7 @@
       "source_file": "builders.py",
       "source_location": "L718",
       "id": "scripts_builders_build_slide_13",
-      "community": 2,
+      "community": 0,
       "norm_label": "build_slide_13()"
     },
     {
@@ -153,7 +153,7 @@
       "source_file": "builders.py",
       "source_location": "L769",
       "id": "scripts_builders_build_slide_14",
-      "community": 14,
+      "community": 0,
       "norm_label": "build_slide_14()"
     },
     {
@@ -162,7 +162,7 @@
       "source_file": "builders.py",
       "source_location": "L815",
       "id": "scripts_builders_build_slide_15",
-      "community": 15,
+      "community": 0,
       "norm_label": "build_slide_15()"
     },
     {
@@ -171,7 +171,7 @@
       "source_file": "builders.py",
       "source_location": "L891",
       "id": "scripts_builders_build_slide",
-      "community": 0,
+      "community": 4,
       "norm_label": "build_slide()"
     },
     {
@@ -180,7 +180,7 @@
       "source_file": "builders.py",
       "source_location": "L1",
       "id": "scripts_builders_rationale_1",
-      "community": 2,
+      "community": 0,
       "norm_label": "constructeurs par layout (slide 1 a 11) du template palette jessica. chaque fon"
     },
     {
@@ -189,7 +189,7 @@
       "source_file": "builders.py",
       "source_location": "L30",
       "id": "scripts_builders_rationale_30",
-      "community": 15,
+      "community": 0,
       "norm_label": "retourne le texte brut d'un champ enrichi, sans emphases inline."
     },
     {
@@ -198,7 +198,7 @@
       "source_file": "builders.py",
       "source_location": "L892",
       "id": "scripts_builders_rationale_892",
-      "community": 0,
+      "community": 4,
       "norm_label": "dispatcher : appelle le bon builder selon layout_n (1..11)."
     },
     {
@@ -207,7 +207,7 @@
       "source_file": "generate_pptx.py",
       "source_location": "L1",
       "id": "generate_pptx_py",
-      "community": 0,
+      "community": 4,
       "norm_label": "generate_pptx.py"
     },
     {
@@ -216,7 +216,7 @@
       "source_file": "generate_pptx.py",
       "source_location": "L37",
       "id": "scripts_generate_pptx_init_presentation",
-      "community": 0,
+      "community": 4,
       "norm_label": "init_presentation()"
     },
     {
@@ -225,7 +225,7 @@
       "source_file": "generate_pptx.py",
       "source_location": "L45",
       "id": "scripts_generate_pptx_resolve_logo_path",
-      "community": 0,
+      "community": 4,
       "norm_label": "resolve_logo_path()"
     },
     {
@@ -234,7 +234,7 @@
       "source_file": "generate_pptx.py",
       "source_location": "L84",
       "id": "scripts_generate_pptx_generate",
-      "community": 0,
+      "community": 4,
       "norm_label": "generate()"
     },
     {
@@ -243,7 +243,7 @@
       "source_file": "generate_pptx.py",
       "source_location": "L130",
       "id": "scripts_generate_pptx_main",
-      "community": 0,
+      "community": 4,
       "norm_label": "main()"
     },
     {
@@ -252,7 +252,7 @@
       "source_file": "generate_pptx.py",
       "source_location": "L38",
       "id": "scripts_generate_pptx_rationale_38",
-      "community": 0,
+      "community": 4,
       "norm_label": "cree une presentation vierge au bon format."
     },
     {
@@ -261,7 +261,7 @@
       "source_file": "generate_pptx.py",
       "source_location": "L46",
       "id": "scripts_generate_pptx_rationale_46",
-      "community": 0,
+      "community": 4,
       "norm_label": "trouve le logo depuis un chemin explicite ou les dossiers d'assets locaux."
     },
     {
@@ -270,7 +270,7 @@
       "source_file": "helpers.py",
       "source_location": "L1",
       "id": "helpers_py",
-      "community": 7,
+      "community": 3,
       "norm_label": "helpers.py"
     },
     {
@@ -288,7 +288,7 @@
       "source_file": "helpers.py",
       "source_location": "L26",
       "id": "scripts_helpers_hex_to_rgb",
-      "community": 3,
+      "community": 0,
       "norm_label": "hex_to_rgb()"
     },
     {
@@ -297,7 +297,7 @@
       "source_file": "helpers.py",
       "source_location": "L31",
       "id": "scripts_helpers_hex_to_rgba",
-      "community": 7,
+      "community": 3,
       "norm_label": "hex_to_rgba()"
     },
     {
@@ -306,7 +306,7 @@
       "source_file": "helpers.py",
       "source_location": "L37",
       "id": "scripts_helpers_remove_theme_style",
-      "community": 12,
+      "community": 3,
       "norm_label": "remove_theme_style()"
     },
     {
@@ -315,7 +315,7 @@
       "source_file": "helpers.py",
       "source_location": "L46",
       "id": "scripts_helpers_set_run_props",
-      "community": 10,
+      "community": 5,
       "norm_label": "set_run_props()"
     },
     {
@@ -324,7 +324,7 @@
       "source_file": "helpers.py",
       "source_location": "L80",
       "id": "scripts_helpers_normalize_text_spec",
-      "community": 13,
+      "community": 2,
       "norm_label": "normalize_text_spec()"
     },
     {
@@ -333,7 +333,7 @@
       "source_file": "helpers.py",
       "source_location": "L90",
       "id": "scripts_helpers_normalize_line_spacing",
-      "community": 11,
+      "community": 3,
       "norm_label": "normalize_line_spacing()"
     },
     {
@@ -342,7 +342,7 @@
       "source_file": "helpers.py",
       "source_location": "L104",
       "id": "scripts_helpers_emphasis_spans",
-      "community": 4,
+      "community": 6,
       "norm_label": "emphasis_spans()"
     },
     {
@@ -351,7 +351,7 @@
       "source_file": "helpers.py",
       "source_location": "L138",
       "id": "scripts_helpers_run_style",
-      "community": 4,
+      "community": 2,
       "norm_label": "run_style()"
     },
     {
@@ -360,7 +360,7 @@
       "source_file": "helpers.py",
       "source_location": "L165",
       "id": "scripts_helpers_add_textbox",
-      "community": 8,
+      "community": 2,
       "norm_label": "add_textbox()"
     },
     {
@@ -369,7 +369,7 @@
       "source_file": "helpers.py",
       "source_location": "L216",
       "id": "scripts_helpers_add_rect",
-      "community": 3,
+      "community": 0,
       "norm_label": "add_rect()"
     },
     {
@@ -378,7 +378,7 @@
       "source_file": "helpers.py",
       "source_location": "L277",
       "id": "scripts_helpers_add_oval",
-      "community": 3,
+      "community": 0,
       "norm_label": "add_oval()"
     },
     {
@@ -387,7 +387,7 @@
       "source_file": "helpers.py",
       "source_location": "L314",
       "id": "scripts_helpers_load_pil_font",
-      "community": 7,
+      "community": 3,
       "norm_label": "_load_pil_font()"
     },
     {
@@ -396,7 +396,7 @@
       "source_file": "helpers.py",
       "source_location": "L340",
       "id": "scripts_helpers_add_transparent_text_image",
-      "community": 7,
+      "community": 3,
       "norm_label": "add_transparent_text_image()"
     },
     {
@@ -405,7 +405,7 @@
       "source_file": "helpers.py",
       "source_location": "L377",
       "id": "scripts_helpers_add_teardrop",
-      "community": 9,
+      "community": 3,
       "norm_label": "add_teardrop()"
     },
     {
@@ -414,7 +414,7 @@
       "source_file": "helpers.py",
       "source_location": "L390",
       "id": "scripts_helpers_add_line",
-      "community": 3,
+      "community": 0,
       "norm_label": "add_line()"
     },
     {
@@ -423,7 +423,7 @@
       "source_file": "helpers.py",
       "source_location": "L407",
       "id": "scripts_helpers_add_takeaway_band",
-      "community": 6,
+      "community": 2,
       "norm_label": "add_takeaway_band()"
     },
     {
@@ -432,7 +432,7 @@
       "source_file": "helpers.py",
       "source_location": "L461",
       "id": "scripts_helpers_add_master_chrome",
-      "community": 5,
+      "community": 0,
       "norm_label": "add_master_chrome()"
     },
     {
@@ -441,7 +441,7 @@
       "source_file": "helpers.py",
       "source_location": "L502",
       "id": "scripts_helpers_set_white_background",
-      "community": 2,
+      "community": 0,
       "norm_label": "set_white_background()"
     },
     {
@@ -450,7 +450,7 @@
       "source_file": "helpers.py",
       "source_location": "L1",
       "id": "scripts_helpers_rationale_1",
-      "community": 7,
+      "community": 3,
       "norm_label": "helpers bas-niveau pour le template palette jessica. manipule directement le xml"
     },
     {
@@ -459,7 +459,7 @@
       "source_file": "helpers.py",
       "source_location": "L38",
       "id": "scripts_helpers_rationale_38",
-      "community": 12,
+      "community": 3,
       "norm_label": "remove powerpoint theme effects that can add shadows by default."
     },
     {
@@ -468,7 +468,7 @@
       "source_file": "helpers.py",
       "source_location": "L48",
       "id": "scripts_helpers_rationale_48",
-      "community": 10,
+      "community": 5,
       "norm_label": "applique les proprietes a un run et patche le xml pour cap / alpha si demande."
     },
     {
@@ -477,7 +477,7 @@
       "source_file": "helpers.py",
       "source_location": "L81",
       "id": "scripts_helpers_rationale_81",
-      "community": 13,
+      "community": 2,
       "norm_label": "accepte une chaine simple ou une spec enrichie de type {\"text\": ..., ...}."
     },
     {
@@ -486,7 +486,7 @@
       "source_file": "helpers.py",
       "source_location": "L91",
       "id": "scripts_helpers_rationale_91",
-      "community": 11,
+      "community": 3,
       "norm_label": "convertit l'interligne json en valeur python-pptx (ratio ou points)."
     },
     {
@@ -495,7 +495,7 @@
       "source_file": "helpers.py",
       "source_location": "L105",
       "id": "scripts_helpers_rationale_105",
-      "community": 4,
+      "community": 6,
       "norm_label": "retourne des segments (texte, style) en appliquant les emphases non chevauchante"
     },
     {
@@ -504,7 +504,7 @@
       "source_file": "helpers.py",
       "source_location": "L139",
       "id": "scripts_helpers_rationale_139",
-      "community": 4,
+      "community": 2,
       "norm_label": "fusionne le style du placeholder avec une emphase locale."
     },
     {
@@ -513,7 +513,7 @@
       "source_file": "helpers.py",
       "source_location": "L170",
       "id": "scripts_helpers_rationale_170",
-      "community": 8,
+      "community": 2,
       "norm_label": "cree un textbox avec texte simple ou spec enrichie (interligne + emphases)."
     },
     {
@@ -522,7 +522,7 @@
       "source_file": "helpers.py",
       "source_location": "L378",
       "id": "scripts_helpers_rationale_378",
-      "community": 9,
+      "community": 3,
       "norm_label": "larme (teardrop). en python-pptx : mso_shape.tear."
     },
     {
@@ -531,7 +531,7 @@
       "source_file": "helpers.py",
       "source_location": "L408",
       "id": "scripts_helpers_rationale_408",
-      "community": 6,
+      "community": 2,
       "norm_label": "bandeau bordeaux avec gradient vertical 3-stops + texte centre blanc."
     },
     {
@@ -540,7 +540,7 @@
       "source_file": "helpers.py",
       "source_location": "L463",
       "id": "scripts_helpers_rationale_463",
-      "community": 5,
+      "community": 0,
       "norm_label": "ajoute le 'chrome' commun a toutes les slides : titre, barre signature, footer,"
     },
     {
@@ -562,28 +562,28 @@
       "norm_label": "_classify_omoc_bullet()"
     },
     {
-      "label": "_first_sentence()",
+      "label": "_extract_raw_levers()",
       "file_type": "code",
       "source_file": "impact_parser.py",
       "source_location": "L74",
-      "id": "scripts_impact_parser_first_sentence",
+      "id": "scripts_impact_parser_extract_raw_levers",
       "community": 1,
-      "norm_label": "_first_sentence()"
+      "norm_label": "_extract_raw_levers()"
     },
     {
-      "label": "_summarize_levers()",
+      "label": "_fallback_summarize_levers()",
       "file_type": "code",
       "source_file": "impact_parser.py",
-      "source_location": "L94",
-      "id": "scripts_impact_parser_summarize_levers",
+      "source_location": "L102",
+      "id": "scripts_impact_parser_fallback_summarize_levers",
       "community": 1,
-      "norm_label": "_summarize_levers()"
+      "norm_label": "_fallback_summarize_levers()"
     },
     {
       "label": "_parse_title()",
       "file_type": "code",
       "source_file": "impact_parser.py",
-      "source_location": "L141",
+      "source_location": "L131",
       "id": "scripts_impact_parser_parse_title",
       "community": 1,
       "norm_label": "_parse_title()"
@@ -592,7 +592,7 @@
       "label": "parse_impact_file()",
       "file_type": "code",
       "source_file": "impact_parser.py",
-      "source_location": "L171",
+      "source_location": "L161",
       "id": "scripts_impact_parser_parse_impact_file",
       "community": 1,
       "norm_label": "parse_impact_file()"
@@ -601,7 +601,7 @@
       "label": "build_layout15_slides()",
       "file_type": "code",
       "source_file": "impact_parser.py",
-      "source_location": "L231",
+      "source_location": "L225",
       "id": "scripts_impact_parser_build_layout15_slides",
       "community": 1,
       "norm_label": "build_layout15_slides()"
@@ -610,7 +610,7 @@
       "label": "generate_impact_content()",
       "file_type": "code",
       "source_file": "impact_parser.py",
-      "source_location": "L284",
+      "source_location": "L278",
       "id": "scripts_impact_parser_generate_impact_content",
       "community": 1,
       "norm_label": "generate_impact_content()"
@@ -625,29 +625,29 @@
       "norm_label": "determine l'axe omoc et le niveau (0-4) d'un bullet a partir de sa     position"
     },
     {
-      "label": "Extrait la premi\u00e8re phrase significative d'un bloc de texte.     Tronque proprem",
+      "label": "Extrait les donn\u00e9es brutes de la table RESSORTS_CHANGE.      Retourne une liste",
       "file_type": "rationale",
       "source_file": "impact_parser.py",
       "source_location": "L75",
       "id": "scripts_impact_parser_rationale_75",
       "community": 1,
-      "norm_label": "extrait la premiere phrase significative d'un bloc de texte.     tronque proprem"
+      "norm_label": "extrait les donnees brutes de la table ressorts_change.      retourne une liste"
     },
     {
-      "label": "R\u00e9sume les actions de la table RESSORTS_CHANGE en une cha\u00eene structur\u00e9e     pour",
+      "label": "R\u00e9sum\u00e9 m\u00e9canique de secours (\u2264 max_len caract\u00e8res) utilis\u00e9 quand     l'IA ne fou",
       "file_type": "rationale",
       "source_file": "impact_parser.py",
-      "source_location": "L95",
-      "id": "scripts_impact_parser_rationale_95",
+      "source_location": "L103",
+      "id": "scripts_impact_parser_rationale_103",
       "community": 1,
-      "norm_label": "resume les actions de la table ressorts_change en une chaine structuree     pour"
+      "norm_label": "resume mecanique de secours (\u2264 max_len caracteres) utilise quand     l'ia ne fou"
     },
     {
       "label": "S\u00e9pare le texte du TITLE en (population, effectif).      Formats attendus :",
       "file_type": "rationale",
       "source_file": "impact_parser.py",
-      "source_location": "L142",
-      "id": "scripts_impact_parser_rationale_142",
+      "source_location": "L132",
+      "id": "scripts_impact_parser_rationale_132",
       "community": 1,
       "norm_label": "separe le texte du title en (population, effectif).      formats attendus :"
     },
@@ -655,8 +655,8 @@
       "label": "Parse un fichier d'analyse d'impact PPTX et retourne une liste de     dictionnai",
       "file_type": "rationale",
       "source_file": "impact_parser.py",
-      "source_location": "L172",
-      "id": "scripts_impact_parser_rationale_172",
+      "source_location": "L162",
+      "id": "scripts_impact_parser_rationale_162",
       "community": 1,
       "norm_label": "parse un fichier d'analyse d'impact pptx et retourne une liste de     dictionnai"
     },
@@ -664,8 +664,8 @@
       "label": "Convertit la liste de populations en entr\u00e9es content.json pour le Layout 15.",
       "file_type": "rationale",
       "source_file": "impact_parser.py",
-      "source_location": "L232",
-      "id": "scripts_impact_parser_rationale_232",
+      "source_location": "L226",
+      "id": "scripts_impact_parser_rationale_226",
       "community": 1,
       "norm_label": "convertit la liste de populations en entrees content.json pour le layout 15."
     },
@@ -673,8 +673,8 @@
       "label": "Fonction principale : parse le fichier d'analyse d'impact et retourne     la lis",
       "file_type": "rationale",
       "source_file": "impact_parser.py",
-      "source_location": "L285",
-      "id": "scripts_impact_parser_rationale_285",
+      "source_location": "L279",
+      "id": "scripts_impact_parser_rationale_279",
       "community": 1,
       "norm_label": "fonction principale : parse le fichier d'analyse d'impact et retourne     la lis"
     },
@@ -684,15 +684,78 @@
       "source_file": "__init__.py",
       "source_location": "L1",
       "id": "init_py",
-      "community": 16,
+      "community": 7,
       "norm_label": "__init__.py"
+    },
+    {
+      "label": "_first_sentence()",
+      "file_type": "code",
+      "source_file": "impact_parser.py",
+      "source_location": "L74",
+      "community": 1,
+      "norm_label": "_first_sentence()",
+      "id": "scripts_impact_parser_first_sentence"
+    },
+    {
+      "label": "_summarize_levers()",
+      "file_type": "code",
+      "source_file": "impact_parser.py",
+      "source_location": "L94",
+      "community": 1,
+      "norm_label": "_summarize_levers()",
+      "id": "scripts_impact_parser_summarize_levers"
+    },
+    {
+      "label": "R\u00e9sume les actions de la table RESSORTS_CHANGE en une cha\u00eene structur\u00e9e     pour",
+      "file_type": "rationale",
+      "source_file": "impact_parser.py",
+      "source_location": "L95",
+      "community": 1,
+      "norm_label": "resume les actions de la table ressorts_change en une chaine structuree     pour",
+      "id": "scripts_impact_parser_rationale_95"
+    },
+    {
+      "label": "S\u00e9pare le texte du TITLE en (population, effectif).      Formats attendus :",
+      "file_type": "rationale",
+      "source_file": "impact_parser.py",
+      "source_location": "L142",
+      "community": 1,
+      "norm_label": "separe le texte du title en (population, effectif).      formats attendus :",
+      "id": "scripts_impact_parser_rationale_142"
+    },
+    {
+      "label": "Parse un fichier d'analyse d'impact PPTX et retourne une liste de     dictionnai",
+      "file_type": "rationale",
+      "source_file": "impact_parser.py",
+      "source_location": "L172",
+      "community": 1,
+      "norm_label": "parse un fichier d'analyse d'impact pptx et retourne une liste de     dictionnai",
+      "id": "scripts_impact_parser_rationale_172"
+    },
+    {
+      "label": "Convertit la liste de populations en entr\u00e9es content.json pour le Layout 15.",
+      "file_type": "rationale",
+      "source_file": "impact_parser.py",
+      "source_location": "L232",
+      "community": 1,
+      "norm_label": "convertit la liste de populations en entrees content.json pour le layout 15.",
+      "id": "scripts_impact_parser_rationale_232"
+    },
+    {
+      "label": "Fonction principale : parse le fichier d'analyse d'impact et retourne     la lis",
+      "file_type": "rationale",
+      "source_file": "impact_parser.py",
+      "source_location": "L285",
+      "community": 1,
+      "norm_label": "fonction principale : parse le fichier d'analyse d'impact et retourne     la lis",
+      "id": "scripts_impact_parser_rationale_285"
     },
     {
       "label": "Dispatcher : appelle le bon builder selon layout_n (1..11).",
       "file_type": "rationale",
       "source_file": "builders.py",
       "source_location": "L683",
-      "community": 0,
+      "community": 4,
       "norm_label": "dispatcher : appelle le bon builder selon layout_n (1..11).",
       "id": "scripts_builders_rationale_683"
     },
@@ -701,7 +764,7 @@
       "file_type": "rationale",
       "source_file": "generate_pptx.py",
       "source_location": "L36",
-      "community": 0,
+      "community": 4,
       "norm_label": "cree une presentation vierge au bon format.",
       "id": "scripts_generate_pptx_rationale_36"
     },
@@ -710,7 +773,7 @@
       "file_type": "rationale",
       "source_file": "generate_pptx.py",
       "source_location": "L44",
-      "community": 0,
+      "community": 4,
       "norm_label": "trouve le logo depuis un chemin explicite ou les dossiers d'assets locaux.",
       "id": "scripts_generate_pptx_rationale_44"
     },
@@ -719,7 +782,7 @@
       "file_type": "rationale",
       "source_file": "builders.py",
       "source_location": "L634",
-      "community": 0,
+      "community": 4,
       "norm_label": "dispatcher : appelle le bon builder selon layout_n (1..11).",
       "id": "scripts_builders_rationale_634"
     },
@@ -728,7 +791,7 @@
       "file_type": "rationale",
       "source_file": "generate_pptx.py",
       "source_location": "L34",
-      "community": 0,
+      "community": 4,
       "norm_label": "cree une presentation vierge au bon format.",
       "id": "scripts_generate_pptx_rationale_34"
     },
@@ -737,7 +800,7 @@
       "file_type": "rationale",
       "source_file": "helpers.py",
       "source_location": "L29",
-      "community": 12,
+      "community": 3,
       "norm_label": "remove powerpoint theme effects that can add shadows by default.",
       "id": "scripts_helpers_rationale_29"
     },
@@ -746,7 +809,7 @@
       "file_type": "rationale",
       "source_file": "helpers.py",
       "source_location": "L39",
-      "community": 10,
+      "community": 5,
       "norm_label": "applique les proprietes a un run et patche le xml pour cap / alpha si demande.",
       "id": "scripts_helpers_rationale_39"
     },
@@ -755,7 +818,7 @@
       "file_type": "rationale",
       "source_file": "helpers.py",
       "source_location": "L72",
-      "community": 13,
+      "community": 2,
       "norm_label": "accepte une chaine simple ou une spec enrichie de type {\"text\": ..., ...}.",
       "id": "scripts_helpers_rationale_72"
     },
@@ -764,7 +827,7 @@
       "file_type": "rationale",
       "source_file": "helpers.py",
       "source_location": "L82",
-      "community": 11,
+      "community": 3,
       "norm_label": "convertit l'interligne json en valeur python-pptx (ratio ou points).",
       "id": "scripts_helpers_rationale_82"
     },
@@ -773,7 +836,7 @@
       "file_type": "rationale",
       "source_file": "helpers.py",
       "source_location": "L96",
-      "community": 4,
+      "community": 6,
       "norm_label": "retourne des segments (texte, style) en appliquant les emphases non chevauchante",
       "id": "scripts_helpers_rationale_96"
     },
@@ -782,7 +845,7 @@
       "file_type": "rationale",
       "source_file": "helpers.py",
       "source_location": "L130",
-      "community": 4,
+      "community": 2,
       "norm_label": "fusionne le style du placeholder avec une emphase locale.",
       "id": "scripts_helpers_rationale_130"
     },
@@ -791,7 +854,7 @@
       "file_type": "rationale",
       "source_file": "helpers.py",
       "source_location": "L161",
-      "community": 8,
+      "community": 2,
       "norm_label": "cree un textbox avec texte simple ou spec enrichie (interligne + emphases).",
       "id": "scripts_helpers_rationale_161"
     },
@@ -800,7 +863,7 @@
       "file_type": "rationale",
       "source_file": "helpers.py",
       "source_location": "L283",
-      "community": 9,
+      "community": 3,
       "norm_label": "larme (teardrop). en python-pptx : mso_shape.tear (rotation a appliquer pour poi",
       "id": "scripts_helpers_rationale_283"
     },
@@ -809,7 +872,7 @@
       "file_type": "rationale",
       "source_file": "helpers.py",
       "source_location": "L314",
-      "community": 6,
+      "community": 2,
       "norm_label": "bandeau bordeaux avec gradient vertical 3-stops + texte centre blanc.",
       "id": "scripts_helpers_rationale_314"
     },
@@ -818,7 +881,7 @@
       "file_type": "rationale",
       "source_file": "helpers.py",
       "source_location": "L367",
-      "community": 5,
+      "community": 0,
       "norm_label": "ajoute le 'chrome' commun a toutes les slides : titre, barre signature, footer,",
       "id": "scripts_helpers_rationale_367"
     },
@@ -827,7 +890,7 @@
       "file_type": "rationale",
       "source_file": "builders.py",
       "source_location": "L605",
-      "community": 0,
+      "community": 4,
       "norm_label": "dispatcher : appelle le bon builder selon layout_n (1..11).",
       "id": "scripts_builders_rationale_605"
     },
@@ -836,7 +899,7 @@
       "file_type": "rationale",
       "source_file": "helpers.py",
       "source_location": "L30",
-      "community": 10,
+      "community": 5,
       "norm_label": "applique les proprietes a un run et patche le xml pour cap / alpha si demande.",
       "id": "scripts_helpers_rationale_30"
     },
@@ -845,7 +908,7 @@
       "file_type": "rationale",
       "source_file": "helpers.py",
       "source_location": "L65",
-      "community": 8,
+      "community": 2,
       "norm_label": "cree un textbox avec un run unique aux proprietes specifiees.",
       "id": "scripts_helpers_rationale_65"
     },
@@ -854,7 +917,7 @@
       "file_type": "rationale",
       "source_file": "helpers.py",
       "source_location": "L127",
-      "community": 9,
+      "community": 3,
       "norm_label": "larme (teardrop). en python-pptx : mso_shape.tear (rotation a appliquer pour poi",
       "id": "scripts_helpers_rationale_127"
     },
@@ -863,7 +926,7 @@
       "file_type": "rationale",
       "source_file": "helpers.py",
       "source_location": "L156",
-      "community": 6,
+      "community": 2,
       "norm_label": "bandeau bordeaux avec gradient vertical 3-stops + texte centre blanc.",
       "id": "scripts_helpers_rationale_156"
     },
@@ -872,7 +935,7 @@
       "file_type": "rationale",
       "source_file": "helpers.py",
       "source_location": "L204",
-      "community": 5,
+      "community": 0,
       "norm_label": "ajoute le 'chrome' commun a toutes les slides : titre, barre signature, footer,",
       "id": "scripts_helpers_rationale_204"
     }
@@ -905,9 +968,9 @@
       "source_file": "builders.py",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "builders_py",
-      "target": "scripts_builders_plain_text",
-      "confidence_score": 1.0
+      "target": "scripts_builders_plain_text"
     },
     {
       "relation": "contains",
@@ -1025,9 +1088,9 @@
       "source_file": "builders.py",
       "source_location": "L682",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "builders_py",
-      "target": "scripts_builders_build_slide_12",
-      "confidence_score": 1.0
+      "target": "scripts_builders_build_slide_12"
     },
     {
       "relation": "contains",
@@ -1035,9 +1098,9 @@
       "source_file": "builders.py",
       "source_location": "L718",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "builders_py",
-      "target": "scripts_builders_build_slide_13",
-      "confidence_score": 1.0
+      "target": "scripts_builders_build_slide_13"
     },
     {
       "relation": "contains",
@@ -1045,9 +1108,9 @@
       "source_file": "builders.py",
       "source_location": "L769",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "builders_py",
-      "target": "scripts_builders_build_slide_14",
-      "confidence_score": 1.0
+      "target": "scripts_builders_build_slide_14"
     },
     {
       "relation": "contains",
@@ -1055,9 +1118,9 @@
       "source_file": "builders.py",
       "source_location": "L815",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "builders_py",
-      "target": "scripts_builders_build_slide_15",
-      "confidence_score": 1.0
+      "target": "scripts_builders_build_slide_15"
     },
     {
       "relation": "contains",
@@ -1108,9 +1171,9 @@
       "source_file": "builders.py",
       "source_location": "L780",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_builders_build_slide_14",
-      "target": "scripts_builders_resolve_background_asset",
-      "confidence_score": 1.0
+      "target": "scripts_builders_resolve_background_asset"
     },
     {
       "relation": "calls",
@@ -1119,9 +1182,9 @@
       "source_file": "builders.py",
       "source_location": "L817",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_builders_build_slide_15",
-      "target": "scripts_builders_plain_text",
-      "confidence_score": 1.0
+      "target": "scripts_builders_plain_text"
     },
     {
       "relation": "rationale_for",
@@ -1129,9 +1192,9 @@
       "source_file": "builders.py",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_builders_rationale_30",
-      "target": "scripts_builders_plain_text",
-      "confidence_score": 1.0
+      "target": "scripts_builders_plain_text"
     },
     {
       "relation": "calls",
@@ -2041,9 +2104,9 @@
       "source_file": "builders.py",
       "source_location": "L892",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_builders_rationale_892",
-      "target": "scripts_builders_build_slide",
-      "confidence_score": 1.0
+      "target": "scripts_builders_build_slide"
     },
     {
       "relation": "calls",
@@ -2093,9 +2156,9 @@
       "source_file": "generate_pptx.py",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "generate_pptx_py",
-      "target": "impact_parser_py",
-      "confidence_score": 1.0
+      "target": "impact_parser_py"
     },
     {
       "relation": "contains",
@@ -2154,9 +2217,9 @@
       "source_file": "generate_pptx.py",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_generate_pptx_rationale_38",
-      "target": "scripts_generate_pptx_init_presentation",
-      "confidence_score": 1.0
+      "target": "scripts_generate_pptx_init_presentation"
     },
     {
       "relation": "calls",
@@ -2206,9 +2269,9 @@
       "source_file": "generate_pptx.py",
       "source_location": "L46",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_generate_pptx_rationale_46",
-      "target": "scripts_generate_pptx_resolve_logo_path",
-      "confidence_score": 1.0
+      "target": "scripts_generate_pptx_resolve_logo_path"
     },
     {
       "relation": "rationale_for",
@@ -3094,9 +3157,9 @@
       "source_file": "impact_parser.py",
       "source_location": "L47",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "impact_parser_py",
-      "target": "scripts_impact_parser_classify_omoc_bullet",
-      "confidence_score": 1.0
+      "target": "scripts_impact_parser_classify_omoc_bullet"
     },
     {
       "relation": "contains",
@@ -3104,19 +3167,19 @@
       "source_file": "impact_parser.py",
       "source_location": "L74",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "impact_parser_py",
-      "target": "scripts_impact_parser_first_sentence",
-      "confidence_score": 1.0
+      "target": "scripts_impact_parser_extract_raw_levers"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "impact_parser.py",
-      "source_location": "L94",
+      "source_location": "L102",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "impact_parser_py",
-      "target": "scripts_impact_parser_summarize_levers",
-      "confidence_score": 1.0
+      "target": "scripts_impact_parser_fallback_summarize_levers"
     },
     {
       "relation": "contains",
@@ -3124,9 +3187,9 @@
       "source_file": "impact_parser.py",
       "source_location": "L141",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "impact_parser_py",
-      "target": "scripts_impact_parser_parse_title",
-      "confidence_score": 1.0
+      "target": "scripts_impact_parser_parse_title"
     },
     {
       "relation": "contains",
@@ -3134,9 +3197,9 @@
       "source_file": "impact_parser.py",
       "source_location": "L171",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "impact_parser_py",
-      "target": "scripts_impact_parser_parse_impact_file",
-      "confidence_score": 1.0
+      "target": "scripts_impact_parser_parse_impact_file"
     },
     {
       "relation": "contains",
@@ -3144,9 +3207,9 @@
       "source_file": "impact_parser.py",
       "source_location": "L231",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "impact_parser_py",
-      "target": "scripts_impact_parser_build_layout15_slides",
-      "confidence_score": 1.0
+      "target": "scripts_impact_parser_build_layout15_slides"
     },
     {
       "relation": "contains",
@@ -3154,9 +3217,29 @@
       "source_file": "impact_parser.py",
       "source_location": "L284",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "impact_parser_py",
-      "target": "scripts_impact_parser_generate_impact_content",
-      "confidence_score": 1.0
+      "target": "scripts_impact_parser_generate_impact_content"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "impact_parser.py",
+      "source_location": "L74",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "impact_parser_py",
+      "target": "scripts_impact_parser_first_sentence"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "impact_parser.py",
+      "source_location": "L94",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "impact_parser_py",
+      "target": "scripts_impact_parser_summarize_levers"
     },
     {
       "relation": "calls",
@@ -3165,9 +3248,9 @@
       "source_file": "impact_parser.py",
       "source_location": "L213",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_impact_parser_parse_impact_file",
-      "target": "scripts_impact_parser_classify_omoc_bullet",
-      "confidence_score": 1.0
+      "target": "scripts_impact_parser_classify_omoc_bullet"
     },
     {
       "relation": "rationale_for",
@@ -3175,20 +3258,20 @@
       "source_file": "impact_parser.py",
       "source_location": "L48",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_impact_parser_rationale_48",
-      "target": "scripts_impact_parser_classify_omoc_bullet",
-      "confidence_score": 1.0
+      "target": "scripts_impact_parser_classify_omoc_bullet"
     },
     {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "impact_parser.py",
-      "source_location": "L135",
+      "source_location": "L211",
       "weight": 1.0,
-      "source": "scripts_impact_parser_summarize_levers",
-      "target": "scripts_impact_parser_first_sentence",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "scripts_impact_parser_parse_impact_file",
+      "target": "scripts_impact_parser_extract_raw_levers"
     },
     {
       "relation": "rationale_for",
@@ -3196,30 +3279,30 @@
       "source_file": "impact_parser.py",
       "source_location": "L75",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_impact_parser_rationale_75",
-      "target": "scripts_impact_parser_first_sentence",
-      "confidence_score": 1.0
+      "target": "scripts_impact_parser_extract_raw_levers"
     },
     {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "impact_parser.py",
-      "source_location": "L218",
+      "source_location": "L212",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_impact_parser_parse_impact_file",
-      "target": "scripts_impact_parser_summarize_levers",
-      "confidence_score": 1.0
+      "target": "scripts_impact_parser_fallback_summarize_levers"
     },
     {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "impact_parser.py",
-      "source_location": "L95",
+      "source_location": "L103",
       "weight": 1.0,
-      "source": "scripts_impact_parser_rationale_95",
-      "target": "scripts_impact_parser_summarize_levers",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "scripts_impact_parser_rationale_103",
+      "target": "scripts_impact_parser_fallback_summarize_levers"
     },
     {
       "relation": "calls",
@@ -3228,9 +3311,19 @@
       "source_file": "impact_parser.py",
       "source_location": "L203",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_impact_parser_parse_impact_file",
-      "target": "scripts_impact_parser_parse_title",
-      "confidence_score": 1.0
+      "target": "scripts_impact_parser_parse_title"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "impact_parser.py",
+      "source_location": "L132",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_impact_parser_rationale_132",
+      "target": "scripts_impact_parser_parse_title"
     },
     {
       "relation": "rationale_for",
@@ -3238,9 +3331,9 @@
       "source_file": "impact_parser.py",
       "source_location": "L142",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_impact_parser_rationale_142",
-      "target": "scripts_impact_parser_parse_title",
-      "confidence_score": 1.0
+      "target": "scripts_impact_parser_parse_title"
     },
     {
       "relation": "calls",
@@ -3249,9 +3342,30 @@
       "source_file": "impact_parser.py",
       "source_location": "L289",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_impact_parser_generate_impact_content",
-      "target": "scripts_impact_parser_parse_impact_file",
-      "confidence_score": 1.0
+      "target": "scripts_impact_parser_parse_impact_file"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "impact_parser.py",
+      "source_location": "L162",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_impact_parser_rationale_162",
+      "target": "scripts_impact_parser_parse_impact_file"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "impact_parser.py",
+      "source_location": "L218",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_impact_parser_parse_impact_file",
+      "target": "scripts_impact_parser_summarize_levers"
     },
     {
       "relation": "rationale_for",
@@ -3259,9 +3373,9 @@
       "source_file": "impact_parser.py",
       "source_location": "L172",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_impact_parser_rationale_172",
-      "target": "scripts_impact_parser_parse_impact_file",
-      "confidence_score": 1.0
+      "target": "scripts_impact_parser_parse_impact_file"
     },
     {
       "relation": "calls",
@@ -3270,9 +3384,19 @@
       "source_file": "impact_parser.py",
       "source_location": "L290",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_impact_parser_generate_impact_content",
-      "target": "scripts_impact_parser_build_layout15_slides",
-      "confidence_score": 1.0
+      "target": "scripts_impact_parser_build_layout15_slides"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "impact_parser.py",
+      "source_location": "L226",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_impact_parser_rationale_226",
+      "target": "scripts_impact_parser_build_layout15_slides"
     },
     {
       "relation": "rationale_for",
@@ -3280,9 +3404,19 @@
       "source_file": "impact_parser.py",
       "source_location": "L232",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_impact_parser_rationale_232",
-      "target": "scripts_impact_parser_build_layout15_slides",
-      "confidence_score": 1.0
+      "target": "scripts_impact_parser_build_layout15_slides"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "impact_parser.py",
+      "source_location": "L279",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_impact_parser_rationale_279",
+      "target": "scripts_impact_parser_generate_impact_content"
     },
     {
       "relation": "rationale_for",
@@ -3290,9 +3424,40 @@
       "source_file": "impact_parser.py",
       "source_location": "L285",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scripts_impact_parser_rationale_285",
-      "target": "scripts_impact_parser_generate_impact_content",
-      "confidence_score": 1.0
+      "target": "scripts_impact_parser_generate_impact_content"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "impact_parser.py",
+      "source_location": "L75",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_impact_parser_rationale_75",
+      "target": "scripts_impact_parser_first_sentence"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "impact_parser.py",
+      "source_location": "L135",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_impact_parser_summarize_levers",
+      "target": "scripts_impact_parser_first_sentence"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "impact_parser.py",
+      "source_location": "L95",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_impact_parser_rationale_95",
+      "target": "scripts_impact_parser_summarize_levers"
     }
   ],
   "hyperedges": []

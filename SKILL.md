@@ -1,9 +1,9 @@
 ---
-name: palette-jessica
-description: Generate Safran-styled PowerPoint presentations using the "Palette Jessica" 16:9 template at pixel-perfect fidelity. Trigger this skill ANY time the user asks for a slide deck, presentation, pitch deck, or .pptx file in the Safran "Palette Jessica" style, mentions the bordeaux/violet/orange palette (#A25871/#6A5D79/#FDA85B), refers to the 15 named layouts (Hook factuel, Hook vision, Liste 6 points, Triptyque, Timeline, Tableau, Dashboard, Comparatif, Risques & Opportunités, Plan d'action 3 phases, Arc narratif/CTA, Process vertical, Opposition qualitative, Comparatif qualitatif, Impact par population), or wants to convert a topic outline into a complete branded presentation. Also use when the user uploads a content brief and asks for a "presentation Safran", "deck conduite du changement", "support comité", "présentation projet de transformation", or similar — even if they don't explicitly name the template.
+name: gen-pptx-jessica
+description: Generate Safran-styled PowerPoint presentations using the "Palette Jessica" 16:9 template. Trigger for slide decks, presentations, or .pptx files in Safran style (#A25871/#6A5D79/#FDA85B). Supports 14 standard layouts (Hook, List, Timeline, Dashboard, Plan, Process, etc.) and content briefs for transformation/change projects. Also use for "presentation Safran", "support comité", or "deck conduite du changement". NOTE: Layout 15 (Impact par population) is NEVER included by default. It is only generated upon explicit request for an "impact analysis" accompanied by a PPTX file containing named zones TITLE, ZONE_OMOC, and RESSORTS_CHANGE.
 ---
 
-# Skill: Palette Jessica — Générateur de présentations Safran
+# Skill: gen-pptx-jessica — Générateur de présentations Safran
 
 Ce skill produit des présentations PowerPoint conformes au template **Palette Jessica** (Safran), en s'appuyant sur 15 layouts métier prédéfinis et la palette signature **bordeaux #A25871 / violet #6A5D79 / orange #FDA85B**.
 
@@ -21,7 +21,7 @@ Ne pas l'utiliser pour : un seul slide isolé qu'on peut juste décrire en chat,
 
 1. **Comprendre l'intention** : combien de slides, quel objectif (informer / convaincre / décider), quelle audience (DISC : Dominant, Influent, Stable, Consciencieux). Si l'utilisateur n'a pas précisé, propose une structure narrative (storyline) avant de générer.
 
-2. **Choisir les layouts** parmi les 15 disponibles (voir `references/layouts_catalog.md`). Adapte le choix au message :
+2. **Choisir les layouts** parmi les **14 layouts standard** (voir `references/layouts_catalog.md`). Adapte le choix au message :
    - Layout 1 (Hook factuel) ou 2 (Hook Vision) en ouverture
    - Layout 5 (Timeline) ou 10 (Plan 3 phases) pour le quand/comment
    - Layout 9 (Risques & Opportunités) avant la décision
@@ -29,7 +29,10 @@ Ne pas l'utiliser pour : un seul slide isolé qu'on peut juste décrire en chat,
    - Layout 12 pour un protocole/process en 6 étapes
    - Layout 13 pour opposer bonnes pratiques et erreurs à éviter
    - Layout 14 pour comparer qualitativement deux méthodes
-   - Layout 15 pour cartographier les impacts par population
+
+   > [!IMPORTANT]
+   > **Le Layout 15 (Impact par population) n'est JAMAIS inclus par défaut.**
+   > Il est réservé à un workflow spécifique d'analyse d'impact — voir la section dédiée ci-dessous.
 
 3. **Construire le `content.json`** au format décrit dans `references/content_schema.md`.
 
@@ -126,9 +129,17 @@ Après génération, vérifie :
 - Pour modifier la palette : éditer les hex codes en haut des builders concernés (recommandation : extraire dans une constante en début de `builders.py` pour future v2)
 - La spec complète du template original est dans `references/spec.json` — pour audit / régénération XML directe
 
-## Analyse d'impact — Génération automatique du Layout 15
+## Analyse d'impact — Génération du Layout 15
 
-Quand l'utilisateur fournit un fichier d'analyse d'impact PPTX (format Safran, comme `Exemple_analyse_impact.pptx`), tu dois générer un ou plusieurs slides Layout 15 (Matrice d'impact par population) à partir des données extraites.
+> [!CAUTION]
+> **Le Layout 15 ne doit JAMAIS être inclus dans une présentation standard.**
+> Il n'est activé que lorsque les **deux conditions suivantes sont simultanément réunies** :
+> 1. L'utilisateur indique **explicitement** qu'il souhaite formaliser une **analyse d'impact** (ex. : « génère le slide d'impact par population », « fais le Layout 15 à partir de mon fichier d'analyse », « je veux formaliser mon analyse d'impact »)
+> 2. L'utilisateur **joint un fichier PPTX** contenant les zones nommées **TITLE** (ou TITRE), **ZONE_OMOC** et **RESSORTS_CHANGE**
+>
+> Si l'une des deux conditions manque, ne pas utiliser le Layout 15. Si le fichier joint ne contient pas ces zones, en informer l'utilisateur.
+
+Quand les deux conditions sont réunies, tu dois générer un ou plusieurs slides Layout 15 (Matrice d'impact par population) à partir des données extraites du fichier source.
 
 ### Workflow analyse d'impact
 
