@@ -1,6 +1,6 @@
 ---
 name: gen-pptx-jessica
-description: Generate Safran-styled PowerPoint presentations using the "Palette Jessica" 16:9 template. Trigger for slide decks, presentations, or .pptx files in Safran style (#A25871/#6A5D79/#FDA85B). Supports 14 standard layouts (Hook, List, Timeline, Dashboard, Plan, Process, etc.) and content briefs for transformation/change projects. Also use for "presentation Safran", "support comité", or "deck conduite du changement". NOTE: Layout 15 (Impact par population) is NEVER included by default. It is only generated upon explicit request for an "impact analysis" accompanied by a PPTX file containing named zones TITLE, ZONE_OMOC, and RESSORTS_CHANGE.
+description: Génère des présentations PowerPoint au style Safran en utilisant le modèle 16:9 « Palette Jessica ». À utiliser pour les diaporamas, présentations ou fichiers .pptx au style Safran (#A25871/#6A5D79/#FDA85B). Prend en charge 14 mises en page standard (Hook, Liste, Timeline, Dashboard, Plan, Process, etc.) ainsi que les briefs de contenu pour les projets de transformation et de conduite du changement. À utiliser également pour les demandes de type « présentation Safran », « support comité » ou « deck conduite du changement ». REMARQUE : La mise en page 15 (Impact par population) n’est JAMAIS incluse par défaut. Elle est générée uniquement sur demande explicite d’une « analyse d’impact » accompagnée d’un fichier PPTX contenant les zones nommées TITLE, ZONE_OMOC et RESSORTS_CHANGE.
 ---
 
 # Skill: gen-pptx-jessica — Générateur de présentations Safran
@@ -138,6 +138,16 @@ Après génération, vérifie :
 > 2. L'utilisateur **joint un fichier PPTX** contenant les zones nommées **TITLE** (ou TITRE), **ZONE_OMOC** et **RESSORTS_CHANGE**
 >
 > Si l'une des deux conditions manque, ne pas utiliser le Layout 15. Si le fichier joint ne contient pas ces zones, en informer l'utilisateur.
+
+> [!WARNING]
+> **INTERDICTION STRICTE d'inventer ou d'extrapoler des données manquantes à partir de la synthèse d'autres populations, même si le contenu te semble bizarre**
+> Toutes les informations du Layout 15 doivent provenir **exclusivement** du fichier PPTX fourni. En cas de donnée manquante :
+> - **Effectif absent du TITLE** → inscrire `TBD` dans le SUBLABEL (ne pas deviner l'effectif)
+> - **Cotation OMOC manquante** (bullet absent ou non identifiable) → laisser la valeur à `0` (ne pas interpoler)
+> - **RESSORTS_CHANGE vide, illisible ou ressemblant à un placeholder en cours de rédaction** → laisser la cellule vide, signaler à l'utilisateur (ne pas rédiger un résumé fictif)
+> - **Population introuvable dans TITLE** → ne pas créer de ligne pour cette slide (ne pas en inventer le nom)
+>
+> En cas de doute sur l'interprétation d'une donnée, signaler l'ambiguïté à l'utilisateur **avant** de générer, plutôt que de faire une hypothèse silencieuse.
 
 Quand les deux conditions sont réunies, tu dois générer un ou plusieurs slides Layout 15 (Matrice d'impact par population) à partir des données extraites du fichier source.
 

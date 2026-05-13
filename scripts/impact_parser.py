@@ -16,6 +16,12 @@ from pathlib import Path
 from pptx import Presentation
 from pptx.util import Emu
 
+try:
+    import fitz
+    HAS_FITZ = True
+except ImportError:
+    HAS_FITZ = False
+
 
 # ---------------------------------------------------------------------------
 # Constantes géométriques du radar OMOC (GAP MEASURE)
@@ -218,6 +224,104 @@ def parse_impact_file(pptx_path):
     return populations
 
 
+def parse_impact_pdf(pdf_path):
+    """
+    Parse un fichier d'analyse d'impact PDF et retourne la même structure.
+    """
+    if not HAS_FITZ:
+        print("[ERROR] PyMuPDF (fitz) est requis pour parser les PDF d'analyse d'impact.", file=sys.stderr)
+        return []
+
+    pdf = fitz.open(str(pdf_path))
+    populations = []
+
+    CENTER_X_PT = 161.2
+    CENTER_Y_PT = 227.8
+    STEP_PT = 26.4
+
+    def is_red(fill):
+        if fill is None: return False
+        return fill[0] > 0.9 and fill[1] < 0.1 and fill[2] < 0.1
+
+    def is_title_block(x0, y0, x1, y1, text):
+        return y0 < 70 and y1 < 75 and len(text.strip()) > 5
+
+    for slide_idx in range(len(pdf)):
+        page = pdf[slide_idx]
+        entry = {
+            "slide_index": slide_idx + 1,
+            "population": "",
+            "effectif": "TBD",
+            "omoc": {"Tool": 0, "Business": 0, "Organization": 0, "Culture": 0},
+            "raw_levers": [],
+            "levers": ""
+        }
+
+        blocks = page.get_text("blocks")
+        title = ""
+        for b in blocks:
+            x0, y0, x1, y1, text = b[0], b[1], b[2], b[3], b[4].strip()
+            if is_title_block(x0, y0, x1, y1, text):
+                title = text.replace('\n', ' ')
+                break
+
+        if title:
+            entry["population"], entry["effectif"] = _parse_title(title)
+        else:
+            continue
+
+        drawings = page.get_drawings()
+        for d in drawings:
+            fill = d.get("fill")
+            r = d.get("rect")
+            if r and is_red(fill):
+                cx = (r.x0 + r.x1) / 2
+                cy = (r.y0 + r.y1) / 2
+                
+                if cx < 380 and 60 < cy < 430:
+                    dx = cx - CENTER_X_PT
+                    dy = CENTER_Y_PT - cy
+                    
+                    if abs(dx) < 20 or abs(dy) < 20:
+                        if abs(dx) > abs(dy):
+                            axis = 'Business' if dx > 0 else 'Culture'
+                            axis_dist = abs(dx)
+                        else:
+                            axis = 'Organization' if dy > 0 else 'Tool'
+                            axis_dist = abs(dy)
+                        
+                        level = round(axis_dist / STEP_PT)
+                        level = max(0, min(4, level))
+                        entry["omoc"][axis] = level
+
+        for b in blocks:
+            x0, y0, x1, y1, text = b[0], b[1], b[2], b[3], b[4].strip()
+            if x0 > 350 and y0 > 280:
+                lines = [l.strip() for l in text.split('\n') if l.strip()]
+                if len(lines) >= 3:
+                    ressort = lines[0]
+                    if ressort.lower() in ('ressorts du changement', 'actions'):
+                        continue
+                    
+                    action_type = lines[1]
+                    if lines[2] in ['•', '-', '', '\uf0b7']:
+                        detail = " ".join(lines[3:])
+                    else:
+                        detail = " ".join(lines[2:]).lstrip('•-\uf0b7 ')
+                    
+                    entry["raw_levers"].append({
+                        "ressort": ressort,
+                        "type": action_type.rstrip(':'),
+                        "detail": detail or action_type
+                    })
+        
+        entry["levers"] = _fallback_summarize_levers(entry["raw_levers"])
+        populations.append(entry)
+
+    pdf.close()
+    return populations
+
+
 # ---------------------------------------------------------------------------
 # Génération du contenu Layout 15
 # ---------------------------------------------------------------------------
@@ -275,12 +379,16 @@ def build_layout15_slides(populations):
     return slides
 
 
-def generate_impact_content(pptx_path):
+def generate_impact_content(file_path):
     """
     Fonction principale : parse le fichier d'analyse d'impact et retourne
     la liste de slides Layout 15 prête à être insérée dans le content.json.
     """
-    populations = parse_impact_file(pptx_path)
+    path = Path(file_path)
+    if path.suffix.lower() == ".pdf":
+        populations = parse_impact_pdf(file_path)
+    else:
+        populations = parse_impact_file(file_path)
     return build_layout15_slides(populations)
 
 
@@ -290,14 +398,18 @@ def generate_impact_content(pptx_path):
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: python impact_parser.py <fichier_analyse_impact.pptx> [--json]",
+        print("Usage: python impact_parser.py <fichier_analyse_impact> [--json]",
               file=sys.stderr)
         sys.exit(1)
 
-    pptx_path = sys.argv[1]
+    file_path = sys.argv[1]
     output_json = "--json" in sys.argv
 
-    populations = parse_impact_file(pptx_path)
+    path = Path(file_path)
+    if path.suffix.lower() == ".pdf":
+        populations = parse_impact_pdf(file_path)
+    else:
+        populations = parse_impact_file(file_path)
 
     if output_json:
         slides = build_layout15_slides(populations)

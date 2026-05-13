@@ -165,7 +165,7 @@ def run_style(base, override=None, defaults=None):
 def add_textbox(slide, x_cm, y_cm, w_cm, h_cm, text, *, font="Segoe UI", size_pt=12,
                 bold=False, italic=False, color_hex="#070E1D", cap=None, alpha_pct=None,
                 align="left", anchor="t", name=None, line_spacing=None,
-                emphasis_style=None, margin_left=None, margin_right=None,
+                emphasis_style=None, allow_emphasis=False, margin_left=None, margin_right=None,
                 margin_top=None, margin_bottom=None):
     """Crée un textbox avec texte simple ou spec enrichie (interligne + emphases)."""
     tb = slide.shapes.add_textbox(cm(x_cm), cm(y_cm), cm(w_cm), cm(h_cm))
@@ -188,6 +188,9 @@ def add_textbox(slide, x_cm, y_cm, w_cm, h_cm, text, *, font="Segoe UI", size_pt
     p.alignment = align_map.get(align, PP_ALIGN.LEFT)
 
     spec = normalize_text_spec(text)
+    if not allow_emphasis:
+        spec["emphasis"] = []
+        
     effective_line_spacing = spec.get("line_spacing", spec.get("interligne", line_spacing))
     effective_line_spacing = normalize_line_spacing(effective_line_spacing)
     if effective_line_spacing is not None:
@@ -217,7 +220,7 @@ def add_rect(slide, x_cm, y_cm, w_cm, h_cm, fill_hex, *, line_hex=None, line_w_p
              rounded=False, radius_adjust=0.1, name=None, text=None,
              font="Segoe UI", size_pt=12, bold=False, italic=False,
              text_color_hex="#070E1D", color_hex=None, cap=None, alpha_pct=None,
-             align="left", anchor="m", line_spacing=None, emphasis_style=None,
+             align="left", anchor="m", line_spacing=None, emphasis_style=None, allow_emphasis=False,
              margin_left=None, margin_right=None, margin_top=None, margin_bottom=None):
     shape_type = MSO_SHAPE.ROUNDED_RECTANGLE if rounded else MSO_SHAPE.RECTANGLE
     shp = slide.shapes.add_shape(shape_type, cm(x_cm), cm(y_cm), cm(w_cm), cm(h_cm))
@@ -251,6 +254,9 @@ def add_rect(slide, x_cm, y_cm, w_cm, h_cm, fill_hex, *, line_hex=None, line_w_p
         p.alignment = align_map.get(align, PP_ALIGN.LEFT)
 
         spec = normalize_text_spec(text)
+        if not allow_emphasis:
+            spec["emphasis"] = []
+            
         effective_line_spacing = spec.get("line_spacing", spec.get("interligne", line_spacing))
         effective_line_spacing = normalize_line_spacing(effective_line_spacing)
         if effective_line_spacing is not None:

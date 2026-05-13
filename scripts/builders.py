@@ -48,12 +48,14 @@ def build_slide_1(slide, c, page_num=1, total=11, logo_path=None):
     add_textbox(slide, 2.33, 3.44, 21.16, 2.86, c.get("manifesto", ""),
                 font="Segoe UI Light", size_pt=24, color_hex="#474E67",
                 anchor="t", name="S01_MANIFESTO", line_spacing=1.15,
-                emphasis_style={"font": "Segoe UI", "bold": True, "color_hex": "#A25871"})
+                emphasis_style={"font": "Segoe UI", "bold": True, "color_hex": "#A25871"},
+                allow_emphasis=True)
     # Body
     add_textbox(slide, 2.33, 7.96, 20.46, 2.82, c.get("body", ""),
                 font="Segoe UI", size_pt=13, color_hex="#474E67",
                 name="S01_BODY", line_spacing=1.3,
-                emphasis_style={"font": "Segoe UI", "bold": True, "color_hex":"#070E1D"})
+                emphasis_style={"font": "Segoe UI", "bold": True, "color_hex":"#070E1D"},
+                allow_emphasis=True)
 
     # 3 KPI verticaux
     stats = c.get("stats", [])
@@ -670,7 +672,8 @@ def build_slide_11(slide, c, page_num=11, total=11, logo_path=None):
         add_textbox(slide, 2.00, body_ys[i], 29.50, 2.40, b.get("body", ""),
                     font="Segoe UI Light", size_pt=14, color_hex="#474E67",
                     name=f"S11_BLOCK_{i+1}_BODY", line_spacing=1.3,
-                    emphasis_style={"font": "Segoe UI", "bold": True})
+                    emphasis_style={"font": "Segoe UI", "bold": True},
+                    allow_emphasis=True)
 
     # CTA en bas (gradient bandeau)
     add_takeaway_band(slide, c.get("cta", "Êtes-vous prêts ?"))
@@ -754,13 +757,11 @@ def build_slide_13(slide, c, page_num=13, total=15, logo_path=None):
         add_textbox(slide, 2.49, y + 0.14, 13.42, 1.22, left_text,
                     font="Segoe UI", size_pt=10, color_hex="#474E67",
                     anchor="m", name=f"S13_LEFT_{i+1}_ITEM", margin_left=0,
-                    line_spacing=1.1,
-                    emphasis_style={"font": "Segoe UI", "bold": True, "color_hex": "#070E1D"})
+                    line_spacing=1.1)
         add_textbox(slide, 18.46, y + 0.14, 14.10, 1.22, right_text,
                     font="Segoe UI", size_pt=10, color_hex="#474E67",
                     anchor="m", name=f"S13_RIGHT_{i+1}_ITEM", margin_left=0,
-                    line_spacing=1.1,
-                    emphasis_style={"font": "Segoe UI", "bold": True, "color_hex": "#070E1D"})
+                    line_spacing=1.1)
 
 
 # ============================================================
@@ -798,13 +799,15 @@ def build_slide_14(slide, c, page_num=14, total=15, logo_path=None):
                     font="Segoe UI", size_pt=10, color_hex="#474E67",
                     anchor="m", name=f"S14_LEFT_{i+1}_ITEM", margin_left=0,
                     line_spacing=1.1,
-                    emphasis_style={"font": "Segoe UI", "bold": True, "color_hex": "#070E1D"})
+                    emphasis_style={"font": "Segoe UI", "bold": True, "color_hex": "#070E1D"},
+                    allow_emphasis=True)
         add_textbox(slide, 18.62, item_ys[i], 11.18, 1.22,
                     right_items[i] if i < len(right_items) else "",
                     font="Segoe UI", size_pt=10, color_hex="#474E67",
                     anchor="m", name=f"S14_RIGHT_{i+1}_ITEM", margin_left=0,
                     line_spacing=1.1,
-                    emphasis_style={"font": "Segoe UI", "bold": True, "color_hex": "#070E1D"})
+                    emphasis_style={"font": "Segoe UI", "bold": True, "color_hex": "#070E1D"},
+                    allow_emphasis=True)
 
     add_takeaway_band(slide, c.get("takeaway", "Take away"), y_cm=16.87)
 

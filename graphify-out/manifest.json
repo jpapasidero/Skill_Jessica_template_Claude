@@ -1,4 +1,24 @@
 {
+  "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\gen-pptx-jessica\\scripts\\builders.py": {
+    "mtime": 1778617543.1296227,
+    "hash": "603970995df0de6698456556c7d64501"
+  },
+  "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\gen-pptx-jessica\\scripts\\generate_pptx.py": {
+    "mtime": 1778617542.010977,
+    "hash": "0058450644bd701bd5d4b5da7448f0ae"
+  },
+  "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\gen-pptx-jessica\\scripts\\helpers.py": {
+    "mtime": 1778611606.2296886,
+    "hash": "ba891705b7066f3ec9ae816ab0ad992e"
+  },
+  "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\gen-pptx-jessica\\scripts\\impact_parser.py": {
+    "mtime": 1778619291.499084,
+    "hash": "e2a3444c24d51c7d332a4445f818f7f7"
+  },
+  "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\gen-pptx-jessica\\scripts\\__init__.py": {
+    "mtime": 1778611606.1823702,
+    "hash": "5674535097e3348b9b273c46b3c520da"
+  },
   "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\scripts\\builders.py": {
     "mtime": 1778617543.1296227,
     "hash": "603970995df0de6698456556c7d64501"
@@ -15,13 +35,29 @@
     "mtime": 1778619291.499084,
     "hash": "e2a3444c24d51c7d332a4445f818f7f7"
   },
+  "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\scripts\\_explore_pdf.py": {
+    "mtime": 1778622008.3687854,
+    "hash": "0492ef8dbbdc32757991d0a3b254b198"
+  },
   "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\scripts\\__init__.py": {
     "mtime": 1778611606.1823702,
     "hash": "5674535097e3348b9b273c46b3c520da"
   },
   "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\SKILL.md": {
-    "mtime": 1778620114.064679,
-    "hash": "104d58f89c281b65be69738cb6b8db01"
+    "mtime": 1778623560.1145377,
+    "hash": "879f3a69a0f2e17be36b2fdf424c2f79"
+  },
+  "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\gen-pptx-jessica\\SKILL.md": {
+    "mtime": 1778623560.1145377,
+    "hash": "879f3a69a0f2e17be36b2fdf424c2f79"
+  },
+  "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\gen-pptx-jessica\\references\\content_schema.md": {
+    "mtime": 1778617543.1236033,
+    "hash": "299c481959d58047c4f05386d0becc46"
+  },
+  "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\gen-pptx-jessica\\references\\layouts_catalog.md": {
+    "mtime": 1778617543.1236033,
+    "hash": "eda8f1348f07c35d1b0f93c1531ff6fb"
   },
   "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\references\\content_schema.md": {
     "mtime": 1778617543.1236033,
@@ -30,6 +66,10 @@
   "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\references\\layouts_catalog.md": {
     "mtime": 1778617543.1236033,
     "hash": "eda8f1348f07c35d1b0f93c1531ff6fb"
+  },
+  "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\Exemple_analyse_impact.pdf": {
+    "mtime": 1778621669.081665,
+    "hash": "3c9ea1d635b8cf1db0410be255a0ea21"
   },
   "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\assets\\backgrounds\\Comp_quali_bg.png": {
     "mtime": 1778618577.8085887,
@@ -48,6 +88,26 @@
     "hash": "fa8be3451eb22d9b373a61b19ada954a"
   },
   "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\assets\\logos\\safran_logo_vector.svg": {
+    "mtime": 1778611605.9397633,
+    "hash": "6ae06496ce220de1cf039a91bbd88297"
+  },
+  "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\gen-pptx-jessica\\assets\\backgrounds\\Comp_quali_bg.png": {
+    "mtime": 1778618577.8085887,
+    "hash": "40dbda1c05c93dbcc7477a925b8c0951"
+  },
+  "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\gen-pptx-jessica\\assets\\backgrounds\\triangle_bg.png": {
+    "mtime": 1778611605.8763113,
+    "hash": "806d0950370d6f55033b530c9bc42c83"
+  },
+  "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\gen-pptx-jessica\\assets\\logos\\safran_logo.png": {
+    "mtime": 1778611605.900669,
+    "hash": "84e2f68a3805d35d1dfe4fd6b97de916"
+  },
+  "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\gen-pptx-jessica\\assets\\logos\\safran_logo_alt.svg": {
+    "mtime": 1778611605.9164827,
+    "hash": "fa8be3451eb22d9b373a61b19ada954a"
+  },
+  "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\gen-pptx-jessica\\assets\\logos\\safran_logo_vector.svg": {
     "mtime": 1778611605.9397633,
     "hash": "6ae06496ce220de1cf039a91bbd88297"
   }
