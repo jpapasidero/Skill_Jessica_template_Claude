@@ -30,57 +30,72 @@ except ImportError:
 
 
 # ---------------------------------------------------------------------------
-# Constantes géométriques du radar OMOC (GAP MEASURE)
-# ---------------------------------------------------------------------------
-# Le radar est un diamant centré dans l'image ZONE_OMOC.
-# Image : pos=(0.0, 3.25) cm, taille=(11.37, 9.57) cm
-# Centre du diamant (en coordonnées slide) :
-OMOC_CENTER_X = 5.685   # cm
-OMOC_CENTER_Y = 8.035   # cm
-
-# Pas unique (calibré empiriquement sur le template Safran).
-# Distance en cm entre deux niveaux concentriques du radar.
-OMOC_STEP = 0.93  # cm par niveau
-
-# Noms des Ellipses portant les bullets OMOC (identiques sur chaque slide)
-OMOC_BULLET_NAMES = {'5', '7', '10', '14'}
-
-# Axes du radar :
-#   Organisation = axe vertical vers le haut (y décroissant)
-#   Métier       = axe horizontal vers la droite (x croissant)
-#   Outils       = axe vertical vers le bas (y croissant)
-#   Culture      = axe horizontal vers la gauche (x décroissant)
-
-
-# ---------------------------------------------------------------------------
-# Helpers
+# Helpers Géométriques Communs (PPTX & PDF)
 # ---------------------------------------------------------------------------
 
-def _classify_omoc_bullet(x_cm, y_cm, w_cm, h_cm):
+def _is_title_zone(px, py):
+    """Vérifie si les coordonnées (en %) sont dans la zone du titre."""
+    return 2 <= px <= 60 and 2 <= py <= 15
+
+def _is_omoc_zone(px, py):
+    """Vérifie si les coordonnées (en %) sont dans la zone radar OMOC."""
+    return 5 <= px <= 40 and 20 <= py <= 65
+
+def _is_levers_zone(px, py):
+    """Vérifie si les coordonnées (en %) sont dans la zone des leviers."""
+    return 35 <= px <= 95 and 50 <= py <= 95
+
+def _classify_omoc_bullet(px, py):
     """
     Détermine l'axe OMOC et le niveau (0-4) d'un bullet à partir de sa
-    position et taille sur le slide.
+    position relative (en pourcentage) sur le slide.
 
-    Retourne (axis_name, level) où axis_name ∈ {Organization, Business, Tool, Culture}.
+    Retourne (axis_name, level) ou (None, None) si trop au centre.
     """
-    # Centre du bullet
-    cx = x_cm + w_cm / 2
-    cy = y_cm + h_cm / 2
-
-    dx = cx - OMOC_CENTER_X
-    dy = OMOC_CENTER_Y - cy  # inversé : y monte = dy positif
-
-    # Déterminer l'axe le plus proche
-    if abs(dx) > abs(dy):
+    dx = px - 16.8
+    dy = 42.2 - py
+    
+    level_x = abs(dx) / 2.75
+    level_y = abs(dy) / 4.88
+    
+    if abs(dx) < 1.0 and abs(dy) < 1.0:
+        return None, None
+        
+    if level_x > 4.5 or level_y > 4.5:
+        return None, None
+        
+    if level_x > level_y:
         axis = 'Business' if dx > 0 else 'Culture'
-        distance = abs(dx)
+        level = round(level_x)
     else:
         axis = 'Organization' if dy > 0 else 'Tool'
-        distance = abs(dy)
+        level = round(level_y)
+        
+    return axis, max(0, min(4, level))
 
-    level = round(distance / OMOC_STEP)
-    level = max(0, min(4, level))
-    return axis, level
+def _extract_raw_lever_from_lines(lines):
+    """
+    Extrait un ressort depuis une liste de lignes de texte (utilisé par PDF).
+    """
+    if len(lines) < 3:
+        return None
+    ressort = lines[0]
+    if ressort.lower() in ('ressorts du changement', 'actions'):
+        return None
+    action_type = lines[1]
+    if lines[2] in ['•', '-', '', '', '\uf0b7']:
+        detail = " ".join(lines[3:])
+    else:
+        detail = " ".join(lines[2:]).lstrip('•-\uf0b7 ')
+    return {
+        "ressort": ressort,
+        "type": action_type.rstrip(':'),
+        "detail": detail or action_type
+    }
+
+# ---------------------------------------------------------------------------
+# Helpers Données
+# ---------------------------------------------------------------------------
 
 
 def _extract_raw_levers(table):
@@ -170,7 +185,7 @@ def _parse_title(title_text):
 # Parsing principal
 # ---------------------------------------------------------------------------
 
-def parse_impact_file(pptx_path):
+def parse_impact_pptx(pptx_path):
     """
     Parse un fichier d'analyse d'impact PPTX et retourne une liste de
     dictionnaires, un par slide/population :
@@ -188,44 +203,71 @@ def parse_impact_file(pptx_path):
     """
     prs = Presentation(str(pptx_path))
     populations = []
+    
+    page_w = prs.slide_width
+    page_h = prs.slide_height
 
     for slide_idx, slide in enumerate(prs.slides, start=1):
         entry = {
             "slide_index": slide_idx,
-            "population": "",
+            "population": "TBD",
             "effectif": "TBD",
             "omoc": {"Tool": 0, "Business": 0, "Organization": 0, "Culture": 0},
             "raw_levers": [],
             "levers": ""
         }
 
+        title_candidates = []
+
         for shape in slide.shapes:
-            name = shape.name.strip()
+            try:
+                x0 = shape.left
+                y0 = shape.top
+                w = getattr(shape, "width", 0)
+                h = getattr(shape, "height", 0)
+            except Exception:
+                continue
+                
+            x1 = x0 + w
+            y1 = y0 + h
+            
+            if page_w == 0 or page_h == 0:
+                continue
+                
+            px0 = (x0 / page_w) * 100
+            py0 = (y0 / page_h) * 100
+            
+            cx = (x0 + x1) / 2
+            cy = (y0 + y1) / 2
+            cpx = (cx / page_w) * 100
+            cpy = (cy / page_h) * 100
 
-            # --- TITLE / TITRE ---
-            if name in ('TITLE', 'TITRE'):
-                title_text = shape.text_frame.text.strip()
-                entry["population"], entry["effectif"] = _parse_title(title_text)
+            # --- TITLE ---
+            if shape.has_text_frame:
+                text = shape.text_frame.text.strip()
+                if text and _is_title_zone(px0, py0):
+                    title_candidates.append((y0, text))
 
-            # --- ZONE_OMOC bullets (Ellipse 5, 7, 10, 14) ---
-            if 'Ellipse' in name:
-                parts = name.split()
-                if len(parts) >= 2 and parts[-1] in OMOC_BULLET_NAMES:
-                    x = Emu(shape.left).cm
-                    y = Emu(shape.top).cm
-                    w = Emu(shape.width).cm
-                    h = Emu(shape.height).cm
-                    axis, level = _classify_omoc_bullet(x, y, w, h)
-                    entry["omoc"][axis] = level
+            # --- ZONE_OMOC bullets ---
+            w_cm = Emu(w).cm
+            h_cm = Emu(h).cm
+            
+            if _is_omoc_zone(cpx, cpy) and 0 < w_cm < 2.0 and 0 < h_cm < 2.0:
+                axis, level = _classify_omoc_bullet(cpx, cpy)
+                if axis:
+                    entry["omoc"][axis] = max(entry["omoc"][axis], level)
 
             # --- RESSORTS_CHANGE ---
-            if name == 'RESSORTS_CHANGE':
+            if shape.has_table and _is_levers_zone(px0, py0):
                 entry["raw_levers"] = _extract_raw_levers(shape.table)
                 entry["levers"] = _fallback_summarize_levers(entry["raw_levers"])
 
-        # N'ajouter que les slides qui ont un titre exploitable
-        if entry["population"]:
-            populations.append(entry)
+        if title_candidates:
+            title_candidates.sort(key=lambda x: x[0])
+            best_title = title_candidates[0][1]
+            entry["population"], entry["effectif"] = _parse_title(best_title)
+            
+        populations.append(entry)
 
     return populations
 
@@ -239,16 +281,11 @@ def _parse_impact_pdf_fitz(pdf_path):
         if fill is None: return False
         return fill[0] > 0.9 and fill[1] < 0.1 and fill[2] < 0.1
 
-    def is_title_block(x0, y0, x1, y1, text, page_w, page_h):
-        return (0.02 * page_w <= x0 <= 0.60 * page_w and
-                0.02 * page_h <= y0 <= 0.15 * page_h and
-                len(text.strip()) > 5)
-
     for slide_idx in range(len(pdf)):
         page = pdf[slide_idx]
         entry = {
             "slide_index": slide_idx + 1,
-            "population": "",
+            "population": "TBD",
             "effectif": "TBD",
             "omoc": {"Tool": 0, "Business": 0, "Organization": 0, "Culture": 0},
             "raw_levers": [],
@@ -263,14 +300,16 @@ def _parse_impact_pdf_fitz(pdf_path):
         title = ""
         for b in blocks:
             x0, y0, x1, y1, text = b[0], b[1], b[2], b[3], b[4].strip()
-            if is_title_block(x0, y0, x1, y1, text, page_w, page_h):
+            px0, py0 = (x0 / page_w) * 100, (y0 / page_h) * 100
+            if _is_title_zone(px0, py0) and len(text) > 5:
                 title = text.replace('\n', ' ')
                 break
 
         if title:
             entry["population"], entry["effectif"] = _parse_title(title)
         else:
-            continue
+            entry["population"] = "TBD"
+            entry["effectif"] = "TBD"
 
         drawings = page.get_drawings()
         for d in drawings:
@@ -283,45 +322,19 @@ def _parse_impact_pdf_fitz(pdf_path):
                 px = (cx / page_w) * 100
                 py = (cy / page_h) * 100
                 
-                if 5 <= px <= 40 and 20 <= py <= 65:
-                    dx = px - 16.8
-                    dy = 42.2 - py
-                    
-                    level_x = abs(dx) / 2.75
-                    level_y = abs(dy) / 4.88
-                    
-                    if abs(dx) < 1.0 and abs(dy) < 1.0:
-                        continue
-                        
-                    if level_x > level_y:
-                        axis = 'Business' if dx > 0 else 'Culture'
-                        level = round(level_x)
-                    else:
-                        axis = 'Organization' if dy > 0 else 'Tool'
-                        level = round(level_y)
-                        
-                    entry["omoc"][axis] = max(0, min(4, level))
+                if _is_omoc_zone(px, py):
+                    axis, level = _classify_omoc_bullet(px, py)
+                    if axis:
+                        entry["omoc"][axis] = max(entry["omoc"][axis], level)
 
         for b in blocks:
             x0, y0, x1, y1, text = b[0], b[1], b[2], b[3], b[4].strip()
-            if 0.35 * page_w <= x0 <= 0.95 * page_w and 0.50 * page_h <= y0 <= 0.95 * page_h:
+            px0, py0 = (x0 / page_w) * 100, (y0 / page_h) * 100
+            if _is_levers_zone(px0, py0):
                 lines = [l.strip() for l in text.split('\n') if l.strip()]
-                if len(lines) >= 3:
-                    ressort = lines[0]
-                    if ressort.lower() in ('ressorts du changement', 'actions'):
-                        continue
-                    
-                    action_type = lines[1]
-                    if lines[2] in ['•', '-', '', '\uf0b7', '']:
-                        detail = " ".join(lines[3:])
-                    else:
-                        detail = " ".join(lines[2:]).lstrip('•-\uf0b7 ')
-                    
-                    entry["raw_levers"].append({
-                        "ressort": ressort,
-                        "type": action_type.rstrip(':'),
-                        "detail": detail or action_type
-                    })
+                lever = _extract_raw_lever_from_lines(lines)
+                if lever:
+                    entry["raw_levers"].append(lever)
         
         entry["levers"] = _fallback_summarize_levers(entry["raw_levers"])
         populations.append(entry)
@@ -364,7 +377,7 @@ def _parse_impact_pdf_pdfplumber(pdf_path):
         for slide_idx, page in enumerate(pdf.pages):
             entry = {
                 "slide_index": slide_idx + 1,
-                "population": "",
+                "population": "TBD",
                 "effectif": "TBD",
                 "omoc": {"Tool": 0, "Business": 0, "Organization": 0, "Culture": 0},
                 "raw_levers": [],
@@ -379,25 +392,26 @@ def _parse_impact_pdf_pdfplumber(pdf_path):
             # --- Titre (Zone 1) ---
             title_words = [
                 w for w in words 
-                if 0.02 * page_w <= w["x0"] <= 0.60 * page_w 
-                and 0.02 * page_h <= w["top"] <= 0.15 * page_h
+                if _is_title_zone((w["x0"] / page_w) * 100, (w["top"] / page_h) * 100)
             ]
-            if not title_words:
-                continue
-            title = " ".join(
-                w["text"] for w in sorted(title_words, key=lambda w: (w["top"], w["x0"]))
-            ).replace('\n', ' ')
-            entry["population"], entry["effectif"] = _parse_title(title)
+            if title_words:
+                title = " ".join(
+                    w["text"] for w in sorted(title_words, key=lambda w: (w["top"], w["x0"]))
+                ).replace('\n', ' ')
+                entry["population"], entry["effectif"] = _parse_title(title)
+            else:
+                entry["population"] = "TBD"
+                entry["effectif"] = "TBD"
 
             # --- Bullets OMOC (Zone 2) ---
-            for rect in page.rects:
+            for rect in page.rects + list(page.curves):
                 cx = (rect["x0"] + rect["x1"]) / 2
                 cy = (rect["top"] + rect["bottom"]) / 2
                 
                 px = (cx / page_w) * 100
                 py = (cy / page_h) * 100
                 
-                if not (5 <= px <= 40 and 20 <= py <= 65):
+                if not _is_omoc_zone(px, py):
                     continue
 
                 fill = rect.get("non_stroking_color")
@@ -409,48 +423,22 @@ def _parse_impact_pdf_pdfplumber(pdf_path):
                     else:
                         continue
 
-                dx = px - 16.8
-                dy = 42.2 - py
-                
-                level_x = abs(dx) / 2.75
-                level_y = abs(dy) / 4.88
-                
-                if abs(dx) < 1.0 and abs(dy) < 1.0:
-                    continue
-
-                if level_x > level_y:
-                    axis = 'Business' if dx > 0 else 'Culture'
-                    level = round(level_x)
-                else:
-                    axis = 'Organization' if dy > 0 else 'Tool'
-                    level = round(level_y)
-                entry["omoc"][axis] = max(0, min(4, level))
+                axis, level = _classify_omoc_bullet(px, py)
+                if axis:
+                    entry["omoc"][axis] = max(entry["omoc"][axis], level)
 
             # --- Leviers (Zone 3) ---
             lever_words = [
                 w for w in words 
-                if 0.35 * page_w <= w["x0"] <= 0.95 * page_w 
-                and 0.50 * page_h <= w["top"] <= 0.95 * page_h
+                if _is_levers_zone((w["x0"] / page_w) * 100, (w["top"] / page_h) * 100)
             ]
             if lever_words:
                 lines = _group_into_lines(lever_words)
                 for block_text in _lines_to_blocks(lines):
                     block_lines = [l.strip() for l in block_text.split('\n') if l.strip()]
-                    if len(block_lines) < 3:
-                        continue
-                    ressort = block_lines[0]
-                    if ressort.lower() in ('ressorts du changement', 'actions'):
-                        continue
-                    action_type = block_lines[1]
-                    if block_lines[2] in ['•', '-', '', '', '\uf0b7']:
-                        detail = " ".join(block_lines[3:])
-                    else:
-                        detail = " ".join(block_lines[2:]).lstrip('•-\uf0b7 ')
-                    entry["raw_levers"].append({
-                        "ressort": ressort,
-                        "type": action_type.rstrip(':'),
-                        "detail": detail or action_type
-                    })
+                    lever = _extract_raw_lever_from_lines(block_lines)
+                    if lever:
+                        entry["raw_levers"].append(lever)
 
             entry["levers"] = _fallback_summarize_levers(entry["raw_levers"])
             populations.append(entry)
@@ -461,12 +449,14 @@ def _parse_impact_pdf_pdfplumber(pdf_path):
 def parse_impact_pdf(pdf_path):
     """
     Parse un fichier d'analyse d'impact PDF et retourne la même structure
-    que parse_impact_file(). Utilise PyMuPDF si disponible, sinon pdfplumber.
+    que parse_impact_pptx(). Utilise pdfplumber obligatoirement (selon instruction).
+    """
+    if HAS_PDFPLUMBER:
+        return _parse_impact_pdf_pdfplumber(pdf_path)
     """
     if HAS_FITZ:
         return _parse_impact_pdf_fitz(pdf_path)
-    if HAS_PDFPLUMBER:
-        return _parse_impact_pdf_pdfplumber(pdf_path)
+    """
     print(
         "[ERROR] PyMuPDF (fitz) ou pdfplumber est requis pour parser les PDF d'analyse d'impact.\n"
         "        Installez l'un des deux : pip install pymupdf  ou  pip install pdfplumber",
@@ -541,7 +531,7 @@ def generate_impact_content(file_path):
     if path.suffix.lower() == ".pdf":
         populations = parse_impact_pdf(file_path)
     else:
-        populations = parse_impact_file(file_path)
+        populations = parse_impact_pptx(file_path)
     return build_layout15_slides(populations)
 
 
@@ -562,7 +552,7 @@ if __name__ == "__main__":
     if path.suffix.lower() == ".pdf":
         populations = parse_impact_pdf(file_path)
     else:
-        populations = parse_impact_file(file_path)
+        populations = parse_impact_pptx(file_path)
 
     if output_json:
         slides = build_layout15_slides(populations)

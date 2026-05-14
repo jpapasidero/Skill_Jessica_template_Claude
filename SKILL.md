@@ -152,12 +152,12 @@ Après génération, vérifier :
 ```bash
      python scripts/impact_parser.py <fichier_impact.pptx> --raw
 ```
-     Le parseur appelle `parse_impact_file()` qui lit les zones nommées **TITLE** (ou TITRE), **ZONE_OMOC** et **RESSORTS_CHANGE**.
+     Le parseur appelle `parse_impact_pptx()` qui extrait titre, bullets OMOC par couleur/position géométrique, et la table RESSORTS_CHANGE.
 
    Dans les deux cas, la sortie `--raw` retourne un JSON avec, pour chaque slide/page :
-   - `population` : nom de la population impactée
+   - `population` : nom de la population impactée (ou `"Population à nommer"` si absent du titre)
    - `effectif` : effectif (ou `"TBD"` si absent du titre)
-   - `omoc` : cotations d'impact `{Tool, Business, Organization, Culture}` de 0 à 4
+   - `omoc` : cotations d'impact `{Tool, Business, Organization, Culture}` de 1 à 4 (ou `"0"` si illisible)
    - `raw_levers` : liste des actions de changement brutes (ressort, type, détail)
 
 2. **Synthèse sémantique**
@@ -183,7 +183,7 @@ Après génération, vérifier :
 > [!WARNING]
 > **INTERDICTION STRICTE d'inventer ou d'extrapoler des données manquantes à partir de la synthèse d'autres populations, même si le contenu te semble bizarre**
 > Toutes les informations du Layout 15 doivent provenir **exclusivement** du fichier fourni. En cas de donnée manquante :
-> - **Population introuvable dans TITLE** → créer une ligne pour cette slide et indiquer `Population à nommer' dans le LABEL
+> - **Population introuvable dans TITLE** → créer une ligne pour cette slide et indiquer `Population à nommer` dans le LABEL
 > - **Effectif absent du TITLE** → inscrire `TBD` dans le SUBLABEL (ne pas deviner l'effectif)
 > - **Cotation OMOC manquante** (bullet absent ou non identifiable) → laisser la valeur à `0` (ne pas interpoler)
 > - **RESSORTS_CHANGE vide, illisible ou ressemblant à un placeholder en cours de rédaction** → laisser la cellule vide, le signaler à l'utilisateur (ne pas rédiger un résumé fictif)
