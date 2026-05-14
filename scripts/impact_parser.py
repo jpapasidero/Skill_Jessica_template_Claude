@@ -22,6 +22,12 @@ try:
 except ImportError:
     HAS_FITZ = False
 
+try:
+    import pdfplumber
+    HAS_PDFPLUMBER = True
+except ImportError:
+    HAS_PDFPLUMBER = False
+
 
 # ---------------------------------------------------------------------------
 # Constantes géométriques du radar OMOC (GAP MEASURE)
@@ -224,14 +230,8 @@ def parse_impact_file(pptx_path):
     return populations
 
 
-def parse_impact_pdf(pdf_path):
-    """
-    Parse un fichier d'analyse d'impact PDF et retourne la même structure.
-    """
-    if not HAS_FITZ:
-        print("[ERROR] PyMuPDF (fitz) est requis pour parser les PDF d'analyse d'impact.", file=sys.stderr)
-        return []
-
+def _parse_impact_pdf_fitz(pdf_path):
+    """Parse un PDF d'analyse d'impact via PyMuPDF (fitz)."""
     pdf = fitz.open(str(pdf_path))
     populations = []
 
@@ -320,6 +320,134 @@ def parse_impact_pdf(pdf_path):
 
     pdf.close()
     return populations
+
+
+def _parse_impact_pdf_pdfplumber(pdf_path):
+    """Parse un PDF d'analyse d'impact via pdfplumber (alternative à PyMuPDF)."""
+    CENTER_X_PT = 161.2
+    CENTER_Y_PT = 227.8
+    STEP_PT = 26.4
+
+    def _group_into_lines(words, y_tol=3):
+        words = sorted(words, key=lambda w: (w["top"], w["x0"]))
+        lines = []
+        for w in words:
+            if not lines or w["top"] - lines[-1][0]["top"] > y_tol:
+                lines.append([w])
+            else:
+                lines[-1].append(w)
+        return [
+            (" ".join(w["text"] for w in line),
+             min(w["top"] for w in line),
+             max(w["bottom"] for w in line))
+            for line in lines
+        ]
+
+    def _lines_to_blocks(lines, gap=12):
+        blocks, current = [], [lines[0]]
+        for line in lines[1:]:
+            if line[1] - current[-1][2] > gap:
+                blocks.append(current)
+                current = [line]
+            else:
+                current.append(line)
+        blocks.append(current)
+        return ["\n".join(l[0] for l in block) for block in blocks]
+
+    populations = []
+    with pdfplumber.open(str(pdf_path)) as pdf:
+        for slide_idx, page in enumerate(pdf.pages):
+            entry = {
+                "slide_index": slide_idx + 1,
+                "population": "",
+                "effectif": "TBD",
+                "omoc": {"Tool": 0, "Business": 0, "Organization": 0, "Culture": 0},
+                "raw_levers": [],
+                "levers": ""
+            }
+
+            words = page.extract_words(keep_blank_chars=False, x_tolerance=3, y_tolerance=3)
+
+            # --- Titre (top < 70 pt) ---
+            title_words = [w for w in words if w["top"] < 70]
+            if not title_words:
+                continue
+            title = " ".join(
+                w["text"] for w in sorted(title_words, key=lambda w: (w["top"], w["x0"]))
+            ).replace('\n', ' ')
+            entry["population"], entry["effectif"] = _parse_title(title)
+
+            # --- Bullets OMOC (rectangles dans la zone radar) ---
+            for rect in page.rects:
+                cx = (rect["x0"] + rect["x1"]) / 2
+                cy = (rect["top"] + rect["bottom"]) / 2
+                if not (cx < 380 and 60 < cy < 430):
+                    continue
+
+                fill = rect.get("non_stroking_color")
+                if fill is not None:
+                    if isinstance(fill, (list, tuple)) and len(fill) >= 3:
+                        r, g, b = fill[0], fill[1], fill[2]
+                        if not (r > 0.9 and g < 0.1 and b < 0.1):
+                            continue
+                    else:
+                        continue
+
+                dx = cx - CENTER_X_PT
+                dy = CENTER_Y_PT - cy
+                if abs(dx) < 20 or abs(dy) < 20:
+                    if abs(dx) > abs(dy):
+                        axis = 'Business' if dx > 0 else 'Culture'
+                        axis_dist = abs(dx)
+                    else:
+                        axis = 'Organization' if dy > 0 else 'Tool'
+                        axis_dist = abs(dy)
+                    level = round(axis_dist / STEP_PT)
+                    entry["omoc"][axis] = max(0, min(4, level))
+
+            # --- Leviers (zone x > 350, top > 280) ---
+            lever_words = [w for w in words if w["x0"] > 350 and w["top"] > 280]
+            if lever_words:
+                lines = _group_into_lines(lever_words)
+                for block_text in _lines_to_blocks(lines):
+                    block_lines = [l.strip() for l in block_text.split('\n') if l.strip()]
+                    if len(block_lines) < 3:
+                        continue
+                    ressort = block_lines[0]
+                    if ressort.lower() in ('ressorts du changement', 'actions'):
+                        continue
+                    action_type = block_lines[1]
+                    if block_lines[2] in ['•', '-', '', '']:
+                        detail = " ".join(block_lines[3:])
+                    else:
+                        detail = " ".join(block_lines[2:]).lstrip('•- ')
+                    entry["raw_levers"].append({
+                        "ressort": ressort,
+                        "type": action_type.rstrip(':'),
+                        "detail": detail or action_type
+                    })
+
+            entry["levers"] = _fallback_summarize_levers(entry["raw_levers"])
+            populations.append(entry)
+
+    return populations
+
+
+def parse_impact_pdf(pdf_path):
+    """
+    Parse un fichier d'analyse d'impact PDF et retourne la même structure
+    que parse_impact_file(). Utilise PyMuPDF si disponible, sinon pdfplumber.
+    """
+    if HAS_FITZ:
+        return _parse_impact_pdf_fitz(pdf_path)
+    if HAS_PDFPLUMBER:
+        return _parse_impact_pdf_pdfplumber(pdf_path)
+    print(
+        "[ERROR] PyMuPDF (fitz) ou pdfplumber est requis pour parser les PDF d'analyse d'impact.\n"
+        "        Installez l'un des deux : pip install pymupdf  ou  pip install pdfplumber",
+        file=sys.stderr
+    )
+    return []
 
 
 # ---------------------------------------------------------------------------

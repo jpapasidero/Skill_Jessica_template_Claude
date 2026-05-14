@@ -1,39 +1,43 @@
 {
   "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\gen-pptx-jessica\\scripts\\builders.py": {
-    "mtime": 1778617543.1296227,
-    "hash": "603970995df0de6698456556c7d64501"
+    "mtime": 1778656038.6812532,
+    "hash": "1dc49bf068e4cce1a395e52db1eec4bd"
   },
   "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\gen-pptx-jessica\\scripts\\generate_pptx.py": {
     "mtime": 1778617542.010977,
     "hash": "0058450644bd701bd5d4b5da7448f0ae"
   },
   "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\gen-pptx-jessica\\scripts\\helpers.py": {
-    "mtime": 1778611606.2296886,
-    "hash": "ba891705b7066f3ec9ae816ab0ad992e"
+    "mtime": 1778656015.5365136,
+    "hash": "5b7d9bc153f5fbcd561a6ccff6f53368"
   },
   "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\gen-pptx-jessica\\scripts\\impact_parser.py": {
-    "mtime": 1778619291.499084,
-    "hash": "e2a3444c24d51c7d332a4445f818f7f7"
+    "mtime": 1778656068.6490428,
+    "hash": "ae2bbfdc1b8d14fd1683429925a876b3"
+  },
+  "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\gen-pptx-jessica\\scripts\\_explore_pdf.py": {
+    "mtime": 1778622008.3687854,
+    "hash": "0492ef8dbbdc32757991d0a3b254b198"
   },
   "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\gen-pptx-jessica\\scripts\\__init__.py": {
     "mtime": 1778611606.1823702,
     "hash": "5674535097e3348b9b273c46b3c520da"
   },
   "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\scripts\\builders.py": {
-    "mtime": 1778617543.1296227,
-    "hash": "603970995df0de6698456556c7d64501"
+    "mtime": 1778656038.6812532,
+    "hash": "1dc49bf068e4cce1a395e52db1eec4bd"
   },
   "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\scripts\\generate_pptx.py": {
     "mtime": 1778617542.010977,
     "hash": "0058450644bd701bd5d4b5da7448f0ae"
   },
   "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\scripts\\helpers.py": {
-    "mtime": 1778611606.2296886,
-    "hash": "ba891705b7066f3ec9ae816ab0ad992e"
+    "mtime": 1778656015.5365136,
+    "hash": "5b7d9bc153f5fbcd561a6ccff6f53368"
   },
   "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\scripts\\impact_parser.py": {
-    "mtime": 1778619291.499084,
-    "hash": "e2a3444c24d51c7d332a4445f818f7f7"
+    "mtime": 1778772450.1675398,
+    "hash": "6d2baf6465216ea972bbe24e13dfd71c"
   },
   "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\scripts\\_explore_pdf.py": {
     "mtime": 1778622008.3687854,
@@ -43,13 +47,17 @@
     "mtime": 1778611606.1823702,
     "hash": "5674535097e3348b9b273c46b3c520da"
   },
+  "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\Kano.md": {
+    "mtime": 1778657253.6463537,
+    "hash": "42b32eca463aef2f33bbfbdbc19a7f40"
+  },
   "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\SKILL.md": {
-    "mtime": 1778623560.1145377,
-    "hash": "879f3a69a0f2e17be36b2fdf424c2f79"
+    "mtime": 1778772203.162346,
+    "hash": "09b2f12ddf69986fbd2df92d112154fa"
   },
   "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\gen-pptx-jessica\\SKILL.md": {
-    "mtime": 1778623560.1145377,
-    "hash": "879f3a69a0f2e17be36b2fdf424c2f79"
+    "mtime": 1778771744.8551273,
+    "hash": "a7acc696a8505583d1096d879c3463a6"
   },
   "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\gen-pptx-jessica\\references\\content_schema.md": {
     "mtime": 1778617543.1236033,
@@ -59,6 +67,14 @@
     "mtime": 1778617543.1236033,
     "hash": "eda8f1348f07c35d1b0f93c1531ff6fb"
   },
+  "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\gen-pptx-jessica\\rules\\rule_impact_analyse_pdf.md": {
+    "mtime": 1778658817.0153296,
+    "hash": "6c1037cfdbd4ba25be92ae626e7a118f"
+  },
+  "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\gen-pptx-jessica\\rules\\rule_impact_analysis_pptx.md": {
+    "mtime": 1778658803.5342095,
+    "hash": "18fd935bd15d8216fe44279611f43a5f"
+  },
   "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\references\\content_schema.md": {
     "mtime": 1778617543.1236033,
     "hash": "299c481959d58047c4f05386d0becc46"
@@ -66,6 +82,14 @@
   "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\references\\layouts_catalog.md": {
     "mtime": 1778617543.1236033,
     "hash": "eda8f1348f07c35d1b0f93c1531ff6fb"
+  },
+  "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\rules\\rule_impact_analyse_pdf.md": {
+    "mtime": 1778772465.2281396,
+    "hash": "359b947b71f85fa5553b563fff45ef03"
+  },
+  "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\rules\\rule_impact_analysis_pptx.md": {
+    "mtime": 1778658803.5342095,
+    "hash": "18fd935bd15d8216fe44279611f43a5f"
   },
   "C:\\Users\\jessi\\Documents\\Skill_Jessica_template_Claude\\Exemple_analyse_impact.pdf": {
     "mtime": 1778621669.081665,

@@ -133,10 +133,8 @@ def main():
     ap.add_argument("--output", required=True, help="Fichier .pptx de sortie")
     ap.add_argument("--logo", default=None,
                     help="Chemin optionnel vers le logo Safran. Par defaut, cherche dans assets/logo(s).")
-    ap.add_argument("--impact", default=None,
-                    help="Fichier PPTX d'analyse d'impact pour générer automatiquement les slides Layout 15.")
     args = ap.parse_args()
-    generate(args.content, args.output, logo_path=args.logo, impact_path=args.impact)
+    generate(args.content, args.output, logo_path=args.logo)
 
 
 if __name__ == "__main__":

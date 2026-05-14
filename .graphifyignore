@@ -1,0 +1,9 @@
+﻿gen-pptx-jessica/
+graphify-out/
+node_modules/
+dist/
+build/
+.venv/
+.env
+.skill
+.zip
