@@ -54,7 +54,7 @@
       "source_file": "scripts\\builders.py",
       "source_location": "L128",
       "id": "scripts_builders_build_slide_3",
-      "community": 6,
+      "community": 0,
       "norm_label": "build_slide_3()"
     },
     {
@@ -405,7 +405,7 @@
       "source_file": "scripts\\helpers.py",
       "source_location": "L383",
       "id": "scripts_helpers_add_teardrop",
-      "community": 6,
+      "community": 1,
       "norm_label": "add_teardrop()"
     },
     {
@@ -522,7 +522,7 @@
       "source_file": "scripts\\helpers.py",
       "source_location": "L384",
       "id": "scripts_helpers_rationale_384",
-      "community": 6,
+      "community": 1,
       "norm_label": "larme (teardrop). en python-pptx : mso_shape.tear."
     },
     {
@@ -549,7 +549,7 @@
       "source_file": "gen-pptx-jessica\\scripts\\impact_parser.py",
       "source_location": "L1",
       "id": "gen_pptx_jessica_scripts_impact_parser_py",
-      "community": 9,
+      "community": 3,
       "norm_label": "impact_parser.py"
     },
     {
@@ -585,7 +585,7 @@
       "source_file": "scripts\\impact_parser.py",
       "source_location": "L143",
       "id": "scripts_impact_parser_parse_title",
-      "community": 7,
+      "community": 8,
       "norm_label": "_parse_title()"
     },
     {
@@ -594,14 +594,32 @@
       "source_file": "scripts\\impact_parser.py",
       "source_location": "L173",
       "id": "scripts_impact_parser_parse_impact_file",
-      "community": 8,
+      "community": 4,
       "norm_label": "parse_impact_file()"
+    },
+    {
+      "label": "_parse_impact_pdf_fitz()",
+      "file_type": "code",
+      "source_file": "scripts\\impact_parser.py",
+      "source_location": "L233",
+      "id": "scripts_impact_parser_parse_impact_pdf_fitz",
+      "community": 3,
+      "norm_label": "_parse_impact_pdf_fitz()"
+    },
+    {
+      "label": "_parse_impact_pdf_pdfplumber()",
+      "file_type": "code",
+      "source_file": "scripts\\impact_parser.py",
+      "source_location": "L333",
+      "id": "scripts_impact_parser_parse_impact_pdf_pdfplumber",
+      "community": 3,
+      "norm_label": "_parse_impact_pdf_pdfplumber()"
     },
     {
       "label": "parse_impact_pdf()",
       "file_type": "code",
       "source_file": "scripts\\impact_parser.py",
-      "source_location": "L436",
+      "source_location": "L461",
       "id": "scripts_impact_parser_parse_impact_pdf",
       "community": 3,
       "norm_label": "parse_impact_pdf()"
@@ -610,90 +628,108 @@
       "label": "build_layout15_slides()",
       "file_type": "code",
       "source_file": "scripts\\impact_parser.py",
-      "source_location": "L457",
+      "source_location": "L482",
       "id": "scripts_impact_parser_build_layout15_slides",
-      "community": 11,
+      "community": 6,
       "norm_label": "build_layout15_slides()"
     },
     {
       "label": "generate_impact_content()",
       "file_type": "code",
       "source_file": "scripts\\impact_parser.py",
-      "source_location": "L510",
+      "source_location": "L535",
       "id": "scripts_impact_parser_generate_impact_content",
-      "community": 10,
+      "community": 7,
       "norm_label": "generate_impact_content()"
     },
     {
       "label": "D\u00e9termine l'axe OMOC et le niveau (0-4) d'un bullet \u00e0 partir de sa     position",
       "file_type": "rationale",
-      "source_file": "gen-pptx-jessica\\scripts\\impact_parser.py",
-      "source_location": "L54",
-      "id": "scripts_impact_parser_rationale_54",
+      "source_file": "scripts\\impact_parser.py",
+      "source_location": "L60",
+      "id": "scripts_impact_parser_rationale_60",
       "community": 9,
       "norm_label": "determine l'axe omoc et le niveau (0-4) d'un bullet a partir de sa     position"
     },
     {
       "label": "Extrait les donn\u00e9es brutes de la table RESSORTS_CHANGE.      Retourne une liste",
       "file_type": "rationale",
-      "source_file": "gen-pptx-jessica\\scripts\\impact_parser.py",
-      "source_location": "L81",
-      "id": "scripts_impact_parser_rationale_81",
+      "source_file": "scripts\\impact_parser.py",
+      "source_location": "L87",
+      "id": "scripts_impact_parser_rationale_87",
       "community": 4,
       "norm_label": "extrait les donnees brutes de la table ressorts_change.      retourne une liste"
     },
     {
       "label": "R\u00e9sum\u00e9 m\u00e9canique de secours (\u2264 max_len caract\u00e8res) utilis\u00e9 quand     l'IA ne fou",
       "file_type": "rationale",
-      "source_file": "gen-pptx-jessica\\scripts\\impact_parser.py",
-      "source_location": "L109",
-      "id": "scripts_impact_parser_rationale_109",
+      "source_file": "scripts\\impact_parser.py",
+      "source_location": "L115",
+      "id": "scripts_impact_parser_rationale_115",
       "community": 3,
       "norm_label": "resume mecanique de secours (\u2264 max_len caracteres) utilise quand     l'ia ne fou"
     },
     {
       "label": "S\u00e9pare le texte du TITLE en (population, effectif).      Formats attendus :",
       "file_type": "rationale",
-      "source_file": "gen-pptx-jessica\\scripts\\impact_parser.py",
-      "source_location": "L138",
-      "id": "scripts_impact_parser_rationale_138",
-      "community": 7,
+      "source_file": "scripts\\impact_parser.py",
+      "source_location": "L144",
+      "id": "scripts_impact_parser_rationale_144",
+      "community": 8,
       "norm_label": "separe le texte du title en (population, effectif).      formats attendus :"
     },
     {
       "label": "Parse un fichier d'analyse d'impact PPTX et retourne une liste de     dictionnai",
       "file_type": "rationale",
-      "source_file": "gen-pptx-jessica\\scripts\\impact_parser.py",
-      "source_location": "L168",
-      "id": "scripts_impact_parser_rationale_168",
-      "community": 8,
+      "source_file": "scripts\\impact_parser.py",
+      "source_location": "L174",
+      "id": "scripts_impact_parser_rationale_174",
+      "community": 4,
       "norm_label": "parse un fichier d'analyse d'impact pptx et retourne une liste de     dictionnai"
     },
     {
-      "label": "Parse un fichier d'analyse d'impact PDF et retourne la m\u00eame structure.",
+      "label": "Parse un PDF d'analyse d'impact via PyMuPDF (fitz).",
+      "file_type": "rationale",
+      "source_file": "scripts\\impact_parser.py",
+      "source_location": "L234",
+      "id": "scripts_impact_parser_rationale_234",
+      "community": 3,
+      "norm_label": "parse un pdf d'analyse d'impact via pymupdf (fitz)."
+    },
+    {
+      "label": "Parse un PDF d'analyse d'impact via pdfplumber (alternative \u00e0 PyMuPDF).",
       "file_type": "rationale",
       "source_file": "gen-pptx-jessica\\scripts\\impact_parser.py",
-      "source_location": "L228",
-      "id": "scripts_impact_parser_rationale_228",
+      "source_location": "L326",
+      "id": "scripts_impact_parser_rationale_326",
       "community": 3,
-      "norm_label": "parse un fichier d'analyse d'impact pdf et retourne la meme structure."
+      "norm_label": "parse un pdf d'analyse d'impact via pdfplumber (alternative a pymupdf)."
+    },
+    {
+      "label": "Parse un fichier d'analyse d'impact PDF et retourne la m\u00eame structure     que pa",
+      "file_type": "rationale",
+      "source_file": "gen-pptx-jessica\\scripts\\impact_parser.py",
+      "source_location": "L437",
+      "id": "scripts_impact_parser_rationale_437",
+      "community": 3,
+      "norm_label": "parse un fichier d'analyse d'impact pdf et retourne la meme structure     que pa"
     },
     {
       "label": "Convertit la liste de populations en entr\u00e9es content.json pour le Layout 15.",
       "file_type": "rationale",
       "source_file": "gen-pptx-jessica\\scripts\\impact_parser.py",
-      "source_location": "L330",
-      "id": "scripts_impact_parser_rationale_330",
-      "community": 11,
+      "source_location": "L458",
+      "id": "scripts_impact_parser_rationale_458",
+      "community": 6,
       "norm_label": "convertit la liste de populations en entrees content.json pour le layout 15."
     },
     {
       "label": "Fonction principale : parse le fichier d'analyse d'impact et retourne     la lis",
       "file_type": "rationale",
       "source_file": "gen-pptx-jessica\\scripts\\impact_parser.py",
-      "source_location": "L383",
-      "id": "scripts_impact_parser_rationale_383",
-      "community": 10,
+      "source_location": "L511",
+      "id": "scripts_impact_parser_rationale_511",
+      "community": 7,
       "norm_label": "fonction principale : parse le fichier d'analyse d'impact et retourne     la lis"
     },
     {
@@ -756,7 +792,7 @@
       "source_file": "gen-pptx-jessica\\scripts\\__init__.py",
       "source_location": "L1",
       "id": "gen_pptx_jessica_scripts_init_py",
-      "community": 12,
+      "community": 10,
       "norm_label": "__init__.py"
     },
     {
@@ -796,83 +832,11 @@
       "norm_label": "impact_parser.py"
     },
     {
-      "label": "_parse_impact_pdf_fitz()",
-      "file_type": "code",
-      "source_file": "scripts\\impact_parser.py",
-      "source_location": "L233",
-      "id": "scripts_impact_parser_parse_impact_pdf_fitz",
-      "community": 3,
-      "norm_label": "_parse_impact_pdf_fitz()"
-    },
-    {
-      "label": "_parse_impact_pdf_pdfplumber()",
-      "file_type": "code",
-      "source_file": "scripts\\impact_parser.py",
-      "source_location": "L325",
-      "id": "scripts_impact_parser_parse_impact_pdf_pdfplumber",
-      "community": 3,
-      "norm_label": "_parse_impact_pdf_pdfplumber()"
-    },
-    {
-      "label": "D\u00e9termine l'axe OMOC et le niveau (0-4) d'un bullet \u00e0 partir de sa     position",
-      "file_type": "rationale",
-      "source_file": "scripts\\impact_parser.py",
-      "source_location": "L60",
-      "id": "scripts_impact_parser_rationale_60",
-      "community": 9,
-      "norm_label": "determine l'axe omoc et le niveau (0-4) d'un bullet a partir de sa     position"
-    },
-    {
-      "label": "Extrait les donn\u00e9es brutes de la table RESSORTS_CHANGE.      Retourne une liste",
-      "file_type": "rationale",
-      "source_file": "scripts\\impact_parser.py",
-      "source_location": "L87",
-      "id": "scripts_impact_parser_rationale_87",
-      "community": 4,
-      "norm_label": "extrait les donnees brutes de la table ressorts_change.      retourne une liste"
-    },
-    {
-      "label": "R\u00e9sum\u00e9 m\u00e9canique de secours (\u2264 max_len caract\u00e8res) utilis\u00e9 quand     l'IA ne fou",
-      "file_type": "rationale",
-      "source_file": "scripts\\impact_parser.py",
-      "source_location": "L115",
-      "id": "scripts_impact_parser_rationale_115",
-      "community": 3,
-      "norm_label": "resume mecanique de secours (\u2264 max_len caracteres) utilise quand     l'ia ne fou"
-    },
-    {
-      "label": "S\u00e9pare le texte du TITLE en (population, effectif).      Formats attendus :",
-      "file_type": "rationale",
-      "source_file": "scripts\\impact_parser.py",
-      "source_location": "L144",
-      "id": "scripts_impact_parser_rationale_144",
-      "community": 7,
-      "norm_label": "separe le texte du title en (population, effectif).      formats attendus :"
-    },
-    {
-      "label": "Parse un fichier d'analyse d'impact PPTX et retourne une liste de     dictionnai",
-      "file_type": "rationale",
-      "source_file": "scripts\\impact_parser.py",
-      "source_location": "L174",
-      "id": "scripts_impact_parser_rationale_174",
-      "community": 8,
-      "norm_label": "parse un fichier d'analyse d'impact pptx et retourne une liste de     dictionnai"
-    },
-    {
-      "label": "Parse un PDF d'analyse d'impact via PyMuPDF (fitz).",
-      "file_type": "rationale",
-      "source_file": "scripts\\impact_parser.py",
-      "source_location": "L234",
-      "id": "scripts_impact_parser_rationale_234",
-      "community": 3,
-      "norm_label": "parse un pdf d'analyse d'impact via pymupdf (fitz)."
-    },
-    {
       "label": "Parse un PDF d'analyse d'impact via pdfplumber (alternative \u00e0 PyMuPDF).",
       "file_type": "rationale",
       "source_file": "scripts\\impact_parser.py",
-      "source_location": "L326",
-      "id": "scripts_impact_parser_rationale_326",
+      "source_location": "L334",
+      "id": "scripts_impact_parser_rationale_334",
       "community": 3,
       "norm_label": "parse un pdf d'analyse d'impact via pdfplumber (alternative a pymupdf)."
     },
@@ -880,8 +844,8 @@
       "label": "Parse un fichier d'analyse d'impact PDF et retourne la m\u00eame structure     que pa",
       "file_type": "rationale",
       "source_file": "scripts\\impact_parser.py",
-      "source_location": "L437",
-      "id": "scripts_impact_parser_rationale_437",
+      "source_location": "L462",
+      "id": "scripts_impact_parser_rationale_462",
       "community": 3,
       "norm_label": "parse un fichier d'analyse d'impact pdf et retourne la meme structure     que pa"
     },
@@ -889,18 +853,18 @@
       "label": "Convertit la liste de populations en entr\u00e9es content.json pour le Layout 15.",
       "file_type": "rationale",
       "source_file": "scripts\\impact_parser.py",
-      "source_location": "L458",
-      "id": "scripts_impact_parser_rationale_458",
-      "community": 11,
+      "source_location": "L483",
+      "id": "scripts_impact_parser_rationale_483",
+      "community": 6,
       "norm_label": "convertit la liste de populations en entrees content.json pour le layout 15."
     },
     {
       "label": "Fonction principale : parse le fichier d'analyse d'impact et retourne     la lis",
       "file_type": "rationale",
       "source_file": "scripts\\impact_parser.py",
-      "source_location": "L511",
-      "id": "scripts_impact_parser_rationale_511",
-      "community": 10,
+      "source_location": "L536",
+      "id": "scripts_impact_parser_rationale_536",
+      "community": 7,
       "norm_label": "fonction principale : parse le fichier d'analyse d'impact et retourne     la lis"
     },
     {
@@ -918,8 +882,80 @@
       "source_file": "scripts\\__init__.py",
       "source_location": "L1",
       "id": "scripts_init_py",
-      "community": 13,
+      "community": 11,
       "norm_label": "__init__.py"
+    },
+    {
+      "label": "D\u00e9termine l'axe OMOC et le niveau (0-4) d'un bullet \u00e0 partir de sa     position",
+      "file_type": "rationale",
+      "source_file": "gen-pptx-jessica\\scripts\\impact_parser.py",
+      "source_location": "L54",
+      "community": 9,
+      "norm_label": "determine l'axe omoc et le niveau (0-4) d'un bullet a partir de sa     position",
+      "id": "scripts_impact_parser_rationale_54"
+    },
+    {
+      "label": "Extrait les donn\u00e9es brutes de la table RESSORTS_CHANGE.      Retourne une liste",
+      "file_type": "rationale",
+      "source_file": "gen-pptx-jessica\\scripts\\impact_parser.py",
+      "source_location": "L81",
+      "community": 4,
+      "norm_label": "extrait les donnees brutes de la table ressorts_change.      retourne une liste",
+      "id": "scripts_impact_parser_rationale_81"
+    },
+    {
+      "label": "R\u00e9sum\u00e9 m\u00e9canique de secours (\u2264 max_len caract\u00e8res) utilis\u00e9 quand     l'IA ne fou",
+      "file_type": "rationale",
+      "source_file": "gen-pptx-jessica\\scripts\\impact_parser.py",
+      "source_location": "L109",
+      "community": 3,
+      "norm_label": "resume mecanique de secours (\u2264 max_len caracteres) utilise quand     l'ia ne fou",
+      "id": "scripts_impact_parser_rationale_109"
+    },
+    {
+      "label": "S\u00e9pare le texte du TITLE en (population, effectif).      Formats attendus :",
+      "file_type": "rationale",
+      "source_file": "gen-pptx-jessica\\scripts\\impact_parser.py",
+      "source_location": "L138",
+      "community": 8,
+      "norm_label": "separe le texte du title en (population, effectif).      formats attendus :",
+      "id": "scripts_impact_parser_rationale_138"
+    },
+    {
+      "label": "Parse un fichier d'analyse d'impact PPTX et retourne une liste de     dictionnai",
+      "file_type": "rationale",
+      "source_file": "gen-pptx-jessica\\scripts\\impact_parser.py",
+      "source_location": "L168",
+      "community": 4,
+      "norm_label": "parse un fichier d'analyse d'impact pptx et retourne une liste de     dictionnai",
+      "id": "scripts_impact_parser_rationale_168"
+    },
+    {
+      "label": "Parse un fichier d'analyse d'impact PDF et retourne la m\u00eame structure.",
+      "file_type": "rationale",
+      "source_file": "gen-pptx-jessica\\scripts\\impact_parser.py",
+      "source_location": "L228",
+      "community": 3,
+      "norm_label": "parse un fichier d'analyse d'impact pdf et retourne la meme structure.",
+      "id": "scripts_impact_parser_rationale_228"
+    },
+    {
+      "label": "Convertit la liste de populations en entr\u00e9es content.json pour le Layout 15.",
+      "file_type": "rationale",
+      "source_file": "gen-pptx-jessica\\scripts\\impact_parser.py",
+      "source_location": "L330",
+      "community": 6,
+      "norm_label": "convertit la liste de populations en entrees content.json pour le layout 15.",
+      "id": "scripts_impact_parser_rationale_330"
+    },
+    {
+      "label": "Fonction principale : parse le fichier d'analyse d'impact et retourne     la lis",
+      "file_type": "rationale",
+      "source_file": "gen-pptx-jessica\\scripts\\impact_parser.py",
+      "source_location": "L383",
+      "community": 7,
+      "norm_label": "fonction principale : parse le fichier d'analyse d'impact et retourne     la lis",
+      "id": "scripts_impact_parser_rationale_383"
     },
     {
       "label": "Dispatcher : appelle le bon builder selon layout_n (1..11).",
@@ -935,7 +971,7 @@
       "file_type": "rationale",
       "source_file": "scripts\\helpers.py",
       "source_location": "L378",
-      "community": 6,
+      "community": 1,
       "norm_label": "larme (teardrop). en python-pptx : mso_shape.tear.",
       "id": "scripts_helpers_rationale_378"
     },
@@ -989,7 +1025,7 @@
       "file_type": "rationale",
       "source_file": "scripts\\impact_parser.py",
       "source_location": "L132",
-      "community": 7,
+      "community": 8,
       "norm_label": "separe le texte du title en (population, effectif).      formats attendus :",
       "id": "scripts_impact_parser_rationale_132"
     },
@@ -998,7 +1034,7 @@
       "file_type": "rationale",
       "source_file": "scripts\\impact_parser.py",
       "source_location": "L162",
-      "community": 8,
+      "community": 4,
       "norm_label": "parse un fichier d'analyse d'impact pptx et retourne une liste de     dictionnai",
       "id": "scripts_impact_parser_rationale_162"
     },
@@ -1007,7 +1043,7 @@
       "file_type": "rationale",
       "source_file": "scripts\\impact_parser.py",
       "source_location": "L226",
-      "community": 11,
+      "community": 6,
       "norm_label": "convertit la liste de populations en entrees content.json pour le layout 15.",
       "id": "scripts_impact_parser_rationale_226"
     },
@@ -1016,7 +1052,7 @@
       "file_type": "rationale",
       "source_file": "scripts\\impact_parser.py",
       "source_location": "L279",
-      "community": 10,
+      "community": 7,
       "norm_label": "fonction principale : parse le fichier d'analyse d'impact et retourne     la lis",
       "id": "scripts_impact_parser_rationale_279"
     },
@@ -1061,7 +1097,7 @@
       "file_type": "code",
       "source_file": "__init__.py",
       "source_location": "L1",
-      "community": 14,
+      "community": 12,
       "norm_label": "__init__.py",
       "id": "init_py"
     },
@@ -1097,7 +1133,7 @@
       "file_type": "rationale",
       "source_file": "impact_parser.py",
       "source_location": "L142",
-      "community": 7,
+      "community": 8,
       "norm_label": "separe le texte du title en (population, effectif).      formats attendus :",
       "id": "scripts_impact_parser_rationale_142"
     },
@@ -1106,7 +1142,7 @@
       "file_type": "rationale",
       "source_file": "impact_parser.py",
       "source_location": "L172",
-      "community": 8,
+      "community": 4,
       "norm_label": "parse un fichier d'analyse d'impact pptx et retourne une liste de     dictionnai",
       "id": "scripts_impact_parser_rationale_172"
     },
@@ -1115,7 +1151,7 @@
       "file_type": "rationale",
       "source_file": "impact_parser.py",
       "source_location": "L232",
-      "community": 11,
+      "community": 6,
       "norm_label": "convertit la liste de populations en entrees content.json pour le layout 15.",
       "id": "scripts_impact_parser_rationale_232"
     },
@@ -1124,7 +1160,7 @@
       "file_type": "rationale",
       "source_file": "impact_parser.py",
       "source_location": "L285",
-      "community": 10,
+      "community": 7,
       "norm_label": "fonction principale : parse le fichier d'analyse d'impact et retourne     la lis",
       "id": "scripts_impact_parser_rationale_285"
     },
@@ -1241,7 +1277,7 @@
       "file_type": "rationale",
       "source_file": "helpers.py",
       "source_location": "L283",
-      "community": 6,
+      "community": 1,
       "norm_label": "larme (teardrop). en python-pptx : mso_shape.tear (rotation a appliquer pour poi",
       "id": "scripts_helpers_rationale_283"
     },
@@ -1295,7 +1331,7 @@
       "file_type": "rationale",
       "source_file": "helpers.py",
       "source_location": "L127",
-      "community": 6,
+      "community": 1,
       "norm_label": "larme (teardrop). en python-pptx : mso_shape.tear (rotation a appliquer pour poi",
       "id": "scripts_helpers_rationale_127"
     },
@@ -4483,6 +4519,26 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "gen-pptx-jessica\\scripts\\impact_parser.py",
+      "source_location": "L233",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "gen_pptx_jessica_scripts_impact_parser_py",
+      "target": "scripts_impact_parser_parse_impact_pdf_fitz"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "gen-pptx-jessica\\scripts\\impact_parser.py",
+      "source_location": "L325",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "gen_pptx_jessica_scripts_impact_parser_py",
+      "target": "scripts_impact_parser_parse_impact_pdf_pdfplumber"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "gen-pptx-jessica\\scripts\\impact_parser.py",
       "source_location": "L227",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -4524,10 +4580,10 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "scripts\\impact_parser.py",
-      "source_location": "L54",
+      "source_location": "L60",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "scripts_impact_parser_rationale_54",
+      "source": "scripts_impact_parser_rationale_60",
       "target": "scripts_impact_parser_classify_omoc_bullet"
     },
     {
@@ -4544,11 +4600,11 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "scripts\\impact_parser.py",
-      "source_location": "L60",
+      "source_location": "L54",
       "weight": 1.0,
-      "source": "scripts_impact_parser_rationale_60",
-      "target": "scripts_impact_parser_classify_omoc_bullet",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "scripts_impact_parser_rationale_54",
+      "target": "scripts_impact_parser_classify_omoc_bullet"
     },
     {
       "relation": "rationale_for",
@@ -4585,10 +4641,10 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "scripts\\impact_parser.py",
-      "source_location": "L81",
+      "source_location": "L87",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "scripts_impact_parser_rationale_81",
+      "source": "scripts_impact_parser_rationale_87",
       "target": "scripts_impact_parser_extract_raw_levers"
     },
     {
@@ -4605,11 +4661,11 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "scripts\\impact_parser.py",
-      "source_location": "L87",
+      "source_location": "L81",
       "weight": 1.0,
-      "source": "scripts_impact_parser_rationale_87",
-      "target": "scripts_impact_parser_extract_raw_levers",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "scripts_impact_parser_rationale_81",
+      "target": "scripts_impact_parser_extract_raw_levers"
     },
     {
       "relation": "rationale_for",
@@ -4650,17 +4706,28 @@
       "source_location": "L318",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "scripts_impact_parser_parse_impact_pdf",
+      "source": "scripts_impact_parser_parse_impact_pdf_fitz",
+      "target": "scripts_impact_parser_fallback_summarize_levers"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\impact_parser.py",
+      "source_location": "L430",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_impact_parser_parse_impact_pdf_pdfplumber",
       "target": "scripts_impact_parser_fallback_summarize_levers"
     },
     {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "scripts\\impact_parser.py",
-      "source_location": "L109",
+      "source_location": "L115",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "scripts_impact_parser_rationale_109",
+      "source": "scripts_impact_parser_rationale_115",
       "target": "scripts_impact_parser_fallback_summarize_levers"
     },
     {
@@ -4680,30 +4747,19 @@
       "source_file": "scripts\\impact_parser.py",
       "source_location": "L318",
       "weight": 1.0,
-      "source": "scripts_impact_parser_parse_impact_pdf_fitz",
-      "target": "scripts_impact_parser_fallback_summarize_levers",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts\\impact_parser.py",
-      "source_location": "L430",
-      "weight": 1.0,
-      "source": "scripts_impact_parser_parse_impact_pdf_pdfplumber",
-      "target": "scripts_impact_parser_fallback_summarize_levers",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "scripts_impact_parser_parse_impact_pdf",
+      "target": "scripts_impact_parser_fallback_summarize_levers"
     },
     {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "scripts\\impact_parser.py",
-      "source_location": "L115",
+      "source_location": "L109",
       "weight": 1.0,
-      "source": "scripts_impact_parser_rationale_115",
-      "target": "scripts_impact_parser_fallback_summarize_levers",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "scripts_impact_parser_rationale_109",
+      "target": "scripts_impact_parser_fallback_summarize_levers"
     },
     {
       "relation": "rationale_for",
@@ -4744,17 +4800,28 @@
       "source_location": "L269",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "scripts_impact_parser_parse_impact_pdf",
+      "source": "scripts_impact_parser_parse_impact_pdf_fitz",
+      "target": "scripts_impact_parser_parse_title"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\impact_parser.py",
+      "source_location": "L378",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_impact_parser_parse_impact_pdf_pdfplumber",
       "target": "scripts_impact_parser_parse_title"
     },
     {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "scripts\\impact_parser.py",
-      "source_location": "L138",
+      "source_location": "L144",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "scripts_impact_parser_rationale_138",
+      "source": "scripts_impact_parser_rationale_144",
       "target": "scripts_impact_parser_parse_title"
     },
     {
@@ -4774,30 +4841,19 @@
       "source_file": "scripts\\impact_parser.py",
       "source_location": "L269",
       "weight": 1.0,
-      "source": "scripts_impact_parser_parse_impact_pdf_fitz",
-      "target": "scripts_impact_parser_parse_title",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts\\impact_parser.py",
-      "source_location": "L378",
-      "weight": 1.0,
-      "source": "scripts_impact_parser_parse_impact_pdf_pdfplumber",
-      "target": "scripts_impact_parser_parse_title",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "scripts_impact_parser_parse_impact_pdf",
+      "target": "scripts_impact_parser_parse_title"
     },
     {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "scripts\\impact_parser.py",
-      "source_location": "L144",
+      "source_location": "L138",
       "weight": 1.0,
-      "source": "scripts_impact_parser_rationale_144",
-      "target": "scripts_impact_parser_parse_title",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "scripts_impact_parser_rationale_138",
+      "target": "scripts_impact_parser_parse_title"
     },
     {
       "relation": "rationale_for",
@@ -4844,10 +4900,10 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "scripts\\impact_parser.py",
-      "source_location": "L168",
+      "source_location": "L174",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "scripts_impact_parser_rationale_168",
+      "source": "scripts_impact_parser_rationale_174",
       "target": "scripts_impact_parser_parse_impact_file"
     },
     {
@@ -4864,11 +4920,11 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "scripts\\impact_parser.py",
-      "source_location": "L174",
+      "source_location": "L168",
       "weight": 1.0,
-      "source": "scripts_impact_parser_rationale_174",
-      "target": "scripts_impact_parser_parse_impact_file",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "scripts_impact_parser_rationale_168",
+      "target": "scripts_impact_parser_parse_impact_file"
     },
     {
       "relation": "rationale_for",
@@ -4916,6 +4972,78 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "scripts\\impact_parser.py",
+      "source_location": "L442",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_impact_parser_parse_impact_pdf",
+      "target": "scripts_impact_parser_parse_impact_pdf_fitz"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\impact_parser.py",
+      "source_location": "L234",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_impact_parser_rationale_234",
+      "target": "scripts_impact_parser_parse_impact_pdf_fitz"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\impact_parser.py",
+      "source_location": "L233",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_impact_parser_py",
+      "target": "scripts_impact_parser_parse_impact_pdf_fitz"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\impact_parser.py",
+      "source_location": "L444",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_impact_parser_parse_impact_pdf",
+      "target": "scripts_impact_parser_parse_impact_pdf_pdfplumber"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\impact_parser.py",
+      "source_location": "L326",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_impact_parser_rationale_326",
+      "target": "scripts_impact_parser_parse_impact_pdf_pdfplumber"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\impact_parser.py",
+      "source_location": "L325",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_impact_parser_py",
+      "target": "scripts_impact_parser_parse_impact_pdf_pdfplumber"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\impact_parser.py",
+      "source_location": "L334",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_impact_parser_rationale_334",
+      "target": "scripts_impact_parser_parse_impact_pdf_pdfplumber"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\impact_parser.py",
       "source_location": "L389",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -4926,10 +5054,10 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "scripts\\impact_parser.py",
-      "source_location": "L228",
+      "source_location": "L437",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "scripts_impact_parser_rationale_228",
+      "source": "scripts_impact_parser_rationale_437",
       "target": "scripts_impact_parser_parse_impact_pdf"
     },
     {
@@ -4943,36 +5071,24 @@
       "target": "scripts_impact_parser_parse_impact_pdf"
     },
     {
-      "relation": "calls",
-      "context": "call",
+      "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "scripts\\impact_parser.py",
-      "source_location": "L442",
+      "source_location": "L462",
       "weight": 1.0,
-      "source": "scripts_impact_parser_parse_impact_pdf",
-      "target": "scripts_impact_parser_parse_impact_pdf_fitz",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts\\impact_parser.py",
-      "source_location": "L444",
-      "weight": 1.0,
-      "source": "scripts_impact_parser_parse_impact_pdf",
-      "target": "scripts_impact_parser_parse_impact_pdf_pdfplumber",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "scripts_impact_parser_rationale_462",
+      "target": "scripts_impact_parser_parse_impact_pdf"
     },
     {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "scripts\\impact_parser.py",
-      "source_location": "L437",
+      "source_location": "L228",
       "weight": 1.0,
-      "source": "scripts_impact_parser_rationale_437",
-      "target": "scripts_impact_parser_parse_impact_pdf",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "scripts_impact_parser_rationale_228",
+      "target": "scripts_impact_parser_parse_impact_pdf"
     },
     {
       "relation": "calls",
@@ -4989,10 +5105,10 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "scripts\\impact_parser.py",
-      "source_location": "L330",
+      "source_location": "L458",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "scripts_impact_parser_rationale_330",
+      "source": "scripts_impact_parser_rationale_458",
       "target": "scripts_impact_parser_build_layout15_slides"
     },
     {
@@ -5009,11 +5125,21 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "scripts\\impact_parser.py",
-      "source_location": "L458",
+      "source_location": "L483",
       "weight": 1.0,
-      "source": "scripts_impact_parser_rationale_458",
-      "target": "scripts_impact_parser_build_layout15_slides",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "scripts_impact_parser_rationale_483",
+      "target": "scripts_impact_parser_build_layout15_slides"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\impact_parser.py",
+      "source_location": "L330",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_impact_parser_rationale_330",
+      "target": "scripts_impact_parser_build_layout15_slides"
     },
     {
       "relation": "rationale_for",
@@ -5049,10 +5175,10 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "scripts\\impact_parser.py",
-      "source_location": "L383",
+      "source_location": "L511",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "scripts_impact_parser_rationale_383",
+      "source": "scripts_impact_parser_rationale_511",
       "target": "scripts_impact_parser_generate_impact_content"
     },
     {
@@ -5069,11 +5195,21 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "scripts\\impact_parser.py",
-      "source_location": "L511",
+      "source_location": "L536",
       "weight": 1.0,
-      "source": "scripts_impact_parser_rationale_511",
-      "target": "scripts_impact_parser_generate_impact_content",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "scripts_impact_parser_rationale_536",
+      "target": "scripts_impact_parser_generate_impact_content"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts\\impact_parser.py",
+      "source_location": "L383",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_impact_parser_rationale_383",
+      "target": "scripts_impact_parser_generate_impact_content"
     },
     {
       "relation": "rationale_for",
@@ -5217,46 +5353,6 @@
       "confidence_score": 1.0,
       "source": "scripts_generate_pptx_py",
       "target": "scripts_impact_parser_py"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts\\impact_parser.py",
-      "source_location": "L233",
-      "weight": 1.0,
-      "source": "scripts_impact_parser_py",
-      "target": "scripts_impact_parser_parse_impact_pdf_fitz",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts\\impact_parser.py",
-      "source_location": "L325",
-      "weight": 1.0,
-      "source": "scripts_impact_parser_py",
-      "target": "scripts_impact_parser_parse_impact_pdf_pdfplumber",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts\\impact_parser.py",
-      "source_location": "L234",
-      "weight": 1.0,
-      "source": "scripts_impact_parser_rationale_234",
-      "target": "scripts_impact_parser_parse_impact_pdf_fitz",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts\\impact_parser.py",
-      "source_location": "L326",
-      "weight": 1.0,
-      "source": "scripts_impact_parser_rationale_326",
-      "target": "scripts_impact_parser_parse_impact_pdf_pdfplumber",
-      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",

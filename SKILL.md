@@ -63,9 +63,9 @@ Ne pas l'utiliser pour : un seul slide isolé qu'on peut juste décrire en chat,
 
 # Workflow de génération
 
-1. **Comprendre l'intention** : combien de slides, quel objectif (informer / convaincre / décider), quelle audience (DISC : Dominant, Influent, Stable, Consciencieux). Si l'utilisateur n'a pas précisé, propose une structure narrative (storyline) avant de générer.
+1. **Comprendre l'intention** : combien de slides, quel objectif (informer / convaincre / décider), quelle audience (DISC : Dominant, Influent, Stable, Consciencieux). En l'absence de précisions, propose une structure narrative (storyline) avant de générer.
 
-2. **Choisir les layouts** parmi les **14 layouts standard** (voir `references/layouts_catalog.md`). Adapte le choix au message :
+2. **Choisir les layouts** parmi les **14 layouts standard** (voir `references/layouts_catalog.md`). Il s'agit d'adapter le choix au message :
    - Layout 1 (Hook factuel) ou 2 (Hook Vision) en ouverture
    - Layout 5 (Timeline) ou 10 (Plan 3 phases) pour le quand/comment
    - Layout 9 (Risques & Opportunités) avant la décision
@@ -78,7 +78,10 @@ Ne pas l'utiliser pour : un seul slide isolé qu'on peut juste décrire en chat,
    > **Le Layout 15 (Impact par population) n'est JAMAIS inclus par défaut.**
    > Il est réservé à un workflow spécifique d'analyse d'impact — voir la section dédiée ci-dessous.
 
-3. **Construire le `content.json`** au format décrit dans `references/content_schema.md`.
+3. **Construire le `content.json`** au format décrit dans `references/content_schema.md`. 
+   > [!IMPORTANT]
+   > **CONSIGNE CRITIQUE : EMPHASES OBLIGATOIRES**
+   # > Pour les **Layouts 1, 11 et 14**, il est obligatoire d'utiliser la structure enrichie `{ "text": "...", "emphasis": [...] }` pour mettre en gras les mots-clés stratégiques. Ne jamais fournir du texte brut pour ces champs.
 
 4. **Générer la présentation** :
    ```bash
@@ -89,9 +92,9 @@ Ne pas l'utiliser pour : un seul slide isolé qu'on peut juste décrire en chat,
        [--logo /path/to/safran_logo.png]
    ```
  
-5. **Remettre le fichier généré** à l'utilisateur en indiquant clairement le chemin du `.pptx` produit.
+5. **Remise du fichier généré** : il s'agit de remettre le fichier à l'utilisateur en indiquant clairement le chemin du `.pptx` produit.
 
-Le détail exact des champs attendus pour chaque layout est dans `references/content_schema.md` — **lis ce fichier avant de construire le JSON**, particulièrement pour les layouts 6 (tableau), 7 (dashboard), 9 (risques/opps) et 10 (phases) qui ont des structures imbriquées.
+Le détail exact des champs attendus pour chaque layout est dans `references/content_schema.md` — **il est nécessaire de lire ce fichier avant de construire le JSON**, particulièrement pour les layouts 6 (tableau), 7 (dashboard), 9 (risques/opps) et 10 (phases) qui ont des structures imbriquées.
 
 # Contraintes techniques
 
@@ -107,7 +110,7 @@ Le détail exact des champs attendus pour chaque layout est dans `references/con
 
 # Vérification post-génération
 
-Après génération, vérifie :
+Après génération, vérifier :
 - [ ] Le bandeau Take-away (gradient vertical bordeaux) apparaît sur les slides 1, 3, 4, 6, 7, 8, 10, 11, 14
 - [ ] Le bandeau **n'apparaît pas** sur les slides 2, 5, 9, 12, 13, 15
 - [ ] Les couleurs signature sont présentes : `#A25871`, `#6A5D79`, `#FDA85B`
@@ -115,10 +118,11 @@ Après génération, vérifie :
 - [ ] La barre de signature (rectangle bleu nuit + trait fin) apparaît sous chaque titre
 - [ ] Le filigrane "01"/"02"/"03" (slide 11) est translucide à 40%
 - [ ] Les small caps fonctionnent sur slides 2 (titres colonnes), 3 (factor labels), 5 (periods), 9 (level + action tags), 14 (titres comparatifs)
+- [ ] **VÉRIFICATION EMPHASES** : Les mots-clés sont-ils bien en gras/couleur sur les Layouts 1, 11 et 14 ? (Vérifier la présence du champ `emphasis` dans le JSON généré).
 
 # Extension / personnalisation
 
-- Pour ajouter un layout : créer un `build_slide_N` dans `scripts/builders.py` et l'enregistrer dans le dict `BUILDERS`
+- Pour ajouter un layout :  créer un `build_slide_N` dans `scripts/builders.py` et de l'enregistrer dans le dict `BUILDERS`
 - Pour modifier la palette : éditer les hex codes en haut des builders concernés (recommandation : extraire dans une constante en début de `builders.py` pour future v2)
 - La spec complète du template original est dans `references/spec.json` — pour audit / régénération XML directe
 
@@ -142,7 +146,7 @@ Après génération, vérifie :
 ```
      Le parseur appelle `_parse_impact_pdf()` qui extrait titre, bullets OMOC par couleur/position géométrique, et la table RESSORTS_CHANGE.
      Il utilise automatiquement **PyMuPDF** si disponible, sinon **pdfplumber** (fallback, disponible dans Claude.ai).
-     > Si aucune des deux librairies n'est disponible, extraire les données manuellement depuis le contenu du PDF déjà visible dans le contexte, en appliquant les mêmes règles de mapping.
+     > Si aucune des deux librairies n'est disponible, il est nécessaire d'extraire les données manuellement depuis le contenu du PDF déjà visible dans le contexte, en appliquant les mêmes règles de mapping.
 
    - Si le fichier est un **PPTX** (extension `.pptx`) :
 ```bash
@@ -157,7 +161,7 @@ Après génération, vérifie :
    - `raw_levers` : liste des actions de changement brutes (ressort, type, détail)
 
 2. **Synthèse sémantique**
-	Pour chaque population, lis **exclusivement** le champ `détail` de chaque entrée `raw_levers` et rédige un résumé synthétique (max 135 caractères).
+	Pour chaque population, lire **exclusivement** le champ `détail` de chaque entrée `raw_levers` et rédiger un résumé synthétique (max 135 caractères).
 	- Style télégraphique professionnel (pas de verbes conjugués).
 	- Extraire les actions concrètes nommées dans `détail` : noms d'outils, livrables, acteurs, moments-clés.
 	- **INTERDIT** : utiliser le champ `type` (Communication, Support, Mobilisation...) comme contenu ou comme préfixe de la synthèse. Le `type` est une métadonnée de catégorie, pas un levier actionnable.
@@ -166,13 +170,13 @@ Après génération, vérifie :
 	- Exemple attendu pour une population outillage : *"Planification 3 mois ; pairs VP1 en témoin RGM ; templates oSmoz outillages ; retex coord. IB + mesure appropriation"*
 
 3. **Construction et génération**
-	- Construis le `content.json` pour le Layout 15 en injectant tes résumés rédigés dans le champ `levers` de chaque population.
-	- Génère la présentation :
+	- Il s'agit de construire le `content.json` pour le Layout 15 en injectant les résumés rédigés dans le champ `levers` de chaque population.
+	- Il s'agit ensuite de générer la présentation :
 	```bash
 	python scripts/generate_pptx.py \
 		--content /path/to/content.json \
 		--output /path/to/output.pptx \
-	````
+	```
 	
 # Contraintes spécifiques au layout 15
 
@@ -182,7 +186,7 @@ Après génération, vérifie :
 > - **Population introuvable dans TITLE** → créer une ligne pour cette slide et indiquer `Population à nommer' dans le LABEL
 > - **Effectif absent du TITLE** → inscrire `TBD` dans le SUBLABEL (ne pas deviner l'effectif)
 > - **Cotation OMOC manquante** (bullet absent ou non identifiable) → laisser la valeur à `0` (ne pas interpoler)
-> - **RESSORTS_CHANGE vide, illisible ou ressemblant à un placeholder en cours de rédaction** → laisser la cellule vide, signaler à l'utilisateur (ne pas rédiger un résumé fictif)
+> - **RESSORTS_CHANGE vide, illisible ou ressemblant à un placeholder en cours de rédaction** → laisser la cellule vide, le signaler à l'utilisateur (ne pas rédiger un résumé fictif)
 > - **Analyse d'impact (depuis PPTX ou PDF)** → Il est strictement **interdit de regrouper des populations**. Il faut générer 1 ligne par planche source (slide), même si les planches concernent des populations identiques. Ce sont les mêmes contraintes de restitution quelle que soit la source.
 >
 > En cas de doute sur l'interprétation d'une donnée, signaler l'ambiguïté à l'utilisateur **avant** de générer, plutôt que de faire une hypothèse silencieuse.
@@ -193,11 +197,19 @@ Après génération, vérifie :
 # Bonnes pratiques de contenu
 
 - **Titres courts** (5-7 mots max) pour ne pas casser la mise en page
-- **Manifesto / titres de section en small caps** : écris en minuscules normales — l'effet `cap="small"` est appliqué automatiquement par le rendu OOXML
+- **Manifesto / titres de section en small caps** : écrire en minuscules normales — l'effet `cap="small"` est appliqué automatiquement par le rendu OOXML
 - **3 KPI verticaux (slide 1)** : 1 chiffre signature par couleur (violet, bordeaux, orange). Le script accepte du texte plus long, mais vise 4-6 caractères pour préserver le rendu en 44 pt.
 - **Take-away** : 1 phrase d'action, max 12 mots, formulation impérative ou affirmative forte
 - **Layout 11 (CTA)** : la phrase CTA doit poser une question ou appeler à un engagement explicite (registre Influent en DISC)
-- **Mots en emphase (Layouts 1, 11, 14)** : Lors de la création du contenu, l'IA **doit identifier proactivement les mots clés à mettre en évidence** dans les Layouts 1 (manifesto, body), 11 (corps des blocs) et 14 (éléments comparés). Il faut obligatoirement utiliser la structure enrichie `{ "text": "...", "emphasis": ["mot1", "mot2"] }` dans le `content.json` pour appliquer cette mise en valeur. *L'emphase est strictement interdite (et sera techniquement ignorée) sur tous les autres éléments et layouts.*
+- **Mots en emphase (Layouts 1, 11, 14) — RÈGLE D'OR** :
+  L'IA **DOIT** identifier proactivement les mots-clés et utiliser **OBLIGATOIREMENT** la structure enrichie :
+  `{ "text": "...", "emphasis": ["mot1", "mot2"] }`
+  Ceci s'applique aux champs suivants :
+  - **Layout 1** : `manifesto` et `body`
+  - **Layout 11** : `body` (dans `blocks`)
+  - **Layout 14** : `left_items` et `right_items`
+  *L'emphase est strictement interdite sur tous les autres éléments.*
+
 
 # Limites connues
 

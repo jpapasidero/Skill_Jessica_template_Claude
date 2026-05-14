@@ -672,7 +672,7 @@ def build_slide_11(slide, c, page_num=11, total=11, logo_path=None):
         add_textbox(slide, 2.00, body_ys[i], 29.50, 2.40, b.get("body", ""),
                     font="Segoe UI Light", size_pt=14, color_hex="#474E67",
                     name=f"S11_BLOCK_{i+1}_BODY", line_spacing=1.3,
-                    emphasis_style={"font": "Segoe UI", "bold": True},
+                    emphasis_style={"font": "Segoe UI", "bold": True, "color_hex":"#070E1D"},
                     allow_emphasis=True)
 
     # CTA en bas (gradient bandeau)

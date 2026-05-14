@@ -235,16 +235,14 @@ def _parse_impact_pdf_fitz(pdf_path):
     pdf = fitz.open(str(pdf_path))
     populations = []
 
-    CENTER_X_PT = 161.2
-    CENTER_Y_PT = 227.8
-    STEP_PT = 26.4
-
     def is_red(fill):
         if fill is None: return False
         return fill[0] > 0.9 and fill[1] < 0.1 and fill[2] < 0.1
 
-    def is_title_block(x0, y0, x1, y1, text):
-        return y0 < 70 and y1 < 75 and len(text.strip()) > 5
+    def is_title_block(x0, y0, x1, y1, text, page_w, page_h):
+        return (0.02 * page_w <= x0 <= 0.60 * page_w and
+                0.02 * page_h <= y0 <= 0.15 * page_h and
+                len(text.strip()) > 5)
 
     for slide_idx in range(len(pdf)):
         page = pdf[slide_idx]
@@ -257,11 +255,15 @@ def _parse_impact_pdf_fitz(pdf_path):
             "levers": ""
         }
 
+        page_rect = page.rect
+        page_w = page_rect.width
+        page_h = page_rect.height
+
         blocks = page.get_text("blocks")
         title = ""
         for b in blocks:
             x0, y0, x1, y1, text = b[0], b[1], b[2], b[3], b[4].strip()
-            if is_title_block(x0, y0, x1, y1, text):
+            if is_title_block(x0, y0, x1, y1, text, page_w, page_h):
                 title = text.replace('\n', ' ')
                 break
 
@@ -278,25 +280,31 @@ def _parse_impact_pdf_fitz(pdf_path):
                 cx = (r.x0 + r.x1) / 2
                 cy = (r.y0 + r.y1) / 2
                 
-                if cx < 380 and 60 < cy < 430:
-                    dx = cx - CENTER_X_PT
-                    dy = CENTER_Y_PT - cy
+                px = (cx / page_w) * 100
+                py = (cy / page_h) * 100
+                
+                if 5 <= px <= 40 and 20 <= py <= 65:
+                    dx = px - 16.8
+                    dy = 42.2 - py
                     
-                    if abs(dx) < 20 or abs(dy) < 20:
-                        if abs(dx) > abs(dy):
-                            axis = 'Business' if dx > 0 else 'Culture'
-                            axis_dist = abs(dx)
-                        else:
-                            axis = 'Organization' if dy > 0 else 'Tool'
-                            axis_dist = abs(dy)
+                    level_x = abs(dx) / 2.75
+                    level_y = abs(dy) / 4.88
+                    
+                    if abs(dx) < 1.0 and abs(dy) < 1.0:
+                        continue
                         
-                        level = round(axis_dist / STEP_PT)
-                        level = max(0, min(4, level))
-                        entry["omoc"][axis] = level
+                    if level_x > level_y:
+                        axis = 'Business' if dx > 0 else 'Culture'
+                        level = round(level_x)
+                    else:
+                        axis = 'Organization' if dy > 0 else 'Tool'
+                        level = round(level_y)
+                        
+                    entry["omoc"][axis] = max(0, min(4, level))
 
         for b in blocks:
             x0, y0, x1, y1, text = b[0], b[1], b[2], b[3], b[4].strip()
-            if x0 > 350 and y0 > 280:
+            if 0.35 * page_w <= x0 <= 0.95 * page_w and 0.50 * page_h <= y0 <= 0.95 * page_h:
                 lines = [l.strip() for l in text.split('\n') if l.strip()]
                 if len(lines) >= 3:
                     ressort = lines[0]
@@ -304,10 +312,10 @@ def _parse_impact_pdf_fitz(pdf_path):
                         continue
                     
                     action_type = lines[1]
-                    if lines[2] in ['•', '-', '', '\uf0b7']:
+                    if lines[2] in ['•', '-', '', '\uf0b7', '']:
                         detail = " ".join(lines[3:])
                     else:
-                        detail = " ".join(lines[2:]).lstrip('•-\uf0b7 ')
+                        detail = " ".join(lines[2:]).lstrip('•-\uf0b7 ')
                     
                     entry["raw_levers"].append({
                         "ressort": ressort,
@@ -324,9 +332,6 @@ def _parse_impact_pdf_fitz(pdf_path):
 
 def _parse_impact_pdf_pdfplumber(pdf_path):
     """Parse un PDF d'analyse d'impact via pdfplumber (alternative à PyMuPDF)."""
-    CENTER_X_PT = 161.2
-    CENTER_Y_PT = 227.8
-    STEP_PT = 26.4
 
     def _group_into_lines(words, y_tol=3):
         words = sorted(words, key=lambda w: (w["top"], w["x0"]))
@@ -366,10 +371,17 @@ def _parse_impact_pdf_pdfplumber(pdf_path):
                 "levers": ""
             }
 
+            page_w = page.width
+            page_h = page.height
+
             words = page.extract_words(keep_blank_chars=False, x_tolerance=3, y_tolerance=3)
 
-            # --- Titre (top < 70 pt) ---
-            title_words = [w for w in words if w["top"] < 70]
+            # --- Titre (Zone 1) ---
+            title_words = [
+                w for w in words 
+                if 0.02 * page_w <= w["x0"] <= 0.60 * page_w 
+                and 0.02 * page_h <= w["top"] <= 0.15 * page_h
+            ]
             if not title_words:
                 continue
             title = " ".join(
@@ -377,11 +389,15 @@ def _parse_impact_pdf_pdfplumber(pdf_path):
             ).replace('\n', ' ')
             entry["population"], entry["effectif"] = _parse_title(title)
 
-            # --- Bullets OMOC (rectangles dans la zone radar) ---
+            # --- Bullets OMOC (Zone 2) ---
             for rect in page.rects:
                 cx = (rect["x0"] + rect["x1"]) / 2
                 cy = (rect["top"] + rect["bottom"]) / 2
-                if not (cx < 380 and 60 < cy < 430):
+                
+                px = (cx / page_w) * 100
+                py = (cy / page_h) * 100
+                
+                if not (5 <= px <= 40 and 20 <= py <= 65):
                     continue
 
                 fill = rect.get("non_stroking_color")
@@ -393,20 +409,29 @@ def _parse_impact_pdf_pdfplumber(pdf_path):
                     else:
                         continue
 
-                dx = cx - CENTER_X_PT
-                dy = CENTER_Y_PT - cy
-                if abs(dx) < 20 or abs(dy) < 20:
-                    if abs(dx) > abs(dy):
-                        axis = 'Business' if dx > 0 else 'Culture'
-                        axis_dist = abs(dx)
-                    else:
-                        axis = 'Organization' if dy > 0 else 'Tool'
-                        axis_dist = abs(dy)
-                    level = round(axis_dist / STEP_PT)
-                    entry["omoc"][axis] = max(0, min(4, level))
+                dx = px - 16.8
+                dy = 42.2 - py
+                
+                level_x = abs(dx) / 2.75
+                level_y = abs(dy) / 4.88
+                
+                if abs(dx) < 1.0 and abs(dy) < 1.0:
+                    continue
 
-            # --- Leviers (zone x > 350, top > 280) ---
-            lever_words = [w for w in words if w["x0"] > 350 and w["top"] > 280]
+                if level_x > level_y:
+                    axis = 'Business' if dx > 0 else 'Culture'
+                    level = round(level_x)
+                else:
+                    axis = 'Organization' if dy > 0 else 'Tool'
+                    level = round(level_y)
+                entry["omoc"][axis] = max(0, min(4, level))
+
+            # --- Leviers (Zone 3) ---
+            lever_words = [
+                w for w in words 
+                if 0.35 * page_w <= w["x0"] <= 0.95 * page_w 
+                and 0.50 * page_h <= w["top"] <= 0.95 * page_h
+            ]
             if lever_words:
                 lines = _group_into_lines(lever_words)
                 for block_text in _lines_to_blocks(lines):
@@ -417,10 +442,10 @@ def _parse_impact_pdf_pdfplumber(pdf_path):
                     if ressort.lower() in ('ressorts du changement', 'actions'):
                         continue
                     action_type = block_lines[1]
-                    if block_lines[2] in ['•', '-', '', '']:
+                    if block_lines[2] in ['•', '-', '', '', '\uf0b7']:
                         detail = " ".join(block_lines[3:])
                     else:
-                        detail = " ".join(block_lines[2:]).lstrip('•- ')
+                        detail = " ".join(block_lines[2:]).lstrip('•-\uf0b7 ')
                     entry["raw_levers"].append({
                         "ressort": ressort,
                         "type": action_type.rstrip(':'),

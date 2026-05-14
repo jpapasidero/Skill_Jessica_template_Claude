@@ -1,0 +1,274 @@
+[
+  {
+    "slide_index": 1,
+    "population": "Garants de  fabricabilitÚ  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "effectif": "~ 5 personnes",
+    "omoc": {
+      "Tool": 1,
+      "Business": 1,
+      "Organization": 2,
+      "Culture": 2
+    },
+    "raw_levers": [
+      {
+        "ressort": "Sens",
+        "type": "Communication",
+        "detail": "Se raccrocher aux attentes tech-eco de suivi et visibilitÚ sur la consommation du budget. Souligner que les attentes portent raisonnablement sur la planification Ó 3 mois (on nÆattend pas une planification prÚcise Ó un horizon lointain)"
+      },
+      {
+        "ressort": "Preuve",
+        "type": "Communication",
+        "detail": "PrÚsenter les Úvolutions apportÚes Ó la RGM en prÚsence dÆun de leurs pairs membre de la Vague Pilote 1 ò Montrer les rÚsultats sur la qualitÚ de prÚvision."
+      },
+      {
+        "ressort": "Accompagnement technique",
+        "type": "Support",
+        "detail": "Templates oSmoz chargement jalonnÚs achats outillages ò RÚaliser quelques points retex post-dÚploiement et mesurer lÆappropriation des nouveaux usages RGM et de la qualitÚ de prÚvision des lots (en sÆappuyant sur coodinateur tech-eco IB et les experts usinage)"
+      },
+      {
+        "ressort": "Accompagnement de proximitÚ",
+        "type": "Support",
+        "detail": "Points de support Ó la MÓJ oSmoz et au chargement organisÚs par le coordinateur tech-eco IB"
+      }
+    ],
+    "levers": "Communication | Support"
+  },
+  {
+    "slide_index": 2,
+    "population": "Experts usinage IBIF",
+    "effectif": "~ 1 personne",
+    "omoc": {
+      "Tool": 1,
+      "Business": 2,
+      "Organization": 1,
+      "Culture": 2
+    },
+    "raw_levers": [
+      {
+        "ressort": "Sens",
+        "type": "Communication",
+        "detail": "Communiquer sur les enjeux du chantier et les rÚsultats de la vague pilote 1"
+      },
+      {
+        "ressort": "Preuve",
+        "type": "Communication",
+        "detail": "PrÚsenter les Úvolutions apportÚes Ó la RGM en prÚsence dÆun de leurs pairs membre de la Vague Pilote 1 ò Montrer les apports sur la qualitÚ du travail de par lÆintÚgration des experts / rÚfÚrents outillages (exhaustivitÚ du besoin outillage)"
+      },
+      {
+        "ressort": "Accompagnement de proximitÚ",
+        "type": "Mobilisation",
+        "detail": "Mobiliser en tant que relai pour animer les Úvolutions de la RGM (mettre Ó disposition la liste des livrables, Ûtre en attente lors de la RGM de ces ÚlÚments) ò Mobiliser pour piloter la mise Ó jour de lÆILS-1940 et la planification de la rÚalisation dÆun RACI"
+      },
+      {
+        "ressort": "Accompagnement technique",
+        "type": "Support",
+        "detail": "RÚaliser quelques points retex post-dÚploiement et mesurer lÆappropriation des nouveaux usages RGM"
+      }
+    ],
+    "levers": "Communication | Mobilisation | Support"
+  },
+  {
+    "slide_index": 3,
+    "population": "Pilotes d'indus",
+    "effectif": "~ 15 personnes",
+    "omoc": {
+      "Tool": 3,
+      "Business": 4,
+      "Organization": 1,
+      "Culture": 3
+    },
+    "raw_levers": [
+      {
+        "ressort": "Sens",
+        "type": "Communication",
+        "detail": "Se raccrocher aux attentes tech-eco de suivi et visibilitÚ sur la consommation du budget. Souligner que les attentes portent raisonnablement sur la planification Ó 3 mois (on nÆattend pas une planification prÚcise Ó un horizon lointain)"
+      },
+      {
+        "ressort": "Preuve",
+        "type": "Communication",
+        "detail": "PrÚsenter les Úvolutions apportÚes Ó la RGM en prÚsence dÆun de leurs pairs membre de la Vague Pilote 1 ò Montrer les rÚsultats sur la qualitÚ de prÚvision."
+      },
+      {
+        "ressort": "Accompagnement technique",
+        "type": "Support",
+        "detail": "Templates oSmoz chargement jalonnÚs achats outillages ò RÚaliser quelques points retex post-dÚploiement et mesurer lÆappropriation des nouveaux usages RGM et de la qualitÚ de prÚvision des lots (en sÆappuyant sur coodinateur tech-eco IB et les experts usinage)"
+      },
+      {
+        "ressort": "Accompagnement de proximitÚ",
+        "type": "Support",
+        "detail": "Points de support Ó la MÓJ oSmoz et au chargement organisÚs par le coordinateur tech-eco IB"
+      }
+    ],
+    "levers": "Communication | Support"
+  },
+  {
+    "slide_index": 4,
+    "population": "Experts usinage IBIF",
+    "effectif": "TBD",
+    "omoc": {
+      "Tool": 1,
+      "Business": 2,
+      "Organization": 1,
+      "Culture": 2
+    },
+    "raw_levers": [
+      {
+        "ressort": "Sens",
+        "type": "Communication",
+        "detail": "Communiquer sur les enjeux du chantier et les rÚsultats de la vague pilote 1"
+      },
+      {
+        "ressort": "Preuve",
+        "type": "Communication",
+        "detail": "PrÚsenter les Úvolutions apportÚes Ó la RGM en prÚsence dÆun de leurs pairs membre de la Vague Pilote 1 ò Montrer les apports sur la qualitÚ du travail de par lÆintÚgration des experts / rÚfÚrents outillages (exhaustivitÚ du besoin outillage)"
+      },
+      {
+        "ressort": "Accompagnement de proximitÚ",
+        "type": "Mobilisation",
+        "detail": "Mobiliser en tant que relai pour animer les Úvolutions de la RGM (mettre Ó disposition la liste des livrables, Ûtre en attente lors de la RGM de ces ÚlÚments) ò Mobiliser pour piloter la mise Ó jour de lÆILS-1940 et la planification de la rÚalisation dÆun RACI"
+      },
+      {
+        "ressort": "Accompagnement technique",
+        "type": "Support",
+        "detail": "RÚaliser quelques points retex post-dÚploiement et mesurer lÆappropriation des nouveaux usages RGM"
+      }
+    ],
+    "levers": "Communication | Mobilisation | Support"
+  },
+  {
+    "slide_index": 5,
+    "population": "Garants de fabricabilitÚ",
+    "effectif": "~ 5 personnes",
+    "omoc": {
+      "Tool": 1,
+      "Business": 1,
+      "Organization": 2,
+      "Culture": 2
+    },
+    "raw_levers": [
+      {
+        "ressort": "Sens",
+        "type": "Communication",
+        "detail": "Se raccrocher aux attentes tech-eco de suivi et visibilitÚ sur la consommation du budget. Souligner que les attentes portent raisonnablement sur la planification Ó 3 mois (on nÆattend pas une planification prÚcise Ó un horizon lointain)"
+      },
+      {
+        "ressort": "Preuve",
+        "type": "Communication",
+        "detail": "PrÚsenter les Úvolutions apportÚes Ó la RGM en prÚsence dÆun de leurs pairs membre de la Vague Pilote 1 ò Montrer les rÚsultats sur la qualitÚ de prÚvision."
+      },
+      {
+        "ressort": "Accompagnement technique",
+        "type": "Support",
+        "detail": "Templates oSmoz chargement jalonnÚs achats outillages ò RÚaliser quelques points retex post-dÚploiement et mesurer lÆappropriation des nouveaux usages RGM et de la qualitÚ de prÚvision des lots (en sÆappuyant sur coodinateur tech-eco IB et les experts usinage)"
+      },
+      {
+        "ressort": "Accompagnement de proximitÚ",
+        "type": "Support",
+        "detail": "Points de support Ó la MÓJ oSmoz et au chargement organisÚs par le coordinateur tech-eco IB"
+      }
+    ],
+    "levers": "Communication | Support"
+  },
+  {
+    "slide_index": 6,
+    "population": "Experts usinage IBIF",
+    "effectif": "TBD",
+    "omoc": {
+      "Tool": 1,
+      "Business": 2,
+      "Organization": 1,
+      "Culture": 2
+    },
+    "raw_levers": [
+      {
+        "ressort": "Sens",
+        "type": "Communication",
+        "detail": "Communiquer sur les enjeux du chantier et les rÚsultats de la vague pilote 1"
+      },
+      {
+        "ressort": "Preuve",
+        "type": "Communication",
+        "detail": "PrÚsenter les Úvolutions apportÚes Ó la RGM en prÚsence dÆun de leurs pairs membre de la Vague Pilote 1 ò Montrer les apports sur la qualitÚ du travail de par lÆintÚgration des experts / rÚfÚrents outillages (exhaustivitÚ du besoin outillage)"
+      },
+      {
+        "ressort": "Accompagnement de proximitÚ",
+        "type": "Mobilisation",
+        "detail": "Mobiliser en tant que relai pour animer les Úvolutions de la RGM (mettre Ó disposition la liste des livrables, Ûtre en attente lors de la RGM de ces ÚlÚments) ò Mobiliser pour piloter la mise Ó jour de lÆILS-1940 et la planification de la rÚalisation dÆun RACI"
+      },
+      {
+        "ressort": "Accompagnement technique",
+        "type": "Support",
+        "detail": "RÚaliser quelques points retex post-dÚploiement et mesurer lÆappropriation des nouveaux usages RGM"
+      }
+    ],
+    "levers": "Communication | Mobilisation | Support"
+  },
+  {
+    "slide_index": 7,
+    "population": "Garants de fabricabilitÚ",
+    "effectif": "~ 5 personnes",
+    "omoc": {
+      "Tool": 1,
+      "Business": 1,
+      "Organization": 4,
+      "Culture": 2
+    },
+    "raw_levers": [
+      {
+        "ressort": "Sens",
+        "type": "Communication",
+        "detail": "Se raccrocher aux attentes tech-eco de suivi et visibilitÚ sur la consommation du budget. Souligner que les attentes portent raisonnablement sur la planification Ó 3 mois (on nÆattend pas une planification prÚcise Ó un horizon lointain)"
+      },
+      {
+        "ressort": "Preuve",
+        "type": "Communication",
+        "detail": "PrÚsenter les Úvolutions apportÚes Ó la RGM en prÚsence dÆun de leurs pairs membre de la Vague Pilote 1 ò Montrer les rÚsultats sur la qualitÚ de prÚvision."
+      },
+      {
+        "ressort": "Accompagnement technique",
+        "type": "Support",
+        "detail": "Templates oSmoz chargement jalonnÚs achats outillages ò RÚaliser quelques points retex post-dÚploiement et mesurer lÆappropriation des nouveaux usages RGM et de la qualitÚ de prÚvision des lots (en sÆappuyant sur coodinateur tech-eco IB et les experts usinage)"
+      },
+      {
+        "ressort": "Accompagnement de proximitÚ",
+        "type": "Support",
+        "detail": "Points de support Ó la MÓJ oSmoz et au chargement organisÚs par le coordinateur tech-eco IB"
+      }
+    ],
+    "levers": "Communication | Support"
+  },
+  {
+    "slide_index": 8,
+    "population": "Experts usinage IBIF",
+    "effectif": "TBD",
+    "omoc": {
+      "Tool": 1,
+      "Business": 2,
+      "Organization": 1,
+      "Culture": 2
+    },
+    "raw_levers": [
+      {
+        "ressort": "Sens",
+        "type": "Communication",
+        "detail": "Communiquer sur les enjeux du chantier et les rÚsultats de la vague pilote 1"
+      },
+      {
+        "ressort": "Preuve",
+        "type": "Communication",
+        "detail": "PrÚsenter les Úvolutions apportÚes Ó la RGM en prÚsence dÆun de leurs pairs membre de la Vague Pilote 1 ò Montrer les apports sur la qualitÚ du travail de par lÆintÚgration des experts / rÚfÚrents outillages (exhaustivitÚ du besoin outillage)"
+      },
+      {
+        "ressort": "Accompagnement de proximitÚ",
+        "type": "Mobilisation",
+        "detail": "Mobiliser en tant que relai pour animer les Úvolutions de la RGM (mettre Ó disposition la liste des livrables, Ûtre en attente lors de la RGM de ces ÚlÚments) ò Mobiliser pour piloter la mise Ó jour de lÆILS-1940 et la planification de la rÚalisation dÆun RACI"
+      },
+      {
+        "ressort": "Accompagnement technique",
+        "type": "Support",
+        "detail": "RÚaliser quelques points retex post-dÚploiement et mesurer lÆappropriation des nouveaux usages RGM"
+      }
+    ],
+    "levers": "Communication | Mobilisation | Support"
+  }
+]

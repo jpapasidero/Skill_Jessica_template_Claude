@@ -1,0 +1,253 @@
+{
+  "slides": [
+    {
+      "layout": 1,
+      "content": {
+        "title": "L'instrument roi : Le Piano",
+        "manifesto": {
+          "text": "Le piano est l'instrument roi qui a transformé la musique occidentale.",
+          "emphasis": ["instrument roi", "musique occidentale"]
+        },
+        "body": {
+          "text": "Inventé par Bartolomeo Cristofori vers 1700, le piano a permis une expressivité dynamique inédite grâce à son mécanisme de frappe.",
+          "emphasis": ["Bartolomeo Cristofori", "expressivité dynamique", "mécanisme de frappe"]
+        },
+        "stats": [
+          { "value": "1700", "label": "Invention", "sublabel": "Florence, Italie" },
+          { "value": "88", "label": "Touches", "sublabel": "Standard moderne" },
+          { "value": "20 t", "label": "Tension", "sublabel": "Force des cordes" }
+        ],
+        "takeaway": "Un héritage de trois siècles d'innovation sonore."
+      }
+    },
+    {
+      "layout": 2,
+      "content": {
+        "title": "L'évolution en trois piliers",
+        "columns": [
+          { "title": "Le Clavecin", "body": "Cordes pincées, sans nuance de volume. L'ancêtre mécanique." },
+          { "title": "Le Pianoforte", "body": "Apparition du marteau, permettant de jouer 'piano' et 'forte'." },
+          { "title": "Le Piano Moderne", "body": "Cadre en fonte et mécanique à double échappement pour la virtuosité." }
+        ]
+      }
+    },
+    {
+      "layout": 3,
+      "content": {
+        "title": "Les Grands Facteurs de Piano",
+        "factors": [
+          { "label": "Steinway & Sons" },
+          { "label": "Yamaha" },
+          { "label": "Bösendorfer" },
+          { "label": "Fazioli" },
+          { "label": "Bechstein" },
+          { "label": "Kawai" }
+        ],
+        "takeaway": "Chaque marque possède sa propre signature sonore."
+      }
+    },
+    {
+      "layout": 4,
+      "content": {
+        "title": "Les trois cœurs du mécanisme",
+        "nodes": {
+          "top": { "label": "Le Clavier", "sublabel": "Interface de l'interprète" },
+          "left": { "label": "La Mécanique", "sublabel": "Transmission par marteaux" },
+          "right": { "label": "La Table", "sublabel": "Amplification naturelle" }
+        },
+        "takeaway": "Une symbiose parfaite entre bois et acier."
+      }
+    },
+    {
+      "layout": 5,
+      "content": {
+        "title": "Timeline de l'évolution",
+        "steps": [
+          { "period": "1700", "step_title": "Invention", "body": "Cristofori crée le Gravicembalo col piano e forte." },
+          { "period": "1821", "step_title": "Échappement", "body": "Sébastien Érard permet la répétition rapide des notes." },
+          { "period": "1855", "step_title": "Cadre Fonte", "body": "Steinway brevette le cadre monobloc pour plus de puissance." },
+          { "period": "1980", "step_title": "Numérique", "body": "Démocratisation avec les technologies d'échantillonnage." }
+        ]
+      }
+    },
+    {
+      "layout": 6,
+      "content": {
+        "title": "Clavecin vs Piano Moderne",
+        "headers": ["Caractéristique", "Clavecin", "Piano", "Impact", "Vainqueur"],
+        "rows": [
+          ["Mécanisme", "Cordes pincées", "Cordes frappées", "Dynamique", "Piano"],
+          ["Nuances", "Fixes", "Infinies", "Expression", "Piano"],
+          ["Clavier", "Parfois double", "Simple 88 touches", "Standard", "Piano"],
+          ["Répertoire", "Baroque", "Universel", "Polyvalence", "Piano"]
+        ],
+        "takeaway": "Le piano a supplanté le clavecin par sa palette expressive."
+      }
+    },
+    {
+      "layout": 7,
+      "content": {
+        "title": "Le Marché Mondial du Piano",
+        "kpis": [
+          { "value": "500k", "sublabel": "Ventes/an" },
+          { "value": "12 j", "label": "Accordage", "sublabel": "Fréquence idéale" },
+          { "value": "60%", "sublabel": "Production Asie" },
+          { "value": "210", "sublabel": "Cordes totales" },
+          { "value": "3 m", "sublabel": "Longueur maxi" },
+          { "value": "440 Hz", "sublabel": "Le 'La' standard" }
+        ],
+        "section_label": "Pratique par région",
+        "bars": [
+          { "label": "Chine - Éducation", "value": 90 },
+          { "label": "Europe - Tradition", "value": 75 },
+          { "label": "USA - Loisir", "value": 60 },
+          { "label": "Japon - Innovation", "value": 85 },
+          { "label": "Reste du monde", "value": 40 }
+        ],
+        "takeaway": "Une croissance portée par l'Asie depuis 20 ans."
+      }
+    },
+    {
+      "layout": 8,
+      "content": {
+        "title": "Piano Droit vs Piano à Queue",
+        "subtitle": "Dimensions et performances comparées",
+        "legends": ["Droit", "Queue"],
+        "rows": [
+          { "label": "Poids (kg)", "value_1": 250, "value_2": 450, "display_1": "250kg", "display_2": "450kg" },
+          { "label": "Longueur (cm)", "value_1": 150, "value_2": 210, "display_1": "150cm", "display_2": "210cm" },
+          { "label": "Complexité", "value_1": 50, "value_2": 95 },
+          { "label": "Volume sonore", "value_1": 70, "value_2": 100 },
+          { "label": "Prix moyen", "value_1": 5000, "value_2": 35000 }
+        ],
+        "takeaway": "Le piano à queue reste la référence pour le concert."
+      }
+    },
+    {
+      "layout": 9,
+      "content": {
+        "title": "Risques & Préservation",
+        "risks": [
+          { "title": "Humidité excessive", "level": "high_risk", "body": "Gonflement des bois et blocage.", "action": "Utiliser un Dampp-Chaser." },
+          { "title": "Sécheresse", "level": "high_risk", "body": "Fente de la table d'harmonie.", "action": "Humidificateur de pièce." },
+          { "title": "Instabilité thermique", "level": "medium_risk", "body": "Désaccordage rapide.", "action": "Éloigner du chauffage." }
+        ],
+        "opportunities": [
+          { "title": "Restauration", "level": "high_opp", "body": "Redonne vie aux instruments anciens.", "action": "Expertise par un maître artisan." },
+          { "title": "Silent System", "level": "medium_opp", "body": "Jouer au casque sur acoustique.", "action": "Installation post-achat." },
+          { "title": "Échantillonnage", "level": "high_opp", "body": "Numérisation du son.", "action": "VST haute fidélité." }
+        ]
+      }
+    },
+    {
+      "layout": 10,
+      "content": {
+        "title": "Parcours d'apprentissage",
+        "date": "Mai 2026",
+        "phases": [
+          {
+            "phase_title": "Initiation",
+            "phase_subtitle": "1-2 ans",
+            "items": [
+              { "title": "Lecture de notes", "body": "Clé de Sol et Clé de Fa." },
+              { "title": "Indépendance", "body": "Travail séparé des deux mains." },
+              { "title": "Posture", "body": "Position du dos et des poignets." }
+            ]
+          },
+          {
+            "phase_title": "Intermédiaire",
+            "phase_subtitle": "3-6 ans",
+            "items": [
+              { "title": "Technique", "body": "Gammes, arpèges et vélocité." },
+              { "title": "Nuances", "body": "Maîtrise du toucher et pédale." },
+              { "title": "Répertoire", "body": "Classique, Jazz ou Pop." }
+            ]
+          },
+          {
+            "phase_title": "Maîtrise",
+            "phase_subtitle": "7 ans +",
+            "items": [
+              { "title": "Interprétation", "body": "Donner du sens à l'œuvre." },
+              { "title": "Improvisation", "body": "Liberté harmonique totale." },
+              { "title": "Performance", "body": "Gestion du trac et concert." }
+            ]
+          }
+        ],
+        "takeaway": "La patience est la clé de la virtuosité."
+      }
+    },
+    {
+      "layout": 11,
+      "content": {
+        "title": "Conclusion : Un instrument d'avenir",
+        "blocks": [
+          {
+            "block_title": "Une prouesse technique",
+            "body": {
+              "text": "Le piano est une merveille d'ingénierie mécanique et acoustique.",
+              "emphasis": ["merveille d'ingénierie"]
+            }
+          },
+          {
+            "block_title": "Un héritage culturel",
+            "body": {
+              "text": "Porté par des compositeurs légendaires à travers les siècles.",
+              "emphasis": ["compositeurs légendaires"]
+            }
+          },
+          {
+            "block_title": "Démocratisation",
+            "body": {
+              "text": "Le numérique permet de transmettre cet héritage aux mélomanes.",
+              "emphasis": ["héritage", "mélomanes"]
+            }
+          }
+        ],
+        "cta": "Êtes-vous prêts à commencer votre voyage musical ?"
+      }
+    },
+    {
+      "layout": 12,
+      "content": {
+        "title": "Process d'accordage",
+        "steps": [
+          { "label": "Préparation", "sublabel": "Ouverture du meuble et nettoyage." },
+          { "label": "Tempérament", "sublabel": "Accordage de l'octave centrale au diapason." },
+          { "label": "Unissons", "sublabel": "Calage des deux ou trois cordes par note." },
+          { "label": "Octaves", "sublabel": "Extension vers les graves et les aigus." },
+          { "label": "Vérification", "sublabel": "Test de la tenue d'accord sur des accords." },
+          { "label": "Réglage", "sublabel": "Ajustement fin de l'harmonisation." }
+        ]
+      }
+    },
+    {
+      "layout": 13,
+      "content": {
+        "title": "Entretien du piano",
+        "left_title": "À faire",
+        "right_title": "À éviter",
+        "left_items": ["Accorder 1 fois par an", "Nettoyer avec un plumeau", "Maintenir 50% d'humidité"],
+        "right_items": ["Poser un vase d'eau", "Utiliser des produits gras", "Exposer au soleil direct"]
+      }
+    },
+    {
+      "layout": 14,
+      "content": {
+        "title": "Acoustique vs Numérique",
+        "left_title": "Acoustique",
+        "right_title": "Numérique",
+        "left_items": [
+          { "text": "Toucher et son organique authentique", "emphasis": ["organique"] },
+          "Meuble de prestige",
+          "Durée de vie (100 ans)"
+        ],
+        "right_items": [
+          { "text": "Volume réglable et casque numérique", "emphasis": ["numérique"] },
+          "Pas d'accordage nécessaire",
+          "Compact et léger"
+        ],
+        "takeaway": "Le choix dépend du budget et de l'usage recherché."
+      }
+    }
+  ]
+}

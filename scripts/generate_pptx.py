@@ -136,6 +136,5 @@ def main():
     args = ap.parse_args()
     generate(args.content, args.output, logo_path=args.logo)
 
-
 if __name__ == "__main__":
     main()
